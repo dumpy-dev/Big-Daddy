@@ -55,13 +55,37 @@
 			isa = PBXGroup;
 			children = (
 				247FB468204B478800BF4CB7 /* AppDelegate.swift */,
-				247FB46A204B478800BF4CB7 /* ViewController.swift */,
-				247FB46C204B478800BF4CB7 /* Main.storyboard */,
+				247FB47A204B47A800BF4CB7 /* Model */,
+				247FB47B204B47C100BF4CB7 /* View */,
+				247FB47C204B47C700BF4CB7 /* Controller */,
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
-				247FB471204B478800BF4CB7 /* LaunchScreen.storyboard */,
 				247FB474204B478800BF4CB7 /* Info.plist */,
 			);
 			path = "Big Daddy";
+			sourceTree = "<group>";
+		};
+		247FB47A204B47A800BF4CB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		247FB47B204B47C100BF4CB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				247FB471204B478800BF4CB7 /* LaunchScreen.storyboard */,
+				247FB46C204B478800BF4CB7 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		247FB47C204B47C700BF4CB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				247FB46A204B478800BF4CB7 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
