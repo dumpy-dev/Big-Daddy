@@ -22,14 +22,18 @@ class SettingsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var userNameEntered: UITextField!
+    @IBOutlet weak var motherNameEntered: UITextField!
+    @IBOutlet weak var babyNameEntered: UITextField!
+    
+    @IBOutlet weak var dueDatePicked: UIDatePicker!
+    @IBAction func sexPicked(_ sender: UISegmentedControl) {
+    
+        print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
     }
-    */
+    @IBAction func unitPicked(_ sender: UISegmentedControl) {
+        print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
+    }
+    
 
 }
