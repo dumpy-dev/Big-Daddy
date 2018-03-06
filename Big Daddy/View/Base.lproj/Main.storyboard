@@ -58,6 +58,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="541933490.46746802">
                                     <!--2018-03-05 09:04:50 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dueDatePicked:" destination="fMg-pk-Aaf" eventType="valueChanged" id="cef-qM-dq2"/>
+                                </connections>
                             </datePicker>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CbL-6L-geq">
                                 <rect key="frame" x="127" y="476" width="121" height="29"/>
@@ -88,7 +91,6 @@
                     </view>
                     <connections>
                         <outlet property="babyNameEntered" destination="cbF-oo-t5x" id="h9h-zO-T2H"/>
-                        <outlet property="dueDatePicked" destination="0f2-ZL-i3y" id="6fb-FP-k5l"/>
                         <outlet property="motherNameEntered" destination="9Xj-Zd-4Jj" id="rdA-jI-PlR"/>
                         <outlet property="userNameEntered" destination="kYa-nC-xE4" id="om5-dT-mtJ"/>
                     </connections>
