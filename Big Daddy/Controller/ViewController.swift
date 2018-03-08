@@ -12,6 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+   
+        
+        let due = UserDefaults.standard.object(forKey: "DueDate")
+        print("This date has been retrieved from the default settings: \(due)")
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

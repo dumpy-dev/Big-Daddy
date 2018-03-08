@@ -11,16 +11,29 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     var dueDate = Date()
-    var weeksElapsed : Int = 0
+    
+    //Keys for UserDefaults:
+    // DueDate - the due date as entered or as calculated from last period
+    
     
     @IBOutlet weak var userNameEntered: UITextField!
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
+    @IBOutlet weak var dateSwitch: UISwitch!
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        let due = UserDefaults.standard.object(forKey: "DueDate")
+        print("This date has been retrieved from the default settings: \(due)")
+        
+        
+      // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +41,7 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var dateSwitch: UISwitch!
+  
     
  
     
@@ -41,7 +54,7 @@ class SettingsViewController: UIViewController {
             
             let daysToAdd = 280
         
-        let calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: sender.date)
+        var calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: sender.date)
             
             let now = Date()
             let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate!).day
@@ -50,15 +63,20 @@ class SettingsViewController: UIViewController {
            
             print("Your partner's due date is \(calculatedDueDate!) which means your partner is \(weeksElapsed) weeks along")
         
+            UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
+            
+//            let due = UserDefaults.standard.object(forKey: "DueDate")
+//            print("This date has been saved to the default settings: \(due)")
+            
         } else {
             
             // This calculates the time until the baby is born from a known due date
             
             // The number of days elapsed is calculated
             let now = Date()
-            let dueDate = sender.date
+            let calculatedDueDate = sender.date
             
-            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate).day
+            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate).day
             
 
             // The number of weeks and days is calculated from the number of days
@@ -73,10 +91,22 @@ class SettingsViewController: UIViewController {
             let remainderDaysElapsed : Int = 7 - remainderDays
             print("Your partner is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
             
+            
+            UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
+            
+            
         }
+        
+        
     }
     
-
+    
+    
+   
+    
+   
+    
+    
     
     
     @IBAction func sexPicked(_ sender: UISegmentedControl) {
