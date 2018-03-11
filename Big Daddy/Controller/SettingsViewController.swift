@@ -20,7 +20,13 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
     @IBOutlet weak var dateSwitch: UISwitch!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBAction func resetPressed(_ sender: Any) {
+        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        UserDefaults.standard.synchronize()
+        
+    }
     
     
     
@@ -29,9 +35,10 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let due = UserDefaults.standard.object(forKey: "DueDate")
-        print("This date has been retrieved from the default settings: \(due)")
+       // let due = UserDefaults.standard.object(forKey: "DueDate")
+        // print("This date has been retrieved from the default settings: \(due)")
         
+     // datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)
         
       // Do any additional setup after loading the view.
     }
@@ -61,7 +68,7 @@ class SettingsViewController: UIViewController {
             let weeksLeft : Int = diffInDays!/7
             let weeksElapsed : Int = 40 - weeksLeft
            
-            print("Your partner's due date is \(calculatedDueDate!) which means your partner is \(weeksElapsed) weeks along")
+            print("\(motherNameEntered.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
         
             UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
             
@@ -89,7 +96,7 @@ class SettingsViewController: UIViewController {
             
             let weeksElapsed : Int = 40 - weeksLeft
             let remainderDaysElapsed : Int = 7 - remainderDays
-            print("Your partner is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
+            print("\(motherNameEntered.text) is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
             
             
             UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
