@@ -35,10 +35,16 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         
-       // let due = UserDefaults.standard.object(forKey: "DueDate")
-        // print("This date has been retrieved from the default settings: \(due)")
+        if let due = UserDefaults.standard.object(forKey: "DueDate"){
+            
+         print("This date has been retrieved from the default settings: \(due)")
         
-     // datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)
+      datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)
+        } else {
+            
+            let due = Date()
+            print("no date has been entered yet")
+        }
         
       // Do any additional setup after loading the view.
     }
