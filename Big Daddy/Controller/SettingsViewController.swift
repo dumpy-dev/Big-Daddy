@@ -36,7 +36,6 @@ class SettingsViewController: UIViewController {
         if let due = UserDefaults.standard.object(forKey: "DueDate"){
             datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)
         } else {
-            
             let due = Date()
             print("no date has been entered yet")
         }
@@ -68,11 +67,15 @@ class SettingsViewController: UIViewController {
             let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate!).day
             let weeksLeft : Int = diffInDays!/7
             let weeksElapsed : Int = 40 - weeksLeft
+            let remainderDays : Int = diffInDays!%7
+            let remainderDaysElapsed : Int = 7 - remainderDays
            
             print("\(motherNameEntered.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
         
             UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
             UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+         UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+            
             
 //            let due = UserDefaults.standard.object(forKey: "DueDate")
 //            print("This date has been saved to the default settings: \(due)")
@@ -102,8 +105,8 @@ class SettingsViewController: UIViewController {
             
             
             UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-            
-            
+            UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+         UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
         }
         
         
@@ -121,8 +124,17 @@ class SettingsViewController: UIViewController {
     @IBAction func sexPicked(_ sender: UISegmentedControl) {
     
         print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
+        
+        let babySex = sender.selectedSegmentIndex
+        UserDefaults.standard.set(babySex, forKey: "BabySex")
+        
     }
+    
     @IBAction func unitPicked(_ sender: UISegmentedControl) {
+       
+        let unitPicked = sender.selectedSegmentIndex
+        
+         UserDefaults.standard.set(unitPicked, forKey: "Unit")
         print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
     }
     
