@@ -39,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242864942058115A00E54FCF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		247FB45C204B478800BF4CB7 = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +70,7 @@
 				247FB47A204B47A800BF4CB7 /* Model */,
 				247FB47B204B47C100BF4CB7 /* View */,
 				247FB47C204B47C700BF4CB7 /* Controller */,
-				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
+				242864942058115A00E54FCF /* Assets */,
 				247FB474204B478800BF4CB7 /* Info.plist */,
 			);
 			path = "Big Daddy";

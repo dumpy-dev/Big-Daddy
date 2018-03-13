@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     
     //Keys for UserDefaults:
     // DueDate - the due date as entered or as calculated from last period
+    // WeeksElapsed - the number of week elapsed
     
     
     @IBOutlet weak var userNameEntered: UITextField!
@@ -28,18 +29,12 @@ class SettingsViewController: UIViewController {
         
     }
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         if let due = UserDefaults.standard.object(forKey: "DueDate"){
-            
-         print("This date has been retrieved from the default settings: \(due)")
-        
-      datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)
+            datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)
         } else {
             
             let due = Date()
@@ -77,6 +72,7 @@ class SettingsViewController: UIViewController {
             print("\(motherNameEntered.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
         
             UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
+            UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
             
 //            let due = UserDefaults.standard.object(forKey: "DueDate")
 //            print("This date has been saved to the default settings: \(due)")
