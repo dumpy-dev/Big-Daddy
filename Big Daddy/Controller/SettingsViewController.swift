@@ -24,10 +24,25 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBAction func resetPressed(_ sender: Any) {
-        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        UserDefaults.standard.synchronize()
-        
+       
+        let alertController = UIAlertController(title: "Reset", message: "Are you sure you want to reset everything?", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Reset", style: UIAlertActionStyle.default){
+            UIAlertAction in
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            UserDefaults.standard.synchronize()
+            
+            self.datePicker.setDate(Date() as Date, animated: true)
+            
+        })
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+        }
+    
+    @IBAction func donePressed(_ sender: Any) {
     }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,6 +142,7 @@ class SettingsViewController: UIViewController {
         
         let babySex = sender.selectedSegmentIndex
         UserDefaults.standard.set(babySex, forKey: "BabySex")
+        print(UserDefaults.standard.object(forKey: "BabySex"))
         
     }
     
