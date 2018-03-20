@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Big Daddy.xcodeproj">
+      location = "group:/Users/GeorgieandChris 1/Documents/Big Daddy Project Files/Big Daddy/Big Daddy/View/launch screen.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

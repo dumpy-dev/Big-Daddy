@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		199389BEA4C022A8E60115C0 /* Pods_Big_Daddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7397F9A18E5A299AD589142D /* Pods_Big_Daddy.framework */; };
 		24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428646F204D3E9700E54FCF /* SettingsViewController.swift */; };
 		242864922057270800E54FCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242864912057270800E54FCF /* TodayViewController.swift */; };
 		247FB469204B478800BF4CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FB468204B478800BF4CB7 /* AppDelegate.swift */; };
@@ -14,6 +15,8 @@
 		247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247FB46C204B478800BF4CB7 /* Main.storyboard */; };
 		247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247FB46F204B478800BF4CB7 /* Assets.xcassets */; };
 		247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247FB471204B478800BF4CB7 /* LaunchScreen.storyboard */; };
+		24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C22059821700971299 /* ArticlesTableViewController.swift */; };
+		24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +29,11 @@
 		247FB46F204B478800BF4CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		247FB472204B478800BF4CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		247FB474204B478800BF4CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24960E1620587BC400415D1E /* contract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contract.png; sourceTree = "<group>"; };
+		24A012C22059821700971299 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
+		24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCustomTableViewCell.swift; sourceTree = "<group>"; };
+		7397F9A18E5A299AD589142D /* Pods_Big_Daddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_Daddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B03719F6B85E8E5387E047 /* Pods-Big Daddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big Daddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Big Daddy/Pods-Big Daddy.debug.xcconfig"; sourceTree = "<group>"; };
+		F757D638D16C681D454C333D /* Pods-Big Daddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big Daddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Big Daddy/Pods-Big Daddy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199389BEA4C022A8E60115C0 /* Pods_Big_Daddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
-				24960E1620587BC400415D1E /* contract.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -54,6 +61,8 @@
 			children = (
 				247FB467204B478800BF4CB7 /* Big Daddy */,
 				247FB466204B478800BF4CB7 /* Products */,
+				68B22DFA2E1F342201275299 /* Pods */,
+				3C73A47CD6636E32EC12526B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				247FB471204B478800BF4CB7 /* LaunchScreen.storyboard */,
+				24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */,
 				247FB46C204B478800BF4CB7 /* Main.storyboard */,
 			);
 			path = View;
@@ -97,11 +107,29 @@
 		247FB47C204B47C700BF4CB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				24A012C22059821700971299 /* ArticlesTableViewController.swift */,
 				247FB46A204B478800BF4CB7 /* ViewController.swift */,
 				242864912057270800E54FCF /* TodayViewController.swift */,
 				2428646F204D3E9700E54FCF /* SettingsViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3C73A47CD6636E32EC12526B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7397F9A18E5A299AD589142D /* Pods_Big_Daddy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68B22DFA2E1F342201275299 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92B03719F6B85E8E5387E047 /* Pods-Big Daddy.debug.xcconfig */,
+				F757D638D16C681D454C333D /* Pods-Big Daddy.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,9 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 247FB477204B478800BF4CB7 /* Build configuration list for PBXNativeTarget "Big Daddy" */;
 			buildPhases = (
+				D4E536B4E4C4089668621ABC /* [CP] Check Pods Manifest.lock */,
 				247FB461204B478800BF4CB7 /* Sources */,
 				247FB462204B478800BF4CB7 /* Frameworks */,
 				247FB463204B478800BF4CB7 /* Resources */,
+				6598E1F776F5E2037FF86426 /* [CP] Embed Pods Frameworks */,
+				97BC7A92A3A28C83A409DE1B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,11 +202,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6598E1F776F5E2037FF86426 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Big Daddy/Pods-Big Daddy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Big Daddy/Pods-Big Daddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97BC7A92A3A28C83A409DE1B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Big Daddy/Pods-Big Daddy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4E536B4E4C4089668621ABC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Big Daddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		247FB461204B478800BF4CB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */,
+				24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */,
 				242864922057270800E54FCF /* TodayViewController.swift in Sources */,
 				247FB46B204B478800BF4CB7 /* ViewController.swift in Sources */,
 				247FB469204B478800BF4CB7 /* AppDelegate.swift in Sources */,
@@ -314,6 +403,7 @@
 		};
 		247FB478204B478800BF4CB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B03719F6B85E8E5387E047 /* Pods-Big Daddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +418,7 @@
 		};
 		247FB479204B478800BF4CB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F757D638D16C681D454C333D /* Pods-Big Daddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
