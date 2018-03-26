@@ -59,7 +59,10 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         return cell
     }
  
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("\(indexPath)")
+    }
     
     
     
