@@ -12,6 +12,7 @@ class ArticlesTableViewController: UITableViewController {
 
     var articlesArray = [String]()
     
+    
     override var prefersStatusBarHidden: Bool {
         
         return true
@@ -19,10 +20,7 @@ class ArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
-        
-        
-        articlesArray = ["Drinking","Foods to avoid","Morning sickness","Driving","Holidays","Babymoon","Caesarean section", "assisted delivery","vitamin K","sleep deprivation","first aid","vitamins","migraines","stretch marks","exercise","nose bleeds","preeclampsia","postnatal depression"]
+        articlesArray = ["Assisted Delivery","Caesarean Section","Drinking","Driving","Eating","Exercise","First Aid","Holidays","Migraines","Morning Sickness","Nose Bleeds","Postnatal Depression","Pre-eclampsia","Sleep Deprivation","Stretch Marks","Vitamin K","Vitamin Supplements",]
         
         tableView.reloadData()
     
@@ -61,10 +59,23 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("\(indexPath)")
+    print("\(indexPath)")
+        
+    
+        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "articleSelectedSegue" {
+            
+        var selectedRowIndex = self.tableView.indexPathForSelectedRow
+            var articleSelected : ArticleViewController = segue.destination as! ArticleViewController
+            articleSelected.articleID = articlesArray[selectedRowIndex!.row]
+            
+            print("This is the selected article \(articlesArray[(selectedRowIndex?.row)!])")
+      
+    }
     
-    
-
+}
 }

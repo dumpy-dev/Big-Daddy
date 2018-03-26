@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="-794" y="-572"/>
         </scene>
-        <!--Tools-->
+        <!--View Controller-->
         <scene sceneID="NNc-eA-ifE">
             <objects>
                 <viewController id="b5l-qi-BEd" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                         <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Sbi-ui-M1t"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tools" springLoaded="YES" id="qz1-B2-jZs"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="toolsIcon" springLoaded="YES" id="qz1-B2-jZs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ni1-WP-1Ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,7 +334,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="articleLabel" destination="8Ls-xL-oRG" id="LC8-13-cV8"/>
-                                    <segue destination="lci-sr-2SG" kind="show" id="2pe-YH-MQ5"/>
+                                    <segue destination="lci-sr-2SG" kind="show" identifier="articleSelectedSegue" id="2pe-YH-MQ5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -361,16 +361,23 @@
             </objects>
             <point key="canvasLocation" x="1984.8" y="-631.0344827586207"/>
         </scene>
-        <!--View Controller-->
+        <!--Article View Controller-->
         <scene sceneID="JaF-VB-9V4">
             <objects>
-                <viewController id="lci-sr-2SG" sceneMemberID="viewController">
+                <viewController id="lci-sr-2SG" customClass="ArticleViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Gz-KW-TCm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ETL-NG-I5M">
+                                <rect key="frame" x="8" y="106" width="204" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="27"/>
+                                <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ULi-t5-lJL">
-                                <rect key="frame" x="8" y="135" width="359" height="470"/>
+                                <rect key="frame" x="8" y="148" width="359" height="470"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <mutableString key="text">Lorem ipsum dolor sit amet, alterum dissentiet consequuntur ne nam, eos libris vocibus ea, pri magna fastidii posidonium ut. Id pro tation nonumes phaedrum, per quis latine no. Ne zril tollit meliore sea, cu brute epicuri appareat eos. Vis an saepe tincidunt, meis brute sed ut. Mei democritum intellegebat cu, unum omnium viderer cum id. Unum scaevola erroribus vel ad.
 
@@ -385,17 +392,13 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETL-NG-I5M">
-                                <rect key="frame" x="8" y="106" width="204" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="27"/>
-                                <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ues-NN-QFw"/>
                     </view>
+                    <connections>
+                        <outlet property="articleTitle" destination="ETL-NG-I5M" id="SSS-to-ks1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCk-p8-JkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -424,6 +427,7 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
     </scenes>
     <resources>
         <image name="pint-of-beer" width="512" height="512"/>
+        <image name="toolsIcon" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
    
         
         let due = UserDefaults.standard.object(forKey: "DueDate")
-        print("This date has been retrieved from the default settings: \(due)")
+        print("This date has been retrieved from the default settings: \(String(describing: due))")
         
         // Do any additional setup after loading the view, typically from a nib.
     }

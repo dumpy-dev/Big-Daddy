@@ -76,7 +76,7 @@ class SettingsViewController: UIViewController {
             
             let daysToAdd = 280
         
-        var calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: sender.date)
+            let calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: sender.date)
             
             let now = Date()
             let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate!).day
