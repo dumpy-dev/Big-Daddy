@@ -14,13 +14,41 @@ class ArticleViewController: UIViewController {
     var articleID : String = ""
     
     @IBOutlet weak var articleTitle: UILabel!
+    @IBOutlet weak var articleBodyLabel: UILabel!
+    
+    
+ // A dictionary of all of the article titles with their content
+    
+    let articles : [String : String] = [
+    
+        "Assisted Delivery" : "Try to avoid this...",
+        "Caesarean Section" : "The deivery method of choice for clever people",
+        "Drinking" : "Don't drink",
+        "Driving" : "Drive carefully",
+        "Eating" : "You can eat these foods...",
+        "Exercise" : "Do exercise",
+        "First Aid" : "This is how to do first aid",
+        "Holidays" : "Hooray for holidays!",
+        "Migraines" : "Migraines aren't very nice",
+        "Morning Sickness" : "Urgh",
+        "Nose Bleeds" : "PANIC!",
+        "Postnatal Depression" : "Watch out for these signs",
+        "Pre-eclampsia" : "Better than eclampsia",
+        "Sleep Deprivation" : "Get used to it",
+        "Stretch Marks" : "Try bio-oil",
+        "Vitamin K" : "Probably for the best",
+        "Vitamin Supplements" : "Don't forget folic acid"
+        
+    ]
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("This is the article ID \(articleID)")
         articleTitle.text = articleID
+        articleBodyLabel.text = articles[articleID]
+   
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,14 +57,6 @@ class ArticleViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

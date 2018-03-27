@@ -15,22 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-794" y="-572"/>
-        </scene>
-        <!--View Controller-->
+        <!--Tools-->
         <scene sceneID="NNc-eA-ifE">
             <objects>
                 <viewController id="b5l-qi-BEd" sceneMemberID="viewController">
@@ -40,11 +25,11 @@
                         <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Sbi-ui-M1t"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="toolsIcon" springLoaded="YES" id="qz1-B2-jZs"/>
+                    <tabBarItem key="tabBarItem" title="Tools" image="toolsIcon" selectedImage="toolsIcon" springLoaded="YES" id="qz1-B2-jZs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ni1-WP-1Ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="148"/>
+            <point key="canvasLocation" x="-724" y="148"/>
         </scene>
         <!--Settings-->
         <scene sceneID="7v6-So-NNt">
@@ -196,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdg-Az-br8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="972"/>
+            <point key="canvasLocation" x="238" y="908"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MWa-eD-5nh">
@@ -280,7 +265,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pint-of-beer" translatesAutoresizingMaskIntoConstraints="NO" id="AXy-Y5-rH1">
-                                <rect key="frame" x="16" y="126" width="207" height="192"/>
+                                <rect key="frame" x="16" y="110" width="207" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -359,7 +344,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1984.8" y="-631.0344827586207"/>
+            <point key="canvasLocation" x="1983" y="-636"/>
         </scene>
         <!--Article View Controller-->
         <scene sceneID="JaF-VB-9V4">
@@ -376,8 +361,8 @@
                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ULi-t5-lJL">
-                                <rect key="frame" x="8" y="148" width="359" height="470"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULi-t5-lJL">
+                                <rect key="frame" x="8" y="148" width="359" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <mutableString key="text">Lorem ipsum dolor sit amet, alterum dissentiet consequuntur ne nam, eos libris vocibus ea, pri magna fastidii posidonium ut. Id pro tation nonumes phaedrum, per quis latine no. Ne zril tollit meliore sea, cu brute epicuri appareat eos. Vis an saepe tincidunt, meis brute sed ut. Mei democritum intellegebat cu, unum omnium viderer cum id. Unum scaevola erroribus vel ad.
 
@@ -397,12 +382,13 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
                         <viewLayoutGuide key="safeArea" id="ues-NN-QFw"/>
                     </view>
                     <connections>
+                        <outlet property="articleBodyLabel" destination="ULi-t5-lJL" id="LZT-bb-ZKs"/>
                         <outlet property="articleTitle" destination="ETL-NG-I5M" id="SSS-to-ks1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCk-p8-JkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2869.5999999999999" y="-631.0344827586207"/>
+            <point key="canvasLocation" x="2921" y="-636"/>
         </scene>
         <!--Articles-->
         <scene sceneID="NCh-CR-feI">

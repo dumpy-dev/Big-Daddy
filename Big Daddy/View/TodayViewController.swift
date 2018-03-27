@@ -19,7 +19,7 @@ class TodayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+print(UserDefaults.standard.object(forKey: "WeeksElapsed"))
         
     }
     

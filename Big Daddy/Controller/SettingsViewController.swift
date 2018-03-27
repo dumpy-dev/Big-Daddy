@@ -47,6 +47,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
         if let due = UserDefaults.standard.object(forKey: "DueDate"){
             datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)

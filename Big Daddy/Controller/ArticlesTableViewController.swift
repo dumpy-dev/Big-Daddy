@@ -12,18 +12,16 @@ class ArticlesTableViewController: UITableViewController {
 
     var articlesArray = [String]()
     
-    
+    // Hide the status bar
     override var prefersStatusBarHidden: Bool {
-        
         return true
     }
+    
+    // The viewDidLoad will load the array of articles and reload the table view
     override func viewDidLoad() {
         super.viewDidLoad()
-
         articlesArray = ["Assisted Delivery","Caesarean Section","Drinking","Driving","Eating","Exercise","First Aid","Holidays","Migraines","Morning Sickness","Nose Bleeds","Postnatal Depression","Pre-eclampsia","Sleep Deprivation","Stretch Marks","Vitamin K","Vitamin Supplements",]
-        
         tableView.reloadData()
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +63,9 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         
     }
     
+    
+    
+    // This is the segue to the article view to display the chosen article and pass the data to the new view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "articleSelectedSegue" {
