@@ -11,6 +11,7 @@
 		2400FAD220697A00003D5CB9 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400FAD120697A00003D5CB9 /* ArticleViewController.swift */; };
 		24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428646F204D3E9700E54FCF /* SettingsViewController.swift */; };
 		242864922057270800E54FCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242864912057270800E54FCF /* TodayViewController.swift */; };
+		245D30C7206CF3BA00166A59 /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D30C6206CF3BA00166A59 /* ToolsTableViewController.swift */; };
 		247FB469204B478800BF4CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FB468204B478800BF4CB7 /* AppDelegate.swift */; };
 		247FB46B204B478800BF4CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FB46A204B478800BF4CB7 /* ViewController.swift */; };
 		247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247FB46C204B478800BF4CB7 /* Main.storyboard */; };
@@ -22,8 +23,10 @@
 
 /* Begin PBXFileReference section */
 		2400FAD120697A00003D5CB9 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		2400FAD3206C2243003D5CB9 /* Articles Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Articles Button.png"; sourceTree = "<group>"; };
 		2428646F204D3E9700E54FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242864912057270800E54FCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = ../View/TodayViewController.swift; sourceTree = "<group>"; };
+		245D30C6206CF3BA00166A59 /* ToolsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsTableViewController.swift; sourceTree = "<group>"; };
 		247FB465204B478800BF4CB7 /* Big Daddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Daddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		247FB468204B478800BF4CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247FB46A204B478800BF4CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
+				2400FAD3206C2243003D5CB9 /* Articles Button.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -113,6 +117,7 @@
 				2400FAD120697A00003D5CB9 /* ArticleViewController.swift */,
 				247FB46A204B478800BF4CB7 /* ViewController.swift */,
 				242864912057270800E54FCF /* TodayViewController.swift */,
+				245D30C6206CF3BA00166A59 /* ToolsTableViewController.swift */,
 				2428646F204D3E9700E54FCF /* SettingsViewController.swift */,
 			);
 			path = Controller;
@@ -267,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */,
+				245D30C7206CF3BA00166A59 /* ToolsTableViewController.swift in Sources */,
 				24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */,
 				2400FAD220697A00003D5CB9 /* ArticleViewController.swift in Sources */,
 				242864922057270800E54FCF /* TodayViewController.swift in Sources */,

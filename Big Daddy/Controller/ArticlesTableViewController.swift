@@ -20,7 +20,7 @@ class ArticlesTableViewController: UITableViewController {
     // The viewDidLoad will load the array of articles and reload the table view
     override func viewDidLoad() {
         super.viewDidLoad()
-        articlesArray = ["Assisted Delivery","Caesarean Section","Drinking","Driving","Eating","Exercise","First Aid","Holidays","Migraines","Morning Sickness","Nose Bleeds","Postnatal Depression","Pre-eclampsia","Sleep Deprivation","Stretch Marks","Vitamin K","Vitamin Supplements",]
+        articlesArray = ["Assisted Delivery","Caesarean Section","Drinking","Driving","Eating","Exercise","First Aid","Holidays","Migraines","Morning Sickness","Nose Bleeds","Postnatal Depression","Pre-eclampsia","Sleep Deprivation","Stretch Marks","Vitamin K","Vitamin Supplements"]
         tableView.reloadData()
     }
 
@@ -32,12 +32,12 @@ class ArticlesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+      
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return articlesArray.count
     }
 

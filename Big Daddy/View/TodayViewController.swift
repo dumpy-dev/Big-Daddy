@@ -10,21 +10,27 @@ import UIKit
 
 class TodayViewController: UIViewController {
 
-      @IBOutlet weak var babyAgeLabel: UILabel!
+    // Setup the IB outlets
+    @IBOutlet weak var babyAgeLabel: UILabel!
     @IBOutlet weak var remainderDays: UILabel!
-    
     @IBOutlet weak var babySizeLabel: UILabel!
+    @IBOutlet weak var babySizeImage: UIImageView!
     
+    //Setup the arrays
+    let babySizeImageArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     
+    // viewDidLoad and viewWillAppear
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-print(UserDefaults.standard.object(forKey: "WeeksElapsed"))
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+      
+        //update the image
+        updateBabySizeImages()
+        
+        //update the age label text
         if let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") {
             babyAgeLabel.text = "\(weeksElapsed)"
         } else {
@@ -36,7 +42,7 @@ print(UserDefaults.standard.object(forKey: "WeeksElapsed"))
             remainderDays.text = ""
         }
         
-        //currently working on setting the baby sex according to the segmented selection
+        //set the baby sex according to the segmented selection
         if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
         
         if babySizeText == 0 {
@@ -52,33 +58,16 @@ print(UserDefaults.standard.object(forKey: "WeeksElapsed"))
             }
 
     
+   //Additional functions
     
-
+    func updateBabySizeImages() {
+        let weeksElapsedInt : Int = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int
+        babySizeImage.image = UIImage(named: babySizeImageArray[weeksElapsedInt - 1])
+        }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    
-  
-    
-    
-    
-    let babyAgeLabel1 : String = "This is test text"
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

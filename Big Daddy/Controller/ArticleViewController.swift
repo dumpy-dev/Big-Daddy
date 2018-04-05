@@ -24,7 +24,7 @@ class ArticleViewController: UIViewController {
         "Assisted Delivery" : "Try to avoid this...",
         "Caesarean Section" : "The deivery method of choice for clever people",
         "Drinking" : "Don't drink",
-        "Driving" : "Drive carefully",
+        "Driving" : "Drive carefully, please look after your baby!",
         "Eating" : "You can eat these foods...",
         "Exercise" : "Do exercise",
         "First Aid" : "This is how to do first aid",
