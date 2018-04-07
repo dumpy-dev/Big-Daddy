@@ -55,15 +55,8 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         return cell
     }
  
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    print("\(indexPath)")
-        
-    
-        
-    }
-    
-    
+   
+
     
     // This is the segue to the article view to display the chosen article and pass the data to the new view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
