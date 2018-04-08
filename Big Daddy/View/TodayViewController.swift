@@ -25,9 +25,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     let iconArray = ["fetusIcon", "femaleIcon", "articlesIcon", "factIcon"]
     
     // viewDidLoad and viewWillAppear
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }

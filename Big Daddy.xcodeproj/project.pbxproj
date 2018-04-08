@@ -15,7 +15,6 @@
 		2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF59207819740043590E /* TodayDetailViewController.swift */; };
 		2445DF5C2079167E0043590E /* ToolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */; };
 		2445DF5E2079180D0043590E /* ToolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */; };
-		245D30C7206CF3BA00166A59 /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245D30C6206CF3BA00166A59 /* ToolsTableViewController.swift */; };
 		247FB469204B478800BF4CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FB468204B478800BF4CB7 /* AppDelegate.swift */; };
 		247FB46B204B478800BF4CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FB46A204B478800BF4CB7 /* ViewController.swift */; };
 		247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247FB46C204B478800BF4CB7 /* Main.storyboard */; };
@@ -34,7 +33,6 @@
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
 		2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewController.swift; sourceTree = "<group>"; };
 		2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewCell.swift; sourceTree = "<group>"; };
-		245D30C6206CF3BA00166A59 /* ToolsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsTableViewController.swift; sourceTree = "<group>"; };
 		247FB465204B478800BF4CB7 /* Big Daddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Daddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		247FB468204B478800BF4CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247FB46A204B478800BF4CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		247FB467204B478800BF4CB7 /* Big Daddy */ = {
 			isa = PBXGroup;
 			children = (
-				247FB468204B478800BF4CB7 /* AppDelegate.swift */,
 				247FB47A204B47A800BF4CB7 /* Model */,
 				247FB47B204B47C100BF4CB7 /* View */,
 				247FB47C204B47C700BF4CB7 /* Controller */,
@@ -104,6 +101,10 @@
 		247FB47A204B47A800BF4CB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				247FB468204B478800BF4CB7 /* AppDelegate.swift */,
+				24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */,
+				2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */,
+				2445DF57207811750043590E /* TodayCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,12 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				247FB471204B478800BF4CB7 /* LaunchScreen.storyboard */,
-				24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */,
 				247FB46C204B478800BF4CB7 /* Main.storyboard */,
-				2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */,
-				2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */,
-				2445DF59207819740043590E /* TodayDetailViewController.swift */,
-				2445DF57207811750043590E /* TodayCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,12 +121,13 @@
 		247FB47C204B47C700BF4CB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				24A012C22059821700971299 /* ArticlesTableViewController.swift */,
 				2400FAD120697A00003D5CB9 /* ArticleViewController.swift */,
-				247FB46A204B478800BF4CB7 /* ViewController.swift */,
+				24A012C22059821700971299 /* ArticlesTableViewController.swift */,
+				2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */,
 				242864912057270800E54FCF /* TodayViewController.swift */,
-				245D30C6206CF3BA00166A59 /* ToolsTableViewController.swift */,
+				2445DF59207819740043590E /* TodayDetailViewController.swift */,
 				2428646F204D3E9700E54FCF /* SettingsViewController.swift */,
+				247FB46A204B478800BF4CB7 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,7 +281,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */,
-				245D30C7206CF3BA00166A59 /* ToolsTableViewController.swift in Sources */,
 				24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */,
 				2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */,
 				2445DF58207811750043590E /* TodayCollectionViewCell.swift in Sources */,

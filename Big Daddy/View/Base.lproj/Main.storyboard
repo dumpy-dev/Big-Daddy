@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdg-Az-br8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237.59999999999999" y="907.1964017991005"/>
+            <point key="canvasLocation" x="-506" y="148"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MWa-eD-5nh">
@@ -213,23 +213,24 @@
                                     <rect key="frame" x="0.0" y="0.0" width="161" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZV1-iH-car">
-                                            <rect key="frame" x="29" y="0.0" width="105" height="102"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prE-ji-xZf">
-                                            <rect key="frame" x="0.0" y="108" width="161" height="21"/>
+                                            <rect key="frame" x="0.0" y="118" width="161" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                             <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZV1-iH-car">
+                                            <rect key="frame" x="28" y="10" width="105" height="102"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="toolsIcon" destination="ZV1-iH-car" id="pdx-ZF-aN1"/>
                                     <outlet property="toolsLabel" destination="prE-ji-xZf" id="cWU-tg-zdm"/>
+                                    <segue destination="1Va-vf-E1m" kind="show" id="UG3-Ze-bvn"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -247,7 +248,22 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nj2-Aa-f4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2361" y="199"/>
+            <point key="canvasLocation" x="1168.8" y="878.41079460269873"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jdm-fl-J0Q">
+            <objects>
+                <viewController id="1Va-vf-E1m" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yTP-cv-kS7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="8ff-Er-rx3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPq-wc-4d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2033" y="879"/>
         </scene>
         <!--Today-->
         <scene sceneID="zW6-56-cqC">
@@ -360,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThT-3a-NsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="-773"/>
+            <point key="canvasLocation" x="238" y="-636"/>
         </scene>
         <!--Articles-->
         <scene sceneID="xkH-o8-cT8">
@@ -423,7 +439,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1983" y="-636"/>
+            <point key="canvasLocation" x="2034" y="148"/>
         </scene>
         <!--Article View Controller-->
         <scene sceneID="JaF-VB-9V4">
@@ -467,7 +483,7 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCk-p8-JkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921" y="-636"/>
+            <point key="canvasLocation" x="2938" y="148"/>
         </scene>
         <!--Articles-->
         <scene sceneID="NCh-CR-feI">
@@ -487,7 +503,7 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvb-gc-xMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="-635.08245877061472"/>
+            <point key="canvasLocation" x="1169" y="148"/>
         </scene>
         <!--Tools-->
         <scene sceneID="Kuz-yL-Fe2">
@@ -506,7 +522,7 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ak-gw-g2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483.2" y="199.70014992503749"/>
+            <point key="canvasLocation" x="238" y="880"/>
         </scene>
     </scenes>
     <resources>
