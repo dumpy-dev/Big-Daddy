@@ -17,7 +17,8 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var remainderDays: UILabel!
     @IBOutlet weak var babySizeLabel: UILabel!
     @IBOutlet weak var babySizeImage: UIImageView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var iconCollectionView: UICollectionView!
+    @IBOutlet weak var weekCollectionView: UICollectionView!
     
     //Setup the arrays
     let babySizeImageArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
@@ -30,6 +31,13 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        iconCollectionView.delegate = self
+        iconCollectionView.dataSource = self
+        
+        weekCollectionView.delegate = self
+        weekCollectionView.dataSource = self
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -77,9 +85,21 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! TodayCollectionViewCell
+      
+        if collectionView == self.iconCollectionView {
+        
+        
+            let cell:TodayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! TodayCollectionViewCell
         cell.iconImage.image = UIImage(named:iconArray[indexPath.row])
         return cell
+            
+        } else {
+            
+            let cell:WeeksCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "weeksCell", for: indexPath) as! WeeksCollectionViewCell
+            cell.weeksIcon.image = UIImage(named:iconArray[indexPath.row])
+            return cell
+            
+        }
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -11,6 +11,7 @@
 		2400FAD220697A00003D5CB9 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400FAD120697A00003D5CB9 /* ArticleViewController.swift */; };
 		24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428646F204D3E9700E54FCF /* SettingsViewController.swift */; };
 		242864922057270800E54FCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242864912057270800E54FCF /* TodayViewController.swift */; };
+		2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */; };
 		2445DF58207811750043590E /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF57207811750043590E /* TodayCollectionViewCell.swift */; };
 		2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF59207819740043590E /* TodayDetailViewController.swift */; };
 		2445DF5C2079167E0043590E /* ToolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */; };
@@ -29,6 +30,7 @@
 		2400FAD3206C2243003D5CB9 /* Articles Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Articles Button.png"; sourceTree = "<group>"; };
 		2428646F204D3E9700E54FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242864912057270800E54FCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = ../View/TodayViewController.swift; sourceTree = "<group>"; };
+		2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF57207811750043590E /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
 		2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		247FB47A204B47A800BF4CB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */,
 				247FB468204B478800BF4CB7 /* AppDelegate.swift */,
 				24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */,
 				2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */,
@@ -282,6 +285,7 @@
 			files = (
 				24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */,
 				24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */,
+				2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */,
 				2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */,
 				2445DF58207811750043590E /* TodayCollectionViewCell.swift in Sources */,
 				2400FAD220697A00003D5CB9 /* ArticleViewController.swift in Sources */,
