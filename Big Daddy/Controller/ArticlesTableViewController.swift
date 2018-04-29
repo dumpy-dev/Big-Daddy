@@ -67,8 +67,6 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
             var articleSelected : ArticleViewController = segue.destination as! ArticleViewController
             articleSelected.articleID = articlesArray[selectedRowIndex!.row]
             
-            print("This is the selected article \(articlesArray[(selectedRowIndex?.row)!])")
-      
     }
     
 }

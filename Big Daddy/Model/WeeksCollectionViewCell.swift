@@ -11,4 +11,8 @@ import UIKit
 class WeeksCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var weeksIcon: UIImageView!
+    @IBOutlet weak var babyWeight: UILabel!
+    @IBOutlet weak var babyLength: UILabel!
+    @IBOutlet weak var babySize: UILabel!
+    @IBOutlet weak var weeksElapsed: UILabel!
 }
