@@ -37,6 +37,10 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         weekCollectionView.delegate = self
         weekCollectionView.dataSource = self
         
+       
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +53,10 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             babyAgeLabel.text = "  ?"
         }
         
-        
+        // set the collection view to the correct baby age
+        let weeksElapsed : Int = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int - 1
+        let indexPath = IndexPath(row: weeksElapsed, section: 0)
+        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         
         //set the baby sex according to the segmented selection
 //        if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
@@ -107,6 +114,17 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
     }
     
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //
 //        if segue.identifier == "articleSelectedSegue" {
@@ -120,6 +138,13 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 //        }
 
    
+    
+    
+    
+    
+    
+    
+    
     
     
     override func didReceiveMemoryWarning() {
