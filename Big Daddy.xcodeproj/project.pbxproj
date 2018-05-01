@@ -24,15 +24,16 @@
 		24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C22059821700971299 /* ArticlesTableViewController.swift */; };
 		24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */; };
 		24DBDDF9208A840400AE1C86 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */; };
+		24DBDE2320977FCE00AE1C86 /* settings@x3.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DBDE2220977FCE00AE1C86 /* settings@x3.png */; };
+		24DBDE252097891D00AE1C86 /* ThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */; };
+		24DBDE2720979DA500AE1C86 /* ArticlesForTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2400FAD120697A00003D5CB9 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
-		2400FAD3206C2243003D5CB9 /* Articles Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Articles Button.png"; sourceTree = "<group>"; };
 		2428646F204D3E9700E54FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242864912057270800E54FCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = ../View/TodayViewController.swift; sourceTree = "<group>"; };
 		2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksCollectionViewCell.swift; sourceTree = "<group>"; };
-		2445B14020893A4500BBA1EC /* ageCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ageCircle.png; sourceTree = "<group>"; };
 		2445DF57207811750043590E /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
 		2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -47,8 +48,9 @@
 		24A012C22059821700971299 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCustomTableViewCell.swift; sourceTree = "<group>"; };
 		24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
-		24DBDDFA208BD1D800AE1C86 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
-		24DBDDFB208BD1DC00AE1C86 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		24DBDE2220977FCE00AE1C86 /* settings@x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@x3.png"; sourceTree = "<group>"; };
+		24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThisWeekViewController.swift; path = "Big Daddy/Controller/ThisWeekViewController.swift"; sourceTree = SOURCE_ROOT; };
+		24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesForTodayViewController.swift; sourceTree = "<group>"; };
 		7397F9A18E5A299AD589142D /* Pods_Big_Daddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_Daddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B03719F6B85E8E5387E047 /* Pods-Big Daddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big Daddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Big Daddy/Pods-Big Daddy.debug.xcconfig"; sourceTree = "<group>"; };
 		F757D638D16C681D454C333D /* Pods-Big Daddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Big Daddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Big Daddy/Pods-Big Daddy.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,10 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
-				24DBDDFB208BD1DC00AE1C86 /* circle.png */,
-				24DBDDFA208BD1D800AE1C86 /* line.png */,
-				2445B14020893A4500BBA1EC /* ageCircle.png */,
-				2400FAD3206C2243003D5CB9 /* Articles Button.png */,
+				24DBDE2220977FCE00AE1C86 /* settings@x3.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -132,11 +131,13 @@
 		247FB47C204B47C700BF4CB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */,
 				2400FAD120697A00003D5CB9 /* ArticleViewController.swift */,
 				24A012C22059821700971299 /* ArticlesTableViewController.swift */,
 				2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */,
 				24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */,
 				242864912057270800E54FCF /* TodayViewController.swift */,
+				24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */,
 				2445DF59207819740043590E /* TodayDetailViewController.swift */,
 				2428646F204D3E9700E54FCF /* SettingsViewController.swift */,
 				247FB46A204B478800BF4CB7 /* ViewController.swift */,
@@ -225,6 +226,7 @@
 			files = (
 				247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */,
 				247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */,
+				24DBDE2320977FCE00AE1C86 /* settings@x3.png in Resources */,
 				247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,8 +298,10 @@
 				24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */,
 				2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */,
 				2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */,
+				24DBDE252097891D00AE1C86 /* ThisWeekViewController.swift in Sources */,
 				2445DF58207811750043590E /* TodayCollectionViewCell.swift in Sources */,
 				2400FAD220697A00003D5CB9 /* ArticleViewController.swift in Sources */,
+				24DBDE2720979DA500AE1C86 /* ArticlesForTodayViewController.swift in Sources */,
 				242864922057270800E54FCF /* TodayViewController.swift in Sources */,
 				24DBDDF9208A840400AE1C86 /* ToolsViewController.swift in Sources */,
 				2445DF5C2079167E0043590E /* ToolsCollectionViewController.swift in Sources */,

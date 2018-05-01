@@ -11,4 +11,10 @@ import UIKit
 class TodayCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var iconImage: UIImageView!
+    
+    
 }
+
+
+
+

@@ -155,7 +155,7 @@
                         <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="YPF-dN-DAF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="l81-Tb-NOu"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings@x3" id="l81-Tb-NOu"/>
                     <connections>
                         <outlet property="babyNameEntered" destination="cbF-oo-t5x" id="h9h-zO-T2H"/>
                         <outlet property="datePicker" destination="0f2-ZL-i3y" id="3Tu-HT-cSg"/>
@@ -166,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdg-Az-br8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-506" y="148"/>
+            <point key="canvasLocation" x="-622" y="148"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MWa-eD-5nh">
@@ -182,10 +182,10 @@
                         <color key="selectedImageTintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tMu-DO-8so" kind="relationship" relationship="viewControllers" id="3ey-nr-V4d"/>
+                        <segue destination="zHR-xX-DUl" kind="relationship" relationship="viewControllers" id="9bb-uc-WgU"/>
                         <segue destination="hGF-uU-vCa" kind="relationship" relationship="viewControllers" id="lL8-yj-A3M"/>
-                        <segue destination="fMg-pk-Aaf" kind="relationship" relationship="viewControllers" id="Ph9-Vr-fQU"/>
                         <segue destination="sjR-hL-0lb" kind="relationship" relationship="viewControllers" id="tq5-2d-1HL"/>
+                        <segue destination="fMg-pk-Aaf" kind="relationship" relationship="viewControllers" id="Ph9-Vr-fQU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSF-Em-nac" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,7 +295,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="u1p-p1-Bqt"/>
                     </view>
                 </viewController>
@@ -319,7 +319,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4G7-b4-wEt"/>
                     </view>
                 </viewController>
@@ -381,17 +381,13 @@
                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="she is the size of a pint of beer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXk-Ul-PMD">
-                                                    <rect key="frame" x="0.0" y="301" width="376" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="she is the size of a pint of beer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WXk-Ul-PMD">
+                                                    <rect key="frame" x="0.0" y="301" width="376" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EkH-hf-80p">
-                                                    <rect key="frame" x="76" y="92" width="225" height="204"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="JUm-vM-mdU">
                                                     <rect key="frame" x="-12" y="5" width="396" height="49"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -407,6 +403,10 @@
                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EkH-hf-80p">
+                                                    <rect key="frame" x="86" y="92" width="204" height="204"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <connections>
@@ -428,7 +428,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J8Q-no-4ih">
-                                <rect key="frame" x="-11" y="465" width="375" height="144"/>
+                                <rect key="frame" x="0.0" y="474" width="375" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0sC-1h-1Kq">
@@ -446,7 +446,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwW-xI-fV3">
-                                                    <rect key="frame" x="12" y="24" width="105" height="105"/>
+                                                    <rect key="frame" x="12" y="24" width="102" height="105"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -465,17 +465,62 @@
                         <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tNl-ft-Evr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" id="MOW-hs-vK2"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="todayButton" id="MOW-hs-vK2"/>
                     <navigationItem key="navigationItem" id="a1f-YO-nSV"/>
                     <connections>
                         <outlet property="babyAgeLabel" destination="Qbb-rH-FeA" id="FzI-Lk-gXk"/>
                         <outlet property="iconCollectionView" destination="J8Q-no-4ih" id="3Sw-XT-67e"/>
                         <outlet property="weekCollectionView" destination="5Lb-Qi-NnG" id="BKx-2D-Byr"/>
+                        <segue destination="bmI-ti-pqe" kind="show" identifier="thisWeekSegue" id="25m-t3-eTG"/>
+                        <segue destination="s0Z-49-wg1" kind="show" identifier="articlesSegue" id="53f-0g-9T1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThT-3a-NsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237.59999999999999" y="-636.4317841079461"/>
+            <point key="canvasLocation" x="1168.8" y="-636.4317841079461"/>
+        </scene>
+        <!--This Week-->
+        <scene sceneID="3PV-L4-abS">
+            <objects>
+                <viewController id="bmI-ti-pqe" customClass="ThisWeekViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pWd-Hg-nzK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Tdq-Nq-WnD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="This Week" id="VRl-oI-rqL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcW-ON-Vmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2033" y="-637"/>
+        </scene>
+        <!--Articles For Today View Controller-->
+        <scene sceneID="jg5-00-lLv">
+            <objects>
+                <viewController id="s0Z-49-wg1" customClass="articlesForTodayViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ajM-bZ-sUO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="These articles are particularly useful this week:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-8p-PJ4">
+                                <rect key="frame" x="16" y="130" width="332" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ro3-zQ-oHh"/>
+                    </view>
+                    <connections>
+                        <segue destination="lci-sr-2SG" kind="show" identifier="articleForTodaySegue" id="BCR-Em-adI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Agc-ns-IM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032.8" y="-1312.8935532233884"/>
         </scene>
         <!--Articles-->
         <scene sceneID="xkH-o8-cT8">
@@ -588,7 +633,7 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
         <scene sceneID="NCh-CR-feI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hGF-uU-vCa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Articles" id="z2Y-M6-tka"/>
+                    <tabBarItem key="tabBarItem" title="Articles" image="articlesButton" id="z2Y-M6-tka"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="XjK-4W-dbm">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -608,9 +653,9 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
         <scene sceneID="Kuz-yL-Fe2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sjR-hL-0lb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tools" id="QWA-Gj-waW"/>
+                    <tabBarItem key="tabBarItem" title="Tools" image="toolsIcon" id="QWA-Gj-waW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4x1-WP-cNU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="4x1-WP-cNU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -623,10 +668,36 @@ Aeterno epicuri convenire mea an, cu omnium vulputate efficiendi sea. Cum at err
             </objects>
             <point key="canvasLocation" x="238" y="880"/>
         </scene>
+        <!--Today-->
+        <scene sceneID="dRl-z9-wh0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zHR-xX-DUl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today" image="todayButton" id="BWv-DO-4ke"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="fjN-SN-h50">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tMu-DO-8so" kind="relationship" relationship="rootViewController" id="pe9-WV-lpQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Wk-73-mlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="-637"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="articlesButton" width="24" height="24"/>
         <image name="circle" width="149" height="149"/>
         <image name="line" width="500" height="149"/>
+        <image name="settings@x3" width="24" height="24"/>
+        <image name="todayButton" width="24" height="24"/>
+        <image name="toolsIcon" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BCR-Em-adI"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

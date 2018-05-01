@@ -15,4 +15,26 @@ class WeeksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var babyLength: UILabel!
     @IBOutlet weak var babySize: UILabel!
     @IBOutlet weak var weeksElapsed: UILabel!
+    
+    
+    
+
+    
+    
+//            if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
+//    var babySex = "your baby"
+//
+//                if babySizeText == 0 {
+//                babySex = "she"
+//            } else if babySizeText == 1 {
+//                babySex = "he"
+//                } else if babySizeText == 2 {
+//                    babySex = "your baby"
+//                    }
+//     babySize.text = "\(babySex) is the size of a beer bottle"
+//            }
+
+    
+    
+    
 }

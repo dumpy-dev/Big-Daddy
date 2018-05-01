@@ -17,12 +17,19 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var iconCollectionView: UICollectionView!
     @IBOutlet weak var weekCollectionView: UICollectionView!
     
-    //Setup the image arrays
+    @IBOutlet weak var babySizeLabel: UILabel!
+    
+    //Setup the arrays
     let babySizeImageArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
+    
+    let babySizeLabelArray = ["1", "2", "3", "4", "5", "6", "7", "8", "size of a mini pretzel", "size of a poker chip", "size of a golf ball", "12", "13", "size of a chicken nugget", "15", "size of a pack of cards", "17", "18", "size of a pint", "height of a beer bottle", "the size of a big mac", "22", "length of a tube of pringles", "24", "25", "weight of a basketball", "27", "28", "29", "weight of a rack of ribs", "31", "32", "33", "weight of a roast chicken", "35", "36", "37", "38", "39", "40"]
     
     let iconArray = ["fetusIcon", "femaleIcon", "articlesIcon", "factIcon"]
     
     // viewDidLoad and viewWillAppear
+    
+    
+   
     
  override var prefersStatusBarHidden: Bool {
        return true
@@ -37,14 +44,16 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         weekCollectionView.delegate = self
         weekCollectionView.dataSource = self
         
-       
+       self.navigationController?.isNavigationBarHidden = true
         
-        
+        weekCollectionView.allowsSelection = false
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
         
         //update the age label text
         if let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") {
@@ -58,19 +67,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         let indexPath = IndexPath(row: weeksElapsed, section: 0)
         weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         
-        //set the baby sex according to the segmented selection
-//        if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
-//
-//        if babySizeText == 0 {
-//                        babySizeLabel.text = "she is the size of a pint of beer"
-//        } else if babySizeText == 1 {
-//
-//                babySizeLabel.text = "he is the size of a pint of beer"
-//
-//            } else if babySizeText == 2 {
-//    babySizeLabel.text = " your baby is the size of a pint of beer "
-//                }
-//            }
+        
             }
 
     
@@ -108,6 +105,20 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             cell.weeksIcon.image = UIImage(named:babySizeImageArray[indexPath.row])
             cell.weeksElapsed.text = String(indexPath.row + 1)
             
+            
+//            if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
+//            var babySex = "your baby"
+//            if babySizeText == 0 {
+//                        babySex = "she"
+//                    } else if babySizeText == 1 {
+//                        babySex = "he"
+//                        } else if babySizeText == 2 {
+//                            babySex = "your baby"
+//                            }
+            let sizeComparison = babySizeLabelArray[indexPath.row]
+             cell.babySize.text = "the \(sizeComparison)"
+//                    }
+
    
             return cell
             
@@ -116,9 +127,20 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
     
+ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-    
-    
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "thisWeekSegue", sender: nil)
+        } else if indexPath.row == 1 {
+            performSegue(withIdentifier: "thisWeekSegue", sender: nil)
+        } else if indexPath.row == 2 {
+            performSegue(withIdentifier: "articlesSegue", sender: nil)
+        } else if indexPath.row == 3 {
+            performSegue(withIdentifier: "thisWeekSegue", sender: nil)
+        }
+    }
+
+  
     
     
     
@@ -139,12 +161,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 
    
     
-    
-    
-    
-    
-    
-    
+
     
     
     override func didReceiveMemoryWarning() {
