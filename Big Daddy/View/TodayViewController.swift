@@ -24,6 +24,10 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     let babySizeLabelArray = ["1", "2", "3", "4", "5", "6", "7", "8", "size of a mini pretzel", "size of a poker chip", "size of a golf ball", "12", "13", "size of a chicken nugget", "15", "size of a pack of cards", "17", "18", "size of a pint", "height of a beer bottle", "the size of a big mac", "22", "length of a tube of pringles", "24", "25", "weight of a basketball", "27", "28", "29", "weight of a rack of ribs", "31", "32", "33", "weight of a roast chicken", "35", "36", "37", "38", "39", "40"]
     
+    let weightArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
+    
+    let lengthArray = ["0mm/0", "0mm/0", "0mm/0", "0mm/0", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
+    
     let iconArray = ["fetusIcon", "femaleIcon", "articlesIcon", "factIcon"]
     
     // viewDidLoad and viewWillAppear
@@ -147,17 +151,25 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "articleSelectedSegue" {
-//
-//            var selectedRowIndex = self.collectionView.indexPath(for: UICollectionViewCell)
-//            var articleSelected : TodayDetailViewController = segue.destination as! TodayDetailViewController
-//            //articleSelected.articleID = articlesArray[selectedRowIndex!.row]
-//
-//
-//        }
-//        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "articleSegue" {
+
+            
+            
+            
+//                    var selectedRowIndex = self.tableView.indexPathForSelectedRow
+//                    var articleSelected : articlesForTodayViewController = segue.destination as! articlesForTodayViewController
+//                    articleSelected.articleID = articlesArray[selectedRowIndex!.row]
+            
+                }
+                
+            }
+
+
+
+
 
    
     

@@ -20,6 +20,8 @@ class ArticlesTableViewController: UITableViewController {
     // The viewDidLoad will load the array of articles and reload the table view
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         articlesArray = ["Assisted Delivery","Caesarean Section","Drinking","Driving","Eating","Exercise","First Aid","Holidays","Migraines","Morning Sickness","Nose Bleeds","Postnatal Depression","Pre-eclampsia","Sleep Deprivation","Stretch Marks","Vitamin K","Vitamin Supplements"]
         tableView.reloadData()
     }
@@ -64,7 +66,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         if segue.identifier == "articleSelectedSegue" {
             
         var selectedRowIndex = self.tableView.indexPathForSelectedRow
-            var articleSelected : ArticleViewController = segue.destination as! ArticleViewController
+            let articleSelected : ArticleViewController = segue.destination as! ArticleViewController
             articleSelected.articleID = articlesArray[selectedRowIndex!.row]
             
     }

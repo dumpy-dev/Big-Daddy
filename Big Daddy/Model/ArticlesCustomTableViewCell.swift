@@ -11,6 +11,7 @@ import UIKit
 class ArticlesCustomTableViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var suggestedReadingLabel: UILabel!
     @IBOutlet weak var articleLabel: UILabel!
 
     override func awakeFromNib() {
