@@ -10,6 +10,7 @@ import UIKit
 
 class TodayViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var selectedPerson = ""
 
 
     // Setup the IB outlets
@@ -58,6 +59,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
+        selectedPerson = ""
         
         //update the age label text
         if let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") {
@@ -135,6 +137,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         if indexPath.row == 0 {
             performSegue(withIdentifier: "thisWeekSegue", sender: nil)
+           
         } else if indexPath.row == 1 {
             performSegue(withIdentifier: "thisWeekSegue", sender: nil)
         } else if indexPath.row == 2 {
@@ -144,7 +147,20 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
     }
 
-  
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        if indexPath.row == 0 {
+//
+//            selectedPerson = "Baby"
+//        } else if indexPath.row == 1 {
+//
+//            selectedPerson = "Mother"
+//        } else if indexPath.row == 2 {
+//            selectedPerson = ""
+//        } else if indexPath.row == 3 {
+//
+//            selectedPerson = "Fact"
+//        }
+//    }
     
     
     
@@ -154,18 +170,23 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if segue.identifier == "articleSegue" {
-
+        if segue.identifier == "thisWeekSegue" {
             
+         
             
+        
+   
             
-//                    var selectedRowIndex = self.tableView.indexPathForSelectedRow
-//                    var articleSelected : articlesForTodayViewController = segue.destination as! articlesForTodayViewController
-//                    articleSelected.articleID = articlesArray[selectedRowIndex!.row]
+             var selectedRowIndex = self.iconCollectionView.indexPathsForSelectedItems!
+            let indexPathAsString : String = String(describing: selectedRowIndex)
             
+           
+            var personSelected : ThisWeekViewController = segue.destination as! ThisWeekViewController
+            personSelected.personID = indexPathAsString
+            }
                 }
                 
-            }
+    
 
 
 
