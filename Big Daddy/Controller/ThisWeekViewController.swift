@@ -12,6 +12,9 @@ class ThisWeekViewController: UIViewController {
 
     var personID : String = ""
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
     // Setup dictionaries of information
     
     var babyWeeks : [Int : String] = [
@@ -28,15 +31,15 @@ class ThisWeekViewController: UIViewController {
         10 : "Baby is getting bigger",
         11 : "Baby is getting bigger",
         12 : "Baby is getting bigger",
-        13 : "Baby is getting bigger",
-        14 : "Baby is getting bigger",
-        15 : "Baby is getting bigger",
-        16 : "Baby is getting bigger",
+        13 : "At 13 weeks,Baby is getting bigger",
+        14 : "At 14 weeks, Baby is getting bigger",
+        15 : "At 15 weeks,Baby is getting bigger",
+        16 : "At 16 weeks, Baby is getting bigger",
         17 : "Baby is getting bigger",
         18 : "Baby is getting bigger",
         19 : "Baby is getting bigger",
         20 : "Baby is getting bigger",
-        21 : "Baby is getting bigger",
+        21 : "At 21 weeks, Baby is getting bigger",
         22 : "Baby is getting bigger",
         23 : "Baby is getting bigger",
         24 : "Baby is getting bigger",
@@ -46,7 +49,7 @@ class ThisWeekViewController: UIViewController {
         28 : "Baby is getting bigger",
         29 : "Baby is getting bigger",
         30 : "Baby is getting bigger",
-        31 : "Baby is getting bigger",
+        31 : "At 31 weeks, Baby is getting bigger",
         32 : "Baby is getting bigger",
         33 : "Baby is getting bigger",
         34 : "Baby is getting bigger",
@@ -171,15 +174,21 @@ class ThisWeekViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
        
+        let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int
+        
+        
         if personID == "[[0, 0]]" {
-            print("Baby")
+            titleLabel.text = "Baby"
+            contentLabel.text = babyWeeks[weeksElapsed]
+            
         } else if personID == "[[0, 1]]" {
             
-            print("Mother")
+            titleLabel.text = "Mother"
+             contentLabel.text = motherWeeks[weeksElapsed]
         } else if personID == "[[0, 3]]" {
             
-            print("Fact")
-            
+            titleLabel.text = "Fact of the Week"
+             contentLabel.text = factWeeks[weeksElapsed]
         }
         
     }
