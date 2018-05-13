@@ -10,6 +10,6 @@ import Foundation
 
 
 struct Article {
-    let category : String
+    let keyword : String
     let name : String
 }
