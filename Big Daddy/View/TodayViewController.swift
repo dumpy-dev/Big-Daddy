@@ -53,6 +53,8 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         weekCollectionView.allowsSelection = false
         
+          weekCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,11 +173,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "thisWeekSegue" {
-            
-         
-            
-        
-   
+       
             
              var selectedRowIndex = self.iconCollectionView.indexPathsForSelectedItems!
             let indexPathAsString : String = String(describing: selectedRowIndex)
@@ -185,14 +183,23 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             personSelected.personID = indexPathAsString
             }
                 }
-                
     
 
 
 
 
 
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
+        }
+    }
    
+  
     
 
     
@@ -202,3 +209,31 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         // Dispose of any resources that can be recreated.
     }
 }
+
+
+extension UICollectionView {
+    func scrollToNearestVisibleCollectionViewCell() {
+        self.decelerationRate = UIScrollViewDecelerationRateFast
+        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 2))
+        var closestCellIndex = -1
+        var closestDistance: Float = .greatestFiniteMagnitude
+        for i in 0..<self.visibleCells.count {
+            let cell = self.visibleCells[i]
+            let cellWidth = cell.bounds.size.width
+            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
+            
+            // Now calculate closest cell
+            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+            if distance < closestDistance {
+                closestDistance = distance
+                closestCellIndex = self.indexPath(for: cell)!.row
+            }
+        }
+        if closestCellIndex != -1 {
+            self.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+}
+
+
+

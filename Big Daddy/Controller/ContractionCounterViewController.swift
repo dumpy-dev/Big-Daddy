@@ -14,94 +14,57 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerTable: UITableView!
 
+    var realTimeArray : [Date] = []
+    var contractionTimeArray : [Int] = []
+    
+    var seconds = 0
     var timer = Timer()
-    var time = 1
-    var timerIsRunning : Bool = false
+    var isTimerRunning = false
     
-    @objc func increaseTimer() {
-            time += 1
-            timerLabel.text = String(time)
-        timerIsRunning = true
-        }
-        
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateTimer)), userInfo: nil, repeats: true)
+         isTimerRunning = true
+    }
     
+    @objc func updateTimer() {
+        seconds += 1
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+    }
     
+    func timeString(time:TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
     
     
     @IBAction func startPressed(_ sender: AnyObject) {
         
-        if timerIsRunning == false {
-        
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ContractionCounterViewController.increaseTimer), userInfo: nil, repeats: true)
+        if isTimerRunning == false {
+            
+     runTimer()
+            
             sender.setTitle("STOP", for: [])
-        } else {
+            
+            
+           
+            
+        } else if isTimerRunning == true {
+            
+            contractionTimeArray.append(seconds)
             sender.setTitle("START", for: [])
+            isTimerRunning = false
             timer.invalidate()
-            timerIsRunning = false
+            seconds = 0
+             realTimeArray.append(Date())
+            
+            timerTable.reloadData()
+            timerLabel.text = "00:00:00"
+            
         }
         
     }
-    
-    
-        
-        
-    
-
-    
-    
-//
-//    let stopwatch = Stopwatch()
-//
-//
-//    @IBAction func startPressed(_ sender: UIButton) {
-//        Timer.scheduledTimer(timeInterval: 0.1, target: self,
-//                             selector: #selector(ContractionCounterViewController.updateElapsedTimeLabel(_:)), userInfo: nil, repeats: true)
-//        stopwatch.start()
-//    }
-//
-//    @IBAction func stopButtonTapped(_ sender: UIButton) {
-//        stopwatch.stop()
-//    }
-//
-//    @objc func updateElapsedTimeLabel(_ timer: Timer) {
-//        if stopwatch.isRunning {
-//            timerLabel.text = stopwatch.elapsedTimeAsString
-//            print(stopwatch.elapsedTimeAsString)
-//        } else {
-//            timer.invalidate()
-//        }
-//    }
-//
-//
-//
-//
-//
-//
-    
-//
-//    var seconds = 60
-//    var contractionTimer = Timer()
-//    var isTimerRunning = false
-//
-//    @IBAction func startPressed(_ sender: UIButton) {
-//        runTimer()
-//    }
-//
-//
-//
-//
-//    func runTimer() {
-//        contractionTimer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateTimer)), userInfo: nil, repeats: true)
-//        isTimerRunning = true
-//    }
-//
-//    @objc func updateTimer() {
-//        seconds -= 1     //This will decrement(count down)the seconds.
-//        timer.text = "\(seconds)" //This will update the label.
-//    }
-    
-   
-    
     
     
     
@@ -120,18 +83,26 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return realTimeArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contractionCounterCell") as! ContractionCounterTableViewCell
-//        let article: Article
-//        if isFiltering() {
-//            article = filteredArticles[indexPath.row]
-//        } else {
-//            article = articlesArray[indexPath.row]
-//        }
-//        cell.articleLabel!.text = article.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContractionCounterTableViewCell
+
+
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .medium
+        
+        cell.realTimeLabel!.text = "\(dateFormatter.string(from: realTimeArray[indexPath.row] ))"
+        cell.contractionTimeLabel!.text = "\(contractionTimeArray[indexPath.row]) sec"
+       
+        
+        if indexPath.row == 0 {
+            cell.contractionGapLabel!.text = "0"
+        } else {
+            cell.contractionGapLabel!.text = "gap"
+        }
         
         if indexPath.row % 2 == 0 {
             cell.contentView.backgroundColor = UIColor(red:0.04, green:0.41, blue:0.49, alpha:1.0)

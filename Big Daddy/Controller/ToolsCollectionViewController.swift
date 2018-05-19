@@ -21,8 +21,8 @@ class ToolsCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImages = [#imageLiteral(resourceName: "fetusIcon"), #imageLiteral(resourceName: "week19"), #imageLiteral(resourceName: "articlesIcon"), #imageLiteral(resourceName: "femaleIcon")]
-        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Credits"]
+        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "hypnosis")]
+        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Hypnobirthing"]
         arrayOfTypes = ["Timer", "Checklist", "Checklist", "General"]
         }
 

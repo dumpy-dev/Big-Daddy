@@ -12,8 +12,10 @@ class ContractionCounterTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var realTimeLabel: UILabel!
-    @IBOutlet weak var contractionLengthLabel: UILabel!
+    @IBOutlet weak var contractionTimeLabel: UILabel!
     @IBOutlet weak var contractionGapLabel: UILabel!
+    
+//    @IBOutlet weak var contractionGapLabel: UILabel!
     
     
     override func awakeFromNib() {
