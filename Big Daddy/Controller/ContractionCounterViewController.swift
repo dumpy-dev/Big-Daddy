@@ -10,25 +10,42 @@ import UIKit
 
 class ContractionCounterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-    
+    // Add outlets
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerTable: UITableView!
 
+    // Arrays set up
     var realTimeArray : [Date] = []
     var contractionTimeArray : [Int] = []
+    var gapTimeArray : [Int] = []
     
     var seconds = 0
+    var secondarySeconds = 0
     var timer = Timer()
     var isTimerRunning = false
+    var isSecondaryTimerRunning = false
     
+    
+    // Timer functions set up
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateTimer)), userInfo: nil, repeats: true)
          isTimerRunning = true
     }
     
+    func runSecondaryTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateSecondaryTimer)), userInfo: nil, repeats: true)
+        isSecondaryTimerRunning = true
+        
+    }
+    
     @objc func updateTimer() {
         seconds += 1
         timerLabel.text = timeString(time: TimeInterval(seconds))
+    }
+    
+    @objc func updateSecondaryTimer() {
+        secondarySeconds += 1
+        //timerLabel.text = timeString(time: TimeInterval(seconds))
     }
     
     func timeString(time:TimeInterval) -> String {
@@ -43,19 +60,22 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         
         if isTimerRunning == false {
             
+           timer.invalidate()
      runTimer()
-            
             sender.setTitle("STOP", for: [])
-            
-            
+            isSecondaryTimerRunning = false
+            gapTimeArray.append(secondarySeconds)
+            secondarySeconds = 0
            
             
         } else if isTimerRunning == true {
+            
             
             contractionTimeArray.append(seconds)
             sender.setTitle("START", for: [])
             isTimerRunning = false
             timer.invalidate()
+            runSecondaryTimer()
             seconds = 0
              realTimeArray.append(Date())
             
@@ -101,7 +121,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         if indexPath.row == 0 {
             cell.contractionGapLabel!.text = "0"
         } else {
-            cell.contractionGapLabel!.text = "gap"
+            cell.contractionGapLabel!.text = "\(gapTimeArray[indexPath.row]) sec"
         }
         
         if indexPath.row % 2 == 0 {
@@ -124,4 +144,23 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     }
     */
 
+}
+
+class ContractionCounterTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var realTimeLabel: UILabel!
+    @IBOutlet weak var contractionTimeLabel: UILabel!
+    @IBOutlet weak var contractionGapLabel: UILabel!
+
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
 }

@@ -29,12 +29,14 @@ class ArticlesTableViewController: UITableViewController {
         func isFiltering() -> Bool {
             return searchController.isActive && !searchBarIsEmpty()
         }
-    
-    // Hide the status bar
-    override var prefersStatusBarHidden: Bool {
-        return true
+
+    //Hide the status bar
+    override func viewDidAppear(_ animated: Bool) {
+         var prefersStatusBarHidden: Bool {
+            return true
+        }
+        
     }
-    
     // The viewDidLoad will load the array of articles and reload the table view
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +69,7 @@ class ArticlesTableViewController: UITableViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

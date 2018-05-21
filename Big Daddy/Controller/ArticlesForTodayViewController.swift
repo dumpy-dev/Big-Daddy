@@ -8,7 +8,7 @@
 
 import UIKit
 
-class articlesForTodayViewController: UIViewController, UITableViewDataSource {
+class articlesForTodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +22,7 @@ class articlesForTodayViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
         
         articlesArray = [1: ["Drinking", "Driving", "Eating"], 2:["Caesarean Section", "Exercise", "First Aid"], 3:["Morning Sickness", "Migraines"], 4:["First Aid", "Holidays"], 5: ["Drinking", "Driving", "Eating"], 6: ["Drinking", "Driving", "Eating"], 7: ["Drinking", "Driving", "Eating"], 8: ["Drinking", "Driving", "Eating"], 9: ["Drinking", "Driving", "Eating"], 10: ["Drinking", "Driving", "Eating"], 11: ["Drinking", "Driving", "Eating"], 12: ["Drinking", "Driving", "Eating"], 13: ["Drinking", "Driving", "Eating"], 14: ["Drinking", "Driving", "First Aid"], 15: ["Drinking", "Driving", "Eating"], 16: ["Drinking", "Driving", "Eating"], 17: ["Drinking", "Driving", "Eating"], 18: ["Drinking", "Driving", "Eating"], 19: ["Drinking", "Driving", "Eating"], 20: ["Drinking", "Driving", "Eating"], 21: ["Drinking", "Driving", "Eating"], 22: ["Drinking", "Driving", "Eating"], 23: ["Drinking", "Driving", "Eating"], 24: ["Drinking", "Driving", "Eating"], 25: ["Drinking", "Driving", "Eating"], 26: ["Drinking", "Driving", "Eating"], 27: ["Drinking", "Driving", "Eating"], 28: ["Drinking", "Driving", "Eating"], 29: ["Drinking", "Driving", "Eating"], 30: ["Drinking", "Driving", "Eating"], 31: ["Drinking", "Driving", "Eating"], 32: ["Drinking", "Driving", "Eating"], 33: ["Drinking", "Driving", "Eating"], 34: ["Drinking", "Driving", "Eating"], 35: ["Drinking", "Driving", "Eating"], 36: ["Drinking", "Driving", "Eating"], 37: ["Drinking", "Driving", "Eating"], 38: ["Drinking", "Driving", "Eating"], 39: ["Drinking", "Driving", "Eating"], 40: ["Drinking", "Driving", "Eating"], 41: ["Drinking", "Driving", "Eating"], 42: ["Drinking", "Driving", "Eating"]]
             
@@ -71,7 +72,10 @@ class articlesForTodayViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
-    
+  
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("cell selected")
+    }
     
     
     // This is the segue to the article view to display the chosen article and pass the data to the new view controller
