@@ -24,6 +24,7 @@
 		24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C22059821700971299 /* ArticlesTableViewController.swift */; };
 		24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */; };
 		24A32D0720B0D6BA00EB94F3 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A32D0620B0D6B900EB94F3 /* ChecklistViewController.swift */; };
+		24AC094620D1BE4E0018532C /* HypnobirthingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */; };
 		24DBDDF9208A840400AE1C86 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */; };
 		24DBDE2320977FCE00AE1C86 /* settings@x3.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DBDE2220977FCE00AE1C86 /* settings@x3.png */; };
 		24DBDE252097891D00AE1C86 /* ThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */; };
@@ -53,6 +54,7 @@
 		24A32D0620B0D6B900EB94F3 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChecklistViewController.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Controller/ChecklistViewController.swift"; sourceTree = "<absolute>"; };
 		24A32D0820B2128100EB94F3 /* tickBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tickBlue.png; sourceTree = "<group>"; };
 		24A32D0920B2128100EB94F3 /* tickOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tickOrange.png; sourceTree = "<group>"; };
+		24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypnobirthingViewController.swift; sourceTree = "<group>"; };
 		24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
 		24DBDE2220977FCE00AE1C86 /* settings@x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@x3.png"; sourceTree = "<group>"; };
 		24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThisWeekViewController.swift; path = "Big Daddy/Controller/ThisWeekViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -141,6 +143,7 @@
 		247FB47C204B47C700BF4CB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */,
 				24DBDE2C20A788EC00AE1C86 /* ContractionCounterViewController.swift */,
 				24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */,
 				24A32D0620B0D6B900EB94F3 /* ChecklistViewController.swift */,
@@ -323,6 +326,7 @@
 				2445DF5E2079180D0043590E /* ToolsCollectionViewCell.swift in Sources */,
 				24DBDE2B20A0F73600AE1C86 /* Article.swift in Sources */,
 				247FB46B204B478800BF4CB7 /* ViewController.swift in Sources */,
+				24AC094620D1BE4E0018532C /* HypnobirthingViewController.swift in Sources */,
 				247FB469204B478800BF4CB7 /* AppDelegate.swift in Sources */,
 				24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */,
 			);
