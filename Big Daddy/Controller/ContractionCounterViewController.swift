@@ -55,13 +55,14 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
     
+    
+    // Button actions
+    
     @IBAction func stopPressed(_ sender: Any) {
         
+        if isTimerRunning == true {
         contractionTimeArray.append(seconds)
-        //sender.setTitle("START", for: [])
-        
-        //            sender.setImage(#imageLiteral(resourceName: "play-button-sing"), for:[])
-        isTimerRunning = false
+    isTimerRunning = false
         timer.invalidate()
         runSecondaryTimer()
         seconds = 0
@@ -69,8 +70,9 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         
         timerTable.reloadData()
         timerLabel.text = "00:00:00"
-        
-        
+        } else {
+            print("timer is already stopped")
+        }
     }
     
     @IBAction func startPressed(_ sender: AnyObject) {
@@ -79,8 +81,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
             
            timer.invalidate()
      runTimer()
-            //sender.setTitle("STOP", for: [])
-//            sender.setImage(#imageLiteral(resourceName: "stop"), for:[])
+        
             isSecondaryTimerRunning = false
             gapTimeArray.append(secondarySeconds)
             secondarySeconds = 0

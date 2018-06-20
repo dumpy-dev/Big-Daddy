@@ -71,9 +71,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         
         // set the collection view to the correct baby age
- //  let weeksElapsed : Int = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int - 1
-  //      let indexPath = IndexPath(row: weeksElapsed, section: 0)
-   //     weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+   let weeksElapsed : Int = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int - 1
+        let indexPath = IndexPath(row: weeksElapsed, section: 0)
+        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
        
         
         
