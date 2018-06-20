@@ -55,36 +55,98 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
     
+    @IBAction func stopPressed(_ sender: Any) {
+        
+        contractionTimeArray.append(seconds)
+        //sender.setTitle("START", for: [])
+        
+        //            sender.setImage(#imageLiteral(resourceName: "play-button-sing"), for:[])
+        isTimerRunning = false
+        timer.invalidate()
+        runSecondaryTimer()
+        seconds = 0
+        realTimeArray.append(Date())
+        
+        timerTable.reloadData()
+        timerLabel.text = "00:00:00"
+        
+        
+    }
     
     @IBAction func startPressed(_ sender: AnyObject) {
         
-        if isTimerRunning == false {
+//        if isTimerRunning == false {
             
            timer.invalidate()
      runTimer()
-            sender.setTitle("STOP", for: [])
+            //sender.setTitle("STOP", for: [])
+//            sender.setImage(#imageLiteral(resourceName: "stop"), for:[])
             isSecondaryTimerRunning = false
             gapTimeArray.append(secondarySeconds)
             secondarySeconds = 0
            
             
-        } else if isTimerRunning == true {
-            
-            
-            contractionTimeArray.append(seconds)
-            sender.setTitle("START", for: [])
-            isTimerRunning = false
-            timer.invalidate()
-            runSecondaryTimer()
-            seconds = 0
-             realTimeArray.append(Date())
-            
-            timerTable.reloadData()
-            timerLabel.text = "00:00:00"
-            
-        }
+//        } else if isTimerRunning == true {
+//
+//
+//            contractionTimeArray.append(seconds)
+//            //sender.setTitle("START", for: [])
+//
+////            sender.setImage(#imageLiteral(resourceName: "play-button-sing"), for:[])
+//            isTimerRunning = false
+//            timer.invalidate()
+//            runSecondaryTimer()
+//            seconds = 0
+//             realTimeArray.append(Date())
+//
+//            timerTable.reloadData()
+//            timerLabel.text = "00:00:00"
+//
+//        }
         
     }
+    
+    
+    
+    @IBAction func resetPressed(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Reset", message: "This will reset all of your contraction times. Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Reset", style: UIAlertActionStyle.default){
+            UIAlertAction in
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            UserDefaults.standard.synchronize()
+            
+           self.isTimerRunning = false
+            self.timer.invalidate()
+    
+            self.seconds = 0
+            self.realTimeArray.append(Date())
+            
+            self.timerTable.reloadData()
+            self.timerLabel.text = "00:00:00"
+            
+            self.realTimeArray = []
+            self.contractionTimeArray  = []
+            self.gapTimeArray = []
+            
+            self.timerTable.reloadData()
+            
+            
+            
+            
+        })
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
     
     
@@ -106,9 +168,12 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         return realTimeArray.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContractionCounterTableViewCell
-
+        
 
         
         let dateFormatter = DateFormatter()
