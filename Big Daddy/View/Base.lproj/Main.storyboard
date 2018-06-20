@@ -387,15 +387,6 @@
                                     <action selector="infoButtonPressed:" destination="XrW-UV-xMG" eventType="touchUpInside" id="FZP-jg-MuQ"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e3v-dB-ING">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="AlG-bG-tfu">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.21960784310000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="u1p-p1-Bqt"/>
@@ -403,31 +394,31 @@
                     <connections>
                         <outlet property="infoPopupView" destination="5E8-3k-uXS" id="S3r-IQ-6T1"/>
                         <outlet property="scriptLabel" destination="C19-7x-IIa" id="dHo-DD-4Uw"/>
-                        <outlet property="visualEffectView" destination="e3v-dB-ING" id="IWz-hG-PfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1e-Eh-ni5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="5E8-3k-uXS">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="350"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Popup!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhE-iK-edi">
-                            <rect key="frame" x="99" y="54" width="55" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufh-Jd-rew">
-                            <rect key="frame" x="103" y="98" width="46" height="30"/>
+                            <rect key="frame" x="97" y="320" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="close"/>
                             <connections>
                                 <action selector="closeButtonPressed:" destination="XrW-UV-xMG" eventType="touchUpInside" id="9tZ-f7-9oM"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhE-iK-edi">
+                            <rect key="frame" x="20" y="0.0" width="200" height="292"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Hypnobirthing is just a technique of relaxation, to help your partner stay calm and focussed during labour. Our hypnobirthing script helps you find the words to say to keep her going, especially when things heat up during the early contractions. Go with the script or ad lib - take your cues from your partner</string>
+                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                            <color key="textColor" red="0.18039215689999999" green="0.21960784310000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.84479345034246578" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <viewLayoutGuide key="safeArea" id="z0z-2F-eit"/>
                 </view>
                 <tapGestureRecognizer id="WBH-nI-XFn">
