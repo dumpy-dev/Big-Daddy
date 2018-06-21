@@ -11,13 +11,11 @@ import UIKit
 class TodayViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var selectedPerson = ""
-
-
+    var selectionTag = 0
+    
     // Setup the IB outlets
     @IBOutlet weak var babyAgeLabel: UILabel!
-    @IBOutlet weak var iconCollectionView: UICollectionView!
     @IBOutlet weak var weekCollectionView: UICollectionView!
-    
     @IBOutlet weak var babySizeLabel: UILabel!
     
     //Setup the arrays
@@ -29,37 +27,29 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     let lengthArray = ["0mm/0", "0mm/0", "0mm/0", "0mm/0", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     
-    let iconArray = ["fetusIcon", "femaleIcon", "articlesIcon", "factIcon"]
+    
     
     // viewDidLoad and viewWillAppear
-    
-    
-   
-    
  override var prefersStatusBarHidden: Bool {
        return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        iconCollectionView.delegate = self
-        iconCollectionView.dataSource = self
-        
         weekCollectionView.delegate = self
         weekCollectionView.dataSource = self
         
        self.navigationController?.isNavigationBarHidden = true
         
         weekCollectionView.allowsSelection = false
-        
           weekCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        selectionTag = 0
+        print("the new selection tag = \(selectionTag)")
         self.navigationController?.isNavigationBarHidden = true
         selectedPerson = ""
         
@@ -80,38 +70,39 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
             }
 
-    
-   //Additional functions
-    
-//    func updateBabySizeImages() {
-//        let weeksElapsedInt : Int = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int
-//        babySizeImage.image = UIImage(named: babySizeImageArray[weeksElapsedInt - 1])
-//        } NOT CURRENTLY USED AS USING COLLECTION VIEW INSTEAD
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if collectionView == self.iconCollectionView {
-            
-            return iconArray.count
-        } else {
-            
-            return babySizeImageArray.count
-        }
+    @IBAction func fetusPressed(_ sender: Any) {
+        selectionTag = 1
+        performSegue(withIdentifier: "thisWeekSegue", sender: nil)
         
     }
     
+    @IBAction func femalePressed(_ sender: Any) {
+        selectionTag = 2
+        performSegue(withIdentifier: "thisWeekSegue", sender: nil)
+    }
+    
+    @IBAction func articlesPressed(_ sender: Any) {
+        selectionTag = 3
+        performSegue(withIdentifier: "articlesSegue", sender: nil)
+        
+    }
+    
+    @IBAction func factsPressed(_ sender: Any) {
+        selectionTag = 4
+        performSegue(withIdentifier: "thisWeekSegue", sender: (Any).self)
+    }
+    
+    
+    
+   //Additional functions
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return babySizeImageArray.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      
-        if collectionView == self.iconCollectionView {
-        
-        
-            let cell:TodayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! TodayCollectionViewCell
-        cell.iconImage.image = UIImage(named:iconArray[indexPath.row])
-        return cell
-            
-        } else {
-            
-            let cell:WeeksCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "weeksCell", for: indexPath) as! WeeksCollectionViewCell
+      let cell:WeeksCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "weeksCell", for: indexPath) as! WeeksCollectionViewCell
             cell.weeksIcon.image = UIImage(named:babySizeImageArray[indexPath.row])
             cell.weeksElapsed.text = String(indexPath.row + 1)
             
@@ -129,66 +120,21 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
              cell.babySize.text = "the \(sizeComparison)"
 //                    }
 
-   
             return cell
             
-        }
-    }
-    
-    
-    
- func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if indexPath.row == 0 {
-            performSegue(withIdentifier: "thisWeekSegue", sender: nil)
-           
-        } else if indexPath.row == 1 {
-            performSegue(withIdentifier: "thisWeekSegue", sender: nil)
-        } else if indexPath.row == 2 {
-            performSegue(withIdentifier: "articlesSegue", sender: nil)
-        } else if indexPath.row == 3 {
-            performSegue(withIdentifier: "thisWeekSegue", sender: nil)
+    }
+    
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is articlesForTodayViewController {
+            print("to articles")
+        } else {
+            let tag = segue.destination as? ThisWeekViewController
+            tag?.selectedTag = selectionTag
         }
     }
-
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//
-//            selectedPerson = "Baby"
-//        } else if indexPath.row == 1 {
-//
-//            selectedPerson = "Mother"
-//        } else if indexPath.row == 2 {
-//            selectedPerson = ""
-//        } else if indexPath.row == 3 {
-//
-//            selectedPerson = "Fact"
-//        }
-//    }
-    
-    
-    
-    
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "thisWeekSegue" {
-       
-            
-             var selectedRowIndex = self.iconCollectionView.indexPathsForSelectedItems!
-            let indexPathAsString : String = String(describing: selectedRowIndex)
-            
-           
-            var personSelected : ThisWeekViewController = segue.destination as! ThisWeekViewController
-            personSelected.personID = indexPathAsString
-            }
-                }
-    
-
-
-
 
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

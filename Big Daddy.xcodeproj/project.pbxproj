@@ -23,7 +23,6 @@
 		247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247FB471204B478800BF4CB7 /* LaunchScreen.storyboard */; };
 		24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C22059821700971299 /* ArticlesTableViewController.swift */; };
 		24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */; };
-		24A32D0720B0D6BA00EB94F3 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A32D0620B0D6B900EB94F3 /* ChecklistViewController.swift */; };
 		24AC094620D1BE4E0018532C /* HypnobirthingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */; };
 		24DBDDF9208A840400AE1C86 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */; };
 		24DBDE2320977FCE00AE1C86 /* settings@x3.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DBDE2220977FCE00AE1C86 /* settings@x3.png */; };
@@ -51,7 +50,6 @@
 		247FB474204B478800BF4CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24A012C22059821700971299 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCustomTableViewCell.swift; sourceTree = "<group>"; };
-		24A32D0620B0D6B900EB94F3 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChecklistViewController.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Controller/ChecklistViewController.swift"; sourceTree = "<absolute>"; };
 		24A32D0820B2128100EB94F3 /* tickBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tickBlue.png; sourceTree = "<group>"; };
 		24A32D0920B2128100EB94F3 /* tickOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tickOrange.png; sourceTree = "<group>"; };
 		24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypnobirthingViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */,
 				24DBDE2C20A788EC00AE1C86 /* ContractionCounterViewController.swift */,
 				24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */,
-				24A32D0620B0D6B900EB94F3 /* ChecklistViewController.swift */,
 				2400FAD120697A00003D5CB9 /* ArticleViewController.swift */,
 				24A012C22059821700971299 /* ArticlesTableViewController.swift */,
 				24DBDE2A20A0F73600AE1C86 /* Article.swift */,
@@ -315,7 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */,
-				24A32D0720B0D6BA00EB94F3 /* ChecklistViewController.swift in Sources */,
 				24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */,
 				2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */,
 				2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */,
