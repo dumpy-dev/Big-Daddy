@@ -41,8 +41,10 @@ class SettingsViewController: UIViewController {
     @IBAction func donePressed(_ sender: Any) {
         
         let mothersName = motherNameEntered.text
+        let babysName = babyNameEntered.text
         
     UserDefaults.standard.set(mothersName, forKey: "mother")
+        UserDefaults.standard.set(babysName, forKey: "baby")
         
     }
     

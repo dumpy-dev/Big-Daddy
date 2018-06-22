@@ -9,13 +9,14 @@
 import UIKit
 
 class ThisWeekViewController: UIViewController {
-
-    var personID : String = ""
-    var selectedTag : Int = 0
     
+    var selectedTag : Int = 0
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    
+    let mother : String  = UserDefaults.standard.object(forKey: "mother") as! String
+    let baby : String = UserDefaults.standard.object(forKey: "baby") as! String
     
     // Setup dictionaries of information
     
@@ -157,13 +158,6 @@ class ThisWeekViewController: UIViewController {
     
     
     
-    
-
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -173,18 +167,29 @@ class ThisWeekViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
        
         let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int
-        if personID == "[[0, 0]]" {
-            titleLabel.text = "Baby"
-            contentLabel.text = babyWeeks[weeksElapsed]
-        } else if personID == "[[0, 1]]" {
-            titleLabel.text = "Mother"
-             contentLabel.text = motherWeeks[weeksElapsed]
-        } else if personID == "[[0, 3]]" {
+        
+        if selectedTag == 1 {
             
+            if mother.isEmpty {
+                titleLabel.text = "THE BABY"
+            } else {
+                titleLabel.text = "\(baby.uppercased())"
+            }
+            contentLabel.text = babyWeeks[weeksElapsed]
+            
+        } else if selectedTag == 2 {
+            
+            if mother.isEmpty {
+                titleLabel.text = "THE MOTHER"
+            } else {
+            titleLabel.text = "\(mother.uppercased())"
+            }
+             contentLabel.text = motherWeeks[weeksElapsed]
+            
+        } else if selectedTag == 4 {
             titleLabel.text = "Fact of the Week"
              contentLabel.text = factWeeks[weeksElapsed]
         }
-        
     }
 
   
