@@ -13,6 +13,7 @@ class ArticlesTableViewController: UITableViewController {
     var articlesArray = [Article]()
     var filteredArticles = [Article]()
     let searchController = UISearchController(searchResultsController: nil)
+
     
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
@@ -40,6 +41,12 @@ class ArticlesTableViewController: UITableViewController {
     // The viewDidLoad will load the array of articles and reload the table view
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Setting the search bar attributes
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
+        searchController.searchBar.tintColor = .white
+        
+        //Setup the arrays
         
         articlesArray = [
             Article(keyword:"assisted delivery ventouse suction theatre", name:"Assisted Delivery"),

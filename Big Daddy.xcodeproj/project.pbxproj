@@ -36,6 +36,7 @@
 		2400FAD120697A00003D5CB9 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		2428646F204D3E9700E54FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242864912057270800E54FCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = ../View/TodayViewController.swift; sourceTree = "<group>"; };
+		243729C120E2D9F80027AD12 /* food-scale-tool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food-scale-tool.png"; sourceTree = "<group>"; };
 		2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF57207811750043590E /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		242864942058115A00E54FCF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				243729C120E2D9F80027AD12 /* food-scale-tool.png */,
 				24C2318F20D987DD0065C795 /* stop.png */,
 				24C2319020D99ED40065C795 /* dummybackground.png */,
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,

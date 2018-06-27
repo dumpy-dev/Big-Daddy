@@ -170,7 +170,7 @@ class ThisWeekViewController: UIViewController {
         
         if selectedTag == 1 {
             
-            if mother.isEmpty {
+            if baby.isEmpty {
                 titleLabel.text = "THE BABY"
             } else {
                 titleLabel.text = "\(baby.uppercased())"

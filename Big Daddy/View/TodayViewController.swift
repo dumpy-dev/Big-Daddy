@@ -12,6 +12,10 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     var selectedPerson = ""
     var selectionTag = 0
+    let baby : String = UserDefaults.standard.object(forKey: "baby") as! String
+    
+    
+    
     
     // Setup the IB outlets
     @IBOutlet weak var babyAgeLabel: UILabel!
@@ -64,9 +68,6 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
    let weeksElapsed : Int = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int - 1
         let indexPath = IndexPath(row: weeksElapsed, section: 0)
         weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
-       
-        
-        
         
             }
 
@@ -117,7 +118,12 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 //                            babySex = "your baby"
 //                            }
             let sizeComparison = babySizeLabelArray[indexPath.row]
-             cell.babySize.text = "the \(sizeComparison)"
+        
+        if baby.isEmpty == true {
+            cell.babySize.text = "your baby is the \(sizeComparison)"
+        } else {
+        cell.babySize.text = "\(baby) is the \(sizeComparison)"
+        }
 //                    }
 
             return cell

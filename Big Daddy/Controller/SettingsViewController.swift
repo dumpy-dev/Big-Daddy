@@ -12,17 +12,12 @@ class SettingsViewController: UIViewController {
 
     var dueDate = Date()
     
-    //Keys for UserDefaults:
-    // DueDate - the due date as entered or as calculated from last period
-    // WeeksElapsed - the number of week elapsed
-    
-    
-    @IBOutlet weak var userNameEntered: UITextField!
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
     @IBOutlet weak var dateSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+
     @IBAction func resetPressed(_ sender: Any) {
        
         let alertController = UIAlertController(title: "Reset", message: "Are you sure you want to reset everything?", preferredStyle: UIAlertControllerStyle.alert)
@@ -43,8 +38,17 @@ class SettingsViewController: UIViewController {
         let mothersName = motherNameEntered.text
         let babysName = babyNameEntered.text
         
+        if mothersName?.isEmpty == false {
     UserDefaults.standard.set(mothersName, forKey: "mother")
+        motherNameEntered.placeholder = mothersName
+        motherNameEntered.text = nil
+        }
+        
+        if babysName?.isEmpty == false {
         UserDefaults.standard.set(babysName, forKey: "baby")
+        babyNameEntered.placeholder = babysName
+        babyNameEntered.text = nil
+        }
         
     }
     
@@ -54,21 +58,23 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        motherNameEntered.placeholder = UserDefaults.standard.object(forKey: "mother") as? String
+        babyNameEntered.placeholder = UserDefaults.standard.object(forKey: "baby") as? String
+        
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
-        if let due = UserDefaults.standard.object(forKey: "DueDate"){
-            datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)
-        } else {
-            let due = Date()
-            print("no date has been entered yet")
-        }
-        
-      // Do any additional setup after loading the view.
+//        if let due = UserDefaults.standard.object(forKey: "DueDate"){
+//            datePicker.setDate(UserDefaults.standard.object(forKey: "DueDate") as! Date, animated: true)
+//        } else {
+//            let due = Date()
+//            print("no date has been entered yet")
+//        }
+//
+      
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
   
@@ -136,14 +142,6 @@ class SettingsViewController: UIViewController {
     }
     
     
-    
-   
-    
-   
-    
-    
-    
-    
     @IBAction func sexPicked(_ sender: UISegmentedControl) {
     
         print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
@@ -154,14 +152,5 @@ class SettingsViewController: UIViewController {
         
     }
     
-    @IBAction func unitPicked(_ sender: UISegmentedControl) {
-       
-        let unitPicked = sender.selectedSegmentIndex
-        
-         UserDefaults.standard.set(unitPicked, forKey: "Unit")
-        print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
-    }
-    
-
 
 }
