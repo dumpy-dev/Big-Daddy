@@ -1,0 +1,14 @@
+//
+//  HomeCollectionViewCell.swift
+//  Big Daddy
+//
+//  Created by Georgie and Chris on 06/04/2018.
+//  Copyright © 2018 Dumpy Developments. All rights reserved.
+//
+
+import UIKit
+
+class HomeCollectionViewCell: UICollectionViewCell {
+    
+    
+}
