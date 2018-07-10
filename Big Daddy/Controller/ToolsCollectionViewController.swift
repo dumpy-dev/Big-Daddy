@@ -52,8 +52,10 @@ class ToolsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         if indexPath.row == 0 {
+            print("tool selected index path 0")
             performSegue(withIdentifier: "toolsTimerSegue", sender: nil)
         } else if indexPath.row == 1 {
+            print("tool selected index path 1")
             performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
         } else if indexPath.row == 2 {
             performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
