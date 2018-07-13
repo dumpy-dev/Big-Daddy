@@ -392,9 +392,9 @@
                                 <state key="normal" title="ADD"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uVw-TT-Vdx">
-                                <rect key="frame" x="0.0" y="64" width="414" height="566"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checklistCell" id="eN1-0z-ukk" customClass="HospitalBagTableViewCell" customModule="Big_Daddy" customModuleProvider="target">
@@ -443,42 +443,44 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addPopupView" destination="N40-8J-9zF" id="ak6-Lv-WHN"/>
+                        <outlet property="addTextField" destination="kRg-0p-1WW" id="8NK-Vu-i0b"/>
+                        <outlet property="checklistTable" destination="uVw-TT-Vdx" id="VPD-rq-LE1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDw-lN-EPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="N40-8J-9zF" userLabel="addPopUpView">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="0.0" width="287" height="128"/>
+                    <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRg-0p-1WW">
-                            <rect key="frame" x="16" y="20" width="192" height="30"/>
+                            <rect key="frame" x="28" y="20" width="231" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuZ-yu-dXA">
-                            <rect key="frame" x="50" y="78" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e9-Xr-uaU">
+                            <rect key="frame" x="63" y="68" width="49" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Add"/>
-                            <connections>
-                                <action selector="addCompleted:" destination="nqU-FL-ZaU" eventType="touchUpInside" id="Pz8-US-6gn"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e9-Xr-uaU">
-                            <rect key="frame" x="135" y="78" width="48" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Cancel"/>
+                            <state key="normal" image="cancel"/>
                             <connections>
                                 <action selector="addCancelled:" destination="nqU-FL-ZaU" eventType="touchUpInside" id="lAN-uR-1in"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuZ-yu-dXA">
+                            <rect key="frame" x="176" y="68" width="49" height="49"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="plus"/>
+                            <connections>
+                                <action selector="addCompleted:" destination="nqU-FL-ZaU" eventType="touchUpInside" id="Pz8-US-6gn"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.033476186329999998" green="0.52949833420000003" blue="0.68503269010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <viewLayoutGuide key="safeArea" id="nWq-RG-8iS"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2033" y="806"/>
+            <point key="canvasLocation" x="2031.8840579710147" y="805.43478260869574"/>
         </scene>
         <!--Contraction Counter-->
         <scene sceneID="5Fh-bi-ENP">
@@ -1023,6 +1025,7 @@
     <resources>
         <image name="articlesButton" width="24" height="24"/>
         <image name="articlesIcon" width="512" height="512"/>
+        <image name="cancel" width="128" height="128"/>
         <image name="circle" width="149" height="149"/>
         <image name="factIcon" width="512" height="512"/>
         <image name="femaleIcon" width="512" height="512"/>
@@ -1031,6 +1034,7 @@
         <image name="line" width="500" height="149"/>
         <image name="measuring-tape" width="64" height="64"/>
         <image name="play-button-sing" width="32" height="32"/>
+        <image name="plus" width="128" height="128"/>
         <image name="rewind" width="32" height="32"/>
         <image name="scale" width="64" height="64"/>
         <image name="settings@x3" width="24" height="24"/>
@@ -1041,7 +1045,7 @@
         <image name="update-arrow" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qUH-4F-oyr"/>
+        <segue reference="2pe-YH-MQ5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
