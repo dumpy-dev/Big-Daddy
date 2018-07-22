@@ -12,7 +12,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     var selectedPerson = ""
     var selectionTag = 0
-    let baby : String = UserDefaults.standard.object(forKey: "baby") as! String
+    
+    
+ let baby = UserDefaults.standard.string(forKey: "baby") ?? "Unknown Baby"
     
     
     
@@ -25,7 +27,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     //Setup the arrays
     let babySizeImageArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     
-    let babySizeLabelArray = ["1", "2", "3", "4", "5", "6", "7", "8", "size of a mini pretzel", "size of a poker chip", "size of a golf ball", "12", "13", "size of a chicken nugget", "15", "size of a pack of cards", "17", "18", "size of a pint", "height of a beer bottle", "the size of a big mac", "22", "length of a tube of pringles", "24", "25", "weight of a basketball", "27", "28", "29", "weight of a rack of ribs", "31", "32", "33", "weight of a roast chicken", "35", "36", "37", "38", "39", "40"]
+    let babySizeLabelArray = ["1", "2", "3", "4", "5", "size of a snowflake", "size of a peanut", "8", "size of an eyeball", "size of a birdseye chilli", "size of a poker chip", "size of a chicken nugget", "13", "size of a deck of cards", "size of a big mac", "size of a can of coke", "size of a razor", "size of an iPhone 8", "size of a pint", "height of a beer bottle", "length of a tube of pringes", "22", "23", "height of a bottle of wine", "25", "weight of a basketball", "weight of War and Peace", "28", "weight of a tomahawk steak", "size of a steering wheel", "weight of an adult brain", "weight of a roast chicken", "size of a vinyl player", "size of a dartboard", "size of a small octopus", "36", "size of a car tyre", "38", "39", "length of a full rack of ribs"]
     
     let weightArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     
@@ -43,6 +45,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         weekCollectionView.delegate = self
         weekCollectionView.dataSource = self
         
+       
+        
+        
        self.navigationController?.isNavigationBarHidden = true
         
         weekCollectionView.allowsSelection = false
@@ -57,18 +62,23 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.navigationController?.isNavigationBarHidden = true
         selectedPerson = ""
         
-        //update the age label text
-        if let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") {
+       // update the age label text
+         if let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") {
             babyAgeLabel.text = "your baby is \(weeksElapsed) weeks old"
         } else {
             babyAgeLabel.text = "  ?"
         }
         
-        // set the collection view to the correct baby age
-   let weeksElapsed : Int = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int - 1
-        let indexPath = IndexPath(row: weeksElapsed, section: 0)
-        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+    
+       
+
         
+        
+   // set the collection view to the correct baby age
+        let weeksStored = UserDefaults.standard.integer(forKey: "WeeksElapsed") ?? 1
+        print(weeksStored)
+      
+
             }
 
     @IBAction func fetusPressed(_ sender: Any) {
@@ -125,11 +135,11 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.babySize.text = "\(baby) is the \(sizeComparison)"
         }
 //                    }
-
+//
             return cell
-            
+
         
-    }
+}
     
     
 
