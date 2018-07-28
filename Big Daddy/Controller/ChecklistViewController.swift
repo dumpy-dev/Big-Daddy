@@ -206,7 +206,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         } else if itemChecklist.count == 0 && checklistIdentifier == 2 {
             print("nothing yet added, so defaults implemented")
-            let defaultItemArray = ["Freddy", "Poppy", "Aurora"]
+            let defaultItemArray = ["Freddy", "Poppy", "Aurora", "Maximus Decimus Meridius"]
             for item in defaultItemArray{
                 print(item)
                 let nameItem = NameRealm()
