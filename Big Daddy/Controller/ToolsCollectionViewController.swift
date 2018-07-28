@@ -15,6 +15,7 @@ class ToolsCollectionViewController: UICollectionViewController {
     var arrayOfImages = [UIImage]()
     var arrayOfIDs = [String]()
     var arrayOfTypes = [String]()
+    var checklistID = 0
     
     
     //Setup array values on view loading
@@ -56,8 +57,10 @@ class ToolsCollectionViewController: UICollectionViewController {
             performSegue(withIdentifier: "toolsTimerSegue", sender: nil)
         } else if indexPath.row == 1 {
             print("tool selected index path 1")
+            checklistID = 1
             performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
         } else if indexPath.row == 2 {
+            checklistID = 2
             performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
         } else if indexPath.row == 3 {
             performSegue(withIdentifier: "toolsGeneralSegue", sender: nil)
@@ -68,8 +71,12 @@ class ToolsCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if segue.identifier == "toolsChecklistSegue" {
         
-        
+            let checklistSelected : ChecklistViewController = segue.destination as! ChecklistViewController
+            checklistSelected.checklistIdentifier = checklistID
+            
+        }
         
     }
    

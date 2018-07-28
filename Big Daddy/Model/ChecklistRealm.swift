@@ -11,14 +11,13 @@ import RealmSwift
 
 class ChecklistRealm: Object {
     
-    @objc dynamic var name = ""
     @objc dynamic var item = ""
     @objc dynamic var itemPacked = false
+    @objc dynamic var name = ""
     
+}
+
+class NameRealm: Object {
     
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+    @objc dynamic var name = ""
 }
