@@ -34,9 +34,22 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
      let bagCell = tableView.dequeueReusableCell(withIdentifier: "checklistCell") as! HospitalBagTableViewCell
         
         let item = itemChecklist[indexPath.row]
-        let text = itemArray[indexPath.row]
         bagCell.itemName.text = item.name
 
+        if item.itemPacked == true {
+            print("\(item.name) is already packed")
+            bagCell.itemName.alpha = 0.3
+            bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+            bagCell.tick.alpha = 0.3
+        }
+        
+        if indexPath.row % 2 == 0 {
+            bagCell.contentView.backgroundColor = UIColor(red:0.04, green:0.41, blue:0.49, alpha:1.0)
+        } else {
+            bagCell.contentView.backgroundColor = UIColor(red:0.03, green:0.38, blue:0.49, alpha:1.0)
+        }
+
+        
         return bagCell
     }
     
@@ -60,9 +73,17 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let bagCell = tableView.dequeueReusableCell(withIdentifier: "checklistCell") as! HospitalBagTableViewCell
-//        bagCell.alpha = 0.1
-        print("cell selected")
+        
+            let item = itemChecklist[indexPath.row]
+            try! self.realm.write({
+                if (item.itemPacked == false){
+                    item.itemPacked = true
+                }else{
+                    item.itemPacked = false
+                }
+            })
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        
     }
     
     // Setup functions
@@ -101,10 +122,10 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         if addTextField.text != "" {
             
             print("You added \(addTextField.text)")
-            let checklistItem = ChecklistRealm() // [1]
+            let checklistItem = ChecklistRealm()
             checklistItem.name = addTextField.text!
             checklistItem.itemPacked = false
-            try! self.realm.write({ // [2]
+            try! self.realm.write({
                 self.realm.add(checklistItem)
             })
         }
@@ -118,11 +139,33 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         animateOut()
     }
     
-    // Setup the standard item list
+
+    
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            // Setup the standard item list
+        if itemChecklist.count == 0 {
+            print("nothing yet added, so defaults implemented")
+            let defaultItemArray = ["Camera", "Nappies", "Car Keys", "Phone Charger", "x2 BabyGro", "Baby Hat", "Baby Gloves", "Breast Pads", "Pillow", "Speakers"]
+            for item in defaultItemArray{
+                print(item)
+            let checklistItem = ChecklistRealm()
+            checklistItem.name = item
+            checklistItem.itemPacked = false
+            try! self.realm.write({
+                self.realm.add(checklistItem)
+            })
+            }
+        }
+        checklistTable.reloadData()
+        
+        
+        
 
     }
 
