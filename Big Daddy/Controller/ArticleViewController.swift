@@ -18,7 +18,7 @@ class ArticleViewController: UIViewController {
     
     var articleID : String = ""
     
-  var mother = UserDefaults.standard.object(forKey: "mother")!
+  var mother = UserDefaults.standard.object(forKey: "mother") ?? "mother"
     
     // A dictionary of all of the article titles with their content
     

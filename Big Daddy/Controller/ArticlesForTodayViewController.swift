@@ -14,7 +14,7 @@ class articlesForTodayViewController: UIViewController, UITableViewDataSource, U
     
     var articlesArray : [Int : [String]] = [Int:[String]]()
     
-    let weeksElapsed : Int = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int
+    let weeksElapsed : Int = UserDefaults.standard.integer(forKey: "WeeksElapsed") ?? 1
 
 
     

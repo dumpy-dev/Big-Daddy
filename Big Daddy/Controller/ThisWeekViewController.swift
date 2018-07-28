@@ -15,8 +15,8 @@ class ThisWeekViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
-    let mother : String  = UserDefaults.standard.object(forKey: "mother") as! String
-    let baby : String = UserDefaults.standard.object(forKey: "baby") as! String
+    let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
+    let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
     
     // Setup dictionaries of information
     
@@ -166,7 +166,7 @@ class ThisWeekViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
        
-        let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") as! Int
+        let weeksElapsed = UserDefaults.standard.integer(forKey: "WeeksElapsed") ?? 1
         
         if selectedTag == 1 {
             

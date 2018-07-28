@@ -9,30 +9,20 @@
 import UIKit
 
 class TodayViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    var selectedPerson = ""
-    var selectionTag = 0
-    
-    
- let baby = UserDefaults.standard.string(forKey: "baby") ?? "Unknown Baby"
-    
-    
-    
-    
-    // Setup the IB outlets
+
+    // Setup the IB outlets and initial variables
     @IBOutlet weak var babyAgeLabel: UILabel!
     @IBOutlet weak var weekCollectionView: UICollectionView!
     @IBOutlet weak var babySizeLabel: UILabel!
+   
+    var selectedPerson = ""
+    var selectionTag = 0
     
     //Setup the arrays
-    let babySizeImageArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
-    
-    let babySizeLabelArray = ["1", "2", "3", "4", "5", "size of a snowflake", "size of a peanut", "8", "size of an eyeball", "size of a birdseye chilli", "size of a poker chip", "size of a chicken nugget", "13", "size of a deck of cards", "size of a big mac", "size of a can of coke", "size of a razor", "size of an iPhone 8", "size of a pint", "height of a beer bottle", "length of a tube of pringes", "22", "23", "height of a bottle of wine", "25", "weight of a basketball", "weight of War and Peace", "28", "weight of a tomahawk steak", "size of a steering wheel", "weight of an adult brain", "weight of a roast chicken", "size of a vinyl player", "size of a dartboard", "size of a small octopus", "36", "size of a car tyre", "38", "39", "length of a full rack of ribs"]
-    
-    let weightArray = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
-    
-    let lengthArray = ["0mm/0", "0mm/0", "0mm/0", "0mm/0", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
-    
+    let babySizeImageArray = ["week1to3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
+    let babySizeLabelArray = ["size of nothing", "size of X", "size of X", "size of a snowflake", "size of a peanut", "size of X", "size of an eyeball", "size of a birdseye chilli", "size of a poker chip", "size of a chicken nugget", "size of X", "size of a deck of cards", "size of a big mac", "size of a can of coke", "size of a razor", "size of an iPhone 8", "size of a pint", "height of a beer bottle", "length of a tube of pringes", "size of X", "size of X", "height of a bottle of wine", "size of X", "weight of a basketball", "weight of War and Peace", "size of X", "weight of a tomahawk steak", "size of a steering wheel", "weight of an adult brain", "weight of a roast chicken", "size of a vinyl player", "size of a dartboard", "size of a small octopus", "size of X", "size of a car tyre", "size of X", "size of X", "length of a full rack of ribs"]
+    let weightArray = ["week1to3", "0.01g", "0.2g", "0.4g", "0.8g", "1g", "2g", "4g", "8g", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
+    let lengthArray = ["week1to3", "1mm", "2mm", "4mm", "8mm", "1.6cm", "2.3cm", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     
     
     // viewDidLoad and viewWillAppear
@@ -45,17 +35,17 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         weekCollectionView.delegate = self
         weekCollectionView.dataSource = self
         
-       
-        
-        
        self.navigationController?.isNavigationBarHidden = true
         
         weekCollectionView.allowsSelection = false
           weekCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        weekCollectionView.reloadData()
         
         selectionTag = 0
         print("the new selection tag = \(selectionTag)")
@@ -68,23 +58,25 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         } else {
             babyAgeLabel.text = "  ?"
         }
-        
-    
-       
 
-        
-        
    // set the collection view to the correct baby age
-        let weeksStored = UserDefaults.standard.integer(forKey: "WeeksElapsed") ?? 1
-        print(weeksStored)
+       
+       
+        let weeksElapsed = UserDefaults.standard.integer(forKey: "WeeksElapsed") - 3 ?? 2
       
-
+        
+        if weeksElapsed <= 40 && weeksElapsed >= 4 {
+        let indexPath = IndexPath(row: weeksElapsed, section: 0)
+        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        } else if weeksElapsed <= 3 {
+            let indexPath = IndexPath(row: 0, section: 0)
+             weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        }
             }
 
     @IBAction func fetusPressed(_ sender: Any) {
         selectionTag = 1
         performSegue(withIdentifier: "thisWeekSegue", sender: nil)
-        
     }
     
     @IBAction func femalePressed(_ sender: Any) {
@@ -95,7 +87,6 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBAction func articlesPressed(_ sender: Any) {
         selectionTag = 3
         performSegue(withIdentifier: "articlesSegue", sender: nil)
-        
     }
     
     @IBAction func factsPressed(_ sender: Any) {
@@ -106,17 +97,29 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
    //Additional functions
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return babySizeImageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell:WeeksCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "weeksCell", for: indexPath) as! WeeksCollectionViewCell
-            cell.weeksIcon.image = UIImage(named:babySizeImageArray[indexPath.row])
-            cell.weeksElapsed.text = String(indexPath.row + 1)
-            
+        
+        
+        cell.weeksIcon.image = UIImage(named:babySizeImageArray[indexPath.row])
+        
+        let babyWeight = weightArray[indexPath.row]
+        let babyLength = lengthArray[indexPath.row]
+        
+        
+        if indexPath.row != 0 {
+        cell.weeksElapsed.text = String(indexPath.row + 3)
+            cell.babyLength.text = babyLength
+            cell.babyWeight.text = babyWeight
+        } else {
+            cell.babyLength.text = "0g/0oz"
+            cell.babyWeight.text = "0cm/0in"
+        }
+        
             
 //            if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
 //            var babySex = "your baby"
@@ -128,6 +131,8 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 //                            babySex = "your baby"
 //                            }
             let sizeComparison = babySizeLabelArray[indexPath.row]
+        
+        let baby = UserDefaults.standard.string(forKey: "baby") ?? "your baby"
         
         if baby.isEmpty == true {
             cell.babySize.text = "your baby is the \(sizeComparison)"
@@ -156,7 +161,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
     }
-    
+
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
