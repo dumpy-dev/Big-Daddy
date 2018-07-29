@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ToolsCollectionViewController: UICollectionViewController {
 
     // Initialise arrays
@@ -64,7 +65,13 @@ class ToolsCollectionViewController: UICollectionViewController {
             performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
         } else if indexPath.row == 3 {
             performSegue(withIdentifier: "toolsGeneralSegue", sender: nil)
+        } else if indexPath.row == 4 {
+            performSegue(withIdentifier: "ratingsSegue", sender: nil)
+        } else if indexPath.row == 5 {
+            performSegue(withIdentifier: "generalTextSegue", sender: nil)
         }
+        
+
     }
 
     // Prepare for segues to pass data across

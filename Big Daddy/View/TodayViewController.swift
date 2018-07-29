@@ -20,7 +20,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     //Setup the arrays
     let babySizeImageArray = ["week1to3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
-    let babySizeLabelArray = ["size of nothing", "size of X", "size of X", "size of a snowflake", "size of a peanut", "size of X", "size of an eyeball", "size of a birdseye chilli", "size of a poker chip", "size of a chicken nugget", "size of X", "size of a deck of cards", "size of a big mac", "size of a can of coke", "size of a razor", "size of an iPhone 8", "size of a pint", "height of a beer bottle", "length of a tube of pringes", "size of X", "size of X", "height of a bottle of wine", "size of X", "weight of a basketball", "weight of War and Peace", "size of X", "weight of a tomahawk steak", "size of a steering wheel", "weight of an adult brain", "weight of a roast chicken", "size of a vinyl player", "size of a dartboard", "size of a small octopus", "size of X", "size of a car tyre", "size of X", "size of X", "length of a full rack of ribs"]
+    let babySizeLabelArray = ["still in beta", "the size of X", "the size of X", "the size of a snowflake", "the size of a peanut", "the size of X", "the size of an eyeball", "the size of a birdseye chilli", "the size of a poker chip", "the size of a chicken nugget", "the size of X", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a razor", "the size of an iPhone 8", "the size of a pint", "the height of a beer bottle", "the length of a tube of pringes", "the size of X", "the size of X", "the height of a bottle of wine", "the size of X", "the weight of a basketball", "the weight of War and Peace", "the size of X", "the weight of a tomahawk steak", "the size of a steering wheel", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the size of X", "the size of a car tyre", "the size of X", "the size of X", "the length of a full rack of ribs"]
     let weightArray = ["week1to3", "0.01g", "0.2g", "0.4g", "0.8g", "1g", "2g", "4g", "8g", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     let lengthArray = ["week1to3", "1mm", "2mm", "4mm", "8mm", "1.6cm", "2.3cm", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     
@@ -98,7 +98,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
    //Additional functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return babySizeImageArray.count
+            return 38
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -116,6 +116,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             cell.babyLength.text = babyLength
             cell.babyWeight.text = babyWeight
         } else {
+            cell.weeksElapsed.text = "0-3"
             cell.babyLength.text = "0g/0oz"
             cell.babyWeight.text = "0cm/0in"
         }
@@ -135,9 +136,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         let baby = UserDefaults.standard.string(forKey: "baby") ?? "your baby"
         
         if baby.isEmpty == true {
-            cell.babySize.text = "your baby is the \(sizeComparison)"
+            cell.babySize.text = "your baby is \(sizeComparison)"
         } else {
-        cell.babySize.text = "\(baby) is the \(sizeComparison)"
+        cell.babySize.text = "\(baby) is \(sizeComparison)"
         }
 //                    }
 //
