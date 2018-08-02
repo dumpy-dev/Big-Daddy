@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContractionCounterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -14,10 +15,24 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerTable: UITableView!
 
+    
+    // Setup the Realm
+    let realm = try! Realm()
+    var timerData:Results<ContractionCounterRealm> {
+        get {
+            return realm.objects(ContractionCounterRealm.self)
+        }
+    }
+    var intervalData:Results<ContractionCounterIntervalRealm> {
+        get {
+            return realm.objects(ContractionCounterIntervalRealm.self)
+        }
+    }
+    
     // Setup variables for timers
-    var realTimeArray : [Date] = []
-    var contractionTimeArray : [Int] = []
-    var gapTimeArray : [Int] = []
+//    var realTimeArray : [Date] = []
+//    var contractionTimeArray : [Int] = []
+//    var gapTimeArray : [Int] = []
     
     var seconds = 0
     var secondarySeconds = 0
@@ -59,12 +74,21 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     @IBAction func stopPressed(_ sender: Any) {
         
         if isTimerRunning == true {
-        contractionTimeArray.append(seconds)
+            
+            let timerItem = ContractionCounterRealm()
+            timerItem.timeOfDay = Date()
+            timerItem.lengthOfContraction = seconds
+            try! self.realm.write({
+                self.realm.add(timerItem)
+            })
+            
+            
+//        contractionTimeArray.append(seconds)
     isTimerRunning = false
         timer.invalidate()
         runSecondaryTimer()
         seconds = 0
-        realTimeArray.append(Date())
+//        realTimeArray.append(Date())
         timerTable.reloadData()
         timerLabel.text = "00:00:00"
         } else {
@@ -79,8 +103,14 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
            timer.invalidate()
      runTimer()
         
+        let timerItem = ContractionCounterIntervalRealm()
+        timerItem.interval = secondarySeconds
+        try! self.realm.write({
+            self.realm.add(timerItem)
+        })
+        
             isSecondaryTimerRunning = false
-            gapTimeArray.append(secondarySeconds)
+            //gapTimeArray.append(secondarySeconds)
             secondarySeconds = 0
     }
     
@@ -91,15 +121,27 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
             UIAlertAction in
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
             UserDefaults.standard.synchronize()
+            
+            
+            let times = self.realm.objects(ContractionCounterRealm.self)
+                try! self.realm.write ({
+                    self.realm.delete(times)
+                })
+                
+            
+            
+            
+            
+            
            self.isTimerRunning = false
             self.timer.invalidate()
             self.seconds = 0
-            self.realTimeArray.append(Date())
+            //self.realTimeArray.append(Date())
             self.timerTable.reloadData()
             self.timerLabel.text = "00:00:00"
-            self.realTimeArray = []
-            self.contractionTimeArray  = []
-            self.gapTimeArray = []
+//            self.realTimeArray = []
+//            self.contractionTimeArray  = []
+//            self.gapTimeArray = []
             self.timerTable.reloadData()
         })
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
@@ -124,7 +166,8 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return realTimeArray.count
+        // return realTimeArray.count
+        return self.timerData.count
     }
     
     
@@ -132,15 +175,22 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
       
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContractionCounterTableViewCell
     
+        let time = timerData[indexPath.row]
+         let interval = intervalData[indexPath.row]
+        
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .medium
-        cell.realTimeLabel!.text = "\(dateFormatter.string(from: realTimeArray[indexPath.row] ))"
-        cell.contractionTimeLabel!.text = "\(contractionTimeArray[indexPath.row]) s"
+        //cell.realTimeLabel!.text = "\(dateFormatter.string(from: realTimeArray[indexPath.row] ))"
+      //  cell.contractionTimeLabel!.text = "\(contractionTimeArray[indexPath.row]) s"
    
+        cell.realTimeLabel.text = "\(dateFormatter.string(from: time.timeOfDay! ))"
+         cell.contractionTimeLabel!.text = "\(time.lengthOfContraction) s"
+        
+        
         if indexPath.row == 0 {
             cell.contractionGapLabel!.text = "-"
         } else {
-            cell.contractionGapLabel!.text = "\(gapTimeArray[indexPath.row]) s"
+            cell.contractionGapLabel!.text = "\(interval.interval) s"
         }
         
         if indexPath.row % 2 == 0 {
