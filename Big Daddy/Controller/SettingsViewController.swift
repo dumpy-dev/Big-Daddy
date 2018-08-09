@@ -12,11 +12,18 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     var dueDate = Date()
     
+    // Setup IBOutlets
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
     @IBOutlet weak var dateSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    
+    // Setup Reset fuction
 
     @IBAction func resetPressed(_ sender: Any) {
        
@@ -38,18 +45,15 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
     
     @IBAction func donePressed(_ sender: Any) {
-        
         let mothersName = motherNameEntered.text
         let babysName = babyNameEntered.text
-        
-        
+        print("the selected date is \(self.datePicker.date)")
 
         if dateSwitch.isOn {
             
+            datePicker.minimumDate = nil
             let daysToAdd = 280
-            
             let calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: datePicker.date)
-            
             let now = Date()
             let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate!).day
             let weeksLeft : Int = diffInDays!/7

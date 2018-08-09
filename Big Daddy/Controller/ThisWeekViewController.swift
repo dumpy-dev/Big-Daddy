@@ -15,6 +15,7 @@ class ThisWeekViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
+    // Setup User defaults
     let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
     let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
     

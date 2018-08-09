@@ -15,6 +15,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet var addPopupView: UIView!
     var checklistIdentifier : Int = 0
     
+    // Realm Setup
     let realm = try! Realm()
     var itemChecklist:Results<ChecklistRealm> {
         get {
@@ -26,8 +27,6 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             return realm.objects(NameRealm.self)
         }
     }
-    
-
     
     // Setup table
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,7 +73,6 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             bagCell.contentView.backgroundColor = UIColor(red:0.03, green:0.38, blue:0.49, alpha:1.0)
         }
 
-        
         return bagCell
     }
     
@@ -206,7 +204,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         } else if itemChecklist.count == 0 && checklistIdentifier == 2 {
             print("nothing yet added, so defaults implemented")
-            let defaultItemArray = ["Freddy", "Poppy", "Aurora", "Maximus Decimus Meridius"]
+            let defaultItemArray = ["Maximus Decimus Meridius"]
             for item in defaultItemArray{
                 print(item)
                 let nameItem = NameRealm()

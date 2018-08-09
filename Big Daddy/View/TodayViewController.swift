@@ -32,11 +32,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weekCollectionView.delegate = self
+      weekCollectionView.delegate = self
         weekCollectionView.dataSource = self
-        
        self.navigationController?.isNavigationBarHidden = true
-        
         weekCollectionView.allowsSelection = false
           weekCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
@@ -45,33 +43,37 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as! Date
+        let now = Date()
+        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate).day
+        
+        let weeksLeft : Int = diffInDays!/7
+        let remainderDays : Int = diffInDays!%7
+        let weeksElapsed : Int = 40 - weeksLeft
+        let remainderDaysElapsed : Int = 7 - remainderDays
+        print("Your partner is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
+        print("this is the due date: \(dueDate)")
         weekCollectionView.reloadData()
         
         selectionTag = 0
         print("the new selection tag = \(selectionTag)")
         self.navigationController?.isNavigationBarHidden = true
         selectedPerson = ""
-        
-       // update the age label text
-         if let weeksElapsed = UserDefaults.standard.object(forKey: "WeeksElapsed") {
-            babyAgeLabel.text = "your baby is \(weeksElapsed) weeks old"
-        } else {
-            babyAgeLabel.text = "  ?"
-        }
 
-   // set the collection view to the correct baby age
-       
-       
-        let weeksElapsed = UserDefaults.standard.integer(forKey: "WeeksElapsed") - 3 ?? 2
-      
+        let displayedWeeksElapsed = weeksElapsed - 3 ?? 0
         
-        if weeksElapsed <= 40 && weeksElapsed >= 4 {
-        let indexPath = IndexPath(row: weeksElapsed, section: 0)
+        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
+        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
         weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
-        } else if weeksElapsed <= 3 {
+        } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
              weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
+//        if displayedWeeksElapsed  {
+//            babyAgeLabel.text = "your baby is \(weeksElapsed) weeks old"
+//        } else {
+//            babyAgeLabel.text = "  ?"
+//        }
             }
 
     @IBAction func fetusPressed(_ sender: Any) {

@@ -16,7 +16,7 @@
             <objects>
                 <viewController id="fMg-pk-Aaf" customClass="SettingsViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2aF-0G-28g">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="type here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Xj-Zd-4Jj">
@@ -162,13 +162,13 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4RV-b3-94j" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ct2-Dc-b6O">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ct2-Dc-b6O">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.18039215689999999" green="0.21960784310000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="zHR-xX-DUl" kind="relationship" relationship="viewControllers" id="9bb-uc-WgU"/>
@@ -400,7 +400,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhE-iK-edi">
                             <rect key="frame" x="20" y="0.0" width="200" height="292"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">Hypnobirthing is just a technique of relaxation, to help your partner stay calm and focussed during labour. Our hypnobirthing script helps you find the words to say to keep her going, especially when things heat up during the early contractions. Go with the script or ad lib - take your cues from your partner</string>
+                            <string key="text">Hypnobirthing is just a technique of relaxation, to help your partner stay calm and focussed during labour. Our hypnobirthing script helps you find the words to say to keep her going, especially when things heat up during labour. Go with the script or ad lib - take your cues from your partner</string>
                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                             <color key="textColor" red="0.18039215689999999" green="0.21960784310000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -663,7 +663,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82B-9A-Uwh">
-                                <rect key="frame" x="0.0" y="95" width="414" height="1869.6666666666667"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -683,7 +683,7 @@ DAo
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
@@ -694,7 +694,7 @@ DAo
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -708,7 +708,7 @@ DAo
                                         <string key="content">1.1	This document was created using a template from SEQ Legal (</string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -721,7 +721,7 @@ DAo
                                     <fragment content="https://seqlegal.com">
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <url key="NSLink" string="https://seqlegal.com"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
@@ -738,7 +738,7 @@ DAo
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -749,22 +749,11 @@ DAo
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">You must retain the above credit. Use of this document without the credit is an infringement of copyright. However, you can purchase from us an equivalent document that does not include the credit.</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Oblique"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
+                                        <string key="content">You must retain the above credit. Use of this document without the credit is an infringement of copyright. However, you can purchase from us an equivalent document that does not include the credit.
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
@@ -775,7 +764,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -791,7 +780,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -806,7 +795,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -822,7 +811,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -838,7 +827,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" firstLineHeadIndent="30" headIndent="60" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -853,7 +842,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -871,7 +860,7 @@ Cg
 </mutableString>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -886,7 +875,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -903,7 +892,7 @@ Cg
 </mutableString>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -918,7 +907,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -933,7 +922,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -951,7 +940,7 @@ Cg
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" firstLineHeadIndent="30" headIndent="60" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="0.0">
@@ -978,7 +967,7 @@ DAo
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
@@ -993,7 +982,7 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
 </mutableString>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
@@ -1004,7 +993,7 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -1016,21 +1005,11 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
                                     </fragment>
                                     <fragment>
                                         <string key="content">Section: Free documents licensing warning
+Optional element. Although you need to retain the credit, you should remove the inline copyright warning from this document before use.
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Optional element. Although you need to retain the credit, you should remove the inline copyright warning from this document before use.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
@@ -1041,7 +1020,7 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -1056,7 +1035,7 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
@@ -1067,7 +1046,7 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops>
                                                     <textTab alignment="left" location="30">
@@ -1079,21 +1058,11 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
                                     </fragment>
                                     <fragment>
                                         <string key="content">Section 6.1
+Do not delete this provision (except upon legal advice). Without this provision, the specific limitations and exclusions of liability in the document are more likely to be unenforceable.
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Do not delete this provision (except upon legal advice). Without this provision, the specific limitations and exclusions of liability in the document are more likely to be unenforceable.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="10" name="Helvetica"/>
+                                            <font key="NSFont" size="11" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
@@ -1116,11 +1085,11 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
             <objects>
                 <viewController id="tMu-DO-8so" customClass="TodayViewController" customModule="Big_Daddy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nem-uQ-fUv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="your baby is 24 weeks old" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Qbb-rH-FeA">
-                                <rect key="frame" x="0.0" y="658" width="414" height="29"/>
+                                <rect key="frame" x="0.0" y="658" width="414" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="33"/>
                                 <color key="textColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1279,7 +1248,7 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
             <objects>
                 <viewController id="bmI-ti-pqe" customClass="ThisWeekViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pWd-Hg-nzK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="At 0 weeks, your baby feels like little more than a figment of your imagination. But it is in there, growing day by day. " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPT-vs-jlc">
@@ -1315,7 +1284,7 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
             <objects>
                 <viewController id="s0Z-49-wg1" customClass="articlesForTodayViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ajM-bZ-sUO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sjU-l0-F1M">
@@ -1371,7 +1340,7 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
             <objects>
                 <tableViewController id="uaW-it-e30" customClass="ArticlesTableViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8d0-tu-bTD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -1425,12 +1394,12 @@ NB the courts have many tools they can use to render disclaimers ineffective, an
             <objects>
                 <viewController id="lci-sr-2SG" customClass="ArticleViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Gz-KW-TCm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="XWg-jh-ekg">
                                 <rect key="frame" x="16" y="118.66666666666669" width="382" height="568.33333333333326"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
