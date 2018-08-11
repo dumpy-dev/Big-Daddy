@@ -12,6 +12,7 @@
 		24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428646F204D3E9700E54FCF /* SettingsViewController.swift */; };
 		242864922057270800E54FCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242864912057270800E54FCF /* TodayViewController.swift */; };
 		242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */ = {isa = PBXBuildFile; fileRef = 242F3790211F16C300ADE38E /* Caesarean Section.html */; };
+		242F3796211F1C1E00ADE38E /* Announcing The Pregnancy.html in Resources */ = {isa = PBXBuildFile; fileRef = 242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */; };
 		2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */; };
 		2445DF58207811750043590E /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF57207811750043590E /* TodayCollectionViewCell.swift */; };
 		2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF59207819740043590E /* TodayDetailViewController.swift */; };
@@ -40,6 +41,7 @@
 		2428646F204D3E9700E54FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242864912057270800E54FCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = ../View/TodayViewController.swift; sourceTree = "<group>"; };
 		242F3790211F16C300ADE38E /* Caesarean Section.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Caesarean Section.html"; sourceTree = "<group>"; };
+		242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Announcing The Pregnancy.html"; sourceTree = "<group>"; };
 		2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF57207811750043590E /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				242F3790211F16C300ADE38E /* Caesarean Section.html */,
+				242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242F3796211F1C1E00ADE38E /* Announcing The Pregnancy.html in Resources */,
 				247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */,
 				242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */,
 				247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */,

@@ -50,6 +50,7 @@ class ArticlesTableViewController: UITableViewController {
         
         articlesArray = [
             Article(keyword:"assisted delivery ventouse suction theatre", name:"Assisted Delivery"),
+            Article(keyword:"pregnancy stick blue line announcement test miscarriage first trimester dating scan secret share news tell everyone bun in oven family tshirt t-shirt jumper grandma grandpa grandad uncle aunt pet dog cat line up shoes converse wellies arty picture photo bump ahead", name:"Announcing The Pregnancy"),
             Article(keyword:"caesarian c-section operation theatre surgery gestational diabetes breech emergency procedure labour progressing vaginal birth baby pre-eclampsia recovery plan pain anaesthetic general spinal infection delivery sunroof alien scar tummy hospital", name:"Caesarean Section"),
             Article(keyword:"drinking alcohol beer wine syndrome FAS units", name:"Drinking"),
             Article(keyword:"driving car license seatbelt", name:"Driving"),
