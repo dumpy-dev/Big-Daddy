@@ -28,6 +28,8 @@ class HypnobirthingViewController: UIViewController {
         11 : "Who goes along with you"
     ]
     
+    
+    
     //Setup outlets
   
     @IBOutlet var infoPopupView: UIView!
@@ -36,6 +38,11 @@ class HypnobirthingViewController: UIViewController {
     //Load the view and setup functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.tabBarController?.tabBar.tintColor = UIColor.gray
+        self.tabBarController?.tabBar.barTintColor = UIColor(red:0.18, green:0.22, blue:0.25, alpha:1.0)
+        
         
         if scriptPositionCounter == 0 {
             scriptPositionCounter = scriptPositionCounter + 1
@@ -51,6 +58,15 @@ class HypnobirthingViewController: UIViewController {
         infoPopupView.layer.cornerRadius = 5
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.tintColor = UIColor.gray
+        self.tabBarController?.tabBar.barTintColor = UIColor(red:0.18, green:0.22, blue:0.25, alpha:1.0)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.tintColor = UIColor.gray
+        self.tabBarController?.tabBar.barTintColor = UIColor(red:0.04, green:0.41, blue:0.49, alpha:1.0)
+    }
+    
     
     func animateIn() {
         self.view.addSubview(infoPopupView)

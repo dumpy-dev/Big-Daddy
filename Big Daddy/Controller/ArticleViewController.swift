@@ -51,6 +51,7 @@ class ArticleViewController: UIViewController {
             "Pre-eclampsia" : "Better than eclampsia",
             "Signs of Labour" : """
 
+            \(mother)
             The hospital bag is packed, the cot is assembled (after a minor argument over some missing screws and only a few tears), and the bump is BIG. But how do you know when it’s all about to kick off?
             To help prepare you for that oh-my-god-we’re-having-a-baby-actually-right-now-and-I’m-a-bit-scared moment, here’s a list of signs and symptoms that labour is on the way. Don’t forget that every woman is different, and \(mother) may end up having all, some or none of these symptoms!
             
@@ -75,14 +76,40 @@ class ArticleViewController: UIViewController {
        // articleTitle.text = articleID
         // contentField.text = articles[articleID]
         
-        if let html = Bundle.main.path(forResource: "\(articleID)", ofType: "html") {
-            let urlToLoad = URL(fileURLWithPath: html)
-        let data = NSData(contentsOf: urlToLoad)
-        
-        if let attributedString = try? NSAttributedString(data: data as! Data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-            contentField.attributedText = attributedString
-        }
-        } else {
+//        if let html = Bundle.main.path(forResource: "\(articleID)", ofType: "html") {
+//            let urlToLoad = URL(fileURLWithPath: html)
+//        let data = NSData(contentsOf: urlToLoad)
+//
+//        if let attributedString = try? NSAttributedString(data: data as! Data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+//
+//            contentField.attributedText = attributedString
+//            let mother = "Georgie"
+//        }
+       
+    
+        if let htmlURL = Bundle.main.url(forResource: articleID, withExtension: "html") {
+            do {
+                let data = try Data(contentsOf: htmlURL)
+                
+                let attributedString = try NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+                
+                //### When you want to compare the result...
+                //originalText.attributedText = attributedString
+                let mother : String = UserDefaults.standard.object(forKey: "mother") as! String ?? "mother"
+                let regex = try! NSRegularExpression(pattern: "\\(mother\\)")
+                let range = NSRange(0..<attributedString.string.utf16.count)
+                let matches = regex.matches(in: attributedString.string, range: range)
+                for match in matches.reversed() {
+                    attributedString.replaceCharacters(in: match.range, with: mother)
+                }
+                
+                contentField.attributedText = attributedString
+            } catch {
+                // Do error processing here...
+                print(error)
+            }
+      
+    } else {
             
             contentField.text = articles[articleID]
         }
