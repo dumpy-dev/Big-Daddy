@@ -90,7 +90,19 @@ class ArticleViewController: UIViewController {
         ]
 
         articleTitle.text = articleID
-        contentField.text = articles[articleID]
+        // contentField.text = articles[articleID]
+        
+        let html = Bundle.main.path(forResource: "\(articleID)", ofType: "html")
+        let urlToLoad = URL(fileURLWithPath: html!)
+        let data = NSData(contentsOf: urlToLoad)
+        
+        if let attributedString = try? NSAttributedString(data: data as! Data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            contentField.attributedText = attributedString
+        }
+        
+        
+        
+        
         
     }
 
