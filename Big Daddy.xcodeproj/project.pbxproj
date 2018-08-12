@@ -29,6 +29,8 @@
 		24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C22059821700971299 /* ArticlesTableViewController.swift */; };
 		24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */; };
 		24AC094620D1BE4E0018532C /* HypnobirthingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */; };
+		24CC367A2120579700AD9CF7 /* collectionBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CC36792120579600AD9CF7 /* collectionBackground.png */; };
+		24CC367C212059EE00AD9CF7 /* collectionBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CC367B212059EC00AD9CF7 /* collectionBlue.png */; };
 		24DBDDF9208A840400AE1C86 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */; };
 		24DBDE252097891D00AE1C86 /* ThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */; };
 		24DBDE2720979DA500AE1C86 /* ArticlesForTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */; };
@@ -60,6 +62,8 @@
 		24A012C22059821700971299 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCustomTableViewCell.swift; sourceTree = "<group>"; };
 		24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypnobirthingViewController.swift; sourceTree = "<group>"; };
+		24CC36792120579600AD9CF7 /* collectionBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collectionBackground.png; sourceTree = "<group>"; };
+		24CC367B212059EC00AD9CF7 /* collectionBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collectionBlue.png; sourceTree = "<group>"; };
 		24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
 		24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThisWeekViewController.swift; path = "Big Daddy/Controller/ThisWeekViewController.swift"; sourceTree = SOURCE_ROOT; };
 		24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesForTodayViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
+				24CC367B212059EC00AD9CF7 /* collectionBlue.png */,
+				24CC36792120579600AD9CF7 /* collectionBackground.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -254,8 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				242F3796211F1C1E00ADE38E /* Announcing The Pregnancy.html in Resources */,
+				24CC367C212059EE00AD9CF7 /* collectionBlue.png in Resources */,
 				247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */,
 				242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */,
+				24CC367A2120579700AD9CF7 /* collectionBackground.png in Resources */,
 				247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */,
 				247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */,
 			);
