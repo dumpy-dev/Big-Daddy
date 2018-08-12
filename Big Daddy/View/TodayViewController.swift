@@ -185,14 +185,14 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 
 extension UICollectionView {
     func scrollToNearestVisibleCollectionViewCell() {
-        self.decelerationRate = UIScrollViewDecelerationRateFast
-        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 2))
+        self.decelerationRate = UIScrollViewDecelerationRateNormal
+        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 100))
         var closestCellIndex = -1
         var closestDistance: Float = .greatestFiniteMagnitude
         for i in 0..<self.visibleCells.count {
             let cell = self.visibleCells[i]
             let cellWidth = cell.bounds.size.width
-            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
+            let cellCenter = Float(cell.frame.origin.x + cellWidth / 100)
             
             // Now calculate closest cell
             let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
