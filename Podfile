@@ -7,6 +7,6 @@ target 'Big Daddy' do
   # Pods for Big Daddy
 
 pod 'RealmSwift'
-pod 'ProgressKit'
+pod 'SwiftyOnboard'
 
 end
