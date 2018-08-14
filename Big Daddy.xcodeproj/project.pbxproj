@@ -32,6 +32,7 @@
 		24CC367A2120579700AD9CF7 /* collectionBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CC36792120579600AD9CF7 /* collectionBackground.png */; };
 		24CC367C212059EE00AD9CF7 /* collectionBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CC367B212059EC00AD9CF7 /* collectionBlue.png */; };
 		24CC367E212066A200AD9CF7 /* IntroScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */; };
+		24CC368621237B4100AD9CF7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC368521237B4100AD9CF7 /* OnboardingViewController.swift */; };
 		24DBDDF9208A840400AE1C86 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */; };
 		24DBDE252097891D00AE1C86 /* ThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */; };
 		24DBDE2720979DA500AE1C86 /* ArticlesForTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */; };
@@ -66,6 +67,7 @@
 		24CC36792120579600AD9CF7 /* collectionBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collectionBackground.png; sourceTree = "<group>"; };
 		24CC367B212059EC00AD9CF7 /* collectionBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collectionBlue.png; sourceTree = "<group>"; };
 		24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreenViewController.swift; sourceTree = "<group>"; };
+		24CC368521237B4100AD9CF7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = ../View/OnboardingViewController.swift; sourceTree = "<group>"; };
 		24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
 		24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThisWeekViewController.swift; path = "Big Daddy/Controller/ThisWeekViewController.swift"; sourceTree = SOURCE_ROOT; };
 		24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesForTodayViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		247FB47C204B47C700BF4CB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				24CC368521237B4100AD9CF7 /* OnboardingViewController.swift */,
 				246BE865210DB4690087B095 /* RatingsViewController.swift */,
 				24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */,
 				2479AA9120E828C200C9D0C0 /* ChecklistViewController.swift */,
@@ -341,6 +344,7 @@
 				24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */,
 				246BE866210DB4690087B095 /* RatingsViewController.swift in Sources */,
 				2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */,
+				24CC368621237B4100AD9CF7 /* OnboardingViewController.swift in Sources */,
 				2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */,
 				2479AA9020E8287400C9D0C0 /* ChecklistRealm.swift in Sources */,
 				24DBDE252097891D00AE1C86 /* ThisWeekViewController.swift in Sources */,

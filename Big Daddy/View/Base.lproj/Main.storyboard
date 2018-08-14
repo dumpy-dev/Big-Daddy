@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NRt-u5-aB8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K1h-Mi-lD6">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1436,6 +1436,24 @@ Do not delete this provision (except upon legal advice). Without this provision,
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvb-gc-xMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1169" y="148"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="KpO-gO-tBE">
+            <objects>
+                <viewController id="K1h-Mi-lD6" customClass="OnboardingViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="egV-CQ-Bu2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="U4x-8Y-YTN"/>
+                    </view>
+                    <connections>
+                        <segue destination="NRt-u5-aB8" kind="show" identifier="onboardingSegue" id="cSP-5l-WXp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWf-bi-Ic7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1408" y="910"/>
         </scene>
         <!--Intro Screen View Controller-->
         <scene sceneID="D1G-MC-8Rf">
