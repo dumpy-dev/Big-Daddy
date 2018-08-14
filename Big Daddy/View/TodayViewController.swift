@@ -43,7 +43,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+    
         let dueDate = UserDefaults.standard.object(forKey: "DueDate") as! Date
+        
         let now = Date()
         let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate).day
         
@@ -74,6 +76,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 //        } else {
 //            babyAgeLabel.text = "  ?"
 //        }
+        
             }
 
     @IBAction func fetusPressed(_ sender: Any) {

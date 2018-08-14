@@ -32,6 +32,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             UIAlertAction in
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
             UserDefaults.standard.synchronize()
+           let daysToSubtract = -280
+//            let dueDate = Calendar.current.date(byAdding: .day, value: 14, to: Date())
+let dueDate = Date()
+            UserDefaults.standard.set(dueDate, forKey: "DueDate")
+            
             
             self.datePicker.setDate(Date() as Date, animated: true)
             self.motherNameEntered.placeholder = nil
