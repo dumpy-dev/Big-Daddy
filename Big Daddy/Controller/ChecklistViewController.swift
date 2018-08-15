@@ -11,6 +11,7 @@ import RealmSwift
 
 class ChecklistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let mother = UserDefaults.standard.object(forKey: "mother") as? String ?? "your partner"
     @IBOutlet weak var checklistTable: UITableView!
     @IBOutlet var addPopupView: UIView!
     var checklistIdentifier : Int = 0
@@ -192,7 +193,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             // Setup the standard item list
         if itemChecklist.count == 0 && checklistIdentifier == 1 {
             print("nothing yet added, so defaults implemented")
-            let defaultItemArray = ["Camera", "Nappies", "Car Keys", "Phone Charger", "x2 BabyGro", "Baby Hat", "Baby Gloves", "Breast Pads", "Pillow", "Speakers"]
+            let defaultItemArray = ["Nappies (lots)", "Baby wipes", "Baby vests (x3)", "Baby sleepsuit (x3)", "Baby hats (x3)", "Baby socks", "Baby blanket", "Muslins", "Baby nail scissors", "Comfortable clothes (for \(mother))", "Slippers (for \(mother))", "Dressing gown (for \(mother))", "Pyjamas (for \(mother))", "Going home outfits (for everyone)", "Washbag", "Maternity pads", "Breast pads", "Snacks", "Phone chargers", "Speakers", "Change for parking", "Books/Magazines/iPad", "Blanket/Pillow for you", "Change of clothes for you", "Maternity notes"]
             for item in defaultItemArray{
                 print(item)
             let checklistItem = ChecklistRealm()

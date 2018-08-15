@@ -12,7 +12,7 @@ import UIKit
 class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, SwiftyOnboardDelegate {
     
         var swiftyOnboard: SwiftyOnboard!
-        let colors:[UIColor] = [#colorLiteral(red: 0.02745098039, green: 0.3803921569, blue: 0.4901960784, alpha: 0.66),#colorLiteral(red: 0.03347618633, green: 0.5294983342, blue: 0.6850326901, alpha: 0.66),#colorLiteral(red: 0.9764705882, green: 0.6588235294, blue: 0.1568627451, alpha: 0.66)]
+        let colors:[UIColor] = [#colorLiteral(red: 0.02788124846, green: 0.4410022836, blue: 0.5705418906, alpha: 0.66),#colorLiteral(red: 0.03611627438, green: 0.5941812396, blue: 0.7784456025, alpha: 0.66),#colorLiteral(red: 1, green: 0.7970821868, blue: 0.4988624448, alpha: 1)]
         var titleArray: [String] = ["Welcome to Big Daddy!", "Loads of information", "Time to customise"]
         var subTitleArray: [String] = ["being involved in your partner's pregnancy is the best possible\n way to start your relationship\n with your new baby.", "Go to Articles for ready to use information\n and have a look at the Tools for some\n useful bits of kit", "Now you can add in some useful\n bits of information\n and find out how\n big your baby is!"]
         

@@ -95,7 +95,7 @@ class ArticleViewController: UIViewController {
                 
                 //### When you want to compare the result...
                 //originalText.attributedText = attributedString
-                let mother : String = UserDefaults.standard.object(forKey: "mother") as! String ?? "mother"
+                let mother : String = UserDefaults.standard.object(forKey: "mother") as? String ?? "mother"
                 let regex = try! NSRegularExpression(pattern: "\\(mother\\)")
                 let range = NSRange(0..<attributedString.string.utf16.count)
                 let matches = regex.matches(in: attributedString.string, range: range)

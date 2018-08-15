@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IntroScreenViewController: UIViewController {
+class IntroScreenViewController: UIViewController, UITextFieldDelegate {
 
     
     // Setup outlets
@@ -119,11 +119,29 @@ UserDefaults.standard.set(mothersName.text, forKey: "mother")
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
+        func hideKeyboardWhenTappedAround() {
+            let tap: UITapGestureRecognizer =     UITapGestureRecognizer(target: self, action:    #selector(IntroScreenViewController.dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+        }
+    
+    @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        self.mothersName.delegate = self
+        hideKeyboardWhenTappedAround()
         
     }
 
