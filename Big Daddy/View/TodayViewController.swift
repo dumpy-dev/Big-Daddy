@@ -66,10 +66,10 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredVertically, animated: true)
         } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
-             weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+             weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredVertically, animated: true)
         }
 //        if displayedWeeksElapsed  {
 //            babyAgeLabel.text = "your baby is \(weeksElapsed) weeks old"
@@ -205,7 +205,7 @@ extension UICollectionView {
             }
         }
         if closestCellIndex != -1 {
-            self.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+            self.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredVertically, animated: true)
         }
     }
 }

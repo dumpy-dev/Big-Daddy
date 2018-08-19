@@ -1099,7 +1099,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                 <rect key="frame" x="-20" y="64" width="450" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ade-SA-LNS">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ade-SA-LNS">
                                     <size key="itemSize" width="442" height="588"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1107,7 +1107,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="weeksCell" id="Uod-kr-Bvt" customClass="WeeksCollectionViewCell" customModule="Big_Daddy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="17.666666666666668" width="442" height="588"/>
+                                        <rect key="frame" x="4" y="0.0" width="442" height="588"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="442" height="588"/>
@@ -1127,10 +1127,6 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="FA7-fH-arK">
                                                     <rect key="frame" x="160" y="11" width="122" height="94"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EkH-hf-80p">
-                                                    <rect key="frame" x="96" y="140" width="250" height="250"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="balancing-scale-variant" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-vl-HCc">
                                                     <rect key="frame" x="77" y="39" width="40" height="40"/>
@@ -1200,6 +1196,10 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EkH-hf-80p">
+                                                    <rect key="frame" x="51" y="381" width="58" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <connections>
