@@ -282,40 +282,40 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
         
-                     cell.backgroundColor = UIColor.red
+                   //  cell.backgroundColor = UIColor.red
         
         
-//        if indexPath.item == 0 {
-//
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
-//
-//            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
-//
-//
-//            cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
-//
-//            return cell
-//
-//        } else {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! WeekCollectionViewCell2
-//
-//            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
-//
-//            if indexPath.item == 1 {
-//                cell.textView.text = "screen1"
-//            } else if indexPath.item == 2 {
-//                cell.textView.text = "screen2"
-//            } else if indexPath.item == 3 {
-//                cell.textView.text = "screen3"
-//            } else {
-//                cell.textView.text = "screen4"
-//            }
-//
-//            return cell
-//        }
+        if indexPath.item == 0 {
+
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
+
+            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
+
+
+            cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
+
+            return cell
+
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! WeekCollectionViewCell2
+
+            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
+
+            if indexPath.item == 1 {
+                cell.textView.text = "screen1"
+            } else if indexPath.item == 2 {
+                cell.textView.text = "screen2"
+            } else if indexPath.item == 3 {
+                cell.textView.text = "screen3"
+            } else {
+                cell.textView.text = "screen4"
+            }
+
+            return cell
+        }
         //  cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
         
-        return cell
+//        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
