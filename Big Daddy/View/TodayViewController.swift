@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // Setup the IB outlets and initial variables
     @IBOutlet weak var babyAgeLabel: UILabel!
@@ -28,7 +28,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
     
-    let babySizeImageArray = ["week1to3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
+   
     
     
     
@@ -36,28 +36,28 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     var storedOffsets = [Int: CGFloat]()
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return babySizeImageArray.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard let tableViewCell = cell as? TableViewCell else { return }
+        guard let tableViewCell = cell as? WeekTableViewCell else { return }
         
         tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
         tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard let tableViewCell = cell as? TableViewCell else { return }
+        guard let tableViewCell = cell as? WeekTableViewCell else { return }
         
         storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
@@ -94,11 +94,11 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      weekCollectionView.delegate = self
-        weekCollectionView.dataSource = self
-       self.navigationController?.isNavigationBarHidden = true
-        weekCollectionView.allowsSelection = false
-          weekCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+//      weekCollectionView.delegate = self
+//        weekCollectionView.dataSource = self
+//       self.navigationController?.isNavigationBarHidden = true
+//        weekCollectionView.allowsSelection = false
+//          weekCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
     
@@ -117,7 +117,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         let remainderDaysElapsed : Int = 7 - remainderDays
         print("Your partner is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
         print("this is the due date: \(dueDate)")
-        weekCollectionView.reloadData()
+//        weekCollectionView.reloadData()
         
         selectionTag = 0
         print("the new selection tag = \(selectionTag)")
@@ -126,13 +126,13 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 
         let displayedWeeksElapsed = weeksElapsed - 3 ?? 0
         
-        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
-        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
-        } else if displayedWeeksElapsed <= 3 {
-            let indexPath = IndexPath(row: 0, section: 0)
-             weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
-        }
+//        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
+//        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+//        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+//        } else if displayedWeeksElapsed <= 3 {
+//            let indexPath = IndexPath(row: 0, section: 0)
+//             weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+//        }
 //        if displayedWeeksElapsed  {
 //            babyAgeLabel.text = "your baby is \(weeksElapsed) weeks old"
 //        } else {
@@ -164,55 +164,55 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
    //Additional functions
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 38
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell:WeeksCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "weeksCell", for: indexPath) as! WeeksCollectionViewCell
-        
-        
-        cell.weeksIcon.image = UIImage(named:babySizeImageArray[indexPath.row])
-        
-        let babyWeight = weightArray[indexPath.row]
-        let babyLength = lengthArray[indexPath.row]
-        
-        
-        if indexPath.row != 0 {
-        cell.weeksElapsed.text = String(indexPath.row + 3)
-            cell.babyLength.text = babyLength
-            cell.babyWeight.text = babyWeight
-        } else {
-            cell.weeksElapsed.text = "0-3"
-            cell.babyLength.text = "0g/0oz"
-            cell.babyWeight.text = "0cm/0in"
-        }
-        
-            
-//            if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
-//            var babySex = "your baby"
-//            if babySizeText == 0 {
-//                        babySex = "she"
-//                    } else if babySizeText == 1 {
-//                        babySex = "he"
-//                        } else if babySizeText == 2 {
-//                            babySex = "your baby"
-//                            }
-            let sizeComparison = babySizeLabelArray[indexPath.row]
-        
-        let baby = UserDefaults.standard.string(forKey: "baby") ?? "your baby"
-        
-        if baby.isEmpty == true {
-            cell.babySize.text = "your baby is \(sizeComparison)"
-        } else {
-        cell.babySize.text = "\(baby) is \(sizeComparison)"
-        }
-//                    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//            return 38
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//      let cell:WeeksCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "weeksCell", for: indexPath) as! WeeksCollectionViewCell
+//        
+//        
+//        cell.weeksIcon.image = UIImage(named:babySizeImageArray[indexPath.row])
+//        
+//        let babyWeight = weightArray[indexPath.row]
+//        let babyLength = lengthArray[indexPath.row]
+//        
+//        
+//        if indexPath.row != 0 {
+//        cell.weeksElapsed.text = String(indexPath.row + 3)
+//            cell.babyLength.text = babyLength
+//            cell.babyWeight.text = babyWeight
+//        } else {
+//            cell.weeksElapsed.text = "0-3"
+//            cell.babyLength.text = "0g/0oz"
+//            cell.babyWeight.text = "0cm/0in"
+//        }
+//        
+//            
+////            if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
+////            var babySex = "your baby"
+////            if babySizeText == 0 {
+////                        babySex = "she"
+////                    } else if babySizeText == 1 {
+////                        babySex = "he"
+////                        } else if babySizeText == 2 {
+////                            babySex = "your baby"
+////                            }
+//            let sizeComparison = babySizeLabelArray[indexPath.row]
+//        
+//        let baby = UserDefaults.standard.string(forKey: "baby") ?? "your baby"
+//        
+//        if baby.isEmpty == true {
+//            cell.babySize.text = "your baby is \(sizeComparison)"
+//        } else {
+//        cell.babySize.text = "\(baby) is \(sizeComparison)"
+//        }
+////                    }
+////
+//            return cell
 //
-            return cell
-
-        
-}
+//        
+//}
     
     
 
@@ -226,15 +226,15 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
 
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
-        }
-    }
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
+//    }
+//
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if !decelerate {
+//            self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
+//        }
+//    }
    
   
     
@@ -280,37 +280,42 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.item == 0 {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-            
-            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
-            
-            
-            cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
-            
-            return cell
-            
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! CollectionViewCell2
-            
-            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
-            
-            if indexPath.item == 1 {
-                cell.textView.text = "screen1"
-            } else if indexPath.item == 2 {
-                cell.textView.text = "screen2"
-            } else if indexPath.item == 3 {
-                cell.textView.text = "screen3"
-            } else {
-                cell.textView.text = "screen4"
-            }
-            
-            return cell
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
+        
+                     cell.backgroundColor = UIColor.red
+        
+        
+//        if indexPath.item == 0 {
+//
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
+//
+//            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
+//
+//
+//            cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
+//
+//            return cell
+//
+//        } else {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! WeekCollectionViewCell2
+//
+//            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
+//
+//            if indexPath.item == 1 {
+//                cell.textView.text = "screen1"
+//            } else if indexPath.item == 2 {
+//                cell.textView.text = "screen2"
+//            } else if indexPath.item == 3 {
+//                cell.textView.text = "screen3"
+//            } else {
+//                cell.textView.text = "screen4"
+//            }
+//
+//            return cell
+//        }
         //  cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
         
-        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
