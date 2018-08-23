@@ -10,11 +10,12 @@ import UIKit
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var weeklyTableView: UITableView!
     // Setup the IB outlets and initial variables
     @IBOutlet weak var babyAgeLabel: UILabel!
-    @IBOutlet weak var weekCollectionView: UICollectionView!
-    @IBOutlet weak var babySizeLabel: UILabel!
-   
+ 
+  
+    
     var selectedPerson = ""
     var selectionTag = 0
     
@@ -97,8 +98,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //      weekCollectionView.delegate = self
 //        weekCollectionView.dataSource = self
 //       self.navigationController?.isNavigationBarHidden = true
-//        weekCollectionView.allowsSelection = false
-//          weekCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+   weeklyTableView.allowsSelection = false
+        weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
     
@@ -126,13 +127,14 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         let displayedWeeksElapsed = weeksElapsed - 3 ?? 0
         
-//        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
-//        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-//        weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
-//        } else if displayedWeeksElapsed <= 3 {
-//            let indexPath = IndexPath(row: 0, section: 0)
-//             weekCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
-//        }
+        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
+        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+      // weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
+//            (at: indexPath, at: UITableViewScrollPosition.centeredVertically, animated: true)
+        } else if displayedWeeksElapsed <= 3 {
+            let indexPath = IndexPath(row: 0, section: 0)
+          //  weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+        } 
 //        if displayedWeeksElapsed  {
 //            babyAgeLabel.text = "your baby is \(weeksElapsed) weeks old"
 //        } else {
@@ -168,51 +170,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //            return 38
 //    }
 //    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//      let cell:WeeksCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "weeksCell", for: indexPath) as! WeeksCollectionViewCell
-//        
-//        
-//        cell.weeksIcon.image = UIImage(named:babySizeImageArray[indexPath.row])
-//        
-//        let babyWeight = weightArray[indexPath.row]
-//        let babyLength = lengthArray[indexPath.row]
-//        
-//        
-//        if indexPath.row != 0 {
-//        cell.weeksElapsed.text = String(indexPath.row + 3)
-//            cell.babyLength.text = babyLength
-//            cell.babyWeight.text = babyWeight
-//        } else {
-//            cell.weeksElapsed.text = "0-3"
-//            cell.babyLength.text = "0g/0oz"
-//            cell.babyWeight.text = "0cm/0in"
-//        }
-//        
-//            
-////            if let babySizeText : Int = UserDefaults.standard.integer(forKey: "BabySex") {
-////            var babySex = "your baby"
-////            if babySizeText == 0 {
-////                        babySex = "she"
-////                    } else if babySizeText == 1 {
-////                        babySex = "he"
-////                        } else if babySizeText == 2 {
-////                            babySex = "your baby"
-////                            }
-//            let sizeComparison = babySizeLabelArray[indexPath.row]
-//        
-//        let baby = UserDefaults.standard.string(forKey: "baby") ?? "your baby"
-//        
-//        if baby.isEmpty == true {
-//            cell.babySize.text = "your baby is \(sizeComparison)"
-//        } else {
-//        cell.babySize.text = "\(baby) is \(sizeComparison)"
-//        }
-////                    }
-////
-//            return cell
 //
-//        
-//}
     
     
 
@@ -274,7 +232,7 @@ extension UICollectionView {
 
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return model[collectionView.tag].count
+       
         return 5
     }
     
@@ -282,11 +240,11 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
         
-                   //  cell.backgroundColor = UIColor.red
+        
         
         
         if indexPath.item == 0 {
-
+            print("this is the collection view tag: \(collectionView.tag)")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
 
             // cell.backgroundColor = model[collectionView.tag][indexPath.item]
@@ -294,6 +252,36 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
             cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
 
+            
+                    let babyLength = lengthArray[collectionView.tag]
+            let babyWeight = weightArray[collectionView.tag]
+            
+         let sizeComparison = babySizeLabelArray[collectionView.tag]
+         
+            
+                    if collectionView.tag != 0 {
+                    cell.weeksElapsed.text = String(collectionView.tag + 3)
+                        cell.babyHeight.text = babyLength
+                        cell.babyWeight.text = babyWeight
+                    } else {
+                        cell.weeksElapsed.text = "0-3"
+                        cell.babyHeight.text = "0g/0oz"
+                        cell.babyWeight.text = "0cm/0in"
+                    }
+            
+            
+            let baby = UserDefaults.standard.string(forKey: "baby") ?? "your baby"
+
+                    if baby.isEmpty == true {
+                        cell.babySize.text = "your baby is \(sizeComparison)"
+                    } else {
+                    cell.babySize.text = "\(baby) is \(sizeComparison)"
+                    }
+            
+            
+            
+            
+            
             return cell
 
         } else {
