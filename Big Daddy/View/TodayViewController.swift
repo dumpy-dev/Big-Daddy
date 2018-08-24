@@ -14,16 +14,112 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // Setup the IB outlets and initial variables
     @IBOutlet weak var babyAgeLabel: UILabel!
  
-  
+ 
     
     var selectedPerson = ""
     var selectionTag = 0
     
-    //Setup the arrays
+    //Setup the arrays and dictionaries
+    
     let babySizeImageArray = ["week1to3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a pint", "the height of a beer bottle", "the length of a tube of pringes", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the weight of a basketball", "the weight of War and Peace", "the size of X", "the weight of a tomahawk steak", "the size of a steering wheel", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the size of a brick", "the height of a car tyre", "the size of X", "the length of a wood saw", "the length of a full rack of ribs"]
     let weightArray = ["week1to3", "0.01g", "0.2g", "0.4g", "0.8g", "1g", "2g", "4g", "8g", "14g", "23g", "45g", "70g", "100g", "140g", "190g", "240g", "300g", "360g", "430g", "500g", "600g", "660g", "760g", "875g", "1kg", "1.1kg", "1.3kg", "1.5kg", "1.7kg", "1.9kg", "2.1kg", "2.4kg", "2.6kg", "2.9kg", "3.1kg", "3.3kg", "3.5kg", "3.5kg", "3.5kg"]
     let lengthArray = ["week1to3", "1mm", "2mm", "4mm", "8mm", "1.6cm", "2.3cm", "3.4cm", "4.1cm", "5.4cm", "7.4cm", "8.5cm", "10.1cm", "11.6cm", "12.9cm", "14.2cm", "15cm", "25.6cm", "26.6cm", "27.8cm", "29cm", "30cm", "34.6cm", "35.6cm", "36.6cm", "37.6cm", "38.6cm", "39.9cm", "41.1cm", "42.4cm", "43.7cm", "45cm", "46.2cm", "47.4cm", "48.6cm", "49.8cm", "50.6cm", "51.2cm", "51.2cm", "51.2cm"]
+  
+    var babyWeeks : [Int : String] = [
+        
+        1 : "Baby is not yet in existence",
+        2 : """
+Baby is still not in existence
+""",
+        3 : "Baby is still not in existence",
+        4 : "Baby is possibly just about in existence",
+        5 : "Baby is in existence",
+        6 : "Baby is getting bigger",
+        7 : "Baby is getting bigger",
+        8 : "Baby is getting bigger",
+        9 : "Baby is getting bigger",
+        10 : "Baby is getting bigger",
+        11 : "Baby is getting bigger",
+        12 : "Baby is getting bigger",
+        13 : "At 13 weeks,Baby is getting bigger",
+        14 : "At 14 weeks, Baby is getting bigger",
+        15 : "At 15 weeks,Baby is getting bigger",
+        16 : "At 16 weeks, Baby is getting bigger",
+        17 : "Baby is getting bigger",
+        18 : "Baby is getting bigger",
+        19 : "Baby is getting bigger",
+        20 : "Baby is getting bigger",
+        21 : "At 21 weeks, Baby is getting bigger",
+        22 : "Baby is getting bigger",
+        23 : "Baby is getting bigger",
+        24 : "Baby is getting bigger",
+        25 : "Baby is getting bigger",
+        26 : "Baby is getting bigger",
+        27 : "Baby is getting bigger",
+        28 : "Baby is getting bigger",
+        29 : "Baby is getting bigger",
+        30 : "Baby is getting bigger",
+        31 : "At 31 weeks, Baby is getting bigger",
+        32 : "Baby is getting bigger",
+        33 : "Baby is getting bigger",
+        34 : "Baby is getting bigger",
+        35 : "Baby is getting bigger",
+        36 : "Baby is getting bigger",
+        37 : "Baby is getting bigger",
+        38 : "Baby is getting bigger",
+        39 : "Baby is getting bigger",
+        40 : "Baby is getting bigger",
+        41 : "Baby is getting bigger",
+        42 : "Baby is getting bigger"
+    ]
+    
+    
+    
+    var factWeeks : [Int : String] = [
+        1 : "Baby is not yet in existence",
+        2 : "Baby is still not in existence",
+        3 : "Baby is still not in existence",
+        4 : "Baby is possibly just about in existence",
+        5 : "Baby is in existence",
+        6 : "Baby is getting bigger",
+        7 : "Baby is getting bigger",
+        8 : "Baby is getting bigger",
+        9 : "Baby is getting bigger",
+        10 : "Baby is getting bigger",
+        11 : "Baby is getting bigger",
+        12 : "Baby is getting bigger",
+        13 : "Baby is getting bigger",
+        14 : "Baby is getting bigger",
+        15 : "Baby is getting bigger",
+        16 : "Baby is getting bigger",
+        17 : "Baby is getting bigger",
+        18 : "Baby is getting bigger",
+        19 : "Baby is getting bigger",
+        20 : "Baby is getting bigger",
+        21 : "Baby is getting bigger",
+        22 : "Baby is getting bigger",
+        23 : "Baby is getting bigger",
+        24 : "Baby is getting bigger",
+        25 : "Baby is getting bigger",
+        26 : "Baby is getting bigger",
+        27 : "Baby is getting bigger",
+        28 : "Baby is getting bigger",
+        29 : "Baby is getting bigger",
+        30 : "Baby is getting bigger",
+        31 : "Baby is getting bigger",
+        32 : "Baby is getting bigger",
+        33 : "Baby is getting bigger",
+        34 : "Baby is getting bigger",
+        35 : "Baby is getting bigger",
+        36 : "Baby is getting bigger",
+        37 : "Baby is getting bigger",
+        38 : "Baby is getting bigger",
+        39 : "Baby is getting bigger",
+        40 : "Baby is getting bigger",
+        41 : "Baby is getting bigger",
+        42 : "Baby is getting bigger"
+    ]
     
     // New tablecollection view
     
@@ -99,7 +195,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        weekCollectionView.dataSource = self
 //       self.navigationController?.isNavigationBarHidden = true
    weeklyTableView.allowsSelection = false
-        weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
+        // weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
     
@@ -257,7 +353,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
             let babyWeight = weightArray[collectionView.tag]
             
          let sizeComparison = babySizeLabelArray[collectionView.tag]
-         
+            
             
                     if collectionView.tag != 0 {
                     cell.weeksElapsed.text = String(collectionView.tag + 3)
@@ -278,32 +374,140 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     cell.babySize.text = "\(baby) is \(sizeComparison)"
                     }
             
-            
-            
-            
-            
             return cell
 
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! WeekCollectionViewCell2
 
-            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
+            let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
+            let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
 
             if indexPath.item == 1 {
-                cell.textView.text = "screen1"
+                
+                
+                cell.personIcon.image = #imageLiteral(resourceName: "fetusIcon")
+
+                cell.textView.text = babyWeeks[collectionView.tag + 3]
             } else if indexPath.item == 2 {
-                cell.textView.text = "screen2"
+                   let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
+                var motherWeeks : [Int : String] = [
+                    1 : "Baby is not yet in existence",
+                    2 :"""
+                    Baby is not yet in existence
+                    """,
+                    3 : """
+                    Sorry, but your baby isn't even in existence yet...
+                    """,
+                    4 : """
+                    This week, \(mother)’s period is due. And if there’s a bun in the oven, that period will be AWOL. Her body will be starting to produce a hormone called human chorionic gonadotrophin (hCG) - which is what triggers the positive result on a pregnancy test.
+                    
+                    \(mother) might be feeling a bit tired and moody which - confusingly - might be how she normally feels around this time of the month. It’s a bit of waiting game until that all-important pregnancy test.
+                    
+                    Some pregnancy tests are highly sensitive, and claim to give a reliable reading on the first day of the missed period. But if the test is negative, it’s so early that it doesn’t necessarily mean she’s not pregnant.
+                    """,
+                    5 : """
+                    Shit just got real - \(mother)’s period is MIA and you’ve very likely got a positive result on a pregnancy test.
+                    
+                    \(mother) might be feeling a bit tired, and increased blood flow to her breasts could leave them feeling a bit sensitive or tender. It’s possible that she might notice a tiny bit of light bleeding when she goes to the toilet around now. It’s really important that \(mother) starts taking a folic acid supplement until she’s 12 weeks pregnant, as this will help the baby’s nervous system to develop properly and prevent defects such as spina bifida.
+
+                    """,
+                    6 : """
+                    \(mother) doesn’t look pregnant at all, but she may be starting to feel different. Hormone changes and increased blood flow to her kidneys may mean more overnight trips to the toilet.
+                    
+                    Up to 9 out of 10 pregnant women suffer from morning sickness or nausea, so chances are \(mother) will start feeling a little green around the gills over the next few weeks. If she’s vomiting more than Regan-The-Exorcist-MacNeil, and can’t keep anything down, she should go to her GP. Around 1 in 100 pregnant women suffer from a condition called hypermeresis gravidarum (made famous by Kate of Kate’n’Wills), where they vomit so much that they may need hospital treatment. Even if it’s not that severe, if \(mother) is struggling with sickness or feeling nauseous, her GP may be able to help by prescribing anti-sickness tablets or suggesting ways to cope with the symptoms. Have a look at our morning sickness article for some tips.
+
+                    """,
+                    7 :"""
+                    This week, \(mother) might start to feel some twinges in her belly, as her uterus begins to expand. If she feels any sort of pain in her tummy, or has more than a tiny amount of bleeding, she should go to her GP. Chances are, it’s nothing to worry about, but it’s better to get it checked as it can be an early sign of miscarriage.
+                    
+                    If she’s feeling greener than Slimer, try making her a cup of stomach-settling ginger tea. You can either buy ginger teabags, or just add boiling water to a tablespoon of chopped fresh ginger.
+                    """,
+                    8 : """
+                    Varicose veins are common in pregnancy, and \(mother) might start to notice one or two developing on her legs. Varicose veins are just where blood collects in veins and makes them bulge a bit. They usually don’t cause serious problems, but \(mother) should mention them to her midwife at her next appointment.
+                    
+                    Soon, \(mother) will be having her first antenatal appointment - called the Booking Appointment. At this appointment, a midwife will just ask her straightforward questions about her medical history and lifestyle, and will calculate the approximate due date of your baby (although this date won’t be confirmed until the first scan). The midwife will also measure \(mother)’s BMI, take her blood pressure and a urine sample, and do some blood tests. At the end of the appointment, the midwife will give \(mother) her all-important maternity notes - these need to be kept safe as she’ll need to take them to every appointment, and eventually the birth!
+
+                    """,
+                    9 : """
+                    You might notice \(mother)’s breasts are starting to get larger. This is because pregnancy hormones cause the fat in breasts to get thicker, and the milk ducts to multiply, ready for breastfeeding.
+                    
+                    This week, the combination of tiredness and nausea might be starting to get \(mother) down. If you think she might be feeling a bit low, why not suggest a date night. If she doesn’t feel like going out, you could surprise her with a night in with her favourite dinner (one that won’t make her retch at the smell) and a feel-good film.
+
+                    """,
+                    10 : """
+                    Headaches and dizziness are really common in pregnancy, but \(mother) should make sure she doesn’t take ibuprofen (such as Nurofen) or aspirin. If she needs a painkiller, paracetamol should do the trick.
+                    
+                    \(mother)’s nausea and tiredness might be getting more intense. If she’s feeling down about it, reassure her that these symptoms should start getting much better soon. In fact, many women feel better than ever once they reach the second trimester - which is only a few weeks away!
+
+                    """,
+                    11 : """
+                    Baby is not yet in existence
+                    """,
+                    12 : """
+                    Baby is not yet in existence
+                    """,
+                    13 :"""
+                    Baby is not yet in existence
+                    """,
+                    14 : """
+                    Baby is not yet in existence
+                    """,
+                    15 : """
+                    Baby is not yet in existence
+                    """,
+                    16 : """
+                    Baby is not yet in existence
+                    """,
+                    17 : """
+                    Baby is not yet in existence
+                    """,
+                    18 : """
+                    Baby is not yet in existence
+                    """,
+                    19 : """
+                    Baby is not yet in existence
+                    """,
+                    20 : """
+                    Baby is not yet in existence
+                    """,
+                    21 : """
+                    Baby is not yet in existence
+                    """,
+                    22 : "Baby is getting bigger",
+                    23 : "Baby is getting bigger",
+                    24 : "Baby is getting bigger",
+                    25 : "Baby is getting bigger",
+                    26 : "Baby is getting bigger",
+                    27 : "Baby is getting bigger",
+                    28 : "Baby is getting bigger",
+                    29 : "Baby is getting bigger",
+                    30 : "Baby is getting bigger",
+                    31 : "Baby is getting bigger",
+                    32 : "Baby is getting bigger",
+                    33 : "Baby is getting bigger",
+                    34 : "Baby is getting bigger",
+                    35 : "Baby is getting bigger",
+                    36 : "Baby is getting bigger",
+                    37 : "Baby is getting bigger",
+                    38 : "Baby is getting bigger",
+                    39 : "Baby is getting bigger",
+                    40 : "Baby is getting bigger",
+                    41 : "Baby is getting bigger",
+                    42 : "Baby is getting bigger"
+                ]
+                
+                
+                cell.textView.text = motherWeeks[collectionView.tag + 3]
+                     cell.personIcon.image = #imageLiteral(resourceName: "femaleIcon")
             } else if indexPath.item == 3 {
-                cell.textView.text = "screen3"
+                cell.textView.text = factWeeks[collectionView.tag + 3]
             } else {
                 cell.textView.text = "screen4"
             }
 
             return cell
         }
-        //  cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
-        
-//        return cell
+     
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

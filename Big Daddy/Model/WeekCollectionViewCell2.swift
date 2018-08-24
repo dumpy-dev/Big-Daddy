@@ -8,6 +8,7 @@
 import UIKit
 
 class WeekCollectionViewCell2: UICollectionViewCell {
+    @IBOutlet weak var personIcon: UIImageView!
     
     @IBOutlet weak var textView: UITextView!
 }
