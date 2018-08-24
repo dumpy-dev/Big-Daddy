@@ -379,14 +379,111 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! WeekCollectionViewCell2
 
-            let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
-            let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
+//            let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
+           // let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
 
             if indexPath.item == 1 {
-                
+                  let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
+                let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
                 
                 cell.personIcon.image = #imageLiteral(resourceName: "fetusIcon")
 
+                 var babyWeeks : [Int : String] = [
+                1 : "Baby is not yet in existence",
+                2 :"""
+                Baby is not yet in existence
+                """,
+                3 : """
+                When men ejaculate, they release around 100 million sperm. Of these, only a few hundred actually reach the woman’s egg. On the surface of the egg are receptors which make sure only one sperm gets in.
+                """,
+                4 : """
+                Your baby is only just about real and you could only just about see it with the naked eye
+                """,
+                5 : """
+                Congratulations! You’re going to be a Big Daddy!
+                    
+                Your baby may only be the size of a peppercorn, but he or she is doing some serious growing. Incredibly, their heart is already functioning and blood is starting to circulate around their body. Their brain and spinal cord are also developing, and a string of blood vessels – which will eventually become the baby’s umbilical cord – connects the baby to \(mother).  This umbilical cord is a life line which will deliver essential oxygen and nutrients from \(mother) to baby.
+
+                """,
+                6 : """
+                Find yourself wondering whether your baby will inherit Uncle Tim’s unusually large ears? This week, your baby’s facial features are starting to develop and they have a thin layer of transparent skin. Having said that, don’t get too excited yet. With a bump for their head, buds for arms and legs and a tail, your baby still looks more like a tadpole than anything else.
+                    
+                The baby’s little heart is beating at around 100 beats per minute (our resting heart rate is usually between 60 and 80) and could even be seen on a vaginal ultrasound around now.
+
+                """,
+                7 :"""
+                This week, your peanut is fast becoming a little brain box! Their head is growing faster than [X] to make room for their expanding and increasingly complex brain. It won’t be too long before their brain will start to process sounds and light from inside \(mother)’s uterus. In other news, your baby’s inner ear is starting to develop and their arms and legs are getting longer. Their sex organs are also taking shape, but don’t start painting the nursery yet - it’s still too early to tell on a scan whether they’re a boy or a girl.
+                """,
+                8 : """
+                Breaking news: this week, your baby’s tail has almost completely disappeared! Phew. Their tail will be replaced by their tailbone (coccyx), which is at the base of their spine. Your baby’s limbs are getting longer still, and there are notches visible on their hands where tiny little fingers will develop. Their facial features are becoming more defined, and their eyes have tiny eyelids.
+                """,
+                9 : """
+                This is a big week for your little [X]: all their body parts are now present! Although your baby doesn’t look like a tadpole any more, their fingers and toes are still webbed, Kermit-style. Your baby’s eyes are getting bigger and their mouth and tongue are developing quickly, with tiny tastebuds starting to appear. \(mother)’s placenta is almost fully functioning and will soon provide vital nutrients to your baby.
+                """,
+                10 : """
+                This week, your little chilli pepper has got more moves than Jagger as they discover that they can wriggle their arms and legs. Your baby is too small for \(mother) to feel these jerky movements quite yet, but it will only be a couple of months before those first flutters are felt.
+                    
+                Amazingly, your baby’s jawbones already contain all of their milk teeth. Their heart is fully developed and is beating at around 180 beats per minute – that’s up to three times the speed of yours.
+
+                """,
+                11 : """
+                Good news: your baby now looks less like E.T. and more like a miniature human. They have developed almost all of their critical organs and body parts, and will spend the next six months getting bigger, stronger and ready for the outside world. Your baby’s fingers and toes are no longer webbed, and they even have tiny fingernails. Their eyelids have grown, and their eyes will stay closed for another few months.
+                """,
+                12 : """
+                Baby is not yet in existence
+                """,
+                13 :"""
+                Baby is not yet in existence
+                """,
+                14 : """
+                Baby is not yet in existence
+                """,
+                15 : """
+                Baby is not yet in existence
+                """,
+                16 : """
+                Baby is not yet in existence
+                """,
+                17 : """
+                Baby is not yet in existence
+                """,
+                18 : """
+                Baby is not yet in existence
+                """,
+                19 : """
+                Baby is not yet in existence
+                """,
+                20 : """
+                Baby is not yet in existence
+                """,
+                21 : """
+                Baby is not yet in existence
+                """,
+                22 : "Baby is getting bigger",
+                23 : "Baby is getting bigger",
+                24 : "Baby is getting bigger",
+                25 : "Baby is getting bigger",
+                26 : "Baby is getting bigger",
+                27 : "Baby is getting bigger",
+                28 : "Baby is getting bigger",
+                29 : "Baby is getting bigger",
+                30 : "Baby is getting bigger",
+                31 : "Baby is getting bigger",
+                32 : "Baby is getting bigger",
+                33 : "Baby is getting bigger",
+                34 : "Baby is getting bigger",
+                35 : "Baby is getting bigger",
+                36 : "Baby is getting bigger",
+                37 : "Baby is getting bigger",
+                38 : "Baby is getting bigger",
+                39 : "Baby is getting bigger",
+                40 : "Baby is getting bigger",
+                41 : "Baby is getting bigger",
+                42 : "Baby is getting bigger"
+                ]
+                
+                
+                
                 cell.textView.text = babyWeeks[collectionView.tag + 3]
             } else if indexPath.item == 2 {
                    let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
