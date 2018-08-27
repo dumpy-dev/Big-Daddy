@@ -18,6 +18,8 @@
 		2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF59207819740043590E /* TodayDetailViewController.swift */; };
 		2445DF5C2079167E0043590E /* ToolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */; };
 		2445DF5E2079180D0043590E /* ToolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */; };
+		245196882130B4E5008D4CF4 /* seahorse.png in Resources */ = {isa = PBXBuildFile; fileRef = 245196872130B4E5008D4CF4 /* seahorse.png */; };
+		2451968A2130BBA5008D4CF4 /* week4.png in Resources */ = {isa = PBXBuildFile; fileRef = 245196892130BBA3008D4CF4 /* week4.png */; };
 		246BE866210DB4690087B095 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BE865210DB4690087B095 /* RatingsViewController.swift */; };
 		2479AA9020E8287400C9D0C0 /* ChecklistRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2479AA8F20E8287400C9D0C0 /* ChecklistRealm.swift */; };
 		2479AA9220E828C200C9D0C0 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2479AA9120E828C200C9D0C0 /* ChecklistViewController.swift */; };
@@ -55,6 +57,8 @@
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
 		2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewController.swift; sourceTree = "<group>"; };
 		2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewCell.swift; sourceTree = "<group>"; };
+		245196872130B4E5008D4CF4 /* seahorse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seahorse.png; sourceTree = "<group>"; };
+		245196892130BBA3008D4CF4 /* week4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = week4.png; sourceTree = "<group>"; };
 		246BE865210DB4690087B095 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
 		2479AA8F20E8287400C9D0C0 /* ChecklistRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistRealm.swift; sourceTree = "<group>"; };
 		2479AA9120E828C200C9D0C0 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +105,9 @@
 		242864942058115A00E54FCF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				245196872130B4E5008D4CF4 /* seahorse.png */,
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
+				245196892130BBA3008D4CF4 /* week4.png */,
 				24CC36872124C4F100AD9CF7 /* octopusIcon.png */,
 				24CC367B212059EC00AD9CF7 /* collectionBlue.png */,
 				24CC36792120579600AD9CF7 /* collectionBackground.png */,
@@ -279,11 +285,13 @@
 			files = (
 				24CC36882124C4F100AD9CF7 /* octopusIcon.png in Resources */,
 				242F3796211F1C1E00ADE38E /* Announcing The Pregnancy.html in Resources */,
+				245196882130B4E5008D4CF4 /* seahorse.png in Resources */,
 				24CC367C212059EE00AD9CF7 /* collectionBlue.png in Resources */,
 				247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */,
 				242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */,
 				24CC367A2120579700AD9CF7 /* collectionBackground.png in Resources */,
 				247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */,
+				2451968A2130BBA5008D4CF4 /* week4.png in Resources */,
 				247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

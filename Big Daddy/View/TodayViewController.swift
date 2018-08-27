@@ -10,10 +10,41 @@ import UIKit
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var weeklyTableView: UITableView!
     // Setup the IB outlets and initial variables
     @IBOutlet weak var babyAgeLabel: UILabel!
- 
+    @IBOutlet weak var mothersNameField: UITextField!
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    func animateIn() {
+        self.view.addSubview(setupPopup)
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            self.weeklyTableView.alpha = 0.0
+        }, completion: nil)
+        mothersNameField.becomeFirstResponder()
+        setupPopup.center.x = self.view.center.x
+        setupPopup.frame.origin.y = self.view.frame.height / 4
+        setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        setupPopup.alpha = 0
+        UIView.animate(withDuration: 0.4) {
+            self.setupPopup.alpha = 1
+            self.setupPopup.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateOut() {
+        self.setupPopup.removeFromSuperview()
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.weeklyTableView.alpha = 1.0
+        }, completion: nil)
+        mothersNameField.resignFirstResponder()
+    }
+    
+    
+    
+    
  
     
     var selectedPerson = ""
@@ -21,8 +52,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //Setup the arrays and dictionaries
     
-    let babySizeImageArray = ["week1to3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
-    let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a pint", "the height of a beer bottle", "the length of a tube of pringes", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the weight of a basketball", "the weight of War and Peace", "the size of X", "the weight of a tomahawk steak", "the size of a steering wheel", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the size of a brick", "the height of a car tyre", "the size of X", "the length of a wood saw", "the length of a full rack of ribs"]
+    let babySizeImageArray = ["week0-3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
+    let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a pint", "the height of a beer bottle", "the length of a tube of pringes", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the size of a violin", "the weight of War and Peace", "the size of X", "the weight of a tomahawk steak", "the size of a steering wheel", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the size of a brick", "the height of a car tyre", "the size of X", "the length of a wood saw", "the length of a full rack of ribs"]
     let weightArray = ["week1to3", "0.01g", "0.2g", "0.4g", "0.8g", "1g", "2g", "4g", "8g", "14g", "23g", "45g", "70g", "100g", "140g", "190g", "240g", "300g", "360g", "430g", "500g", "600g", "660g", "760g", "875g", "1kg", "1.1kg", "1.3kg", "1.5kg", "1.7kg", "1.9kg", "2.1kg", "2.4kg", "2.6kg", "2.9kg", "3.1kg", "3.3kg", "3.5kg", "3.5kg", "3.5kg"]
     let lengthArray = ["week1to3", "1mm", "2mm", "4mm", "8mm", "1.6cm", "2.3cm", "3.4cm", "4.1cm", "5.4cm", "7.4cm", "8.5cm", "10.1cm", "11.6cm", "12.9cm", "14.2cm", "15cm", "25.6cm", "26.6cm", "27.8cm", "29cm", "30cm", "34.6cm", "35.6cm", "36.6cm", "37.6cm", "38.6cm", "39.9cm", "41.1cm", "42.4cm", "43.7cm", "45cm", "46.2cm", "47.4cm", "48.6cm", "49.8cm", "50.6cm", "51.2cm", "51.2cm", "51.2cm"]
   
@@ -165,12 +196,20 @@ Baby is still not in existence
     
     
     
+ 
+    
+    @IBAction func donePressed(_ sender: Any) {
+        animateOut()
+    }
     
     
     
+   // @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var skipPressed: UIButton!
     
-    
-    
+    @IBAction func skipPressed(_ sender: Any) {
+    animateOut()
+    }
     
     
     
@@ -191,6 +230,9 @@ Baby is still not in existence
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        weeklyTableView.alpha = 0
+        animateIn()
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
 //      weekCollectionView.delegate = self
 //        weekCollectionView.dataSource = self
 //       self.navigationController?.isNavigationBarHidden = true
@@ -302,49 +344,55 @@ Baby is still not in existence
 }
 
 
-extension UICollectionView {
-    func scrollToNearestVisibleCollectionViewCell() {
-        self.decelerationRate = UIScrollViewDecelerationRateNormal
-        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 100))
-        var closestCellIndex = -1
-        var closestDistance: Float = .greatestFiniteMagnitude
-        for i in 0..<self.visibleCells.count {
-            let cell = self.visibleCells[i]
-            let cellWidth = cell.bounds.size.width
-            let cellCenter = Float(cell.frame.origin.x + cellWidth / 100)
-            
-            // Now calculate closest cell
-            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
-            if distance < closestDistance {
-                closestDistance = distance
-                closestCellIndex = self.indexPath(for: cell)!.row
-            }
-        }
-        if closestCellIndex != -1 {
-            self.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-        }
-    }
-}
+//extension UICollectionView {
+//    func scrollToNearestVisibleCollectionViewCell() {
+//        self.decelerationRate = UIScrollViewDecelerationRateNormal
+//        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 100))
+//        var closestCellIndex = -1
+//        var closestDistance: Float = .greatestFiniteMagnitude
+//        for i in 0..<self.visibleCells.count {
+//            let cell = self.visibleCells[i]
+//            let cellWidth = cell.bounds.size.width
+//            let cellCenter = Float(cell.frame.origin.x + cellWidth / 100)
+//            
+//            // Now calculate closest cell
+//            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+//            if distance < closestDistance {
+//                closestDistance = distance
+//                closestCellIndex = self.indexPath(for: cell)!.row
+//            }
+//        }
+//        if closestCellIndex != -1 {
+//            self.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+//        }
+//    }
+//}
 
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
+    
+    func buttonFunction(sender: UIButton){
+        print(sender.tag)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         return 5
     }
     
+ 
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
-        
-        
-        
-        
+    
         if indexPath.item == 0 {
             print("this is the collection view tag: \(collectionView.tag)")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
 
-            // cell.backgroundColor = model[collectionView.tag][indexPath.item]
+          
 
+//                        cell.rightArrow.tag = indexPath.row
+//                        cell.rightArrow.addTarget(self,
+//                                                  action: #selector(self.buttonFunction(_:)),
+//                                                  for: .touchUpInside)
+//            
 
             cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
 
@@ -606,11 +654,14 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
      
     }
+        
+       
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+    
+    
+    
     }
-}
-
+    
+    
 
 

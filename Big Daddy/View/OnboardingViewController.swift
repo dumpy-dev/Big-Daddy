@@ -14,7 +14,7 @@ class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, Swift
         var swiftyOnboard: SwiftyOnboard!
         let colors:[UIColor] = [#colorLiteral(red: 0.02788124846, green: 0.4410022836, blue: 0.5705418906, alpha: 0.66),#colorLiteral(red: 0.03611627438, green: 0.5941812396, blue: 0.7784456025, alpha: 0.66),#colorLiteral(red: 1, green: 0.7970821868, blue: 0.4988624448, alpha: 1)]
         var titleArray: [String] = ["Welcome to Big Daddy!", "Loads of information", "Time to customise"]
-        var subTitleArray: [String] = ["being involved in your partner's pregnancy is the best possible\n way to start your relationship\n with your new baby.", "Go to Articles for ready to use information\n and have a look at the Tools for some\n useful bits of kit", "Now you can add in some useful\n bits of information\n and find out how\n big your baby is!"]
+        var subTitleArray: [String] = ["Congratulations!\n You’re going to be a BigDaddy.", "Keep track of how your baby\n is growing", "Get yourself Daddy-ready\n with our hospital bag checklist"]
         
         var gradiant: CAGradientLayer = {
             //Gradiant for the background view
@@ -70,7 +70,7 @@ class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, Swift
         let view = SwiftyOnboardPage()
         
         //Set the image on the page:
-        view.imageView.image = UIImage(named: "week35")
+        view.imageView.image = #imageLiteral(resourceName: "seahorse")
         
         //Set the font and color for the labels:
         view.title.font = UIFont(name: "Gill Sans", size: 28)

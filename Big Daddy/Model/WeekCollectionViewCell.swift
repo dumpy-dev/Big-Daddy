@@ -9,9 +9,20 @@ import UIKit
 
 class WeekCollectionViewCell: UICollectionViewCell {
     
+   var rightPressed : Bool = false
+    @IBAction func rightArrowPressed(_ sender: Any) {
+       skipCell()
+    }
+    
+    @IBOutlet weak var rightArrow: UIButton!
     @IBOutlet weak var babyImage: UIImageView!
     @IBOutlet weak var babyWeight: UILabel!
     @IBOutlet weak var babyHeight: UILabel!
     @IBOutlet weak var weeksElapsed: UILabel!
     @IBOutlet weak var babySize: UILabel!
+    
+    func skipCell() {
+        print("skip cell")
+    }
+    
 }
