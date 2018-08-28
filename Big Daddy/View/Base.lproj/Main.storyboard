@@ -284,6 +284,9 @@
                         <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="QlC-jz-7FJ"/>
                     </view>
+                    <connections>
+                        <outlet property="likeButton" destination="u0b-Wc-odh" id="k1A-3H-xCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQY-mu-ThL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Dmh-iO-aoG" userLabel="Exit" sceneMemberID="exit"/>

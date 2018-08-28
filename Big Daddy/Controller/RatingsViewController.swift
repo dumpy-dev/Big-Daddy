@@ -13,8 +13,15 @@ import MessageUI
 
 class RatingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
+    var timer : Timer?
+    
+    @IBOutlet weak var likeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(likeWiggle), userInfo: nil, repeats: true)
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +57,29 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
         controller.dismiss(animated: true)
     }
 
+    @objc func likeWiggle() {
+        likeButton.wiggle()
+    }
+    
+    
+}
+
+import UIKit
+
+extension UIButton {
+    // Animate a button, adding effect of "something went wrong". Useful for login button for example.
+    @objc func wiggle() {
+        let wiggleAnim = CABasicAnimation(keyPath: "position")
+        wiggleAnim.duration = 0.05
+        wiggleAnim.repeatCount = 8
+        wiggleAnim.autoreverses = true
+        wiggleAnim.fromValue = CGPoint(x: self.center.x - 4.0, y: self.center.y)
+        wiggleAnim.toValue = CGPoint(x: self.center.x + 4.0, y: self.center.y)
+        layer.add(wiggleAnim, forKey: "position")
+    }
+    
+   
+    
 }
 
 
