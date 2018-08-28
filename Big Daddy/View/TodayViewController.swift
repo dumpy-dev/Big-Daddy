@@ -10,43 +10,72 @@ import UIKit
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+   //MARK - code for the Setup Popup
+    
     @IBOutlet var setupPopup: UIView!
-    @IBOutlet weak var weeklyTableView: UITableView!
-    // Setup the IB outlets and initial variables
-    @IBOutlet weak var babyAgeLabel: UILabel!
     @IBOutlet weak var mothersNameField: UITextField!
-    
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-    func animateIn() {
-        self.view.addSubview(setupPopup)
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-            self.weeklyTableView.alpha = 0.0
-        }, completion: nil)
-        mothersNameField.becomeFirstResponder()
-        setupPopup.center.x = self.view.center.x
-        setupPopup.frame.origin.y = self.view.frame.height / 4
-        setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-        setupPopup.alpha = 0
-        UIView.animate(withDuration: 0.4) {
-            self.setupPopup.alpha = 1
-            self.setupPopup.transform = CGAffineTransform.identity
+    @IBOutlet weak var dateSwitch: UISwitch!
+    @IBAction func skipPressed(_ sender: Any) {
+        animateOut()
+    }
+    @IBAction func donePressed(_ sender: Any) {
+        UserDefaults.standard.set(mothersNameField.text, forKey: "mother")
+        if dateSwitch.isOn {
+            datePicker.minimumDate = nil
+            let daysToAdd = 280
+            let calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: datePicker.date)
+            let now = Date()
+            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate!).day
+            let weeksLeft : Int = diffInDays!/7
+            let weeksElapsed : Int = 40 - weeksLeft
+            let remainderDays : Int = diffInDays!%7
+            let remainderDaysElapsed : Int = 7 - remainderDays
+            
+            print("\(mothersNameField.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
+            
+            if weeksLeft >= 40 {
+                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                self.datePicker.setDate(Date() as Date, animated: true)
+            } else {
+                let dateEntered = datePicker.date
+                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+                UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
+                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+            }
+        } else {
+            datePicker.minimumDate = Date()
+            let now = Date()
+            let calculatedDueDate = datePicker.date
+            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate).day
+            let weeksLeft : Int = diffInDays!/7
+            let remainderDays : Int = diffInDays!%7
+            print("You have \(weeksLeft) weeks and \(remainderDays) days to go!")
+            let weeksElapsed : Int = 40 - weeksLeft
+            let remainderDaysElapsed : Int = 7 - remainderDays
+            if weeksLeft >= 40 {
+                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                self.datePicker.setDate(Date() as Date, animated: true)
+            } else {
+                let dateEntered = datePicker.date
+                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+                UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
+                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+            }
         }
+        animateOut()
     }
     
-    func animateOut() {
-        self.setupPopup.removeFromSuperview()
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-            self.weeklyTableView.alpha = 1.0
-        }, completion: nil)
-        mothersNameField.resignFirstResponder()
-    }
+    // MARK - code for remaining functionality
+
     
-    
-    
-    
- 
-    
+    @IBOutlet weak var babyAgeLabel: UILabel!
     var selectedPerson = ""
     var selectionTag = 0
     
@@ -152,26 +181,16 @@ Baby is still not in existence
         42 : "Baby is getting bigger"
     ]
     
-    // New tablecollection view
-    
-    
-    
-   
-    
-    
-    
-    
-    
+    // MARK: Setup for the tableview
+    @IBOutlet weak var weeklyTableView: UITableView!
     var storedOffsets = [Int: CGFloat]()
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return babySizeImageArray.count
+        return 38
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
         return cell
     }
     
@@ -190,39 +209,6 @@ Baby is still not in existence
         storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
     
-    
-    // end of tablecollection view
-    
-    
-    
-    
- 
-    
-    @IBAction func donePressed(_ sender: Any) {
-        animateOut()
-    }
-    
-    
-    
-   // @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var skipPressed: UIButton!
-    
-    @IBAction func skipPressed(_ sender: Any) {
-    animateOut()
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     // viewDidLoad and viewWillAppear
  override var prefersStatusBarHidden: Bool {
        return true
@@ -233,11 +219,10 @@ Baby is still not in existence
         weeklyTableView.alpha = 0
         animateIn()
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-//      weekCollectionView.delegate = self
-//        weekCollectionView.dataSource = self
+
 //       self.navigationController?.isNavigationBarHidden = true
    weeklyTableView.allowsSelection = false
-        // weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
+         weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
     
@@ -267,48 +252,19 @@ Baby is still not in existence
         
         if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-      // weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
-//            (at: indexPath, at: UITableViewScrollPosition.centeredVertically, animated: true)
+       weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
+       (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
-          //  weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
-        } 
-//        if displayedWeeksElapsed  {
-//            babyAgeLabel.text = "your baby is \(weeksElapsed) weeks old"
-//        } else {
-//            babyAgeLabel.text = "  ?"
-//        }
-        
+           weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+        }
             }
 
-    @IBAction func fetusPressed(_ sender: Any) {
-        selectionTag = 1
-        performSegue(withIdentifier: "thisWeekSegue", sender: nil)
-    }
-    
-    @IBAction func femalePressed(_ sender: Any) {
-        selectionTag = 2
-        performSegue(withIdentifier: "thisWeekSegue", sender: nil)
-    }
-    
-    @IBAction func articlesPressed(_ sender: Any) {
-        selectionTag = 3
-        performSegue(withIdentifier: "articlesSegue", sender: nil)
-    }
-    
-    @IBAction func factsPressed(_ sender: Any) {
-        selectionTag = 4
-        performSegue(withIdentifier: "thisWeekSegue", sender: (Any).self)
-    }
+   
     
     
     
-   //Additional functions
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//            return 38
-//    }
-//    
-//
+
     
     
 
@@ -321,52 +277,68 @@ Baby is still not in existence
         }
     }
 
-
+   
+  
+    
+    
+    
+    
+    
+//
 //    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
+//        self.centerTable()
 //    }
 //
 //    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 //        if !decelerate {
-//            self.weekCollectionView.scrollToNearestVisibleCollectionViewCell()
+//            self.centerTable()
 //        }
 //    }
-   
-  
+//
+//    func centerTable()
+//    {
+//        let midX:CGFloat = self.weeklyTableView.bounds.midX
+//        let midY:CGFloat = self.weeklyTableView.bounds.midY
+//        let midPoint:CGPoint = CGPoint(x: midX, y: midY)
+//
+//        if let pathForCenterCell:IndexPath = self.weeklyTableView .indexPathForRow(at: midPoint)
+//        {
+//            self.weeklyTableView.scrollToRow(at: pathForCenterCell, at: .middle, animated: true)
+//        }
+//    }
     
 
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
 
-//extension UICollectionView {
-//    func scrollToNearestVisibleCollectionViewCell() {
-//        self.decelerationRate = UIScrollViewDecelerationRateNormal
-//        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 100))
-//        var closestCellIndex = -1
-//        var closestDistance: Float = .greatestFiniteMagnitude
-//        for i in 0..<self.visibleCells.count {
-//            let cell = self.visibleCells[i]
-//            let cellWidth = cell.bounds.size.width
-//            let cellCenter = Float(cell.frame.origin.x + cellWidth / 100)
-//            
-//            // Now calculate closest cell
-//            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
-//            if distance < closestDistance {
-//                closestDistance = distance
-//                closestCellIndex = self.indexPath(for: cell)!.row
-//            }
-//        }
-//        if closestCellIndex != -1 {
-//            self.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-//        }
-//    }
-//}
+extension UITableView {
+    func scrollToNearestVisibleTableViewCell() {
+        self.decelerationRate = UIScrollViewDecelerationRateNormal
+        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.height / 2))
+        var closestCellIndex = -1
+        var closestDistance: Float = .greatestFiniteMagnitude
+        for i in 0..<self.visibleCells.count {
+            let cell = self.visibleCells[i]
+            let cellWidth = cell.bounds.size.height
+            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
+            
+            // Now calculate closest cell
+            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+            if distance < closestDistance {
+                closestDistance = distance
+                closestCellIndex = self.indexPath(for: cell)!.row
+            }
+        }
+        if closestCellIndex != -1 {
+            self.scrollToRow(at: IndexPath(row:closestCellIndex, section: 0), at: .middle, animated: true)
+        }
+    }
+}
 
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
     
@@ -654,14 +626,34 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
      
     }
-        
-       
+
+    }
+
+
+extension TodayViewController {
     
-    
-    
-    
+    func animateIn() {
+        self.view.addSubview(setupPopup)
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            self.weeklyTableView.alpha = 0.0
+        }, completion: nil)
+        mothersNameField.becomeFirstResponder()
+        setupPopup.center.x = self.view.center.x
+        setupPopup.frame.origin.y = self.view.frame.height / 4
+        setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        setupPopup.alpha = 0
+        UIView.animate(withDuration: 0.4) {
+            self.setupPopup.alpha = 1
+            self.setupPopup.transform = CGAffineTransform.identity
+        }
     }
     
-    
-
+    func animateOut() {
+        self.setupPopup.removeFromSuperview()
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.weeklyTableView.alpha = 1.0
+        }, completion: nil)
+        mothersNameField.resignFirstResponder()
+    }
+}
 

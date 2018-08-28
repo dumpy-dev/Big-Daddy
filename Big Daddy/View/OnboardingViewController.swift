@@ -11,11 +11,15 @@ import UIKit
 
 class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, SwiftyOnboardDelegate {
     
-        var swiftyOnboard: SwiftyOnboard!
-        let colors:[UIColor] = [#colorLiteral(red: 0.02788124846, green: 0.4410022836, blue: 0.5705418906, alpha: 0.66),#colorLiteral(red: 0.03611627438, green: 0.5941812396, blue: 0.7784456025, alpha: 0.66),#colorLiteral(red: 1, green: 0.7970821868, blue: 0.4988624448, alpha: 1)]
-        var titleArray: [String] = ["Welcome to Big Daddy!", "Loads of information", "Time to customise"]
-        var subTitleArray: [String] = ["Congratulations!\n You’re going to be a BigDaddy.", "Keep track of how your baby\n is growing", "Get yourself Daddy-ready\n with our hospital bag checklist"]
-        
+    
+    
+    
+    @IBOutlet weak var onboardingImage: UIImageView!
+    var swiftyOnboard: SwiftyOnboard!
+        let colors:[UIColor] = [#colorLiteral(red: 0.02788124846, green: 0.4410022836, blue: 0.5705418906, alpha: 0.66),#colorLiteral(red: 0.03611627438, green: 0.5941812396, blue: 0.7784456025, alpha: 0.66),#colorLiteral(red: 0.06278733818, green: 0.7784456025, blue: 0.6169850729, alpha: 0.66),#colorLiteral(red: 0.403744119, green: 0.7784456025, blue: 0.359671103, alpha: 0.66),#colorLiteral(red: 1, green: 0.7970821868, blue: 0.4988624448, alpha: 1),#colorLiteral(red: 0.7784456025, green: 0.433761619, blue: 0.001610333474, alpha: 0.66)]
+    var titleArray: [String] = ["Welcome to Big Daddy!", "Swipe up and down", "Swipe right", "Articles", "Tools", "Settings"]
+        var subTitleArray: [String] = ["Congratulations!\n You’re going to be a BigDaddy.", "Find out what your partner /nand your baby to be /nare going through", "Get yourself Daddy-ready\n with our hospital bag checklist", "articles", "tools", "settings"]
+    var imageArray = [#imageLiteral(resourceName: "seahorse"), #imageLiteral(resourceName: "right-arrow"), #imageLiteral(resourceName: "right-arrow"), #imageLiteral(resourceName: "articlesIcon"), #imageLiteral(resourceName: "toolsIcon"), #imageLiteral(resourceName: "settings@x3")]
         var gradiant: CAGradientLayer = {
             //Gradiant for the background view
             let blue = UIColor(red: 69/255, green: 127/255, blue: 202/255, alpha: 1.0).cgColor
@@ -31,10 +35,13 @@ class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, Swift
             gradient()
             UIApplication.shared.statusBarStyle = .lightContent
             
+            
             swiftyOnboard = SwiftyOnboard(frame: view.frame, style: .light)
             view.addSubview(swiftyOnboard)
             swiftyOnboard.dataSource = self as! SwiftyOnboardDataSource
             swiftyOnboard.delegate = self as! SwiftyOnboardDelegate
+           
+            
         }
         
         func gradient() {
@@ -44,12 +51,12 @@ class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, Swift
         }
         
     @objc func handleSkip() {
-            swiftyOnboard?.goToPage(index: 2, animated: true)
+            swiftyOnboard?.goToPage(index: 5, animated: true)
         }
         
     @objc func handleContinue(sender: UIButton) {
             let index = sender.tag
-        if index >= 2 {
+        if index >= 5 {
             performSegue(withIdentifier: "onboardingSegue", sender: self)
         } else {
             swiftyOnboard?.goToPage(index: index + 1, animated: true)
@@ -58,7 +65,7 @@ class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, Swift
         }
     func swiftyOnboardNumberOfPages(_ swiftyOnboard: SwiftyOnboard) -> Int {
         //Number of pages in the onboarding:
-        return 3
+        return 6
     }
     
     func swiftyOnboardBackgroundColorFor(_ swiftyOnboard: SwiftyOnboard, atIndex index: Int) -> UIColor? {
@@ -70,8 +77,11 @@ class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, Swift
         let view = SwiftyOnboardPage()
         
         //Set the image on the page:
-        view.imageView.image = #imageLiteral(resourceName: "seahorse")
-        
+      
+ 
+        view.imageView.image = imageArray[index]
+    
+     
         //Set the font and color for the labels:
         view.title.font = UIFont(name: "Gill Sans", size: 28)
         view.subTitle.font = UIFont(name: "Gill Sans", size: 22)
