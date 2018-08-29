@@ -1564,23 +1564,16 @@ Do not delete this provision (except upon legal advice). Without this provision,
                     <view key="view" contentMode="scaleToFill" id="egV-CQ-Bu2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLK-X1-LnV">
-                                <rect key="frame" x="107" y="119" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="U4x-8Y-YTN"/>
                     </view>
                     <connections>
-                        <outlet property="onboardingImage" destination="QLK-X1-LnV" id="hq2-fu-hXh"/>
                         <segue destination="4RV-b3-94j" kind="show" identifier="onboardingSegue" id="d7q-Dj-Lgb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWf-bi-Ic7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1408" y="910"/>
+            <point key="canvasLocation" x="-1408.6956521739132" y="909.78260869565224"/>
         </scene>
         <!--Intro Screen View Controller-->
         <scene sceneID="D1G-MC-8Rf">

@@ -8,9 +8,10 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
    //MARK - code for the Setup Popup
+    
     
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
@@ -19,7 +20,15 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func skipPressed(_ sender: Any) {
         animateOut()
     }
+    
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        mothersNameField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func donePressed(_ sender: Any) {
+    
         UserDefaults.standard.set(mothersNameField.text, forKey: "mother")
         if dateSwitch.isOn {
             datePicker.minimumDate = nil
@@ -214,12 +223,21 @@ Baby is still not in existence
        return true
     }
     
+   
     override func viewDidLoad() {
+       
+        
         super.viewDidLoad()
+        
+        
         weeklyTableView.alpha = 0
         animateIn()
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-
+        if mothersNameField.isEditing == true {
+            mothersNameField.becomeFirstResponder()
+        }
+        mothersNameField.delegate = self
+        
 //       self.navigationController?.isNavigationBarHidden = true
    weeklyTableView.allowsSelection = false
          weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
@@ -355,6 +373,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         if indexPath.item == 0 {
+//            weeklyTableView.isScrollEnabled = true
             print("this is the collection view tag: \(collectionView.tag)")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
 
@@ -397,6 +416,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return cell
 
         } else {
+//            weeklyTableView.isScrollEnabled = false
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! WeekCollectionViewCell2
 
 //            let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
@@ -637,7 +657,8 @@ extension TodayViewController {
         UIView.animate(withDuration: 0.4, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.weeklyTableView.alpha = 0.0
         }, completion: nil)
-        mothersNameField.becomeFirstResponder()
+      //  mothersNameField.becomeFirstResponder()
+        
         setupPopup.center.x = self.view.center.x
         setupPopup.frame.origin.y = self.view.frame.height / 4
         setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
@@ -653,7 +674,7 @@ extension TodayViewController {
         UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             self.weeklyTableView.alpha = 1.0
         }, completion: nil)
-        mothersNameField.resignFirstResponder()
+     //   mothersNameField.resignFirstResponder()
     }
 }
 
