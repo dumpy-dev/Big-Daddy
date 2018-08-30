@@ -22,6 +22,8 @@
 		2451968A2130BBA5008D4CF4 /* week4.png in Resources */ = {isa = PBXBuildFile; fileRef = 245196892130BBA3008D4CF4 /* week4.png */; };
 		2451968C21373AFA008D4CF4 /* swiperight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2451968B21373AFA008D4CF4 /* swiperight.png */; };
 		2451968E21373E43008D4CF4 /* swipeToRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2451968D21373E43008D4CF4 /* swipeToRight.png */; };
+		2451969021374230008D4CF4 /* decoderCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2451968F2137422F008D4CF4 /* decoderCollectionViewController.swift */; };
+		24519692213742CC008D4CF4 /* decoderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24519691213742CC008D4CF4 /* decoderCollectionViewCell.swift */; };
 		246BE866210DB4690087B095 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BE865210DB4690087B095 /* RatingsViewController.swift */; };
 		2479AA9020E8287400C9D0C0 /* ChecklistRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2479AA8F20E8287400C9D0C0 /* ChecklistRealm.swift */; };
 		2479AA9220E828C200C9D0C0 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2479AA9120E828C200C9D0C0 /* ChecklistViewController.swift */; };
@@ -63,6 +65,8 @@
 		245196892130BBA3008D4CF4 /* week4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = week4.png; sourceTree = "<group>"; };
 		2451968B21373AFA008D4CF4 /* swiperight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swiperight.png; sourceTree = "<group>"; };
 		2451968D21373E43008D4CF4 /* swipeToRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipeToRight.png; sourceTree = "<group>"; };
+		2451968F2137422F008D4CF4 /* decoderCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = decoderCollectionViewController.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Controller/decoderCollectionViewController.swift"; sourceTree = "<absolute>"; };
+		24519691213742CC008D4CF4 /* decoderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decoderCollectionViewCell.swift; sourceTree = "<group>"; };
 		246BE865210DB4690087B095 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
 		2479AA8F20E8287400C9D0C0 /* ChecklistRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistRealm.swift; sourceTree = "<group>"; };
 		2479AA9120E828C200C9D0C0 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 		247FB47C204B47C700BF4CB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2451968F2137422F008D4CF4 /* decoderCollectionViewController.swift */,
+				24519691213742CC008D4CF4 /* decoderCollectionViewCell.swift */,
 				24CC368521237B4100AD9CF7 /* OnboardingViewController.swift */,
 				246BE865210DB4690087B095 /* RatingsViewController.swift */,
 				24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */,
@@ -380,6 +386,8 @@
 				2479AA9020E8287400C9D0C0 /* ChecklistRealm.swift in Sources */,
 				24DBDE252097891D00AE1C86 /* ThisWeekViewController.swift in Sources */,
 				2445DF58207811750043590E /* TodayCollectionViewCell.swift in Sources */,
+				24519692213742CC008D4CF4 /* decoderCollectionViewCell.swift in Sources */,
+				2451969021374230008D4CF4 /* decoderCollectionViewController.swift in Sources */,
 				2400FAD220697A00003D5CB9 /* ArticleViewController.swift in Sources */,
 				24DBDE2720979DA500AE1C86 /* ArticlesForTodayViewController.swift in Sources */,
 				24DBDE2D20A788EC00AE1C86 /* ContractionCounterViewController.swift in Sources */,
