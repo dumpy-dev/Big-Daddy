@@ -23,9 +23,9 @@ class ToolsCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "hypnosis"), #imageLiteral(resourceName: "rating"), #imageLiteral(resourceName: "terms")]
-        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Hypnobirthing", "Rate Us!", "T&Cs"]
-        arrayOfTypes = ["Timer", "Checklist", "Checklist", "General", "General", "General"]
+        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "hypnosis"), #imageLiteral(resourceName: "search"), #imageLiteral(resourceName: "bodysuit"), #imageLiteral(resourceName: "rating"), #imageLiteral(resourceName: "terms")]
+        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Hypnobirthing", "Baby Decoder", "Baby Checklist", "Rate Us!", "T&Cs"]
+        arrayOfTypes = ["Timer", "Checklist", "Checklist", "General", "BabyDecoder", "BabyChecklist", "General", "General"]
         }
 
     override func didReceiveMemoryWarning() {
@@ -66,8 +66,12 @@ class ToolsCollectionViewController: UICollectionViewController {
         } else if indexPath.row == 3 {
             performSegue(withIdentifier: "toolsGeneralSegue", sender: nil)
         } else if indexPath.row == 4 {
-            performSegue(withIdentifier: "ratingsSegue", sender: nil)
+            performSegue(withIdentifier: "decoderSegue", sender: nil)
         } else if indexPath.row == 5 {
+            performSegue(withIdentifier: "babyChecklistSegue", sender: nil)
+        } else if indexPath.row == 6 {
+            performSegue(withIdentifier: "ratingsSegue", sender: nil)
+        } else if indexPath.row == 7 {
             performSegue(withIdentifier: "generalTextSegue", sender: nil)
         }
         

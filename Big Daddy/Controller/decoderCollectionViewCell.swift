@@ -1,14 +1,16 @@
 //
 //  decoderCollectionViewCell.swift
-//  Big Daddy
+//  
 //
-//  Created by Georgie and Chris on 29/08/2018.
-//  Copyright © 2018 Dumpy Developments. All rights reserved.
+//  Created by Georgie and Chris on 01/09/2018.
 //
 
 import UIKit
 
 class decoderCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var decoderImage: UIImageView!
+    @IBOutlet weak var itemImage: UIImageView!
+//    @IBOutlet weak var itemName: UILabel!
+//    @IBOutlet weak var itemIsEssential: UILabel!
+//    @IBOutlet weak var itemDescription: UILabel!
 }

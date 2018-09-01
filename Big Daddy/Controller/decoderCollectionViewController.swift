@@ -1,104 +1,111 @@
 //
 //  decoderCollectionViewController.swift
-//  
+//  Big Daddy
 //
-//  Created by Georgie and Chris on 29/08/2018.
+//  Created by Georgie and Chris on 01/09/2018.
+//  Copyright © 2018 Dumpy Developments. All rights reserved.
 //
 
 import UIKit
 
-//private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "Cell"
 
-class decoderCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class decoderCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet weak var decoderCollectionView: UICollectionView!
     
     var arrayOfImages = [UIImage]()
-    var arrayOfIDs = [String]()
-    var arrayOfTypes = [String]()
-    var checklistID = 0
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    //Setup array values on view loading
-    
+    var arrayOfItems = [String]()
+    var arrayOfDescriptions = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "hypnosis"), #imageLiteral(resourceName: "rating"), #imageLiteral(resourceName: "terms")]
-        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Hypnobirthing", "Rate Us!", "T&Cs"]
-        arrayOfTypes = ["Timer", "Checklist", "Checklist", "General", "General", "General"]
+
+      //  self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
+        decoderCollectionView.delegate = self
+        decoderCollectionView.dataSource = self
+       
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
-    
-    
-    // Setup collection view count and image/text for cells
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+    // MARK: UICollectionViewDataSource
+
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return 5
+    }
+
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! decoderCollectionViewCell
-        
-        cell.decoderImage.image = arrayOfImages[indexPath.row]
-        //cell.toolsLabel.text = "test"
-        
+    
+        cell.itemImage.image = #imageLiteral(resourceName: "seahorse")
+  
         return cell
     }
-    
-    // Setup segues for each collection view cell selection
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if indexPath.row == 0 {
-            print("tool selected index path 0")
-            performSegue(withIdentifier: "toolsTimerSegue", sender: nil)
-        } else if indexPath.row == 1 {
-            print("tool selected index path 1")
-            checklistID = 1
-            performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
-        } else if indexPath.row == 2 {
-            checklistID = 2
-            performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
-        } else if indexPath.row == 3 {
-            performSegue(withIdentifier: "toolsGeneralSegue", sender: nil)
-        } else if indexPath.row == 4 {
-            performSegue(withIdentifier: "ratingsSegue", sender: nil)
-        } else if indexPath.row == 5 {
-            performSegue(withIdentifier: "generalTextSegue", sender: nil)
-        }
-        
-        
+
+    // MARK: UICollectionViewDelegate
+
+    /*
+    // Uncomment this method to specify if the specified item should be highlighted during tracking
+    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
-    
-    // Prepare for segues to pass data across
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "toolsChecklistSegue" {
-            
-            let checklistSelected : ChecklistViewController = segue.destination as! ChecklistViewController
-            checklistSelected.checklistIdentifier = checklistID
-            
-        }
-        
+    */
+
+    /*
+    // Uncomment this method to specify if the specified item should be selected
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
+    */
+
+    /*
+    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return false
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    
+    }
+    */
+
+}
+
+
+extension decoderCollectionViewController: UIScrollViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = self.decoderCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+        let roundedIndex = round(index)
+        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+    }
     
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
