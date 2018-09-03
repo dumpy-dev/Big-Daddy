@@ -10,7 +10,7 @@ import UIKit
 
 class WeekTableViewCell: UITableViewCell {
 
-    @IBOutlet fileprivate weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
 

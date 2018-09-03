@@ -47,6 +47,7 @@
 		24CC3698212D3A5F00AD9CF7 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */; };
 		24CC3699212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3696212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift */; };
 		24CC369A212D3A5F00AD9CF7 /* WeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3697212D3A5F00AD9CF7 /* WeekTableViewCell.swift */; };
+		24CD0B9E213B32D10041C3FE /* DecoderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CD0B9D213B32D10041C3FE /* DecoderItem.swift */; };
 		24DBDDF9208A840400AE1C86 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */; };
 		24DBDE252097891D00AE1C86 /* ThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */; };
 		24DBDE2720979DA500AE1C86 /* ArticlesForTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */; };
@@ -96,6 +97,7 @@
 		24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekCollectionViewCell.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekCollectionViewCell.swift"; sourceTree = "<absolute>"; };
 		24CC3696212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekCollectionViewCell2.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekCollectionViewCell2.swift"; sourceTree = "<absolute>"; };
 		24CC3697212D3A5F00AD9CF7 /* WeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekTableViewCell.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekTableViewCell.swift"; sourceTree = "<absolute>"; };
+		24CD0B9D213B32D10041C3FE /* DecoderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderItem.swift; sourceTree = "<group>"; };
 		24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
 		24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThisWeekViewController.swift; path = "Big Daddy/Controller/ThisWeekViewController.swift"; sourceTree = SOURCE_ROOT; };
 		24DBDE2620979DA500AE1C86 /* ArticlesForTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesForTodayViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				2400FAD120697A00003D5CB9 /* ArticleViewController.swift */,
 				24A012C22059821700971299 /* ArticlesTableViewController.swift */,
 				24DBDE2A20A0F73600AE1C86 /* Article.swift */,
+				24CD0B9D213B32D10041C3FE /* DecoderItem.swift */,
 				2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */,
 				24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */,
 				242864912057270800E54FCF /* TodayViewController.swift */,
@@ -395,6 +398,7 @@
 				24CC369A212D3A5F00AD9CF7 /* WeekTableViewCell.swift in Sources */,
 				246BE866210DB4690087B095 /* RatingsViewController.swift in Sources */,
 				24C1965E213ACF5000B07DBD /* decoderCollectionViewCell.swift in Sources */,
+				24CD0B9E213B32D10041C3FE /* DecoderItem.swift in Sources */,
 				2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */,
 				24CC368621237B4100AD9CF7 /* OnboardingViewController.swift in Sources */,
 				2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */,
