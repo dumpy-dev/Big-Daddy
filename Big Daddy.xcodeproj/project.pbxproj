@@ -180,6 +180,8 @@
 		247FB47A204B47A800BF4CB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24DBDE2A20A0F73600AE1C86 /* Article.swift */,
+				24CD0B9D213B32D10041C3FE /* DecoderItem.swift */,
 				24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */,
 				24CC3696212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift */,
 				24CC3697212D3A5F00AD9CF7 /* WeekTableViewCell.swift */,
@@ -218,8 +220,6 @@
 				24DBDE242097891D00AE1C86 /* ThisWeekViewController.swift */,
 				2400FAD120697A00003D5CB9 /* ArticleViewController.swift */,
 				24A012C22059821700971299 /* ArticlesTableViewController.swift */,
-				24DBDE2A20A0F73600AE1C86 /* Article.swift */,
-				24CD0B9D213B32D10041C3FE /* DecoderItem.swift */,
 				2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */,
 				24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */,
 				242864912057270800E54FCF /* TodayViewController.swift */,

@@ -10,8 +10,7 @@ import UIKit
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-   //MARK - code for the Setup Popup
-    
+   // Code for the Setup Popup
     
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
@@ -225,11 +224,7 @@ Baby is still not in existence
     
    
     override func viewDidLoad() {
-       
-        
         super.viewDidLoad()
-        
-        
         weeklyTableView.alpha = 0
         animateIn()
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
@@ -237,10 +232,8 @@ Baby is still not in existence
             mothersNameField.becomeFirstResponder()
         }
         mothersNameField.delegate = self
-        
-//       self.navigationController?.isNavigationBarHidden = true
    weeklyTableView.allowsSelection = false
-         weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
+         //weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
     
@@ -658,7 +651,7 @@ extension TodayViewController {
             self.weeklyTableView.alpha = 0.0
         }, completion: nil)
       //  mothersNameField.becomeFirstResponder()
-        
+        self.tabBarItem.isEnabled = false
         setupPopup.center.x = self.view.center.x
         setupPopup.frame.origin.y = self.view.frame.height / 4
         setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
@@ -674,6 +667,28 @@ extension TodayViewController {
         UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             self.weeklyTableView.alpha = 1.0
         }, completion: nil)
+        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? Date()
+        
+        let now = Date()
+        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate).day
+        
+        let weeksLeft : Int = diffInDays!/7
+        let remainderDays : Int = diffInDays!%7
+        let weeksElapsed : Int = 40 - weeksLeft
+        let remainderDaysElapsed : Int = 7 - remainderDays
+        print("Your partner is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
+        print("this is the due date: \(dueDate)")
+        //        weekCollectionView.reloadData()
+//
+//        selectionTag = 0
+//        print("the new selection tag = \(selectionTag)")
+//        self.navigationController?.isNavigationBarHidden = true
+//        selectedPerson = ""
+         let displayedWeeksElapsed = weeksElapsed - 3 ?? 0
+        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+        weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
+        (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+ 
      //   mothersNameField.resignFirstResponder()
     }
 }
