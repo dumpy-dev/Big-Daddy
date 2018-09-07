@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     var dueDate = Date()
+    let realm = try! Realm()
     
     // Setup IBOutlets
     @IBOutlet weak var motherNameEntered: UITextField!
@@ -32,6 +34,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             UIAlertAction in
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
             UserDefaults.standard.synchronize()
+            try! self.realm.write {
+                self.realm.deleteAll()
+            }
 //          
 //let dueDate = Date()
 //            UserDefaults.standard.set(dueDate, forKey: "DueDate")

@@ -17,6 +17,17 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateSwitch: UISwitch!
     @IBAction func skipPressed(_ sender: Any) {
+         UserDefaults.standard.set("your partner", forKey: "mother")
+        
+        let calendar = Calendar.current
+        var component = DateComponents()
+        component.day = -280
+       let calculatedDate = calendar.date(byAdding: component, to: Date())
+        
+        print(calculatedDate)
+        
+        UserDefaults.standard.set(Date(), forKey: "DueDate")
+        //UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
         animateOut()
     }
     
@@ -225,6 +236,7 @@ Baby is still not in existence
    
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         weeklyTableView.alpha = 0
         animateIn()
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
@@ -271,13 +283,6 @@ Baby is still not in existence
         }
             }
 
-   
-    
-    
-    
-
-    
-    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is articlesForTodayViewController {
@@ -326,30 +331,41 @@ Baby is still not in existence
     }
 }
 
+//extension decoderCollectionViewController: UIScrollViewDelegate {
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        let layout = self.decoderCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+//        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+//        var offset = targetContentOffset.pointee
+//        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+//        let roundedIndex = round(index)
+//        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+//        targetContentOffset.pointee = offset
+//    }
 
-extension UITableView {
-    func scrollToNearestVisibleTableViewCell() {
-        self.decelerationRate = UIScrollViewDecelerationRateNormal
-        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.height / 2))
-        var closestCellIndex = -1
-        var closestDistance: Float = .greatestFiniteMagnitude
-        for i in 0..<self.visibleCells.count {
-            let cell = self.visibleCells[i]
-            let cellWidth = cell.bounds.size.height
-            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
-            
-            // Now calculate closest cell
-            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
-            if distance < closestDistance {
-                closestDistance = distance
-                closestCellIndex = self.indexPath(for: cell)!.row
-            }
-        }
-        if closestCellIndex != -1 {
-            self.scrollToRow(at: IndexPath(row:closestCellIndex, section: 0), at: .middle, animated: true)
-        }
-    }
-}
+//}
+//extension UITableView {
+//    func scrollToNearestVisibleTableViewCell() {
+//        self.decelerationRate = UIScrollViewDecelerationRateNormal
+//        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.height / 2))
+//        var closestCellIndex = -1
+//        var closestDistance: Float = .greatestFiniteMagnitude
+//        for i in 0..<self.visibleCells.count {
+//            let cell = self.visibleCells[i]
+//            let cellWidth = cell.bounds.size.height
+//            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
+//
+//            // Now calculate closest cell
+//            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+//            if distance < closestDistance {
+//                closestDistance = distance
+//                closestCellIndex = self.indexPath(for: cell)!.row
+//            }
+//        }
+//        if closestCellIndex != -1 {
+//            self.scrollToRow(at: IndexPath(row:closestCellIndex, section: 0), at: .middle, animated: true)
+//        }
+//    }
+//}
 
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
     
@@ -646,6 +662,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 extension TodayViewController {
     
     func animateIn() {
+        
         self.view.addSubview(setupPopup)
         UIView.animate(withDuration: 0.4, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.weeklyTableView.alpha = 0.0
@@ -663,6 +680,7 @@ extension TodayViewController {
     }
     
     func animateOut() {
+        
         self.setupPopup.removeFromSuperview()
         UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             self.weeklyTableView.alpha = 1.0

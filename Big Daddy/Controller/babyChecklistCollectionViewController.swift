@@ -56,21 +56,32 @@ class babyChecklistCollectionViewController: UIViewController, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
-            print("tool selected index path 0")
-            performSegue(withIdentifier: "toolsTimerSegue", sender: nil)
+              checklistID = 3
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
         } else if indexPath.row == 1 {
-            print("tool selected index path 1")
-            checklistID = 1
-            performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
+            checklistID = 4
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
         } else if indexPath.row == 2 {
-            checklistID = 2
-            performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
+            checklistID = 5
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
         } else if indexPath.row == 3 {
-            performSegue(withIdentifier: "toolsGeneralSegue", sender: nil)
+            checklistID = 6
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
         } else if indexPath.row == 4 {
-            performSegue(withIdentifier: "ratingsSegue", sender: nil)
+            checklistID = 7
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
         } else if indexPath.row == 5 {
-            performSegue(withIdentifier: "generalTextSegue", sender: nil)
+            checklistID = 8
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
+        } else if indexPath.row == 5 {
+            checklistID = 9
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
+        } else if indexPath.row == 5 {
+            checklistID = 10
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
+        } else if indexPath.row == 5 {
+            checklistID = 11
+            performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
         }
         
         
@@ -80,7 +91,7 @@ class babyChecklistCollectionViewController: UIViewController, UICollectionViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "toolsChecklistSegue" {
+        if segue.identifier == "babyChecklistListSegue" {
             
             let checklistSelected : ChecklistViewController = segue.destination as! ChecklistViewController
             checklistSelected.checklistIdentifier = checklistID

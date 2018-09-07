@@ -10,13 +10,16 @@ import UIKit
 import RealmSwift
 
 class ChecklistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var barButton: UIBarButtonItem!
     
+    // Set up variables and defaults
     let mother = UserDefaults.standard.object(forKey: "mother") as? String ?? "your partner"
+    var checklistIdentifier : Int = 0
     @IBOutlet weak var checklistTable: UITableView!
     @IBOutlet var addPopupView: UIView!
-    var checklistIdentifier : Int = 0
     
-    // Realm Setup
+    
+    // Set up Realm
     let realm = try! Realm()
     var itemChecklist:Results<ChecklistRealm> {
         get {
@@ -28,6 +31,22 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             return realm.objects(NameRealm.self)
         }
     }
+    var babyChecklist:Results<BabyChecklistRealm> {
+        get {
+            return realm.objects(BabyChecklistRealm.self)
+        }
+    }
+    // Set up Baby Checklist Arrays
+    var defaultArray : [String] = []
+    let clothesArray : [String] = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs"]
+    let travelArray : [String] = ["Carseat", "Mirror", "Sunshade", "Pram (with bassinet)", " Travel Cot", "Baby carrier", "Changing bag", "Foldable Changing Mat"]
+    let nappyArray : [String] = ["Nappies", "Nappy bags", "Wipes", "Bottom cream", "Changing Mat"]
+    let healthArray : [String] = ["Thermometer", "Sudacrem", "Calpol", "Nail Scissors"]
+    let bathArray : [String] = ["Bath Thermometer", "Towels", "Flannels", "Baby Bath", "Baby Bubblebath"]
+    let sleepingArray : [String] = ["Cot", "Moses Basket", "Swaddling Blankets", "Comforter", "Sleeping Bag", "Sheets", "Waterproof Sheet", "Blanket", "White Noise", "Cot Mattress"]
+    let feedingArray : [String] = ["Bottles", "Steriliser", "Formula", "Breast Pump", "Nipple Shield", "Nipple Barrier Cream", "Breast Feeding Cover"]
+    let miscArray : [String] = ["Books", "Toys", "Dummy", "Teething Toys", "Non-Bio Washing Powder", "Sense of Humour"]
+    let todoArray : [String] = ["Pack Hospital Bag", "Test Fire Alarm", "Test Carbon Monoxide Alarm", "Check Fuel in Car", "Test Route to Hospital", "Wash Baby Clothes", "Build Cot", "Construct Pram", "Fit Car Seat", "Practice Removing Car Seat", "Prepare or Buy Freezer Meals"]
     
     // Setup table
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,10 +56,29 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
      
         if checklistIdentifier == 1 {
         return self.itemChecklist.count
-        } else {
+        } else if checklistIdentifier == 2 {
             return self.nameList.count
+        } else {
+        return self.babyChecklist.count
+   }
+            //else if checklistIdentifier == 4 {
+//        return self.travelArray.count
+//        } else if checklistIdentifier == 5 {
+//        return self.nappyArray.count
+//        } else if checklistIdentifier == 6 {
+//        return self.healthArray.count
+//        } else if checklistIdentifier == 7 {
+//        return self.bathArray.count
+//        } else if checklistIdentifier == 8 {
+//        return self.sleepingArray.count
+//        } else if checklistIdentifier == 9 {
+//        return self.feedingArray.count
+//        } else if checklistIdentifier == 10 {
+//        return self.miscArray.count
+//        } else {
+//        return self.todoArray.count
+//        }
         }
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let bagCell = tableView.dequeueReusableCell(withIdentifier: "checklistCell") as! HospitalBagTableViewCell
@@ -59,7 +97,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
             bagCell.tick.alpha = 1
             }
-        } else {
+        } else if checklistIdentifier == 2 {
             
             let item = nameList[indexPath.row]
             
@@ -67,7 +105,44 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             bagCell.tick.image = nil
             bagCell.selectionStyle = .none
 
+          } else {
+            let item = babyChecklist[indexPath.row]
+            
+            bagCell.itemName.text = defaultArray[indexPath.row]
+           
+            
+            if item.itemCompleted == true {
+                bagCell.itemName.alpha = 0.3
+                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+                bagCell.tick.alpha = 0.3
+            } else {
+                bagCell.itemName.alpha = 1
+                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
+                bagCell.tick.alpha = 1
+            }
         }
+    
+//    } else if checklistIdentifier == 4 {
+//    return self.travelArray.count
+//    } else if checklistIdentifier == 5 {
+//    return self.nappyArray.count
+//    } else if checklistIdentifier == 6 {
+//    return self.healthArray.count
+//    } else if checklistIdentifier == 7 {
+//    return self.bathArray.count
+//    } else if checklistIdentifier == 8 {
+//    return self.sleepingArray.count
+//    } else if checklistIdentifier == 9 {
+//    return self.feedingArray.count
+//    } else if checklistIdentifier == 10 {
+//    return self.miscArray.count
+//    } else {
+//    return self.todoArray.count
+//    }
+        
+        
+        
+        
         if indexPath.row % 2 == 0 {
             bagCell.contentView.backgroundColor = UIColor(red:0.04, green:0.41, blue:0.49, alpha:1.0)
         } else {
@@ -81,8 +156,8 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         return true
     }
     
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+  
         
         if (editingStyle == .delete) && checklistIdentifier == 1 {
             let item = itemChecklist[indexPath.row]
@@ -92,8 +167,16 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         
             tableView.deleteRows(at:[indexPath], with: .automatic)
             tableView.reloadData()
-        } else {
+        } else if (editingStyle == .delete) && checklistIdentifier == 2 {
             let item = nameList[indexPath.row]
+            try! self.realm.write({
+                self.realm.delete(item)
+            })
+            
+            tableView.deleteRows(at:[indexPath], with: .automatic)
+            tableView.reloadData()
+        } else if (editingStyle == .delete) && checklistIdentifier != 1 && checklistIdentifier != 2 {
+            let item = babyChecklist[indexPath.row]
             try! self.realm.write({
                 self.realm.delete(item)
             })
@@ -115,11 +198,22 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                     item.itemPacked = false
                 }
             })
+        } else  if checklistIdentifier != 1 && checklistIdentifier != 2 {
+            let item = babyChecklist[indexPath.row]
+            try! self.realm.write({
+                if (item.itemCompleted == false){
+                    item.itemCompleted = true
+                }else{
+                    item.itemCompleted = false
+                }
+            })
         }
+
             tableView.reloadRows(at: [indexPath], with: .automatic)
         tableView.reloadData()
         
     }
+        
     
     // Setup functions
     
@@ -190,6 +284,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if checklistIdentifier >= 2 {
+            
+           barButton.isEnabled = false
+            barButton.tintColor = UIColor.clear
+        }
+        
             // Setup the standard item list
         if itemChecklist.count == 0 && checklistIdentifier == 1 {
             print("nothing yet added, so defaults implemented")
@@ -203,7 +303,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 self.realm.add(checklistItem)
             })
             }
-        } else if itemChecklist.count == 0 && checklistIdentifier == 2 {
+        } else if nameList.count == 0 && checklistIdentifier == 2 {
             print("nothing yet added, so defaults implemented")
             let defaultItemArray = ["Maximus Decimus Meridius"]
             for item in defaultItemArray{
@@ -214,7 +314,116 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                     self.realm.add(nameItem)
                 })
             }
+        } else if babyChecklist.count == 0 && checklistIdentifier == 3 {
+            print("nothing yet added, so defaults implemented")
+            defaultArray = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs", "test"]
+            for item in defaultArray {
+                print(item)
+                let babyItem = BabyChecklistRealm()
+                babyItem.name = item
+                try! self.realm.write({
+                    self.realm.add(babyItem)
+                })
+            }
         }
+            // else if checklistIdentifier == 4 {
+//            print("nothing yet added, so defaults implemented")
+//            defaultArray = ["Carseat", "Mirror", "Sunshade", "Pram (with bassinet)", " Travel Cot", "Baby carrier", "Changing bag", "Foldable Changing Mat"]
+//            for item in defaultArray {
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+//        } else if checklistIdentifier == 5  {
+//            print("nothing yet added, so defaults implemented")
+//            defaultArray = ["Nappies", "Nappy bags", "Wipes", "Bottom cream", "Changing Mat"]
+//            for item in defaultArray {
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+//        } else if checklistIdentifier == 6 {
+//            print("nothing yet added, so defaults implemented")
+//            let defaultArray = ["Thermometer", "Sudacrem", "Calpol", "Nail Scissors"]
+//            for item in defaultArray{
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+//        }else if checklistIdentifier == 7 {
+//            print("nothing yet added, so defaults implemented")
+//            let defaultArray = ["Bath Thermometer", "Towels", "Flannels", "Baby Bath", "Baby Bubblebath"]
+//            for item in defaultArray{
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+//        }else if checklistIdentifier == 8 {
+//            print("nothing yet added, so defaults implemented")
+//            let defaultArray = ["Cot", "Moses Basket", "Swaddling Blankets", "Comforter", "Sleeping Bag", "Sheets", "Waterproof Sheet", "Blanket", "White Noise", "Cot Mattress"]
+//            for item in defaultArray{
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+//        } else if checklistIdentifier == 9 {
+//            print("nothing yet added, so defaults implemented")
+//            let defaultArray = ["Bottles", "Steriliser", "Formula", "Breast Pump", "Nipple Shield", "Nipple Barrier Cream", "Breast Feeding Cover"]
+//            for item in defaultArray{
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+//        } else if checklistIdentifier == 10 {
+//            print("nothing yet added, so defaults implemented")
+//            let defaultArray = ["Books", "Toys", "Dummy", "Teething Toys", "Non-Bio Washing Powder", "Sense of Humour"]
+//            for item in defaultArray{
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+//        } else if checklistIdentifier == 11 {
+//            print("nothing yet added, so defaults implemented")
+//            let defaultArray = ["Pack Hospital Bag", "Test Fire Alarm", "Test Carbon Monoxide Alarm", "Check Fuel in Car", "Test Route to Hospital", "Wash Baby Clothes", "Build Cot", "Construct Pram", "Fit Car Seat", "Practice Removing Car Seat", "Prepare or Buy Freezer Meals"]
+//            for item in defaultArray{
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         checklistTable.reloadData()
         
         

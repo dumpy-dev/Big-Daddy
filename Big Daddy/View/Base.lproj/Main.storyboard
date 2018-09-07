@@ -479,7 +479,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Hcf-rb-qeB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kx0-fT-XzD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kx0-fT-XzD" colorLabel="IBBuiltInLabel-Blue">
                             <connections>
                                 <action selector="addPressed:" destination="nqU-FL-ZaU" id="7Sp-Mu-StV"/>
                             </connections>
@@ -488,6 +488,7 @@
                     <connections>
                         <outlet property="addPopupView" destination="N40-8J-9zF" id="ak6-Lv-WHN"/>
                         <outlet property="addTextField" destination="kRg-0p-1WW" id="8NK-Vu-i0b"/>
+                        <outlet property="barButton" destination="kx0-fT-XzD" id="PuI-M1-wJa"/>
                         <outlet property="checklistTable" destination="uVw-TT-Vdx" id="VPD-rq-LE1"/>
                     </connections>
                 </viewController>

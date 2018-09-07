@@ -30,7 +30,6 @@ class ToolsCollectionViewController: UICollectionViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -83,133 +82,8 @@ class ToolsCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toolsChecklistSegue" {
-        
             let checklistSelected : ChecklistViewController = segue.destination as! ChecklistViewController
             checklistSelected.checklistIdentifier = checklistID
-            
         }
-        
     }
-   
-    
-    
 }
-
-
-
-
-// Below are probably all extraneous experimental blocks of code!
-
-
-
-
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        let storyboardType = arrayOfTypes[indexPath.row]
-//
-//        let viewController = storyboard?.instantiateViewController(withIdentifier: storyboardType)
-//
-//        self.navigationController?.pushViewController(viewController!, animated: true)
-//
-//print(indexPath.row)
-//
-//    }
-
-
-
-
-
-
-    
-//    var toolName = String()
-//    let toolsArray = ["week19", "fetusIcon", "femaleIcon", "fetusIcon", "factsIcon", "articlesIcon", "week19"]
-//
-//
-//    var cellSelected : Int = 0
-//
-//
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//
-//    }
-//
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "toolSelectedSegue" {
-//
-//          var selectedRowIndex = self.collectionView!.indexPathsForSelectedItems![0]
-//            var toolSelected : ToolsViewController = segue.destination as! ToolsViewController
-//
-//
-//         print(selectedRowIndex)
-//toolSelected.toolName = toolsArray[selectedRowIndex]
-//        }
-//
-//    }
-//
-//
-//
-//
-//
-//
-//
-//
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//
-//        return toolsArray.count
-//
-//    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "toolsCell", for: indexPath) as! ToolsCollectionViewCell
-//
-//       cell.toolsIcon.image = UIImage(named:toolsArray[indexPath.row])
-//        cell.toolsLabel.text = "testing"
-//
-//        return cell
-//    }
-//
-//
-//
-//    // MARK: UICollectionViewDelegate
-//
-//    /*
-//    // Uncomment this method to specify if the specified item should be highlighted during tracking
-//    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//    */
-//
-//    /*
-//    // Uncomment this method to specify if the specified item should be selected
-//    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//    */
-//
-//    /*
-//    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-//    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-//        return false
-//    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-//        return false
-//    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-//
-//    }
-//    */
-//
-//}
-
-

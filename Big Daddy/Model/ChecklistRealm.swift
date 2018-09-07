@@ -22,6 +22,14 @@ class NameRealm: Object {
     @objc dynamic var name = ""
 }
 
+class BabyChecklistRealm: Object {
+    
+    @objc dynamic var babyItem = ""
+    @objc dynamic var itemCompleted = false
+    @objc dynamic var name = ""
+    
+}
+
 class ContractionCounterRealm: Object {
     
     @objc dynamic var timeOfDay : Date? = nil
