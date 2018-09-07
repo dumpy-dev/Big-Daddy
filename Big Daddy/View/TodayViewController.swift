@@ -12,6 +12,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
    // Code for the Setup Popup
     
+    @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -237,6 +238,10 @@ Baby is still not in existence
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        tabBar.isEnabled = false
+        
+        
+        
         weeklyTableView.alpha = 0
         animateIn()
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")

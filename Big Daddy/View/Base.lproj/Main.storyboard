@@ -1397,6 +1397,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                         <outlet property="dateSwitch" destination="0Tl-23-NWf" id="ucX-dP-aZQ"/>
                         <outlet property="mothersNameField" destination="oAR-bn-TuD" id="lBe-4l-g4K"/>
                         <outlet property="setupPopup" destination="kbQ-vt-QuC" id="PfY-HY-Jxc"/>
+                        <outlet property="tabBar" destination="MOW-hs-vK2" id="o1q-BS-cgm"/>
                         <outlet property="weeklyTableView" destination="bDS-ke-aH1" id="tG6-4d-IA1"/>
                         <segue destination="s0Z-49-wg1" kind="show" identifier="articlesSegue" id="53f-0g-9T1"/>
                         <segue destination="bmI-ti-pqe" kind="show" identifier="thisWeekSegue" id="PD2-xi-uEG"/>

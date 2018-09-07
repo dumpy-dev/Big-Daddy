@@ -37,7 +37,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     // Set up Baby Checklist Arrays
-    var defaultArray : [String] = []
+    var defaultArray : [String] = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs", "Carseat", "Mirror", "Sunshade", "Pram (with bassinet)", " Travel Cot", "Baby carrier", "Changing bag", "Foldable Changing Mat"]
     let clothesArray : [String] = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs"]
     let travelArray : [String] = ["Carseat", "Mirror", "Sunshade", "Pram (with bassinet)", " Travel Cot", "Baby carrier", "Changing bag", "Foldable Changing Mat"]
     let nappyArray : [String] = ["Nappies", "Nappy bags", "Wipes", "Bottom cream", "Changing Mat"]
@@ -47,37 +47,71 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     let feedingArray : [String] = ["Bottles", "Steriliser", "Formula", "Breast Pump", "Nipple Shield", "Nipple Barrier Cream", "Breast Feeding Cover"]
     let miscArray : [String] = ["Books", "Toys", "Dummy", "Teething Toys", "Non-Bio Washing Powder", "Sense of Humour"]
     let todoArray : [String] = ["Pack Hospital Bag", "Test Fire Alarm", "Test Carbon Monoxide Alarm", "Check Fuel in Car", "Test Route to Hospital", "Wash Baby Clothes", "Build Cot", "Construct Pram", "Fit Car Seat", "Practice Removing Car Seat", "Prepare or Buy Freezer Meals"]
-    
+
     // Setup table
     func numberOfSections(in tableView: UITableView) -> Int {
+        if checklistIdentifier <= 2 {
         return 1
+        } else {
+            return 9
+        }
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+        if checklistIdentifier >= 3 {
+        if section == 0 {
+        return "Clothes"
+        } else if section == 1 {
+            return "Travel"
+        } else if section == 2 {
+            return "Nappy"
+        }else if section == 3 {
+            return "Health"
+        }else if section == 4 {
+            return "Bathtime"
+        } else if section == 5 {
+            return "Sleeping"
+        } else if section == 6 {
+            return "Feeding"
+        }else if section == 7 {
+            return "Miscellaneous"
+        }else if section == 8 {
+            return "To Do"
+        }
+    }
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
         if checklistIdentifier == 1 {
         return self.itemChecklist.count
         } else if checklistIdentifier == 2 {
             return self.nameList.count
+        } else if checklistIdentifier >= 3 {
+            if section == 0 {
+        return self.clothesArray.count
+        } else if section == 1 {
+        return self.travelArray.count
+        } else if section == 2  {
+        return self.nappyArray.count
+        } else if section == 3 {
+        return self.healthArray.count
+        } else if section == 4 {
+        return self.bathArray.count
+        } else if section == 5 {
+        return self.sleepingArray.count
+        } else if section == 6 {
+        return self.feedingArray.count
+        } else if section == 7 {
+        return self.miscArray.count
         } else {
-        return self.babyChecklist.count
-   }
-            //else if checklistIdentifier == 4 {
-//        return self.travelArray.count
-//        } else if checklistIdentifier == 5 {
-//        return self.nappyArray.count
-//        } else if checklistIdentifier == 6 {
-//        return self.healthArray.count
-//        } else if checklistIdentifier == 7 {
-//        return self.bathArray.count
-//        } else if checklistIdentifier == 8 {
-//        return self.sleepingArray.count
-//        } else if checklistIdentifier == 9 {
-//        return self.feedingArray.count
-//        } else if checklistIdentifier == 10 {
-//        return self.miscArray.count
-//        } else {
-//        return self.todoArray.count
-//        }
+        return self.todoArray.count
+        }
+        } else {
+            return 1
+        }
         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,22 +139,69 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             bagCell.tick.image = nil
             bagCell.selectionStyle = .none
 
-          } else {
-            let item = babyChecklist[indexPath.row]
+          } else if checklistIdentifier == 3 {
+
+                if indexPath.section == 0 {
+                   bagCell.itemName.text = clothesArray[indexPath.row]
+                } else if indexPath.section == 1 {
+                    bagCell.itemName.text = travelArray[indexPath.row]
+                } else if indexPath.section == 2  {
+                    bagCell.itemName.text = nappyArray[indexPath.row]
+                } else if indexPath.section == 3 {
+                    bagCell.itemName.text = healthArray[indexPath.row]
+                } else if indexPath.section == 4 {
+                    bagCell.itemName.text = bathArray[indexPath.row]
+                } else if indexPath.section == 5 {
+                    bagCell.itemName.text = sleepingArray[indexPath.row]
+                } else if indexPath.section == 6 {
+                    bagCell.itemName.text = feedingArray[indexPath.row]
+                } else if indexPath.section == 7 {
+                    bagCell.itemName.text = miscArray[indexPath.row]
+                } else {
+                    bagCell.itemName.text = todoArray[indexPath.row]
+                }
+            } else {
+                return bagCell
+            }
             
-            bagCell.itemName.text = defaultArray[indexPath.row]
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+           // let item = babyChecklist[indexPath.row]
+            
+          //  bagCell.itemName.text = defaultArray[indexPath.row]
            
             
-            if item.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
-        }
+//            if item.itemCompleted == true {
+//                bagCell.itemName.alpha = 0.3
+//                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+//                bagCell.tick.alpha = 0.3
+//            } else {
+//                bagCell.itemName.alpha = 1
+//                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
+//                bagCell.tick.alpha = 1
+//            }
+        
     
 //    } else if checklistIdentifier == 4 {
 //    return self.travelArray.count
@@ -142,7 +223,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         
         
         
-        
+
         if indexPath.row % 2 == 0 {
             bagCell.contentView.backgroundColor = UIColor(red:0.04, green:0.41, blue:0.49, alpha:1.0)
         } else {
@@ -284,10 +365,13 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if checklistIdentifier >= 2 {
+        if checklistIdentifier >= 3 {
             
            barButton.isEnabled = false
             barButton.tintColor = UIColor.clear
+        } else {
+            barButton.isEnabled = true
+            barButton.tintColor = nil
         }
         
             // Setup the standard item list
@@ -314,18 +398,18 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                     self.realm.add(nameItem)
                 })
             }
-        } else if babyChecklist.count == 0 && checklistIdentifier == 3 {
-            print("nothing yet added, so defaults implemented")
-            defaultArray = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs", "test"]
-            for item in defaultArray {
-                print(item)
-                let babyItem = BabyChecklistRealm()
-                babyItem.name = item
-                try! self.realm.write({
-                    self.realm.add(babyItem)
-                })
-            }
-        }
+//        } else if babyChecklist.count == 0 && checklistIdentifier == 3 {
+//            print("nothing yet added, so defaults implemented")
+//            defaultArray = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs", "test"]
+//            for item in defaultArray {
+//                print(item)
+//                let babyItem = BabyChecklistRealm()
+//                babyItem.name = item
+//                try! self.realm.write({
+//                    self.realm.add(babyItem)
+//                })
+//            }
+  }
             // else if checklistIdentifier == 4 {
 //            print("nothing yet added, so defaults implemented")
 //            defaultArray = ["Carseat", "Mirror", "Sunshade", "Pram (with bassinet)", " Travel Cot", "Baby carrier", "Changing bag", "Foldable Changing Mat"]
