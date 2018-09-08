@@ -142,7 +142,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
           } else if checklistIdentifier == 3 {
 
                 if indexPath.section == 0 {
-                   bagCell.itemName.text = clothesArray[indexPath.row]
+                bagCell.itemName.text = clothesArray[indexPath.row]
                 } else if indexPath.section == 1 {
                     bagCell.itemName.text = travelArray[indexPath.row]
                 } else if indexPath.section == 2  {
@@ -163,31 +163,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 return bagCell
             }
+       
+        if  bagCell.isSelected == true {
+            print (indexPath.row)
+        }
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-           // let item = babyChecklist[indexPath.row]
+         // let item = babyChecklist[indexPath.row]
             
           //  bagCell.itemName.text = defaultArray[indexPath.row]
            
@@ -280,14 +261,18 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
             })
         } else  if checklistIdentifier != 1 && checklistIdentifier != 2 {
-            let item = babyChecklist[indexPath.row]
-            try! self.realm.write({
-                if (item.itemCompleted == false){
-                    item.itemCompleted = true
-                }else{
-                    item.itemCompleted = false
-                }
-            })
+            print(indexPath.row)
+            let row = indexPath.row
+            let section = indexPath.section
+            
+//            let item = babyChecklist[indexPath.row]
+//            try! self.realm.write({
+//                if (item.itemCompleted == false){
+//                    item.itemCompleted = true
+//                }else{
+//                    item.itemCompleted = false
+//                }
+//            })
         }
 
             tableView.reloadRows(at: [indexPath], with: .automatic)
