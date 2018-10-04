@@ -280,11 +280,11 @@ Baby is still not in existence
         
         if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-       weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
-       (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+//       weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
+//       (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
-           weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+//           weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         }
             }
 
@@ -675,7 +675,10 @@ extension TodayViewController {
       //  mothersNameField.becomeFirstResponder()
         self.tabBarItem.isEnabled = false
         setupPopup.center.x = self.view.center.x
-        setupPopup.frame.origin.y = self.view.frame.height / 4
+        setupPopup.center.y = self.view.center.y
+        
+        // setupPopup.frame.origin.y = self.view.frame.height / 4
+        // setupPopup.frame.origin.x = self.view.frame.height / 4
         setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         setupPopup.alpha = 0
         UIView.animate(withDuration: 0.4) {
@@ -709,9 +712,9 @@ extension TodayViewController {
 //        selectedPerson = ""
          let displayedWeeksElapsed = weeksElapsed - 3 ?? 0
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-        weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
-        (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
- 
+//        weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
+//        (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+// 
      //   mothersNameField.resignFirstResponder()
     }
 }

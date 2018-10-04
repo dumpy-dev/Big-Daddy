@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ToolsCollectionViewController: UICollectionViewController {
+class ToolsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     // Initialise arrays
     
@@ -38,6 +38,19 @@ class ToolsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrayOfImages.count
     }
+    
+func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //2
+//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+//        let availableWidth = view.frame.width - paddingSpace
+//        let widthPerItem = availableWidth / itemsPerRow
+   let availableWidth = view.frame.width
+    let cellWidth = availableWidth / 2 - 20
+        return CGSize(width: cellWidth, height: cellWidth)
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "toolsCell", for: indexPath) as! ToolsCollectionViewCell
