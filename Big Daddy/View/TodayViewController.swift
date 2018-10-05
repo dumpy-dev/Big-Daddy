@@ -238,6 +238,28 @@ Baby is still not in existence
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        
+        
+//
+//        let blurEffect = UIBlurEffect(style: .light)
+//        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurredEffectView.frame = view.bounds
+//        view.addSubview(blurredEffectView)
+
+//
+//        let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
+//        let vibrancyEffectView = UIVisualEffectView(effect: vibrancyEffect)
+//        vibrancyEffectView.frame = view.bounds
+//
+//        vibrancyEffectView.contentView.addSubview(segmentedControl)
+//        blurredEffectView.contentView.addSubview(vibrancyEffectView)
+//
+        
+
+        
+        
+        
+        
         tabBar.isEnabled = false
         
         
