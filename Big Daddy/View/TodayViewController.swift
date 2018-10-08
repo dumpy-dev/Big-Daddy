@@ -12,6 +12,12 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
    // Code for the Setup Popup
     
+    @IBOutlet weak var sizingView: UIView!
+    
+    
+    
+    
+    
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
@@ -221,6 +227,13 @@ Baby is still not in existence
         tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
         tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
     }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return sizingView.frame.height
+    }
+    
     
      func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
@@ -686,7 +699,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 
 
-extension TodayViewController {
+extension TodayViewController: UICollectionViewDelegateFlowLayout {
     
     func animateIn() {
         
@@ -739,6 +752,22 @@ extension TodayViewController {
 // 
      //   mothersNameField.resignFirstResponder()
     }
+    
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellWidth = sizingView.frame.width
+        let cellHeight = sizingView.frame.height
+        
+    return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    
+    
+    
 }
 
 
