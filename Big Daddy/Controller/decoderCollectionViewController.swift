@@ -11,6 +11,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class decoderCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     @IBOutlet weak var decoderCollectionView: UICollectionView!
     
     var arrayOfImages = [UIImage]()
@@ -82,6 +83,9 @@ var itemArray = [Item]()
        
         return cell
     }
+    
+    
+ 
 
     // MARK: UICollectionViewDelegate
 
@@ -118,6 +122,7 @@ var itemArray = [Item]()
 
 
 extension decoderCollectionViewController: UIScrollViewDelegate {
+    
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.decoderCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
@@ -128,4 +133,15 @@ extension decoderCollectionViewController: UIScrollViewDelegate {
         targetContentOffset.pointee = offset
     }
     
+}
+
+extension decoderCollectionViewController: UICollectionViewDelegateFlowLayout {
+
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+    let cellWidth = decoderCollectionView.frame.width
+    let cellHeight = decoderCollectionView.frame.height
+    
+    return CGSize(width: cellWidth, height: cellHeight)
+}
 }
