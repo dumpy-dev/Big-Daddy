@@ -20,8 +20,6 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(likeWiggle), userInfo: nil, repeats: true)
-        
-       
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +62,7 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
     
 }
 
-import UIKit
+//import UIKit
 
 extension UIButton {
     // Animate a button, adding effect of "something went wrong". Useful for login button for example.

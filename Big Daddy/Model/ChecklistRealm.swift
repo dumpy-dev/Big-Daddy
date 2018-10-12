@@ -33,7 +33,7 @@ class BabyChecklistRealm: Object {
 class ContractionCounterRealm: Object {
     
     @objc dynamic var timeOfDay : Date? = nil
-    @objc dynamic var lengthOfContraction = 0
+    @objc dynamic var lengthOfContraction : String = ""
     @objc dynamic var interval : Int = 0
     @objc dynamic var strengthOfContraction : Int = 0
     

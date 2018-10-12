@@ -8,10 +8,7 @@
 import UIKit
 
 class decoderCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
-  //  @IBOutlet weak var itemIsEssential: UILabel!
- 
     @IBOutlet weak var itemDescription: UITextView!
 }
