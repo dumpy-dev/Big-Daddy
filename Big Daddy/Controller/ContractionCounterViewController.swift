@@ -23,12 +23,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     var sec = 0
     var diffMins = 0
     var diffSecs = 0
-    //    var realTimeArray : [Date] = []
-    //    var contractionTimeArray : [Int] = []
-    //    var gapTimeArray : [Int] = []
-    // var hrs = 0
-    // var diffHrs = 0
-    
+   
     // MARK:- Realm setup
     let realm = try! Realm()
     var timerData:Results<ContractionCounterRealm> {
@@ -45,8 +40,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     
     // MARK:- Timer functions set up
     func runTimer() {
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateTimer)), userInfo: nil, repeats: true)
-       
+
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateLabels(t:))), userInfo: nil, repeats: true)
          isTimerRunning = true
     }
@@ -74,21 +68,21 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     }
     
   @objc func pauseWhenBackground() {
-        self.timer.invalidate()
+    if isTimerRunning == true { self.timer.invalidate()
         let shared = UserDefaults.standard
         shared.set(Date(), forKey: "savedTime")
         print("This is the saved time: \(Date())")
     }
+    }
     
   @objc func willEnterForeground() {
-//        if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
-//            (diffHrs, diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
-//            self.refresh(hours: diffHrs, mins: diffMins, secs: diffSecs)
-//        }
-        if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
+
+    if isTimerRunning == true {
+    if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
             (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
             self.refresh(mins: diffMins, secs: diffSecs)
         }
+    }
     }
     
     
@@ -97,10 +91,6 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         if (self.sec == 59) {
             self.min += 1
             self.sec = 0
-//            if (self.min == 60) {
-//                self.hrs += 1
-//                self.min = 0
-//            }
         } else {
             self.sec += 1
         }
@@ -114,7 +104,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     }
     
     func refresh (mins: Int, secs: Int) {
-       // self.hrs += hours
+       
         self.min += mins
         self.sec += secs
         self.timerLabel.text = String(format: "%02i:%02i", self.min, self.sec)
@@ -197,59 +187,49 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         self.present(alertController, animated: true, completion: nil)
     }
  
-    //TODO:- add notifications for leaving the screen but staying within app
     
+    // MARK:- View loading, appearing and disappearing functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground), name: .UIApplicationDidEnterBackground, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        willEnterForeground()
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        pauseWhenBackground()
+    }
     
     // MARK:- Setup the table for displaying results
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return realTimeArray.count
         return self.timerData.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContractionCounterTableViewCell
-    
         let time = timerData[indexPath.row]
-         let interval = intervalData[indexPath.row]
-        
+        let interval = intervalData[indexPath.row]
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .medium
-        //cell.realTimeLabel!.text = "\(dateFormatter.string(from: realTimeArray[indexPath.row] ))"
-      //  cell.contractionTimeLabel!.text = "\(contractionTimeArray[indexPath.row]) s"
-   
         cell.realTimeLabel.text = "\(dateFormatter.string(from: time.timeOfDay! ))"
          cell.contractionTimeLabel!.text = "\(time.lengthOfContraction) s"
-        
-        
         if indexPath.row == 0 {
             cell.contractionGapLabel!.text = "-"
         } else {
-            
             let intervalSeconds = interval.interval
-       
             let minutes = intervalSeconds/60
             let remainderSeconds = intervalSeconds % 60
             print("\(minutes)m and \(remainderSeconds)s")
-            
             cell.contractionGapLabel!.text = ("\(minutes)m\(remainderSeconds)s")
         }
-        
         if indexPath.row % 2 == 0 {
             cell.contentView.backgroundColor = UIColor(red:0.04, green:0.41, blue:0.49, alpha:1.0)
         } else {
@@ -273,5 +253,4 @@ class ContractionCounterTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }
