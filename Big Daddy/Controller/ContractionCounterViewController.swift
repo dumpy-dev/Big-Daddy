@@ -46,8 +46,8 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     // MARK:- Timer functions set up
     func runTimer() {
 //        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateTimer)), userInfo: nil, repeats: true)
-        
-         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateLabels(t:))), userInfo: nil, repeats: true)
+       
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateLabels(t:))), userInfo: nil, repeats: true)
          isTimerRunning = true
     }
     
@@ -73,14 +73,14 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
     
-    func pauseWhenBackground() {
+  @objc func pauseWhenBackground() {
         self.timer.invalidate()
         let shared = UserDefaults.standard
         shared.set(Date(), forKey: "savedTime")
         print("This is the saved time: \(Date())")
     }
     
-    func willEnterForeground() {
+  @objc func willEnterForeground() {
 //        if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
 //            (diffHrs, diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
 //            self.refresh(hours: diffHrs, mins: diffMins, secs: diffSecs)
@@ -125,7 +125,11 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     
     @IBAction func stopPressed(_ sender: Any) {
         
+        
         if isTimerRunning == true {
+            self.timer.invalidate()
+            min = 0
+            sec = 0
             let timerItem = ContractionCounterRealm()
             timerItem.timeOfDay = Date()
             timerItem.lengthOfContraction = timerLabel.text!
@@ -133,9 +137,8 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
                 self.realm.add(timerItem)
             })
             isTimerRunning = false
-            timer.invalidate()
+           
             runSecondaryTimer()
-            // seconds = 0
             timerTable.reloadData()
             timerLabel.text = "00:00"
         } else {
@@ -194,8 +197,13 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         self.present(alertController, animated: true, completion: nil)
     }
  
+    //TODO:- add notifications for leaving the screen but staying within app
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground), name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
