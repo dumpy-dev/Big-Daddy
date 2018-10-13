@@ -14,6 +14,8 @@ class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, Swift
 
 
 
+    
+    
 
     @IBOutlet weak var onboardingImage: UIImageView!
     var swiftyOnboard: SwiftyOnboard!
@@ -42,9 +44,32 @@ class OnboardingViewController: UIViewController, SwiftyOnboardDataSource, Swift
             swiftyOnboard.dataSource = self as! SwiftyOnboardDataSource
             swiftyOnboard.delegate = self as! SwiftyOnboardDelegate
 
-
+            
+//            if let numberOfViews = UserDefaults.standard.object(forKey: "newViews") {
+//                print("this screen has already been viewed before")
+//                let viewCount = 2
+//                UserDefaults.standard.set(viewCount, forKey: "newViews")
+//                  moveOn()
+//            } else {
+//            let shared = UserDefaults.standard
+//                let newViews = 1
+//            shared.set(newViews, forKey: "newViews")
+//                print(newViews)
+//            }
+            
+    
         }
 
+   
+    
+    func moveOn() {
+        
+        performSegue(withIdentifier: "onboardingSegue", sender: self)
+    }
+    
+    
+    
+    
         func gradient() {
             //Add the gradiant to the view:
             self.gradiant.frame = view.bounds

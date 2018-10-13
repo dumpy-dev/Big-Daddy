@@ -16,7 +16,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     
-    
+    var viewCount = 0
     
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
@@ -275,19 +275,36 @@ Baby is still not in existence
         
         tabBar.isEnabled = false
         
-        
-        
-        weeklyTableView.alpha = 0
-        animateIn()
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        if mothersNameField.isEditing == true {
-            mothersNameField.becomeFirstResponder()
-        }
-        mothersNameField.delegate = self
-   weeklyTableView.allowsSelection = false
+        let numberOfViews = UserDefaults.standard.object(forKey: "newViews")
+            
+            viewCount = numberOfViews as! Int
+  
+            print("this is the number of new views: \(viewCount)")
+            
+            if viewCount >= 2 {
+                
+        weeklyTableView.alpha = 1
+//   datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+//        if mothersNameField.isEditing == true {
+//            mothersNameField.becomeFirstResponder()
+//        }
+//        mothersNameField.delegate = self
+//   weeklyTableView.allowsSelection = false
          //weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
+            } else {
+                print("this is the number of views: \(numberOfViews)")
+                weeklyTableView.alpha = 0
+                animateIn()
+                datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+                if mothersNameField.isEditing == true {
+                    mothersNameField.becomeFirstResponder()
+                }
+                mothersNameField.delegate = self
+                weeklyTableView.allowsSelection = false
+                //weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
+            }
+        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
