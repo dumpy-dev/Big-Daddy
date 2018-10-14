@@ -18,11 +18,14 @@ class ArticleViewController: UIViewController {
     
     var articleID : String = ""
     
-  var mother = UserDefaults.standard.object(forKey: "mother") ?? "mother"
+  var mother = UserDefaults.standard.object(forKey: "mother") ?? "your partner"
     
     // A dictionary of all of the article titles with their content
     
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        contentField.setContentOffset(CGPoint.zero, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +37,7 @@ class ArticleViewController: UIViewController {
             "Caesarean Section" : """
              See HTML article
             """,
-            "Drinking" : """
-            Don't drink
-            Don't drive
-            
-            """,
+            "Alcohol" : "Test",
             "Driving" : "Drive carefully, please look after your baby!",
             "Eating" : "You can eat these foods...",
             "Exercise" : "Do exercise",
@@ -95,7 +94,7 @@ class ArticleViewController: UIViewController {
                 
                 //### When you want to compare the result...
                 //originalText.attributedText = attributedString
-                let mother : String = UserDefaults.standard.object(forKey: "mother") as? String ?? "mother"
+                let mother : String = UserDefaults.standard.object(forKey: "mother") as? String ?? "your partner"
                 let regex = try! NSRegularExpression(pattern: "\\(mother\\)")
                 let range = NSRange(0..<attributedString.string.utf16.count)
                 let matches = regex.matches(in: attributedString.string, range: range)

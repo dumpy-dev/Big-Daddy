@@ -56,7 +56,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func donePressed(_ sender: Any) {
         let mothersName = motherNameEntered.text
         let babysName = babyNameEntered.text
-        print("the selected date is \(self.datePicker.date)")
 
         if dateSwitch.isOn {
             

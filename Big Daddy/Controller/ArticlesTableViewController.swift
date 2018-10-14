@@ -49,10 +49,11 @@ class ArticlesTableViewController: UITableViewController {
         //Setup the arrays
         
         articlesArray = [
-            Article(keyword:"assisted delivery ventouse suction theatre", name:"Assisted Delivery"),
+            Article(keyword:"alcohol pregnancy uk us france australia official advice avoid serious shirley airplane mother&rsquo;s blood baby liver organ develop process drinking drink first three months increase risk miscarriage premature birth low weight developmental problems heavily regularly serious condition foetal syndrome facial abnormalities learning difficulties restricted growth worry risk low gone off taste small batch organic craft IPA friday night cup of tea G&T gin tonic cucumber lime spirit alcohol-free", name:"Alcohol"),
+             Article(keyword:"amniocentesis CVS chorionic villus sampling amniotic fluid placenta downs edwards&rsquo; patau&rsquo;s pataus chromosomal genetic problem condition test decision terminate pregnancy miscarriage abortion disability learning difficulties", name:"Amniocentesis"),
+             Article(keyword:"assisted delivery ventouse suction theatre", name:"Assisted Delivery"),
             Article(keyword:"pregnancy stick blue line announcement test miscarriage first trimester dating scan secret share news tell everyone bun in oven family tshirt t-shirt jumper grandma grandpa grandad uncle aunt pet dog cat line up shoes converse wellies arty picture photo bump ahead", name:"Announcing The Pregnancy"),
             Article(keyword:"caesarian c-section operation theatre surgery gestational diabetes breech emergency procedure labour progressing vaginal birth baby pre-eclampsia recovery plan pain anaesthetic general spinal infection delivery sunroof alien scar tummy hospital", name:"Caesarean Section"),
-            Article(keyword:"drinking alcohol beer wine syndrome FAS units", name:"Drinking"),
             Article(keyword:"driving car license seatbelt", name:"Driving"),
             Article(keyword:"eating food egg cheese pate fish salami sushi brie peanut liquorice feta mozzarella pizza cured meats smoked salmon seafood shellfish prawns", name:"Eating"),
             Article(keyword:"exercise", name:"Exercise"),

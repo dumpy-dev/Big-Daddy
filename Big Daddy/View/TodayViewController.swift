@@ -10,26 +10,21 @@ import UIKit
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-   // Code for the Setup Popup
-    
     @IBOutlet weak var sizingView: UIView!
-    
-    
-    
     var viewCount = 0
     
+    // MARK:- Code for the Setup Popup
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateSwitch: UISwitch!
     @IBAction func skipPressed(_ sender: Any) {
-         UserDefaults.standard.set("your partner", forKey: "mother")
-        
+        UserDefaults.standard.set("your partner", forKey: "mother")
         let calendar = Calendar.current
         var component = DateComponents()
         component.day = -280
-       let calculatedDate = calendar.date(byAdding: component, to: Date())
+        let calculatedDate = calendar.date(byAdding: component, to: Date())
         
         print(calculatedDate)
         
@@ -332,11 +327,11 @@ Baby is still not in existence
         
         if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-//       weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
+   weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
 //       (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
-//           weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+     weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         }
             }
 

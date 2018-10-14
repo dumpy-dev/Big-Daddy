@@ -33,6 +33,8 @@
 		247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247FB46F204B478800BF4CB7 /* Assets.xcassets */; };
 		247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247FB471204B478800BF4CB7 /* LaunchScreen.storyboard */; };
 		2489222A2171F70600EE1F98 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248922292171F70600EE1F98 /* LoadingViewController.swift */; };
+		2489222C21722FC400EE1F98 /* Alcohol.html in Resources */ = {isa = PBXBuildFile; fileRef = 2489222B21722FC400EE1F98 /* Alcohol.html */; };
+		2489222E217238EA00EE1F98 /* Amniocentesis.html in Resources */ = {isa = PBXBuildFile; fileRef = 2489222D217238EA00EE1F98 /* Amniocentesis.html */; };
 		24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C22059821700971299 /* ArticlesTableViewController.swift */; };
 		24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */; };
 		24AC094620D1BE4E0018532C /* HypnobirthingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */; };
@@ -84,6 +86,8 @@
 		247FB472204B478800BF4CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		247FB474204B478800BF4CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		248922292171F70600EE1F98 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		2489222B21722FC400EE1F98 /* Alcohol.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Alcohol.html; sourceTree = "<group>"; };
+		2489222D217238EA00EE1F98 /* Amniocentesis.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Amniocentesis.html; sourceTree = "<group>"; };
 		24A012C22059821700971299 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCustomTableViewCell.swift; sourceTree = "<group>"; };
 		24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypnobirthingViewController.swift; sourceTree = "<group>"; };
@@ -142,8 +146,10 @@
 		242F3794211F17A200ADE38E /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				2489222D217238EA00EE1F98 /* Amniocentesis.html */,
 				242F3790211F16C300ADE38E /* Caesarean Section.html */,
 				242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */,
+				2489222B21722FC400EE1F98 /* Alcohol.html */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -320,12 +326,14 @@
 				24CC367C212059EE00AD9CF7 /* collectionBlue.png in Resources */,
 				247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */,
 				242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */,
+				2489222E217238EA00EE1F98 /* Amniocentesis.html in Resources */,
 				2451968C21373AFA008D4CF4 /* swiperight.png in Resources */,
 				24CC367A2120579700AD9CF7 /* collectionBackground.png in Resources */,
 				24C196592138836000B07DBD /* search.png in Resources */,
 				2451968E21373E43008D4CF4 /* swipeToRight.png in Resources */,
 				247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */,
 				2451968A2130BBA5008D4CF4 /* week4.png in Resources */,
+				2489222C21722FC400EE1F98 /* Alcohol.html in Resources */,
 				247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

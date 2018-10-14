@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdg-Az-br8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714.49275362318849" y="879.61956521739137"/>
+            <point key="canvasLocation" x="-570" y="1609"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MWa-eD-5nh">
@@ -954,25 +954,25 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="71q-w2-KRa" userLabel="Cell Titles Stack View">
                                                 <rect key="frame" x="8" y="7.6666666666666856" width="398" height="23"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-73-QaZ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-73-QaZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="77" height="23"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-dw-Lcd">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-dw-Lcd">
                                                         <rect key="frame" x="107" y="0.0" width="77" height="23"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRS-LX-jij">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MRS-LX-jij">
                                                         <rect key="frame" x="214" y="0.0" width="77" height="23"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzl-az-VNp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dzl-az-VNp">
                                                         <rect key="frame" x="321" y="0.0" width="77" height="23"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1543,7 +1543,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="boV-AO-v6k">
-                                <rect key="frame" x="62.333333333333343" y="22" width="289.66666666666663" height="49"/>
+                                <rect key="frame" x="62.333333333333343" y="35" width="289.66666666666663" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B I G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZG-eG-p6O">
                                         <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="49"/>
@@ -1560,11 +1560,11 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKB-tk-YkW" userLabel="Sizing View">
-                                <rect key="frame" x="0.0" y="40.666666666666686" width="414" height="606"/>
+                                <rect key="frame" x="0.0" y="47.333333333333314" width="414" height="593"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="575" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bDS-ke-aH1">
-                                <rect key="frame" x="0.0" y="81" width="414" height="606"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="593"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="575" id="POK-Yh-e4n" customClass="WeekTableViewCell" customModule="Big_Daddy" customModuleProvider="target">
@@ -1806,7 +1806,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                             <constraint firstItem="bDS-ke-aH1" firstAttribute="height" secondItem="sKB-tk-YkW" secondAttribute="height" id="UAV-Co-z2q"/>
                             <constraint firstItem="bDS-ke-aH1" firstAttribute="bottom" secondItem="tNl-ft-Evr" secondAttribute="bottom" id="bkP-lA-Fim"/>
                             <constraint firstItem="bDS-ke-aH1" firstAttribute="trailing" secondItem="tNl-ft-Evr" secondAttribute="trailing" id="cv7-EZ-Kwy"/>
-                            <constraint firstItem="boV-AO-v6k" firstAttribute="top" secondItem="nem-uQ-fUv" secondAttribute="top" constant="22" id="l73-4x-ZBZ"/>
+                            <constraint firstItem="boV-AO-v6k" firstAttribute="top" secondItem="nem-uQ-fUv" secondAttribute="top" constant="35" id="l73-4x-ZBZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tNl-ft-Evr"/>
                     </view>
@@ -2227,7 +2227,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tww-4r-uD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2519" y="149"/>
+            <point key="canvasLocation" x="-1103" y="148"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="KpO-gO-tBE">
@@ -2245,7 +2245,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWf-bi-Ic7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1509" y="564"/>
+            <point key="canvasLocation" x="-1104" y="880"/>
         </scene>
         <!--Intro Screen View Controller-->
         <scene sceneID="D1G-MC-8Rf">
@@ -2368,7 +2368,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nc-iq-dyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1823" y="1189"/>
+            <point key="canvasLocation" x="-2986" y="1855"/>
         </scene>
         <!--Tools-->
         <scene sceneID="Kuz-yL-Fe2">
@@ -2431,7 +2431,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
     <inferredMetricsTieBreakers>
         <segue reference="2pe-YH-MQ5"/>
         <segue reference="ho7-ss-gWS"/>
-        <segue reference="sFO-6i-VIq"/>
+        <segue reference="d7q-Dj-Lgb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
