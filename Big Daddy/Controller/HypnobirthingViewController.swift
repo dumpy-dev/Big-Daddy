@@ -46,12 +46,12 @@ class HypnobirthingViewController: UIViewController {
         
         if scriptPositionCounter == 0 {
             scriptPositionCounter = scriptPositionCounter + 1
-            UIView.animate(withDuration: 3.0, delay: 2.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: 3.0, delay: 2.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.scriptLabel.alpha = 1.0
             }, completion: nil)
                 } else {
             scriptLabel.text = scriptDictionary[scriptPositionCounter]
-            UIView.animate(withDuration: 3.0, delay: 2.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: 3.0, delay: 2.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.scriptLabel.alpha = 1.0
             }, completion: nil)
         }
@@ -71,7 +71,7 @@ class HypnobirthingViewController: UIViewController {
     func animateIn() {
         self.view.addSubview(infoPopupView)
     
-        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.scriptLabel.alpha = 0.3
         }, completion: nil)
         
@@ -95,7 +95,7 @@ class HypnobirthingViewController: UIViewController {
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         self.infoPopupView.removeFromSuperview()
-        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.scriptLabel.alpha = 1.0
         }, completion: nil)
     }
@@ -104,7 +104,7 @@ class HypnobirthingViewController: UIViewController {
   
     @IBAction func textTapped(_ gestureRecognizer : UITapGestureRecognizer) {
         
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.scriptLabel.alpha = 0.0
         }, completion: nil)
         
@@ -112,7 +112,7 @@ class HypnobirthingViewController: UIViewController {
         
         self.scriptLabel.text = scriptDictionary[scriptPositionCounter]
     
-        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.scriptLabel.alpha = 1.0
         }, completion: nil)
         
@@ -120,7 +120,7 @@ class HypnobirthingViewController: UIViewController {
     
     @IBAction func restartPressed(_ sender: Any) {
         
-        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.scriptLabel.alpha = 0.3
         }, completion: nil)
         
@@ -129,7 +129,7 @@ class HypnobirthingViewController: UIViewController {
         self.scriptLabel.text = scriptDictionary[scriptPositionCounter]
         
         // Fade in
-        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.scriptLabel.alpha = 1.0
         }, completion: nil)
 
@@ -143,7 +143,7 @@ class HypnobirthingViewController: UIViewController {
                self.scriptLabel.text = scriptDictionary[scriptPositionCounter]
             
         } else {
-        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.scriptLabel.alpha = 0.3
         }, completion: nil)
         
@@ -152,7 +152,7 @@ class HypnobirthingViewController: UIViewController {
         self.scriptLabel.text = scriptDictionary[scriptPositionCounter]
         
     
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.scriptLabel.alpha = 1.0
         }, completion: nil)
         }

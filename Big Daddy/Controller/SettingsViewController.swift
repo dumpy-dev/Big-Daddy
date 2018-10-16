@@ -29,8 +29,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func resetPressed(_ sender: Any) {
        
-        let alertController = UIAlertController(title: "Reset", message: "Are you sure you want to reset everything?", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Reset", style: UIAlertActionStyle.default){
+        let alertController = UIAlertController(title: "Reset", message: "Are you sure you want to reset everything?", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Reset", style: UIAlertAction.Style.default){
             UIAlertAction in
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
             UserDefaults.standard.synchronize()
@@ -49,7 +49,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             self.babyNameEntered.text = nil
             
         })
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
         }
     
@@ -73,9 +73,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             
             if weeksLeft >= 40 {
                 
-                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
                 
-                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.default, handler: nil))
+                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 
                 self.datePicker.setDate(Date() as Date, animated: true)
@@ -122,9 +122,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             
             if weeksLeft >= 40 {
 
-                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
 
-                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.default, handler: nil))
+                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
 
 self.datePicker.setDate(Date() as Date, animated: true)

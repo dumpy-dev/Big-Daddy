@@ -41,6 +41,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func donePressed(_ sender: Any) {
     
+        
+        
         UserDefaults.standard.set(mothersNameField.text, forKey: "mother")
         if dateSwitch.isOn {
             datePicker.minimumDate = nil
@@ -56,8 +58,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("\(mothersNameField.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
             
             if weeksLeft >= 40 {
-                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.default, handler: nil))
+                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 self.datePicker.setDate(Date() as Date, animated: true)
             } else {
@@ -78,8 +80,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let weeksElapsed : Int = 40 - weeksLeft
             let remainderDaysElapsed : Int = 7 - remainderDays
             if weeksLeft >= 40 {
-                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.default, handler: nil))
+                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 self.datePicker.setDate(Date() as Date, animated: true)
             } else {
@@ -247,36 +249,22 @@ Baby is still not in existence
         super.viewDidLoad()
       
         
-        
-//
-//        let blurEffect = UIBlurEffect(style: .light)
-//        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurredEffectView.frame = view.bounds
-//        view.addSubview(blurredEffectView)
-
-//
-//        let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
-//        let vibrancyEffectView = UIVisualEffectView(effect: vibrancyEffect)
-//        vibrancyEffectView.frame = view.bounds
-//
-//        vibrancyEffectView.contentView.addSubview(segmentedControl)
-//        blurredEffectView.contentView.addSubview(vibrancyEffectView)
-//
+  
         
 
         
         
-        
+
         
         tabBar.isEnabled = false
         
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews")
             
-            viewCount = numberOfViews as! Int
+        viewCount = numberOfViews as! Int
   
             print("this is the number of new views: \(viewCount)")
             
-            if viewCount >= 2 {
+    if viewCount >= 2 {
                 
         weeklyTableView.alpha = 1
 //   datePicker.setValue(UIColor.white, forKeyPath: "textColor")
@@ -286,14 +274,19 @@ Baby is still not in existence
 //        mothersNameField.delegate = self
 //   weeklyTableView.allowsSelection = false
          //weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
-            } else {
+      
+            
+            
+         } else {
+                
+                
                 print("this is the number of views: \(numberOfViews)")
                 weeklyTableView.alpha = 0
                 animateIn()
                 datePicker.setValue(UIColor.white, forKeyPath: "textColor")
                 if mothersNameField.isEditing == true {
                     mothersNameField.becomeFirstResponder()
-                }
+            }
                 mothersNameField.delegate = self
                 weeklyTableView.allowsSelection = false
                 //weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
@@ -327,11 +320,11 @@ Baby is still not in existence
         
         if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-   weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
+   weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
 //       (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
-     weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+     weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
             }
 
@@ -483,11 +476,23 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 //            let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
            // let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
 
+            if collectionView.tag != 0 {
+                let weekNumber = String(collectionView.tag + 3)
+                cell.weekLabel.text = "WEEK \(weekNumber)"
+            } else {
+                let weekNumber = "0-3"
+                cell.weekLabel.text = "WEEK \(weekNumber)"
+            }
+            
+            
             if indexPath.item == 1 {
                   let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
                 let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
                 
+                
                 cell.personIcon.image = #imageLiteral(resourceName: "fetusIcon")
+                
+               
 
                  var babyWeeks : [Int : String] = [
                 1 : "Baby is not yet in existence",
@@ -714,15 +719,27 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 extension TodayViewController: UICollectionViewDelegateFlowLayout {
     
     func animateIn() {
-        
+        self.tabBarController?.tabBar.isHidden = true
         self.view.addSubview(setupPopup)
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.weeklyTableView.alpha = 0.0
         }, completion: nil)
       //  mothersNameField.becomeFirstResponder()
         self.tabBarItem.isEnabled = false
-        setupPopup.center.x = self.view.center.x
-        setupPopup.center.y = self.view.center.y
+//        setupPopup.center.x = self.view.center.x
+//        setupPopup.center.y = self.view.center.y
+        
+        
+       
+        
+        
+        
+        setupPopup.frame.size.height = self.view.frame.height + 90
+        setupPopup.frame.size.width = self.view.frame.width
+        print("this is the sizing view: \(self.sizingView.frame.height)")
+        print("this is the setup popup view: \(setupPopup.frame.height)")
+        setupPopup.frame.origin.y = 0
+        setupPopup.frame.origin.x = self.view.frame.width - setupPopup.frame.width
         
         // setupPopup.frame.origin.y = self.view.frame.height / 4
         // setupPopup.frame.origin.x = self.view.frame.height / 4
@@ -736,8 +753,9 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
     
     func animateOut() {
         
+         self.tabBarController?.tabBar.isHidden = true
         self.setupPopup.removeFromSuperview()
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.weeklyTableView.alpha = 1.0
         }, completion: nil)
         let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? Date()

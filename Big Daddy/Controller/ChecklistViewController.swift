@@ -218,7 +218,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
   
         
         if (editingStyle == .delete) && checklistIdentifier == 1 {
@@ -285,7 +285,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func animateIn() {
     self.view.addSubview(addPopupView)
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.checklistTable.alpha = 0.2
         }, completion: nil)
         addTextField.becomeFirstResponder()
@@ -301,7 +301,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func animateOut() {
         self.addPopupView.removeFromSuperview()
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.checklistTable.alpha = 1.0
         }, completion: nil)
         addTextField.resignFirstResponder()

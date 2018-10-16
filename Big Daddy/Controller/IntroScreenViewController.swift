@@ -46,9 +46,9 @@ UserDefaults.standard.set(mothersName.text, forKey: "mother")
         
                     if weeksLeft >= 40 {
         
-                        let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertControllerStyle.alert)
+                        let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
         
-                        alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.default, handler: nil))
+                        alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                         self.present(alertController, animated: true, completion: nil)
         
                         self.datePicker.setDate(Date() as Date, animated: true)
@@ -95,9 +95,9 @@ UserDefaults.standard.set(mothersName.text, forKey: "mother")
         
                     if weeksLeft >= 40 {
         
-                        let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertControllerStyle.alert)
+                        let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
         
-                        alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.default, handler: nil))
+                        alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                         self.present(alertController, animated: true, completion: nil)
         
                         self.datePicker.setDate(Date() as Date, animated: true)
