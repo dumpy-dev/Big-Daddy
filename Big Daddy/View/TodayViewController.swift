@@ -40,8 +40,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func donePressed(_ sender: Any) {
-    
-        
         
         UserDefaults.standard.set(mothersNameField.text, forKey: "mother")
         if dateSwitch.isOn {
@@ -248,14 +246,6 @@ Baby is still not in existence
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        
-  
-        
-
-        
-        
-
-        
         tabBar.isEnabled = false
         
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews")
@@ -726,23 +716,12 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
         }, completion: nil)
       //  mothersNameField.becomeFirstResponder()
         self.tabBarItem.isEnabled = false
-//        setupPopup.center.x = self.view.center.x
-//        setupPopup.center.y = self.view.center.y
-        
-        
-       
-        
-        
-        
         setupPopup.frame.size.height = self.view.frame.height + 90
         setupPopup.frame.size.width = self.view.frame.width
         print("this is the sizing view: \(self.sizingView.frame.height)")
         print("this is the setup popup view: \(setupPopup.frame.height)")
         setupPopup.frame.origin.y = 0
         setupPopup.frame.origin.x = self.view.frame.width - setupPopup.frame.width
-        
-        // setupPopup.frame.origin.y = self.view.frame.height / 4
-        // setupPopup.frame.origin.x = self.view.frame.height / 4
         setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         setupPopup.alpha = 0
         UIView.animate(withDuration: 0.4) {
@@ -783,10 +762,7 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
      //   mothersNameField.resignFirstResponder()
     }
     
-    
-    
-    
-    
+    // MARK:- Collection View cell size extension
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cellWidth = sizingView.frame.width
@@ -794,10 +770,6 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
         
     return CGSize(width: cellWidth, height: cellHeight)
     }
-    
-    
-    
-    
 }
 
 

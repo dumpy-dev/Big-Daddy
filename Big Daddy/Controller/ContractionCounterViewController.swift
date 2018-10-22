@@ -148,6 +148,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
             timerTable.reloadData()
             timerLabel.text = "00:00"
             strengthSlider.value = 0
+            strengthLabel.text = "0"
         } else {
             print("timer is already stopped")
         }

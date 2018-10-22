@@ -18,10 +18,45 @@
 		2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF59207819740043590E /* TodayDetailViewController.swift */; };
 		2445DF5C2079167E0043590E /* ToolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */; };
 		2445DF5E2079180D0043590E /* ToolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */; };
-		245196882130B4E5008D4CF4 /* seahorse.png in Resources */ = {isa = PBXBuildFile; fileRef = 245196872130B4E5008D4CF4 /* seahorse.png */; };
+		2447DF622177BD1D00A011AA /* Anomaly Scan.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF612177BD1D00A011AA /* Anomaly Scan.html */; };
+		2447DF642177C1D300A011AA /* Antenatal Classes.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF632177C1D300A011AA /* Antenatal Classes.html */; };
+		2447DF692177C30700A011AA /* Assisted Delivery.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF682177C30700A011AA /* Assisted Delivery.html */; };
+		2447DF6B2177C33000A011AA /* Blood Groups.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF6A2177C33000A011AA /* Blood Groups.html */; };
+		2447DF732177C38900A011AA /* Braxton Hicks.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF722177C38900A011AA /* Braxton Hicks.html */; };
+		2447DF752177C39A00A011AA /* Couvade Syndrome.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF742177C39A00A011AA /* Couvade Syndrome.html */; };
+		2447DF772177C3A400A011AA /* Cravings.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF762177C3A400A011AA /* Cravings.html */; };
+		2447DF792177C3BC00A011AA /* Dad's Role in Labour.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF782177C3BC00A011AA /* Dad's Role in Labour.html */; };
+		2447DF7B2177C3C500A011AA /* Dating Scan.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF7A2177C3C500A011AA /* Dating Scan.html */; };
+		2447DF7D2177C3D500A011AA /* Decoding Midwife Notes.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF7C2177C3D500A011AA /* Decoding Midwife Notes.html */; };
+		2447DF7F2177C3EA00A011AA /* Driving.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF7E2177C3EA00A011AA /* Driving.html */; };
+		2447DF812177C3F800A011AA /* Ectopic Pregnancy.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF802177C3F800A011AA /* Ectopic Pregnancy.html */; };
+		2447DF832177C40400A011AA /* Exercising.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF822177C40400A011AA /* Exercising.html */; };
+		2447DF852177C45500A011AA /* Feeding (the baby).html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF842177C45500A011AA /* Feeding (the baby).html */; };
+		2447DF87217925D300A011AA /* Foods to Avoid.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF86217925D300A011AA /* Foods to Avoid.html */; };
+		2447DF892179261900A011AA /* Gestational Diabetes.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF882179261900A011AA /* Gestational Diabetes.html */; };
+		2447DF8B2179262A00A011AA /* Guessing the Gender.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF8A2179262A00A011AA /* Guessing the Gender.html */; };
+		2447DF8D2179263700A011AA /* High Blood Pressure.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF8C2179263700A011AA /* High Blood Pressure.html */; };
+		2447DF8F2179264A00A011AA /* Holidays.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF8E2179264A00A011AA /* Holidays.html */; };
+		2447DF912179265300A011AA /* Hypnobirthing.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF902179265300A011AA /* Hypnobirthing.html */; };
+		2447DF932179266000A011AA /* Induction.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF922179266000A011AA /* Induction.html */; };
+		2447DF952179266700A011AA /* Labour.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF942179266700A011AA /* Labour.html */; };
+		2447DF972179267400A011AA /* Miscarriage.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF962179267400A011AA /* Miscarriage.html */; };
+		2447DF992179269A00A011AA /* Morning Sickness.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF982179269A00A011AA /* Morning Sickness.html */; };
+		2447DF9B21792AB700A011AA /* Bonding with the Bump.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF9A21792AB700A011AA /* Bonding with the Bump.html */; };
+		2447DF9D217E07AD00A011AA /* Pain Relief in Labour.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DF9C217E07AD00A011AA /* Pain Relief in Labour.html */; };
+		2447DFA1217E07EA00A011AA /* Paternity Leave.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFA0217E07EA00A011AA /* Paternity Leave.html */; };
+		2447DFA3217E07FB00A011AA /* Postnatal Depression in Dads.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFA2217E07FB00A011AA /* Postnatal Depression in Dads.html */; };
+		2447DFA5217E080800A011AA /* Pre-eclampsia.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFA4217E080800A011AA /* Pre-eclampsia.html */; };
+		2447DFA7217E081600A011AA /* Premature Babies.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFA6217E081600A011AA /* Premature Babies.html */; };
+		2447DFA9217E082200A011AA /* Sex.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFA8217E082200A011AA /* Sex.html */; };
+		2447DFAB217E083000A011AA /* Signs of Labour.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFAA217E083000A011AA /* Signs of Labour.html */; };
+		2447DFAD217E083D00A011AA /* Sleep.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFAC217E083D00A011AA /* Sleep.html */; };
+		2447DFAF217E084600A011AA /* Smoking.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFAE217E084600A011AA /* Smoking.html */; };
+		2447DFB1217E085000A011AA /* Top Ten New Dad Worries.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFB0217E085000A011AA /* Top Ten New Dad Worries.html */; };
+		2447DFB3217E087C00A011AA /* Top Tips to Get Ready for B-Day.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFB2217E087C00A011AA /* Top Tips to Get Ready for B-Day.html */; };
+		2447DFB5217E088C00A011AA /* Vaccinations.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFB4217E088C00A011AA /* Vaccinations.html */; };
+		2447DFB9217E089F00A011AA /* Vitamins.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFB8217E089F00A011AA /* Vitamins.html */; };
 		2451968A2130BBA5008D4CF4 /* week4.png in Resources */ = {isa = PBXBuildFile; fileRef = 245196892130BBA3008D4CF4 /* week4.png */; };
-		2451968C21373AFA008D4CF4 /* swiperight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2451968B21373AFA008D4CF4 /* swiperight.png */; };
-		2451968E21373E43008D4CF4 /* swipeToRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2451968D21373E43008D4CF4 /* swipeToRight.png */; };
 		2451969021374230008D4CF4 /* babyChecklistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2451968F2137422F008D4CF4 /* babyChecklistCollectionViewController.swift */; };
 		24519692213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24519691213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift */; };
 		246BE866210DB4690087B095 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BE865210DB4690087B095 /* RatingsViewController.swift */; };
@@ -69,10 +104,45 @@
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
 		2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewController.swift; sourceTree = "<group>"; };
 		2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewCell.swift; sourceTree = "<group>"; };
-		245196872130B4E5008D4CF4 /* seahorse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seahorse.png; sourceTree = "<group>"; };
+		2447DF612177BD1D00A011AA /* Anomaly Scan.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Anomaly Scan.html"; sourceTree = "<group>"; };
+		2447DF632177C1D300A011AA /* Antenatal Classes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "Antenatal Classes.html"; path = "Big Daddy/Articles/Antenatal Classes.html"; sourceTree = SOURCE_ROOT; };
+		2447DF682177C30700A011AA /* Assisted Delivery.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Assisted Delivery.html"; sourceTree = "<group>"; };
+		2447DF6A2177C33000A011AA /* Blood Groups.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Blood Groups.html"; sourceTree = "<group>"; };
+		2447DF722177C38900A011AA /* Braxton Hicks.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Braxton Hicks.html"; sourceTree = "<group>"; };
+		2447DF742177C39A00A011AA /* Couvade Syndrome.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Couvade Syndrome.html"; sourceTree = "<group>"; };
+		2447DF762177C3A400A011AA /* Cravings.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Cravings.html; sourceTree = "<group>"; };
+		2447DF782177C3BC00A011AA /* Dad's Role in Labour.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Dad's Role in Labour.html"; sourceTree = "<group>"; };
+		2447DF7A2177C3C500A011AA /* Dating Scan.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Dating Scan.html"; sourceTree = "<group>"; };
+		2447DF7C2177C3D500A011AA /* Decoding Midwife Notes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Decoding Midwife Notes.html"; sourceTree = "<group>"; };
+		2447DF7E2177C3EA00A011AA /* Driving.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Driving.html; sourceTree = "<group>"; };
+		2447DF802177C3F800A011AA /* Ectopic Pregnancy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Ectopic Pregnancy.html"; sourceTree = "<group>"; };
+		2447DF822177C40400A011AA /* Exercising.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Exercising.html; sourceTree = "<group>"; };
+		2447DF842177C45500A011AA /* Feeding (the baby).html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Feeding (the baby).html"; sourceTree = "<group>"; };
+		2447DF86217925D300A011AA /* Foods to Avoid.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Foods to Avoid.html"; sourceTree = "<group>"; };
+		2447DF882179261900A011AA /* Gestational Diabetes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Gestational Diabetes.html"; sourceTree = "<group>"; };
+		2447DF8A2179262A00A011AA /* Guessing the Gender.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Guessing the Gender.html"; sourceTree = "<group>"; };
+		2447DF8C2179263700A011AA /* High Blood Pressure.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "High Blood Pressure.html"; sourceTree = "<group>"; };
+		2447DF8E2179264A00A011AA /* Holidays.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Holidays.html; sourceTree = "<group>"; };
+		2447DF902179265300A011AA /* Hypnobirthing.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Hypnobirthing.html; sourceTree = "<group>"; };
+		2447DF922179266000A011AA /* Induction.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Induction.html; sourceTree = "<group>"; };
+		2447DF942179266700A011AA /* Labour.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Labour.html; sourceTree = "<group>"; };
+		2447DF962179267400A011AA /* Miscarriage.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Miscarriage.html; sourceTree = "<group>"; };
+		2447DF982179269A00A011AA /* Morning Sickness.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Morning Sickness.html"; sourceTree = "<group>"; };
+		2447DF9A21792AB700A011AA /* Bonding with the Bump.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Bonding with the Bump.html"; sourceTree = "<group>"; };
+		2447DF9C217E07AD00A011AA /* Pain Relief in Labour.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Pain Relief in Labour.html"; sourceTree = "<group>"; };
+		2447DFA0217E07EA00A011AA /* Paternity Leave.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Paternity Leave.html"; sourceTree = "<group>"; };
+		2447DFA2217E07FB00A011AA /* Postnatal Depression in Dads.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Postnatal Depression in Dads.html"; sourceTree = "<group>"; };
+		2447DFA4217E080800A011AA /* Pre-eclampsia.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Pre-eclampsia.html"; sourceTree = "<group>"; };
+		2447DFA6217E081600A011AA /* Premature Babies.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Premature Babies.html"; sourceTree = "<group>"; };
+		2447DFA8217E082200A011AA /* Sex.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Sex.html; sourceTree = "<group>"; };
+		2447DFAA217E083000A011AA /* Signs of Labour.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Signs of Labour.html"; sourceTree = "<group>"; };
+		2447DFAC217E083D00A011AA /* Sleep.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Sleep.html; sourceTree = "<group>"; };
+		2447DFAE217E084600A011AA /* Smoking.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Smoking.html; sourceTree = "<group>"; };
+		2447DFB0217E085000A011AA /* Top Ten New Dad Worries.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Top Ten New Dad Worries.html"; sourceTree = "<group>"; };
+		2447DFB2217E087C00A011AA /* Top Tips to Get Ready for B-Day.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Top Tips to Get Ready for B-Day.html"; sourceTree = "<group>"; };
+		2447DFB4217E088C00A011AA /* Vaccinations.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Vaccinations.html; sourceTree = "<group>"; };
+		2447DFB8217E089F00A011AA /* Vitamins.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Vitamins.html; sourceTree = "<group>"; };
 		245196892130BBA3008D4CF4 /* week4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = week4.png; sourceTree = "<group>"; };
-		2451968B21373AFA008D4CF4 /* swiperight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swiperight.png; sourceTree = "<group>"; };
-		2451968D21373E43008D4CF4 /* swipeToRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipeToRight.png; sourceTree = "<group>"; };
 		2451968F2137422F008D4CF4 /* babyChecklistCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = babyChecklistCollectionViewController.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Controller/babyChecklistCollectionViewController.swift"; sourceTree = "<absolute>"; };
 		24519691213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babyChecklistCollectionViewCell.swift; sourceTree = "<group>"; };
 		246BE865210DB4690087B095 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
@@ -129,14 +199,11 @@
 		242864942058115A00E54FCF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				245196872130B4E5008D4CF4 /* seahorse.png */,
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
 				24C196582138835E00B07DBD /* bodysuit.png */,
 				24C196572138835D00B07DBD /* search.png */,
 				245196892130BBA3008D4CF4 /* week4.png */,
-				2451968B21373AFA008D4CF4 /* swiperight.png */,
 				24CC36872124C4F100AD9CF7 /* octopusIcon.png */,
-				2451968D21373E43008D4CF4 /* swipeToRight.png */,
 				24CC367B212059EC00AD9CF7 /* collectionBlue.png */,
 				24CC36792120579600AD9CF7 /* collectionBackground.png */,
 			);
@@ -146,10 +213,48 @@
 		242F3794211F17A200ADE38E /* Articles */ = {
 			isa = PBXGroup;
 			children = (
-				2489222D217238EA00EE1F98 /* Amniocentesis.html */,
-				242F3790211F16C300ADE38E /* Caesarean Section.html */,
-				242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */,
 				2489222B21722FC400EE1F98 /* Alcohol.html */,
+				2489222D217238EA00EE1F98 /* Amniocentesis.html */,
+				242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */,
+				2447DF612177BD1D00A011AA /* Anomaly Scan.html */,
+				2447DF632177C1D300A011AA /* Antenatal Classes.html */,
+				2447DF682177C30700A011AA /* Assisted Delivery.html */,
+				2447DF6A2177C33000A011AA /* Blood Groups.html */,
+				2447DF722177C38900A011AA /* Braxton Hicks.html */,
+				242F3790211F16C300ADE38E /* Caesarean Section.html */,
+				2447DF742177C39A00A011AA /* Couvade Syndrome.html */,
+				2447DF762177C3A400A011AA /* Cravings.html */,
+				2447DF782177C3BC00A011AA /* Dad's Role in Labour.html */,
+				2447DF7A2177C3C500A011AA /* Dating Scan.html */,
+				2447DF7C2177C3D500A011AA /* Decoding Midwife Notes.html */,
+				2447DF7E2177C3EA00A011AA /* Driving.html */,
+				2447DF9A21792AB700A011AA /* Bonding with the Bump.html */,
+				2447DF802177C3F800A011AA /* Ectopic Pregnancy.html */,
+				2447DF822177C40400A011AA /* Exercising.html */,
+				2447DF842177C45500A011AA /* Feeding (the baby).html */,
+				2447DF86217925D300A011AA /* Foods to Avoid.html */,
+				2447DF882179261900A011AA /* Gestational Diabetes.html */,
+				2447DF8A2179262A00A011AA /* Guessing the Gender.html */,
+				2447DF8C2179263700A011AA /* High Blood Pressure.html */,
+				2447DF8E2179264A00A011AA /* Holidays.html */,
+				2447DF902179265300A011AA /* Hypnobirthing.html */,
+				2447DF922179266000A011AA /* Induction.html */,
+				2447DF942179266700A011AA /* Labour.html */,
+				2447DF962179267400A011AA /* Miscarriage.html */,
+				2447DF982179269A00A011AA /* Morning Sickness.html */,
+				2447DF9C217E07AD00A011AA /* Pain Relief in Labour.html */,
+				2447DFA0217E07EA00A011AA /* Paternity Leave.html */,
+				2447DFA2217E07FB00A011AA /* Postnatal Depression in Dads.html */,
+				2447DFA4217E080800A011AA /* Pre-eclampsia.html */,
+				2447DFA6217E081600A011AA /* Premature Babies.html */,
+				2447DFA8217E082200A011AA /* Sex.html */,
+				2447DFAA217E083000A011AA /* Signs of Labour.html */,
+				2447DFAC217E083D00A011AA /* Sleep.html */,
+				2447DFAE217E084600A011AA /* Smoking.html */,
+				2447DFB0217E085000A011AA /* Top Ten New Dad Worries.html */,
+				2447DFB2217E087C00A011AA /* Top Tips to Get Ready for B-Day.html */,
+				2447DFB4217E088C00A011AA /* Vaccinations.html */,
+				2447DFB8217E089F00A011AA /* Vitamins.html */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -320,22 +425,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2447DF732177C38900A011AA /* Braxton Hicks.html in Resources */,
+				2447DF952179266700A011AA /* Labour.html in Resources */,
+				2447DF772177C3A400A011AA /* Cravings.html in Resources */,
 				24C1965A2138836000B07DBD /* bodysuit.png in Resources */,
+				2447DFB5217E088C00A011AA /* Vaccinations.html in Resources */,
+				2447DFA1217E07EA00A011AA /* Paternity Leave.html in Resources */,
+				2447DF992179269A00A011AA /* Morning Sickness.html in Resources */,
+				2447DF692177C30700A011AA /* Assisted Delivery.html in Resources */,
+				2447DF7D2177C3D500A011AA /* Decoding Midwife Notes.html in Resources */,
+				2447DFAB217E083000A011AA /* Signs of Labour.html in Resources */,
+				2447DF7B2177C3C500A011AA /* Dating Scan.html in Resources */,
 				24CC36882124C4F100AD9CF7 /* octopusIcon.png in Resources */,
 				242F3796211F1C1E00ADE38E /* Announcing The Pregnancy.html in Resources */,
-				245196882130B4E5008D4CF4 /* seahorse.png in Resources */,
+				2447DFA9217E082200A011AA /* Sex.html in Resources */,
+				2447DF8F2179264A00A011AA /* Holidays.html in Resources */,
+				2447DFA7217E081600A011AA /* Premature Babies.html in Resources */,
 				24CC367C212059EE00AD9CF7 /* collectionBlue.png in Resources */,
+				2447DFAD217E083D00A011AA /* Sleep.html in Resources */,
+				2447DF8B2179262A00A011AA /* Guessing the Gender.html in Resources */,
 				247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */,
+				2447DFA3217E07FB00A011AA /* Postnatal Depression in Dads.html in Resources */,
+				2447DFAF217E084600A011AA /* Smoking.html in Resources */,
+				2447DF8D2179263700A011AA /* High Blood Pressure.html in Resources */,
+				2447DFB9217E089F00A011AA /* Vitamins.html in Resources */,
 				242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */,
+				2447DFB1217E085000A011AA /* Top Ten New Dad Worries.html in Resources */,
+				2447DF7F2177C3EA00A011AA /* Driving.html in Resources */,
+				2447DF932179266000A011AA /* Induction.html in Resources */,
+				2447DF87217925D300A011AA /* Foods to Avoid.html in Resources */,
 				2489222E217238EA00EE1F98 /* Amniocentesis.html in Resources */,
-				2451968C21373AFA008D4CF4 /* swiperight.png in Resources */,
+				2447DF752177C39A00A011AA /* Couvade Syndrome.html in Resources */,
+				2447DF792177C3BC00A011AA /* Dad's Role in Labour.html in Resources */,
+				2447DF642177C1D300A011AA /* Antenatal Classes.html in Resources */,
+				2447DF852177C45500A011AA /* Feeding (the baby).html in Resources */,
+				2447DFA5217E080800A011AA /* Pre-eclampsia.html in Resources */,
+				2447DF6B2177C33000A011AA /* Blood Groups.html in Resources */,
+				2447DF972179267400A011AA /* Miscarriage.html in Resources */,
 				24CC367A2120579700AD9CF7 /* collectionBackground.png in Resources */,
 				24C196592138836000B07DBD /* search.png in Resources */,
-				2451968E21373E43008D4CF4 /* swipeToRight.png in Resources */,
+				2447DF912179265300A011AA /* Hypnobirthing.html in Resources */,
+				2447DF622177BD1D00A011AA /* Anomaly Scan.html in Resources */,
+				2447DF892179261900A011AA /* Gestational Diabetes.html in Resources */,
+				2447DF9B21792AB700A011AA /* Bonding with the Bump.html in Resources */,
+				2447DF812177C3F800A011AA /* Ectopic Pregnancy.html in Resources */,
 				247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */,
 				2451968A2130BBA5008D4CF4 /* week4.png in Resources */,
+				2447DFB3217E087C00A011AA /* Top Tips to Get Ready for B-Day.html in Resources */,
 				2489222C21722FC400EE1F98 /* Alcohol.html in Resources */,
 				247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */,
+				2447DF832177C40400A011AA /* Exercising.html in Resources */,
+				2447DF9D217E07AD00A011AA /* Pain Relief in Labour.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
