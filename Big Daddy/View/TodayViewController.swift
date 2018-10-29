@@ -714,7 +714,7 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
         UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.weeklyTableView.alpha = 0.0
         }, completion: nil)
-      //  mothersNameField.becomeFirstResponder()
+     
         self.tabBarItem.isEnabled = false
         setupPopup.frame.size.height = self.view.frame.height + 90
         setupPopup.frame.size.width = self.view.frame.width

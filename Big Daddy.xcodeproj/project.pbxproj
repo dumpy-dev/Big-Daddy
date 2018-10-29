@@ -56,7 +56,6 @@
 		2447DFB3217E087C00A011AA /* Top Tips to Get Ready for B-Day.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFB2217E087C00A011AA /* Top Tips to Get Ready for B-Day.html */; };
 		2447DFB5217E088C00A011AA /* Vaccinations.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFB4217E088C00A011AA /* Vaccinations.html */; };
 		2447DFB9217E089F00A011AA /* Vitamins.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFB8217E089F00A011AA /* Vitamins.html */; };
-		2451968A2130BBA5008D4CF4 /* week4.png in Resources */ = {isa = PBXBuildFile; fileRef = 245196892130BBA3008D4CF4 /* week4.png */; };
 		2451969021374230008D4CF4 /* babyChecklistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2451968F2137422F008D4CF4 /* babyChecklistCollectionViewController.swift */; };
 		24519692213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24519691213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift */; };
 		246BE866210DB4690087B095 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BE865210DB4690087B095 /* RatingsViewController.swift */; };
@@ -73,15 +72,10 @@
 		24A012C32059821700971299 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C22059821700971299 /* ArticlesTableViewController.swift */; };
 		24A012C52059C00600971299 /* ArticlesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */; };
 		24AC094620D1BE4E0018532C /* HypnobirthingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */; };
-		24C196592138836000B07DBD /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 24C196572138835D00B07DBD /* search.png */; };
-		24C1965A2138836000B07DBD /* bodysuit.png in Resources */ = {isa = PBXBuildFile; fileRef = 24C196582138835E00B07DBD /* bodysuit.png */; };
 		24C1965C213ACF3700B07DBD /* decoderCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C1965B213ACF3700B07DBD /* decoderCollectionViewController.swift */; };
 		24C1965E213ACF5000B07DBD /* decoderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C1965D213ACF5000B07DBD /* decoderCollectionViewCell.swift */; };
-		24CC367A2120579700AD9CF7 /* collectionBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CC36792120579600AD9CF7 /* collectionBackground.png */; };
-		24CC367C212059EE00AD9CF7 /* collectionBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CC367B212059EC00AD9CF7 /* collectionBlue.png */; };
 		24CC367E212066A200AD9CF7 /* IntroScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */; };
 		24CC368621237B4100AD9CF7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC368521237B4100AD9CF7 /* OnboardingViewController.swift */; };
-		24CC36882124C4F100AD9CF7 /* octopusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CC36872124C4F100AD9CF7 /* octopusIcon.png */; };
 		24CC3698212D3A5F00AD9CF7 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */; };
 		24CC3699212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3696212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift */; };
 		24CC369A212D3A5F00AD9CF7 /* WeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3697212D3A5F00AD9CF7 /* WeekTableViewCell.swift */; };
@@ -142,7 +136,6 @@
 		2447DFB2217E087C00A011AA /* Top Tips to Get Ready for B-Day.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Top Tips to Get Ready for B-Day.html"; sourceTree = "<group>"; };
 		2447DFB4217E088C00A011AA /* Vaccinations.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Vaccinations.html; sourceTree = "<group>"; };
 		2447DFB8217E089F00A011AA /* Vitamins.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Vitamins.html; sourceTree = "<group>"; };
-		245196892130BBA3008D4CF4 /* week4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = week4.png; sourceTree = "<group>"; };
 		2451968F2137422F008D4CF4 /* babyChecklistCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = babyChecklistCollectionViewController.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Controller/babyChecklistCollectionViewController.swift"; sourceTree = "<absolute>"; };
 		24519691213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babyChecklistCollectionViewCell.swift; sourceTree = "<group>"; };
 		246BE865210DB4690087B095 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
@@ -161,15 +154,10 @@
 		24A012C22059821700971299 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCustomTableViewCell.swift; sourceTree = "<group>"; };
 		24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypnobirthingViewController.swift; sourceTree = "<group>"; };
-		24C196572138835D00B07DBD /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
-		24C196582138835E00B07DBD /* bodysuit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bodysuit.png; sourceTree = "<group>"; };
 		24C1965B213ACF3700B07DBD /* decoderCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decoderCollectionViewController.swift; sourceTree = "<group>"; };
 		24C1965D213ACF5000B07DBD /* decoderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = decoderCollectionViewCell.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Controller/decoderCollectionViewCell.swift"; sourceTree = "<absolute>"; };
-		24CC36792120579600AD9CF7 /* collectionBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collectionBackground.png; sourceTree = "<group>"; };
-		24CC367B212059EC00AD9CF7 /* collectionBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collectionBlue.png; sourceTree = "<group>"; };
 		24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreenViewController.swift; sourceTree = "<group>"; };
 		24CC368521237B4100AD9CF7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = ../View/OnboardingViewController.swift; sourceTree = "<group>"; };
-		24CC36872124C4F100AD9CF7 /* octopusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octopusIcon.png; sourceTree = "<group>"; };
 		24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekCollectionViewCell.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekCollectionViewCell.swift"; sourceTree = "<absolute>"; };
 		24CC3696212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekCollectionViewCell2.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekCollectionViewCell2.swift"; sourceTree = "<absolute>"; };
 		24CC3697212D3A5F00AD9CF7 /* WeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekTableViewCell.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekTableViewCell.swift"; sourceTree = "<absolute>"; };
@@ -200,12 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				247FB46F204B478800BF4CB7 /* Assets.xcassets */,
-				24C196582138835E00B07DBD /* bodysuit.png */,
-				24C196572138835D00B07DBD /* search.png */,
-				245196892130BBA3008D4CF4 /* week4.png */,
-				24CC36872124C4F100AD9CF7 /* octopusIcon.png */,
-				24CC367B212059EC00AD9CF7 /* collectionBlue.png */,
-				24CC36792120579600AD9CF7 /* collectionBackground.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -428,7 +410,6 @@
 				2447DF732177C38900A011AA /* Braxton Hicks.html in Resources */,
 				2447DF952179266700A011AA /* Labour.html in Resources */,
 				2447DF772177C3A400A011AA /* Cravings.html in Resources */,
-				24C1965A2138836000B07DBD /* bodysuit.png in Resources */,
 				2447DFB5217E088C00A011AA /* Vaccinations.html in Resources */,
 				2447DFA1217E07EA00A011AA /* Paternity Leave.html in Resources */,
 				2447DF992179269A00A011AA /* Morning Sickness.html in Resources */,
@@ -436,12 +417,10 @@
 				2447DF7D2177C3D500A011AA /* Decoding Midwife Notes.html in Resources */,
 				2447DFAB217E083000A011AA /* Signs of Labour.html in Resources */,
 				2447DF7B2177C3C500A011AA /* Dating Scan.html in Resources */,
-				24CC36882124C4F100AD9CF7 /* octopusIcon.png in Resources */,
 				242F3796211F1C1E00ADE38E /* Announcing The Pregnancy.html in Resources */,
 				2447DFA9217E082200A011AA /* Sex.html in Resources */,
 				2447DF8F2179264A00A011AA /* Holidays.html in Resources */,
 				2447DFA7217E081600A011AA /* Premature Babies.html in Resources */,
-				24CC367C212059EE00AD9CF7 /* collectionBlue.png in Resources */,
 				2447DFAD217E083D00A011AA /* Sleep.html in Resources */,
 				2447DF8B2179262A00A011AA /* Guessing the Gender.html in Resources */,
 				247FB473204B478800BF4CB7 /* LaunchScreen.storyboard in Resources */,
@@ -462,15 +441,12 @@
 				2447DFA5217E080800A011AA /* Pre-eclampsia.html in Resources */,
 				2447DF6B2177C33000A011AA /* Blood Groups.html in Resources */,
 				2447DF972179267400A011AA /* Miscarriage.html in Resources */,
-				24CC367A2120579700AD9CF7 /* collectionBackground.png in Resources */,
-				24C196592138836000B07DBD /* search.png in Resources */,
 				2447DF912179265300A011AA /* Hypnobirthing.html in Resources */,
 				2447DF622177BD1D00A011AA /* Anomaly Scan.html in Resources */,
 				2447DF892179261900A011AA /* Gestational Diabetes.html in Resources */,
 				2447DF9B21792AB700A011AA /* Bonding with the Bump.html in Resources */,
 				2447DF812177C3F800A011AA /* Ectopic Pregnancy.html in Resources */,
 				247FB470204B478800BF4CB7 /* Assets.xcassets in Resources */,
-				2451968A2130BBA5008D4CF4 /* week4.png in Resources */,
 				2447DFB3217E087C00A011AA /* Top Tips to Get Ready for B-Day.html in Resources */,
 				2489222C21722FC400EE1F98 /* Alcohol.html in Resources */,
 				247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */,

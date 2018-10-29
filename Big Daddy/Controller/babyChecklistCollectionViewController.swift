@@ -23,9 +23,8 @@ class babyChecklistCollectionViewController: UIViewController, UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "hypnosis"), #imageLiteral(resourceName: "rating"), #imageLiteral(resourceName: "terms")]
-        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Hypnobirthing", "Rate Us!", "T&Cs"]
-        arrayOfTypes = ["Timer", "Checklist", "Checklist", "General", "General", "General"]
+        arrayOfImages = [#imageLiteral(resourceName: "checklistChecklist"),#imageLiteral(resourceName: "checklistChecklist"),#imageLiteral(resourceName: "nappyChecklist"),#imageLiteral(resourceName: "crossChecklist"),#imageLiteral(resourceName: "bathChecklist"),#imageLiteral(resourceName: "sleepChecklist"),#imageLiteral(resourceName: "bottleChecklist"),#imageLiteral(resourceName: "checklistChecklist"),#imageLiteral(resourceName: "checklistChecklist")]
+        arrayOfIDs = ["Clothes", "Travel", "Nappy", "Health", "Bathtime", "Sleeping", "Feeding", "Misc", "To Do"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,17 +36,13 @@ class babyChecklistCollectionViewController: UIViewController, UICollectionViewD
     // Setup collection view count and image/text for cells
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
-    
-        
+        return arrayOfIDs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! babyChecklistCollectionViewCell
-        
-        cell.decoderImage.image = #imageLiteral(resourceName: "seahorse")
-        //cell.toolsLabel.text = "test"
-        
+        cell.decoderImage.image = arrayOfImages[indexPath.row]
+        cell.categoryLabel.text = arrayOfIDs[indexPath.row]
         return cell
     }
     
@@ -83,25 +78,16 @@ class babyChecklistCollectionViewController: UIViewController, UICollectionViewD
             checklistID = 11
             performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
         }
-        
-        
     }
     
     // Prepare for segues to pass data across
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "babyChecklistListSegue" {
-            
             let checklistSelected : ChecklistViewController = segue.destination as! ChecklistViewController
             checklistSelected.checklistIdentifier = checklistID
-            
+            }
         }
-        
-    }
-    
-    
-    
 }
     
     
