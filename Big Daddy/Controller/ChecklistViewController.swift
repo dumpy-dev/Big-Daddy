@@ -20,6 +20,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK:- Setup Realm
     let realm = try! Realm()
+    
     var itemChecklist:Results<ChecklistRealm> {
         get {
             return realm.objects(ChecklistRealm.self)
@@ -334,7 +335,80 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                     item.itemPacked = false
                 }
             })
-        } else  if checklistIdentifier != 1 && checklistIdentifier != 2 {
+        }  else if checklistIdentifier == 3 {
+            
+           // let babyChecklistItem = babyChecklist[indexPath.row]
+            let babyChecklistItem = BabyChecklistRealm()
+            let selectedCell = tableView.cellForRow(at: indexPath) as! HospitalBagTableViewCell
+            let cellText = selectedCell.itemName.text
+            print("this is the cell text: \(cellText)")
+            babyChecklistItem.name = cellText!
+            if (babyChecklistItem.itemCompleted == false){
+                babyChecklistItem.itemCompleted = true
+            }else{
+                babyChecklistItem.itemCompleted = false
+            }
+            
+            try! realm.write {
+                realm.add(babyChecklistItem, update: true)
+            }
+            
+            
+//            try! self.realm.write({
+//                if (item.itemCompleted == false){
+//                    item.itemCompleted = true
+//                }else{
+//                    item.itemCompleted = false
+//                }
+//            })
+        } else if checklistIdentifier == 4 {
+            let babyChecklistItem = BabyChecklistRealm()
+            let selectedCell = tableView.cellForRow(at: indexPath) as! HospitalBagTableViewCell
+            let cellText = selectedCell.itemName.text
+            print("this is the cell text: \(cellText)")
+            babyChecklistItem.name = cellText!
+            if (babyChecklistItem.itemCompleted == false){
+                babyChecklistItem.itemCompleted = true
+            }else{
+                babyChecklistItem.itemCompleted = false
+            }
+            
+            try! realm.write {
+                realm.add(babyChecklistItem, update: true)
+            }
+//            let babyChecklistItem = babyChecklist[indexPath.row]
+//
+//            let selectedCell = tableView.cellForRow(at: indexPath) as! HospitalBagTableViewCell
+//            let cellText = selectedCell.itemName.text
+//            print("this is the cell text: \(cellText)")
+//            babyChecklistItem.name = cellText!
+//            if (babyChecklistItem.itemCompleted == false){
+//                babyChecklistItem.itemCompleted = true
+//            }else{
+//                babyChecklistItem.itemCompleted = false
+//            }
+//
+//            try! realm.write {
+//                realm.add(babyChecklistItem, update: true)
+//               // realm.create(item.self, value: ["name": cellText, "itemCompleted": true], update: true)
+//            }
+            
+            
+            
+            
+//                let item = babyChecklist[indexPath.row]
+//
+//                try! self.realm.write({
+//                    if (item.itemCompleted == false){
+//                        item.itemCompleted = true
+//                    }else{
+//                        item.itemCompleted = false
+//                    }
+//                })
+            
+            
+        } else  //if checklistIdentifier != 1 && checklistIdentifier != 2
+        {
             
             let row = indexPath.row
             let section = indexPath.section
@@ -415,7 +489,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        print("Realm is located at:", realm.configuration.fileURL!)
         print("this is the checklist ID: \(checklistIdentifier)")
         
         if checklistIdentifier >= 3 {
@@ -455,6 +529,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -467,6 +542,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -478,6 +554,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -489,6 +566,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -500,6 +578,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -511,6 +590,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -522,6 +602,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -533,6 +614,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -544,6 +626,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
+                babyItem.itemCompleted = false
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
@@ -551,7 +634,6 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         checklistTable.reloadData()
     }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lPU-RI-mEk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jpL-eq-WEW">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -2340,7 +2340,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2pe-YH-MQ5"/>
-        <segue reference="Ia7-8s-UuT"/>
+        <segue reference="ho7-ss-gWS"/>
         <segue reference="d7q-Dj-Lgb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
