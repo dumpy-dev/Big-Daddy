@@ -27,6 +27,7 @@ class BabyChecklistRealm: Object {
     @objc dynamic var babyItem = ""
     @objc dynamic var itemCompleted = false
     @objc dynamic var name = ""
+    @objc dynamic var category = ""
     override static func primaryKey() -> String? {
         return "name"
     }

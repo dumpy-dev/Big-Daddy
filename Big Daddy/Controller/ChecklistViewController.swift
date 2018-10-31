@@ -53,32 +53,6 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         return 1
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        if checklistIdentifier >= 3 {
-//        if section == 0 {
-//        return "Clothes"
-//        } else if section == 1 {
-//            return "Travel"
-//        } else if section == 2 {
-//            return "Nappy"
-//        }else if section == 3 {
-//            return "Health"
-//        }else if section == 4 {
-//            return "Bathtime"
-//        } else if section == 5 {
-//            return "Sleeping"
-//        } else if section == 6 {
-//            return "Feeding"
-//        }else if section == 7 {
-//            return "Miscellaneous"
-//        }else if section == 8 {
-//            return "To Do"
-//        }
-//    }
-//        return nil
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
         if checklistIdentifier == 1 {
@@ -86,7 +60,13 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         } else if checklistIdentifier == 2 {
                 return self.nameList.count
         } else if checklistIdentifier == 3 {
-                return self.clothesArray.count
+            
+            var clothesDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'clothes'")
+            print("this is the number of entries: \(clothesDatabase.count)")
+            
+            return clothesDatabase.count
+            
+            //    return self.clothesArray.count
         } else if checklistIdentifier == 4 {
                 return self.travelArray.count
         } else if checklistIdentifier == 5 {
@@ -108,191 +88,76 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bagCell = tableView.dequeueReusableCell(withIdentifier: "checklistCell") as! HospitalBagTableViewCell
-        
-        if checklistIdentifier == 1 {
-        let item = itemChecklist[indexPath.row]
-        bagCell.itemName.text = item.item
-        if item.itemPacked == true {
-            bagCell.itemName.alpha = 0.3
-            bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-            bagCell.tick.alpha = 0.3
-        } else {
-            bagCell.itemName.alpha = 1
-            bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-            bagCell.tick.alpha = 1
-            }
-        } else if checklistIdentifier == 2 {
-            
-            let item = nameList[indexPath.row]
-            
-            bagCell.itemName.text = item.name
-            bagCell.tick.image = nil
-            bagCell.selectionStyle = .none
-
-          } else if checklistIdentifier == 3 {
-
-            bagCell.itemName.text = self.clothesArray[indexPath.row]
+        func babyChecklistUpdate(){
             let primaryKey = bagCell.itemName.text
             let babyChecklistItem = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
             if babyChecklistItem?.itemCompleted == true {
-                            bagCell.itemName.alpha = 0.3
-                            bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                            bagCell.tick.alpha = 0.3
-                        } else {
-                            bagCell.itemName.alpha = 1
-                            bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                            bagCell.tick.alpha = 1
-                        }
+                bagCell.itemName.alpha = 0.3
+                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+                bagCell.tick.alpha = 0.3
+            } else {
+                bagCell.itemName.alpha = 1
+                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
+                bagCell.tick.alpha = 1
+            }
+        }
+        if checklistIdentifier == 1 {
+                let item = itemChecklist[indexPath.row]
+                bagCell.itemName.text = item.item
+            if item.itemPacked == true {
+                bagCell.itemName.alpha = 0.3
+                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+                bagCell.tick.alpha = 0.3
+                } else {
+                bagCell.itemName.alpha = 1
+                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
+                bagCell.tick.alpha = 1
+                }
+        } else if checklistIdentifier == 2 {
+                let item = nameList[indexPath.row]
+                bagCell.itemName.text = item.name
+                bagCell.tick.image = nil
+                bagCell.selectionStyle = .none
+        } else if checklistIdentifier == 3 {
+            
+            var clothesDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'clothes'")
+            let item = clothesDatabase[indexPath.row]
+            bagCell.itemName.text = item.name
+            
+            babyChecklistUpdate()
         } else if checklistIdentifier == 4 {
             bagCell.itemName.text = self.travelArray[indexPath.row]
-            let primaryKey = bagCell.itemName.text
-            let babyChecklistItem = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
-            if babyChecklistItem?.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
-//            let item = babyChecklist[indexPath.row]
-//
-//            bagCell.itemName.text = self.travelArray[indexPath.row]
-//
-//
-//            if item.itemCompleted == true {
-//                bagCell.itemName.alpha = 0.3
-//                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-//                bagCell.tick.alpha = 0.3
-//            } else {
-//                bagCell.itemName.alpha = 1
-//                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-//                bagCell.tick.alpha = 1
-//            }
+            babyChecklistUpdate()
         } else if checklistIdentifier == 5 {
-            
-            let item = babyChecklist[indexPath.row]
-            
             bagCell.itemName.text = self.nappyArray[indexPath.row]
-            
-            
-            if item.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
+            babyChecklistUpdate()
         } else if checklistIdentifier == 6 {
-            
-            let item = babyChecklist[indexPath.row]
-            
             bagCell.itemName.text = self.healthArray[indexPath.row]
-            
-            
-            if item.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
+            babyChecklistUpdate()
         } else if checklistIdentifier == 7 {
-            
-            let item = babyChecklist[indexPath.row]
-            
             bagCell.itemName.text = self.bathArray[indexPath.row]
-            
-            
-            if item.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
+            babyChecklistUpdate()
         } else if checklistIdentifier == 8 {
-            
-            let item = babyChecklist[indexPath.row]
-            
             bagCell.itemName.text = self.sleepingArray[indexPath.row]
-            
-            
-            if item.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
+            babyChecklistUpdate()
         } else if checklistIdentifier == 9 {
-            
-            let item = babyChecklist[indexPath.row]
-            
             bagCell.itemName.text = self.feedingArray[indexPath.row]
-            
-            
-            if item.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
+            babyChecklistUpdate()
         } else if checklistIdentifier == 10 {
-            
-            let item = babyChecklist[indexPath.row]
-            
             bagCell.itemName.text = self.miscArray[indexPath.row]
-            
-            
-            if item.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
+            babyChecklistUpdate()
         } else if checklistIdentifier == 11 {
-            
-            let item = babyChecklist[indexPath.row]
-            
             bagCell.itemName.text = self.todoArray[indexPath.row]
-            
-            
-            if item.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
-                bagCell.tick.alpha = 1
-            }
-        
+            babyChecklistUpdate()
             } else {
                 return bagCell
             }
        
-          if indexPath.row % 2 == 0 {
+        if indexPath.row % 2 == 0 {
             bagCell.contentView.backgroundColor = UIColor(red:0.04, green:0.41, blue:0.49, alpha:1.0)
-        } else {
+            } else {
             bagCell.contentView.backgroundColor = UIColor(red:0.03, green:0.38, blue:0.49, alpha:1.0)
-        }
-
+            }
         return bagCell
     }
     
@@ -333,6 +198,36 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        func babyChecklistCheck(){
+            let babyChecklistItem = BabyChecklistRealm()
+            let selectedCell = tableView.cellForRow(at: indexPath) as! HospitalBagTableViewCell
+            let cellText = selectedCell.itemName.text
+            print("cell selected")
+            babyChecklistItem.name = cellText!
+           
+            let primaryKey = selectedCell.itemName.text
+            let babyChecklistItem2 = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
+            if babyChecklistItem2?.itemCompleted == true {
+                selectedCell.itemName.alpha = 0.3
+                selectedCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+                selectedCell.tick.alpha = 0.3
+            } else {
+                selectedCell.itemName.alpha = 1
+                selectedCell.tick.image = #imageLiteral(resourceName: "briefcase")
+                selectedCell.tick.alpha = 1
+            }
+            try! realm.write {
+                if babyChecklistItem2?.itemCompleted == false {
+                    babyChecklistItem2?.itemCompleted = true
+                }else{
+                    babyChecklistItem2?.itemCompleted = false
+                }
+                realm.add(babyChecklistItem2!, update: true)
+            }
+            
+            
+        }
+        
         if checklistIdentifier == 1 {
             let item = itemChecklist[indexPath.row]
             try! self.realm.write({
@@ -342,90 +237,11 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                     item.itemPacked = false
                 }
             })
-        }  else if checklistIdentifier == 3 {
-            
-           // let babyChecklistItem = babyChecklist[indexPath.row]
-            let babyChecklistItem = BabyChecklistRealm()
-            let selectedCell = tableView.cellForRow(at: indexPath) as! HospitalBagTableViewCell
-            let cellText = selectedCell.itemName.text
-            print("this is the cell text: \(cellText)")
-            babyChecklistItem.name = cellText!
-            if (babyChecklistItem.itemCompleted == false){
-                babyChecklistItem.itemCompleted = true
-            }else{
-                babyChecklistItem.itemCompleted = false
-            }
-            
-            try! realm.write {
-                realm.add(babyChecklistItem, update: true)
-            }
-            
-        } else if checklistIdentifier == 4 {
-            let babyChecklistItem = BabyChecklistRealm()
-            let selectedCell = tableView.cellForRow(at: indexPath) as! HospitalBagTableViewCell
-            let cellText = selectedCell.itemName.text
-            print("this is the cell text: \(cellText)")
-            babyChecklistItem.name = cellText!
-            
-            
-            try! realm.write {
-                if (babyChecklistItem.itemCompleted == false){
-                    babyChecklistItem.itemCompleted = true
-                }else{
-                    babyChecklistItem.itemCompleted = false
-                }
-                realm.add(babyChecklistItem, update: true)
-            }
-//            let babyChecklistItem = babyChecklist[indexPath.row]
-//
-//            let selectedCell = tableView.cellForRow(at: indexPath) as! HospitalBagTableViewCell
-//            let cellText = selectedCell.itemName.text
-//            print("this is the cell text: \(cellText)")
-//            babyChecklistItem.name = cellText!
-//            if (babyChecklistItem.itemCompleted == false){
-//                babyChecklistItem.itemCompleted = true
-//            }else{
-//                babyChecklistItem.itemCompleted = false
-//            }
-//
-//            try! realm.write {
-//                realm.add(babyChecklistItem, update: true)
-//               // realm.create(item.self, value: ["name": cellText, "itemCompleted": true], update: true)
-//            }
-            
-            
-            
-            
-//                let item = babyChecklist[indexPath.row]
-//
-//                try! self.realm.write({
-//                    if (item.itemCompleted == false){
-//                        item.itemCompleted = true
-//                    }else{
-//                        item.itemCompleted = false
-//                    }
-//                })
-            
-            
-        } else  //if checklistIdentifier != 1 && checklistIdentifier != 2
-        {
-            
-            let row = indexPath.row
-            let section = indexPath.section
-            
-//            let item = babyChecklist[indexPath.row]
-//            try! self.realm.write({
-//                if (item.itemCompleted == false){
-//                    item.itemCompleted = true
-//                }else{
-//                    item.itemCompleted = false
-//                }
-//            })
+        }  else if checklistIdentifier >= 3 {
+            babyChecklistCheck()
         }
-
             tableView.reloadRows(at: [indexPath], with: .automatic)
         tableView.reloadData()
-        
     }
         
     
@@ -488,9 +304,17 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         print("Realm is located at:", realm.configuration.fileURL!)
-        print("this is the checklist ID: \(checklistIdentifier)")
+        
+        let clothesDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'clothes'")
+        let travelDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'travel'")
+        let nappyDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'nappy'")
+        let healthDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'health'")
+        let bathDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'bath'")
+        let sleepDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'sleep'")
+        let feedingDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'feeding'")
+        let miscDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'misc'")
+        let todoDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'todo'")
         
         if checklistIdentifier >= 3 {
            barButton.isEnabled = false
@@ -522,20 +346,20 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                     self.realm.add(nameItem)
                 })
             }
-        } else if babyChecklist.count == 0 && checklistIdentifier == 3 {
+        } else if clothesDatabase.count == 0 && checklistIdentifier == 3 {
+            
             print("nothing yet added, so defaults implemented")
             let defaultArray = clothesArray
             for item in defaultArray {
-                print(item)
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "clothes"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
-  }
-             else if babyChecklist.count == 0 && checklistIdentifier == 4 {
+        } else if travelDatabase.count == 0 && checklistIdentifier == 4 {
             print("nothing yet added, so defaults implemented")
             let defaultArray = travelArray
             for item in defaultArray {
@@ -543,11 +367,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "travel"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
-        } else if checklistIdentifier == 5  {
+        } else if nappyDatabase.count == 0 && checklistIdentifier == 5  {
             print("nothing yet added, so defaults implemented")
             let defaultArray = nappyArray
             for item in defaultArray {
@@ -555,11 +380,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "nappy"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
-        } else if checklistIdentifier == 6 {
+        } else if healthDatabase.count == 0 &&  checklistIdentifier == 6 {
             print("nothing yet added, so defaults implemented")
             let defaultArray = healthArray
             for item in defaultArray{
@@ -567,11 +393,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "health"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
-        }else if checklistIdentifier == 7 {
+        } else if bathDatabase.count == 0 &&  checklistIdentifier == 7 {
             print("nothing yet added, so defaults implemented")
             let defaultArray = bathArray
             for item in defaultArray{
@@ -579,11 +406,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "bath"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
-        }else if checklistIdentifier == 8 {
+        } else if sleepDatabase.count == 0 &&  checklistIdentifier == 8 {
             print("nothing yet added, so defaults implemented")
             let defaultArray = sleepingArray
             for item in defaultArray{
@@ -591,11 +419,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "sleep"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
-        } else if checklistIdentifier == 9 {
+        } else if feedingDatabase.count == 0 &&  checklistIdentifier == 9 {
             print("nothing yet added, so defaults implemented")
             let defaultArray = feedingArray
             for item in defaultArray{
@@ -603,11 +432,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "feeding"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
-        } else if checklistIdentifier == 10 {
+        } else if miscDatabase.count == 0 &&  checklistIdentifier == 10 {
             print("nothing yet added, so defaults implemented")
             let defaultArray = miscArray
             for item in defaultArray{
@@ -615,11 +445,12 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "misc"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
-        } else if checklistIdentifier == 11 {
+        } else if todoDatabase.count == 0 &&  checklistIdentifier == 11 {
             print("nothing yet added, so defaults implemented")
             let defaultArray = todoArray
             for item in defaultArray{
@@ -627,13 +458,15 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 let babyItem = BabyChecklistRealm()
                 babyItem.name = item
                 babyItem.itemCompleted = false
+                babyItem.category = "todo"
                 try! self.realm.write({
                     self.realm.add(babyItem)
                 })
             }
+            }
         checklistTable.reloadData()
     }
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

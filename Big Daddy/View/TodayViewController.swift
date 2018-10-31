@@ -249,8 +249,8 @@ Baby is still not in existence
         tabBar.isEnabled = false
         
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews")
-            
-        viewCount = numberOfViews as! Int
+        //TODO:- Reinstate this to make viewcount work
+//        viewCount = numberOfViews as! Int
   
             print("this is the number of new views: \(viewCount)")
             
@@ -271,8 +271,9 @@ Baby is still not in existence
                 
                 
                 print("this is the number of views: \(numberOfViews)")
-                weeklyTableView.alpha = 0
-                animateIn()
+        //TODO:- Reinstate these 2 to make setup popup work
+        // weeklyTableView.alpha = 0
+               // animateIn()
                 datePicker.setValue(UIColor.white, forKeyPath: "textColor")
                 if mothersNameField.isEditing == true {
                     mothersNameField.becomeFirstResponder()
