@@ -68,13 +68,13 @@ class babyChecklistCollectionViewController: UIViewController, UICollectionViewD
         } else if indexPath.row == 5 {
             checklistID = 8
             performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
-        } else if indexPath.row == 5 {
+        } else if indexPath.row == 6 {
             checklistID = 9
             performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
-        } else if indexPath.row == 5 {
+        } else if indexPath.row == 7 {
             checklistID = 10
             performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
-        } else if indexPath.row == 5 {
+        } else if indexPath.row == 8 {
             checklistID = 11
             performSegue(withIdentifier: "babyChecklistListSegue", sender: nil)
         }

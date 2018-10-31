@@ -609,7 +609,7 @@
                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="briefcase" translatesAutoresizingMaskIntoConstraints="NO" id="rYD-HG-zmX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickBlue" translatesAutoresizingMaskIntoConstraints="NO" id="rYD-HG-zmX">
                                                     <rect key="frame" x="368" y="11.666666666666664" width="22" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="1af-NM-hK9"/>
@@ -2322,7 +2322,6 @@ Do not delete this provision (except upon legal advice). Without this provision,
     <resources>
         <image name="articlesButton" width="24" height="24"/>
         <image name="balancing-scale-variant" width="128" height="128"/>
-        <image name="briefcase" width="128" height="128"/>
         <image name="cancel" width="128" height="128"/>
         <image name="information" width="32" height="32"/>
         <image name="measuring-tape" width="64" height="64"/>
@@ -2334,6 +2333,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
         <image name="stop" width="32" height="32"/>
         <image name="thumb-down" width="512" height="512"/>
         <image name="thumbs-up" width="512" height="512"/>
+        <image name="tickBlue" width="128" height="128"/>
         <image name="todayButton" width="24" height="24"/>
         <image name="toolsIcon" width="24" height="24"/>
         <image name="update-arrow" width="32" height="32"/>
