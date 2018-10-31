@@ -131,14 +131,10 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
 
           } else if checklistIdentifier == 3 {
 
-            print("baby checklists")
-            
-             let item = babyChecklist[indexPath.row]
-            
-              bagCell.itemName.text = self.clothesArray[indexPath.row]
-
-
-                        if item.itemCompleted == true {
+            bagCell.itemName.text = self.clothesArray[indexPath.row]
+            let primaryKey = bagCell.itemName.text
+            let babyChecklistItem = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
+            if babyChecklistItem?.itemCompleted == true {
                             bagCell.itemName.alpha = 0.3
                             bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
                             bagCell.tick.alpha = 0.3
@@ -148,13 +144,10 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                             bagCell.tick.alpha = 1
                         }
         } else if checklistIdentifier == 4 {
-            
-            let item = babyChecklist[indexPath.row]
-            
             bagCell.itemName.text = self.travelArray[indexPath.row]
-            
-            
-            if item.itemCompleted == true {
+            let primaryKey = bagCell.itemName.text
+            let babyChecklistItem = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
+            if babyChecklistItem?.itemCompleted == true {
                 bagCell.itemName.alpha = 0.3
                 bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
                 bagCell.tick.alpha = 0.3
@@ -163,6 +156,20 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
                 bagCell.tick.alpha = 1
             }
+//            let item = babyChecklist[indexPath.row]
+//
+//            bagCell.itemName.text = self.travelArray[indexPath.row]
+//
+//
+//            if item.itemCompleted == true {
+//                bagCell.itemName.alpha = 0.3
+//                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+//                bagCell.tick.alpha = 0.3
+//            } else {
+//                bagCell.itemName.alpha = 1
+//                bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
+//                bagCell.tick.alpha = 1
+//            }
         } else if checklistIdentifier == 5 {
             
             let item = babyChecklist[indexPath.row]
@@ -353,27 +360,20 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 realm.add(babyChecklistItem, update: true)
             }
             
-            
-//            try! self.realm.write({
-//                if (item.itemCompleted == false){
-//                    item.itemCompleted = true
-//                }else{
-//                    item.itemCompleted = false
-//                }
-//            })
         } else if checklistIdentifier == 4 {
             let babyChecklistItem = BabyChecklistRealm()
             let selectedCell = tableView.cellForRow(at: indexPath) as! HospitalBagTableViewCell
             let cellText = selectedCell.itemName.text
             print("this is the cell text: \(cellText)")
             babyChecklistItem.name = cellText!
-            if (babyChecklistItem.itemCompleted == false){
-                babyChecklistItem.itemCompleted = true
-            }else{
-                babyChecklistItem.itemCompleted = false
-            }
+            
             
             try! realm.write {
+                if (babyChecklistItem.itemCompleted == false){
+                    babyChecklistItem.itemCompleted = true
+                }else{
+                    babyChecklistItem.itemCompleted = false
+                }
                 realm.add(babyChecklistItem, update: true)
             }
 //            let babyChecklistItem = babyChecklist[indexPath.row]
@@ -535,7 +535,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
                 })
             }
   }
-             else if checklistIdentifier == 4 {
+             else if babyChecklist.count == 0 && checklistIdentifier == 4 {
             print("nothing yet added, so defaults implemented")
             let defaultArray = travelArray
             for item in defaultArray {
