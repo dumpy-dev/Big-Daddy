@@ -99,15 +99,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // let clothesDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'clothes'")
-//        let travelDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'travel'")
-//        let nappyDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'nappy'")
-//        let healthDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'health'")
-//        let bathDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'bath'")
-//        let sleepDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'sleep'")
-//        let feedingDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'feeding'")
-//        let miscDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'misc'")
-//        let todoDatabase = realm.objects(BabyChecklistRealm.self).filter("category = 'todo'")
+    
         if checklistIdentifier == 1 {
                 return self.itemChecklist.count
         } else if checklistIdentifier == 2 {

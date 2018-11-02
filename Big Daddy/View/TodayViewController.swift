@@ -26,7 +26,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         component.day = -280
         let calculatedDate = calendar.date(byAdding: component, to: Date())
         
-        print(calculatedDate)
+        
         
         UserDefaults.standard.set(Date(), forKey: "DueDate")
         //UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
@@ -53,7 +53,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let remainderDays : Int = diffInDays!%7
             let remainderDaysElapsed : Int = 7 - remainderDays
             
-            print("\(mothersNameField.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
+        
             
             if weeksLeft >= 40 {
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
@@ -74,7 +74,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate).day
             let weeksLeft : Int = diffInDays!/7
             let remainderDays : Int = diffInDays!%7
-            print("You have \(weeksLeft) weeks and \(remainderDays) days to go!")
+            
             let weeksElapsed : Int = 40 - weeksLeft
             let remainderDaysElapsed : Int = 7 - remainderDays
             if weeksLeft >= 40 {
@@ -100,7 +100,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var selectedPerson = ""
     var selectionTag = 0
     
-    //Setup the arrays and dictionaries
+    // Setup the arrays and dictionaries
     
     let babySizeImageArray = ["week0-3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a pint", "the height of a beer bottle", "the length of a tube of pringes", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the size of a violin", "the weight of War and Peace", "the size of X", "the weight of a tomahawk steak", "the size of a steering wheel", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the size of a brick", "the height of a car tyre", "the size of X", "the length of a wood saw", "the length of a full rack of ribs"]
@@ -252,7 +252,7 @@ Baby is still not in existence
         //TODO:- Reinstate this to make viewcount work
 //        viewCount = numberOfViews as! Int
   
-            print("this is the number of new views: \(viewCount)")
+        
             
     if viewCount >= 2 {
                 
@@ -270,7 +270,7 @@ Baby is still not in existence
          } else {
                 
                 
-                print("this is the number of views: \(numberOfViews)")
+        
         //TODO:- Reinstate these 2 to make setup popup work
         // weeklyTableView.alpha = 0
                // animateIn()
@@ -298,12 +298,11 @@ Baby is still not in existence
         let remainderDays : Int = diffInDays!%7
         let weeksElapsed : Int = 40 - weeksLeft
         let remainderDaysElapsed : Int = 7 - remainderDays
-        print("Your partner is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
-        print("this is the due date: \(dueDate)")
+    
 //        weekCollectionView.reloadData()
         
         selectionTag = 0
-        print("the new selection tag = \(selectionTag)")
+     
         self.navigationController?.isNavigationBarHidden = true
         selectedPerson = ""
 
@@ -322,20 +321,13 @@ Baby is still not in existence
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is articlesForTodayViewController {
-            print("to articles")
+          
         } else {
             let tag = segue.destination as? ThisWeekViewController
             tag?.selectedTag = selectionTag
         }
     }
 
-   
-  
-    
-    
-    
-    
-    
 //
 //    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 //        self.centerTable()
@@ -367,18 +359,7 @@ Baby is still not in existence
     }
 }
 
-//extension decoderCollectionViewController: UIScrollViewDelegate {
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        let layout = self.decoderCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-//        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-//        var offset = targetContentOffset.pointee
-//        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
-//        let roundedIndex = round(index)
-//        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
-//        targetContentOffset.pointee = offset
-//    }
 
-//}
 //extension UITableView {
 //    func scrollToNearestVisibleTableViewCell() {
 //        self.decelerationRate = UIScrollViewDecelerationRateNormal
@@ -406,7 +387,7 @@ Baby is still not in existence
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
     
     func buttonFunction(sender: UIButton){
-        print(sender.tag)
+        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
@@ -419,7 +400,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
         if indexPath.item == 0 {
 //            weeklyTableView.isScrollEnabled = true
-            print("this is the collection view tag: \(collectionView.tag)")
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
 
           
@@ -719,8 +700,7 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
         self.tabBarItem.isEnabled = false
         setupPopup.frame.size.height = self.view.frame.height + 90
         setupPopup.frame.size.width = self.view.frame.width
-        print("this is the sizing view: \(self.sizingView.frame.height)")
-        print("this is the setup popup view: \(setupPopup.frame.height)")
+        
         setupPopup.frame.origin.y = 0
         setupPopup.frame.origin.x = self.view.frame.width - setupPopup.frame.width
         setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
@@ -747,12 +727,11 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
         let remainderDays : Int = diffInDays!%7
         let weeksElapsed : Int = 40 - weeksLeft
         let remainderDaysElapsed : Int = 7 - remainderDays
-        print("Your partner is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
-        print("this is the due date: \(dueDate)")
+        
         //        weekCollectionView.reloadData()
 //
 //        selectionTag = 0
-//        print("the new selection tag = \(selectionTag)")
+//
 //        self.navigationController?.isNavigationBarHidden = true
 //        selectedPerson = ""
          let displayedWeeksElapsed = weeksElapsed - 3 ?? 0
