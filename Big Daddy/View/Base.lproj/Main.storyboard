@@ -68,7 +68,7 @@
                                                         <color key="backgroundColor" red="0.035294117647058823" green="0.52941176470588236" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,7 +116,7 @@
                                                         <color key="backgroundColor" red="0.033476186329999998" green="0.52949833420000003" blue="0.68503269010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -228,7 +228,7 @@
                                         <rect key="frame" x="32" y="40" width="350" height="29"/>
                                         <color key="backgroundColor" red="0.033476186329999998" green="0.52949833420000003" blue="0.68503269010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="350" id="vAy-o3-0SX"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="vAy-o3-0SX"/>
                                         </constraints>
                                         <segments>
                                             <segment title="Girl"/>
@@ -245,7 +245,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgU-dS-cj1">
                                                 <rect key="frame" x="0.0" y="0.0" width="91" height="39"/>
-                                                <color key="backgroundColor" red="0.033476186329999998" green="0.52949833420000003" blue="0.68503269010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="23"/>
                                                 <state key="normal" title="   Reset   ">
                                                     <color key="titleColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -256,7 +255,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBr-MW-16c">
                                                 <rect key="frame" x="151" y="0.0" width="91" height="39"/>
-                                                <color key="backgroundColor" red="0.033476186329999998" green="0.52949833420000003" blue="0.68503269010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="23"/>
                                                 <state key="normal" title="   Done   ">
                                                     <color key="titleColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -482,7 +480,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are feeling sleepy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C19-7x-IIa">
-                                <rect key="frame" x="0.0" y="306" width="414" height="124.33333333333331"/>
+                                <rect key="frame" x="63.666666666666657" y="306" width="286.66666666666674" height="124.33333333333331"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="54"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -525,13 +523,13 @@
                         <constraints>
                             <constraint firstItem="u1p-p1-Bqt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="C19-7x-IIa" secondAttribute="bottom" constant="20" id="3dR-Rq-7tc"/>
                             <constraint firstItem="C19-7x-IIa" firstAttribute="top" relation="greaterThanOrEqual" secondItem="u1p-p1-Bqt" secondAttribute="top" constant="20" id="7VT-Xh-hOC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="C19-7x-IIa" secondAttribute="trailing" constant="-20" id="PRI-S1-0bH"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="C19-7x-IIa" secondAttribute="trailing" id="PRI-S1-0bH"/>
                             <constraint firstItem="U5V-Lo-ASg" firstAttribute="top" secondItem="u1p-p1-Bqt" secondAttribute="top" constant="20" id="TN6-Yx-hPP"/>
                             <constraint firstItem="u1p-p1-Bqt" firstAttribute="trailing" secondItem="U5V-Lo-ASg" secondAttribute="trailing" constant="20" id="WnX-Ys-mcy"/>
                             <constraint firstItem="C19-7x-IIa" firstAttribute="centerX" secondItem="PaN-Np-4Xr" secondAttribute="centerX" id="cOa-eu-Vea"/>
                             <constraint firstItem="C19-7x-IIa" firstAttribute="centerY" secondItem="PaN-Np-4Xr" secondAttribute="centerY" id="gjH-NB-kEz"/>
                             <constraint firstItem="EEY-4C-v0u" firstAttribute="leading" secondItem="u1p-p1-Bqt" secondAttribute="leading" constant="20" id="jNR-cg-wzr"/>
-                            <constraint firstItem="C19-7x-IIa" firstAttribute="leading" secondItem="PaN-Np-4Xr" secondAttribute="leadingMargin" constant="-20" id="nEg-Mn-7hY"/>
+                            <constraint firstItem="C19-7x-IIa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PaN-Np-4Xr" secondAttribute="leadingMargin" id="nEg-Mn-7hY"/>
                             <constraint firstItem="u1p-p1-Bqt" firstAttribute="bottom" secondItem="EEY-4C-v0u" secondAttribute="bottom" constant="20" id="pRT-jF-7AX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="u1p-p1-Bqt"/>
@@ -1633,7 +1631,6 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstItem="Gj9-aq-d4g" firstAttribute="centerX" secondItem="sCc-Rd-uUH" secondAttribute="centerX" id="3sM-4e-Xip"/>
                                                                             <constraint firstItem="Gj9-aq-d4g" firstAttribute="leading" secondItem="sCc-Rd-uUH" secondAttribute="leading" constant="5" id="5Zu-Ub-THG"/>
                                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gj9-aq-d4g" secondAttribute="bottom" constant="5" id="IxN-ul-caT"/>
                                                                             <constraint firstItem="Gj9-aq-d4g" firstAttribute="centerY" secondItem="sCc-Rd-uUH" secondAttribute="centerY" id="Rs0-Rr-l1W"/>
@@ -1861,16 +1858,16 @@ Do not delete this provision (except upon legal advice). Without this provision,
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omu-97-QyS" userLabel="Upper Third">
-                            <rect key="frame" x="0.0" y="0.0" width="290" height="120"/>
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="122.33333333333333"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET STARTED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="32f-GM-F7q">
-                                    <rect key="frame" x="77.666666666666671" y="20" width="134.66666666666663" height="25.333333333333329"/>
+                                    <rect key="frame" x="77.666666666666671" y="20.333333333333336" width="134.66666666666663" height="27"/>
                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FUr-BK-VSh">
-                                    <rect key="frame" x="20" y="52.666666666666657" width="250" height="45"/>
+                                    <rect key="frame" x="20" y="55.333333333333329" width="250" height="45"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCO-e0-lnC">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="45"/>
@@ -1922,11 +1919,13 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                 <constraint firstItem="32f-GM-F7q" firstAttribute="centerX" secondItem="omu-97-QyS" secondAttribute="centerX" id="8hN-wd-4Oz"/>
                                 <constraint firstItem="FUr-BK-VSh" firstAttribute="centerY" secondItem="omu-97-QyS" secondAttribute="centerY" constant="15" id="CFb-7X-gXc"/>
                                 <constraint firstItem="FUr-BK-VSh" firstAttribute="centerX" secondItem="omu-97-QyS" secondAttribute="centerX" id="CzP-td-Asz"/>
+                                <constraint firstAttribute="bottom" secondItem="FUr-BK-VSh" secondAttribute="bottom" constant="22" id="dXe-fw-tas"/>
                                 <constraint firstItem="32f-GM-F7q" firstAttribute="top" secondItem="omu-97-QyS" secondAttribute="top" constant="20" id="peQ-x0-i74"/>
+                                <constraint firstItem="FUr-BK-VSh" firstAttribute="top" secondItem="32f-GM-F7q" secondAttribute="bottom" constant="8" symbolic="YES" id="q4u-9N-fz8"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dr-D7-cag" userLabel="Middle Third">
-                            <rect key="frame" x="0.0" y="120" width="290" height="240"/>
+                            <rect key="frame" x="0.0" y="122.33333333333334" width="290" height="244.00000000000003"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OJO-Ug-O0L">
                                     <rect key="frame" x="0.0" y="5" width="290" height="225"/>
@@ -1935,16 +1934,16 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                             <rect key="frame" x="20" y="0.0" width="250" height="65"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your baby's due date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHM-cV-cLq">
-                                                    <rect key="frame" x="0.0" y="12.666666666666675" width="83.333333333333329" height="39.333333333333343"/>
+                                                    <rect key="frame" x="0.0" y="12.999999999999989" width="83.333333333333329" height="39.333333333333343"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0L9-4P-BLc">
-                                                    <rect key="frame" x="83.333333333333343" y="7.3333333333333321" width="83.333333333333343" height="50.333333333333343"/>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0L9-4P-BLc">
+                                                    <rect key="frame" x="83.333333333333343" y="7.6666666666666714" width="83.333333333333343" height="50"/>
                                                     <subviews>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Tl-23-NWf">
-                                                            <rect key="frame" x="17.333333333333343" y="9.6666666666666572" width="51" height="31"/>
+                                                            <rect key="frame" x="17.333333333333343" y="9.3333333333333144" width="51" height="31"/>
                                                             <color key="tintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="onTintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="thumbTintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1990,10 +1989,10 @@ Do not delete this provision (except upon legal advice). Without this provision,
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1g-IP-Guc" userLabel="Lower Third">
-                            <rect key="frame" x="0.0" y="360" width="290" height="60"/>
+                            <rect key="frame" x="0.0" y="366.33333333333337" width="290" height="61"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="jhw-Qe-czm">
-                                    <rect key="frame" x="69" y="12.666666666666686" width="152" height="35"/>
+                                    <rect key="frame" x="69" y="13" width="152" height="35"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IR-YK-fEJ">
                                             <rect key="frame" x="0.0" y="0.0" width="46" height="35"/>
@@ -2021,6 +2020,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                             <color key="backgroundColor" red="0.027450980392156862" green="0.38039215686274508" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="jhw-Qe-czm" firstAttribute="centerX" secondItem="m1g-IP-Guc" secondAttribute="centerX" id="bHr-Ca-isR"/>
+                                <constraint firstItem="jhw-Qe-czm" firstAttribute="top" secondItem="m1g-IP-Guc" secondAttribute="top" constant="13" id="fhn-zy-0BE"/>
                                 <constraint firstItem="jhw-Qe-czm" firstAttribute="centerY" secondItem="m1g-IP-Guc" secondAttribute="centerY" id="xhv-z6-7Ub"/>
                             </constraints>
                         </view>
@@ -2155,15 +2155,20 @@ Do not delete this provision (except upon legal advice). Without this provision,
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ls-xL-oRG">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ls-xL-oRG">
                                             <rect key="frame" x="16" y="0.0" width="359" height="36"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                             <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="8Ls-xL-oRG" firstAttribute="leading" secondItem="hFY-4i-8FB" secondAttribute="leadingMargin" constant="-4" id="QXc-00-3tY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8Ls-xL-oRG" secondAttribute="bottom" constant="-3" id="ghr-qg-AQ4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8Ls-xL-oRG" secondAttribute="trailing" constant="19" id="k9L-Gq-u9p"/>
+                                        <constraint firstItem="8Ls-xL-oRG" firstAttribute="top" secondItem="hFY-4i-8FB" secondAttribute="top" id="vqk-QC-yA4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="articleLabel" destination="8Ls-xL-oRG" id="LC8-13-cV8"/>

@@ -23,7 +23,7 @@ class babyChecklistCollectionViewController: UIViewController, UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImages = [#imageLiteral(resourceName: "checklistChecklist"),#imageLiteral(resourceName: "checklistChecklist"),#imageLiteral(resourceName: "nappyChecklist"),#imageLiteral(resourceName: "crossChecklist"),#imageLiteral(resourceName: "bathChecklist"),#imageLiteral(resourceName: "sleepChecklist"),#imageLiteral(resourceName: "bottleChecklist"),#imageLiteral(resourceName: "checklistChecklist"),#imageLiteral(resourceName: "checklistChecklist")]
+        arrayOfImages = [#imageLiteral(resourceName: "clothingChecklist"),#imageLiteral(resourceName: "pramChecklist"),#imageLiteral(resourceName: "nappyChecklist"),#imageLiteral(resourceName: "crossChecklist"),#imageLiteral(resourceName: "bathChecklist"),#imageLiteral(resourceName: "sleepChecklist"),#imageLiteral(resourceName: "bottleChecklist"),#imageLiteral(resourceName: "miscChecklist"),#imageLiteral(resourceName: "checklistChecklist")]
         arrayOfIDs = ["Clothes", "Travel", "Nappy", "Health", "Bathtime", "Sleeping", "Feeding", "Misc", "To Do"]
     }
     
