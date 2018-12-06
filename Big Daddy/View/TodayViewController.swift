@@ -12,82 +12,84 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var sizingView: UIView!
     var viewCount = 0
+    var isDisplayingFirstCell = true
     
+
     // MARK:- Code for the Setup Popup
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateSwitch: UISwitch!
-    @IBAction func skipPressed(_ sender: Any) {
-       
-       print("skip pressed")
-        UserDefaults.standard.set("your partner", forKey: "mother")
-        let calendar = Calendar.current
-        var component = DateComponents()
-        component.day = -280
-        let calculatedDate = calendar.date(byAdding: component, to: Date())
-        UserDefaults.standard.set(Date(), forKey: "DueDate")
-        animateOut()
-    }
-    
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        mothersNameField.resignFirstResponder()
-        return true
-    }
-    
-    @IBAction func donePressed(_ sender: Any) {
-        
-        UserDefaults.standard.set(mothersNameField.text, forKey: "mother")
-        if dateSwitch.isOn {
-            datePicker.minimumDate = nil
-            let daysToAdd = 280
-            let calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: datePicker.date)
-            let now = Date()
-            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate!).day
-            let weeksLeft : Int = diffInDays!/7
-            let weeksElapsed : Int = 40 - weeksLeft
-            let remainderDays : Int = diffInDays!%7
-            let remainderDaysElapsed : Int = 7 - remainderDays
-            
-            if weeksLeft >= 40 {
-                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
-                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-                self.datePicker.setDate(Date() as Date, animated: true)
-            } else {
-                let dateEntered = datePicker.date
-                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
-                UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
-                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
-            }
-        } else {
-            datePicker.minimumDate = Date()
-            let now = Date()
-            let calculatedDueDate = datePicker.date
-            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate).day
-            let weeksLeft : Int = diffInDays!/7
-            let remainderDays : Int = diffInDays!%7
-            
-            let weeksElapsed : Int = 40 - weeksLeft
-            let remainderDaysElapsed : Int = 7 - remainderDays
-            if weeksLeft >= 40 {
-                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
-                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-                self.datePicker.setDate(Date() as Date, animated: true)
-            } else {
-                let dateEntered = datePicker.date
-                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
-                UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
-                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
-            }
-        }
-        animateOut()
-    }
+//    @IBAction func skipPressed(_ sender: Any) {
+//
+//       print("skip pressed")
+//        UserDefaults.standard.set("your partner", forKey: "mother")
+//        let calendar = Calendar.current
+//        var component = DateComponents()
+//        component.day = -280
+//        let calculatedDate = calendar.date(byAdding: component, to: Date())
+//        UserDefaults.standard.set(Date(), forKey: "DueDate")
+//       //  animateOut()
+//    }
+//
+//
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        mothersNameField.resignFirstResponder()
+//        return true
+//    }
+//
+//    @IBAction func donePressed(_ sender: Any) {
+//
+//        UserDefaults.standard.set(mothersNameField.text, forKey: "mother")
+//        if dateSwitch.isOn {
+//            datePicker.minimumDate = nil
+//            let daysToAdd = 280
+//            let calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: datePicker.date)
+//            let now = Date()
+//            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate!).day
+//            let weeksLeft : Int = diffInDays!/7
+//            let weeksElapsed : Int = 40 - weeksLeft
+//            let remainderDays : Int = diffInDays!%7
+//            let remainderDaysElapsed : Int = 7 - remainderDays
+//
+//            if weeksLeft >= 40 {
+//                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
+//                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
+//                self.present(alertController, animated: true, completion: nil)
+//                self.datePicker.setDate(Date() as Date, animated: true)
+//            } else {
+//                let dateEntered = datePicker.date
+//                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+//                UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
+//                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+//                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+//            }
+//        } else {
+//            datePicker.minimumDate = Date()
+//            let now = Date()
+//            let calculatedDueDate = datePicker.date
+//            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate).day
+//            let weeksLeft : Int = diffInDays!/7
+//            let remainderDays : Int = diffInDays!%7
+//
+//            let weeksElapsed : Int = 40 - weeksLeft
+//            let remainderDaysElapsed : Int = 7 - remainderDays
+//            if weeksLeft >= 40 {
+//                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
+//                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
+//                self.present(alertController, animated: true, completion: nil)
+//                self.datePicker.setDate(Date() as Date, animated: true)
+//            } else {
+//                let dateEntered = datePicker.date
+//                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+//                UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
+//                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+//                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+//            }
+//        }
+//      //  animateOut()
+//    }
     
     // MARK - code for remaining functionality
 
@@ -153,6 +155,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var weeklyTableView: UITableView!
     var storedOffsets = [Int: CGFloat]()
     
+    
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 38
     }
@@ -193,6 +196,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        
+        
         tabBar.isEnabled = false
         
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
@@ -219,8 +224,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
         
         //TODO:- Reinstate these 2 to make setup popup work
-         weeklyTableView.alpha = 0
-                animateIn()
+       //  weeklyTableView.alpha = 0
+           //     animateIn()
                 datePicker.setValue(UIColor.white, forKeyPath: "textColor")
                 if mothersNameField.isEditing == true {
                     mothersNameField.becomeFirstResponder()
@@ -235,13 +240,9 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidAppear(_ animated: Bool) {
       
         super.viewWillAppear(animated)
-        
-    
         let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? Date()
-        
         let now = Date()
         let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate).day
-        
         let weeksLeft : Int = diffInDays!/7
         let remainderDays : Int = diffInDays!%7
         let weeksElapsed : Int = 40 - weeksLeft
@@ -258,15 +259,13 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-   weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
+   weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
 //       (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
      weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
             }
-
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is articlesForTodayViewController {
           
@@ -341,7 +340,6 @@ extension UITableView {
 
 extension UICollectionView {
     
-    
     func stopScrolling() {
         // self.decelerationRate = UIScrollView.DecelerationRate.fast
         let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 2))
@@ -372,16 +370,10 @@ extension UICollectionView {
 
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        print("collection view is moving!")
-    }
-  
-  
+   
     func buttonFunction(sender: UIButton){
-        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
         return 3
     }
    
@@ -389,32 +381,39 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
   
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-     
-        
-//        if indexPath.item == 0 {
-//            weeklyTableView.isScrollEnabled = true
-//        } else {
-//            weeklyTableView.isScrollEnabled = false
-//        }
-        
+        func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+            print("collection view is moving!")
+        }
         if indexPath.item == 0 {
         // weeklyTableView.isScrollEnabled = true
             //print("this is the indexPath: \(indexPath.item)")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! WeekCollectionViewCell
   
-            print("this is the cell position: \(cell.contentView.frame.midX)")
+           // print("this is the cell position: \(cell.contentView.frame.midX)")
+             print("this is indexpath 0")
+
             
-                
-          //  print("this is the visible index path: \(collectionView.indexPathsForVisibleItems)")
-
-//                        cell.rightArrow.tag = indexPath.row
-//                        cell.rightArrow.addTarget(self,
-//                                                  action: #selector(self.buttonFunction(_:)),
-//                                                  for: .touchUpInside)
-//            
-
+            
+            
+            
+            
+            
+            
+        
             cell.babyImage.image = UIImage(named:babySizeImageArray[collectionView.tag])
+            
+            func scrollViewDidScroll(_ scrollView: UIScrollView) {
+                print("moving!")
+//                if cell.visibilityView.window != nil {
+//                    print("visibility view is visible")
+//                } else {
+//                    print("visibility view is not visible")
+//                    isDisplayingFirstCell = false
+//                }
+            }
+            
+            
+            
            
                     let babyLength = lengthArray[collectionView.tag]
             let babyWeight = weightArray[collectionView.tag]
@@ -446,7 +445,8 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
         } else {
             
          
-            
+            print("this is indexpath 1")
+
             
             //print("this is the visible index path: \(collectionView.indexPathsForVisibleItems)")
                    //   print("this is the indexPath: \(indexPath.item)")
@@ -882,69 +882,69 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 
 
-extension TodayViewController: UICollectionViewDelegateFlowLayout {
-    
-    func animateIn() {
-        self.tabBarController?.tabBar.isHidden = true
-        self.view.addSubview(setupPopup)
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-            self.weeklyTableView.alpha = 0.0
-        }, completion: nil)
-     
-        self.tabBarItem.isEnabled = false
-        setupPopup.frame.size.height = self.view.frame.height + 90
-        setupPopup.frame.size.width = self.view.frame.width
-        
-        setupPopup.frame.origin.y = 0
-        setupPopup.frame.origin.x = self.view.frame.width - setupPopup.frame.width
-        setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-        setupPopup.alpha = 0
-        UIView.animate(withDuration: 0.4) {
-            self.setupPopup.alpha = 1
-            self.setupPopup.transform = CGAffineTransform.identity
-        }
-    }
-    
-    func animateOut() {
-        
-         self.tabBarController?.tabBar.isHidden = true
-        self.setupPopup.removeFromSuperview()
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.weeklyTableView.alpha = 1.0
-        }, completion: nil)
-        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? Date()
-        
-        let now = Date()
-        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate).day
-        
-        let weeksLeft : Int = diffInDays!/7
-        let remainderDays : Int = diffInDays!%7
-        let weeksElapsed : Int = 40 - weeksLeft
-        let remainderDaysElapsed : Int = 7 - remainderDays
-        
-        //        weekCollectionView.reloadData()
+//extension TodayViewController: UICollectionViewDelegateFlowLayout {
 //
-//        selectionTag = 0
+//    func animateIn() {
+//        self.tabBarController?.tabBar.isHidden = true
+//        self.view.addSubview(setupPopup)
+//        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+//            self.weeklyTableView.alpha = 0.0
+//        }, completion: nil)
 //
-//        self.navigationController?.isNavigationBarHidden = true
-//        selectedPerson = ""
-         let displayedWeeksElapsed = weeksElapsed - 3 ?? 0
-        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-//        weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
-//        (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
-// 
-     //   mothersNameField.resignFirstResponder()
-    }
-    
-    // MARK:- Collection View cell size extension
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let cellWidth = sizingView.frame.width
-        let cellHeight = sizingView.frame.height
-        
-    return CGSize(width: cellWidth, height: cellHeight)
-    }
-}
+//        self.tabBarItem.isEnabled = false
+//        setupPopup.frame.size.height = self.view.frame.height + 90
+//        setupPopup.frame.size.width = self.view.frame.width
+//
+//        setupPopup.frame.origin.y = 0
+//        setupPopup.frame.origin.x = self.view.frame.width - setupPopup.frame.width
+//        setupPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+//        setupPopup.alpha = 0
+//        UIView.animate(withDuration: 0.4) {
+//            self.setupPopup.alpha = 1
+//            self.setupPopup.transform = CGAffineTransform.identity
+//        }
+//    }
+//
+//    func animateOut() {
+//
+//         self.tabBarController?.tabBar.isHidden = true
+//        self.setupPopup.removeFromSuperview()
+//        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+//            self.weeklyTableView.alpha = 1.0
+//        }, completion: nil)
+//        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? Date()
+//
+//        let now = Date()
+//        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate).day
+//
+//        let weeksLeft : Int = diffInDays!/7
+//        let remainderDays : Int = diffInDays!%7
+//        let weeksElapsed : Int = 40 - weeksLeft
+//        let remainderDaysElapsed : Int = 7 - remainderDays
+//
+//        //        weekCollectionView.reloadData()
+////
+////        selectionTag = 0
+////
+////        self.navigationController?.isNavigationBarHidden = true
+////        selectedPerson = ""
+//         let displayedWeeksElapsed = weeksElapsed - 3 ?? 0
+//        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+////        weeklyTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
+////        (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
+////
+//     //   mothersNameField.resignFirstResponder()
+//    }
+//
+//    // MARK:- Collection View cell size extension
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let cellWidth = sizingView.frame.width
+//        let cellHeight = sizingView.frame.height
+//
+//    return CGSize(width: cellWidth, height: cellHeight)
+//    }
+//}
 
 
 

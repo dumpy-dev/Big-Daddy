@@ -74,7 +74,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     }
     
   @objc func pauseWhenBackground() {
-    if isTimerRunning == true {
+   // if isTimerRunning == true {
         self.timer.invalidate()
         let strengthOfContraction = strengthSlider.value
         let shared = UserDefaults.standard
@@ -82,7 +82,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         shared.set(strengthOfContraction, forKey: "strengthOfContraction")
         print("This is the saved time: \(Date())")
         print("this is the saved strength: \(UserDefaults.standard.object(forKey: "strengthOfContraction"))")
-    }
+ //   }
     }
     
   @objc func willEnterForeground() {
@@ -98,6 +98,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
             strengthSlider.value = savedStrength as! Float
         }
     }
+    //TODO:- add code here to update secondary contraction gap timer values on entering foreground
     }
     
     

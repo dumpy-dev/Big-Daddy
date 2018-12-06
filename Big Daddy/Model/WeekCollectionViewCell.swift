@@ -20,6 +20,7 @@ class WeekCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var babyHeight: UILabel!
     @IBOutlet weak var weeksElapsed: UILabel!
     @IBOutlet weak var babySize: UILabel!
+    @IBOutlet weak var visibilityView: UIView!
     
     func skipCell() {
         print("skip cell")
