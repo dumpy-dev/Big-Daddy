@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QJJ-8x-CJW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jpL-eq-WEW">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -354,14 +354,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZV1-iH-car">
-                                            <rect key="frame" x="44" y="42" width="93" height="93"/>
+                                            <rect key="frame" x="42" y="33" width="97" height="97"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ZV1-iH-car" secondAttribute="height" multiplier="1:1" id="qpP-lT-yya"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prE-ji-xZf">
-                                            <rect key="frame" x="10" y="150" width="161" height="6"/>
-                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="prE-ji-xZf">
+                                            <rect key="frame" x="10" y="142" width="161" height="14"/>
+                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                             <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -370,11 +370,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="prE-ji-xZf" secondAttribute="bottom" constant="20" id="62e-EB-nJc"/>
-                                    <constraint firstItem="prE-ji-xZf" firstAttribute="top" secondItem="ZV1-iH-car" secondAttribute="bottom" constant="15" id="A7V-oN-V7C"/>
-                                    <constraint firstItem="ZV1-iH-car" firstAttribute="top" secondItem="ud4-mt-ocP" secondAttribute="topMargin" constant="14" id="Ac8-0t-zsf"/>
+                                    <constraint firstItem="prE-ji-xZf" firstAttribute="top" secondItem="ZV1-iH-car" secondAttribute="bottom" constant="12" id="A7V-oN-V7C"/>
+                                    <constraint firstItem="ZV1-iH-car" firstAttribute="top" secondItem="ud4-mt-ocP" secondAttribute="topMargin" constant="5" id="Ac8-0t-zsf"/>
                                     <constraint firstItem="ZV1-iH-car" firstAttribute="centerX" secondItem="ud4-mt-ocP" secondAttribute="centerX" id="CJ2-C8-vNa"/>
                                     <constraint firstItem="prE-ji-xZf" firstAttribute="centerX" secondItem="ud4-mt-ocP" secondAttribute="centerX" id="ail-kq-vkQ"/>
-                                    <constraint firstItem="ZV1-iH-car" firstAttribute="leading" secondItem="ud4-mt-ocP" secondAttribute="leadingMargin" constant="36" id="fl7-RH-55Q"/>
+                                    <constraint firstItem="ZV1-iH-car" firstAttribute="leading" secondItem="ud4-mt-ocP" secondAttribute="leadingMargin" constant="34" id="fl7-RH-55Q"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="prE-ji-xZf" secondAttribute="trailing" constant="2" id="q6C-dt-mFC"/>
                                     <constraint firstItem="prE-ji-xZf" firstAttribute="leading" secondItem="ud4-mt-ocP" secondAttribute="leadingMargin" constant="2" id="wiF-P7-aGv"/>
                                 </constraints>
@@ -2646,7 +2646,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tww-4r-uD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1103" y="148"/>
+            <point key="canvasLocation" x="-2720" y="524"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="KpO-gO-tBE">
@@ -2664,7 +2664,7 @@ Do not delete this provision (except upon legal advice). Without this provision,
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWf-bi-Ic7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1104" y="880"/>
+            <point key="canvasLocation" x="-2720" y="1167"/>
         </scene>
         <!--Tools-->
         <scene sceneID="Kuz-yL-Fe2">
@@ -2730,8 +2730,8 @@ Do not delete this provision (except upon legal advice). Without this provision,
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2pe-YH-MQ5"/>
-        <segue reference="Ia7-8s-UuT"/>
-        <segue reference="HdG-oj-wdQ"/>
+        <segue reference="ho7-ss-gWS"/>
+        <segue reference="sFO-6i-VIq"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

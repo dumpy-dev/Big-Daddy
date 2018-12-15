@@ -44,7 +44,7 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
             mail.mailComposeDelegate = self
             mail.setToRecipients(["chrisjdeutsch@gmail.com"])
             mail.setSubject("Feedback")
-            //mail.setMessageBody("<p>Have you thought about adding this new feature?</p>", isHTML: true)
+        //mail.setMessageBody("<p>Set default email text here as needed.</p>", isHTML: true)
             present(mail, animated: true, completion: nil)
         } else {
             print("send email doesn't work")
@@ -54,18 +54,13 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
-
     @objc func likeWiggle() {
         likeButton.wiggle()
     }
-    
-    
 }
 
-//import UIKit
-
 extension UIButton {
-    // Animate a button, adding effect of "something went wrong". Useful for login button for example.
+   
     @objc func wiggle() {
         let wiggleAnim = CABasicAnimation(keyPath: "position")
         wiggleAnim.duration = 0.05
@@ -75,9 +70,6 @@ extension UIButton {
         wiggleAnim.toValue = CGPoint(x: self.center.x + 4.0, y: self.center.y)
         layer.add(wiggleAnim, forKey: "position")
     }
-    
-   
-    
 }
 
 

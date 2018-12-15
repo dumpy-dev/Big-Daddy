@@ -290,6 +290,7 @@
 				24A012C42059C00600971299 /* ArticlesCustomTableViewCell.swift */,
 				2445DF5D2079180D0043590E /* ToolsCollectionViewCell.swift */,
 				2445DF57207811750043590E /* TodayCollectionViewCell.swift */,
+				24C1965D213ACF5000B07DBD /* decoderCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,7 +310,6 @@
 				24672128219224FA00B427F9 /* InitialSetupViewController.swift */,
 				2467212C2198C25700B427F9 /* SetupViewController.swift */,
 				248922292171F70600EE1F98 /* LoadingViewController.swift */,
-				24C1965D213ACF5000B07DBD /* decoderCollectionViewCell.swift */,
 				24C1965B213ACF3700B07DBD /* decoderCollectionViewController.swift */,
 				2451968F2137422F008D4CF4 /* babyChecklistCollectionViewController.swift */,
 				24519691213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift */,
