@@ -10,6 +10,7 @@ import UIKit
 
 class InitialSetupViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
+   
     var pageControl = UIPageControl()
     
     // MARK: UIPageViewControllerDataSource
@@ -105,6 +106,14 @@ class InitialSetupViewController: UIPageViewController, UIPageViewControllerDele
         return orderedViewControllers[nextIndex]
     }
     
+    
+}
+
+class setupVC1 : UIViewController {
+    @IBAction func skipButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "skipSegue", sender: self)
+        
+    }
     
 }
 
