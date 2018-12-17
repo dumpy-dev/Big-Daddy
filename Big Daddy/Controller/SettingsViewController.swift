@@ -58,7 +58,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         let babysName = babyNameEntered.text
 
         if dateSwitch.isOn {
-            
             datePicker.minimumDate = nil
             let daysToAdd = 280
             let calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: datePicker.date)
@@ -72,21 +71,17 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             print("\(motherNameEntered.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
             
             if weeksLeft >= 40 {
-                
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
-                
                 alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
-                
                 self.datePicker.setDate(Date() as Date, animated: true)
-                
-                
             } else {
                 let dateEntered = datePicker.date
                 UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
                 UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
                 UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+                  tabBarController?.selectedIndex = 0
             }
             
             //            let due = UserDefaults.standard.object(forKey: "DueDate")
@@ -115,55 +110,31 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             let weeksElapsed : Int = 40 - weeksLeft
             let remainderDaysElapsed : Int = 7 - remainderDays
             print("\(motherNameEntered.text) is \(weeksElapsed) weeks and \(remainderDaysElapsed) days along!")
-            
-            
-            
-            
-            
+          
             if weeksLeft >= 40 {
-
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
-
                 alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
-
-self.datePicker.setDate(Date() as Date, animated: true)
-
-                
+                self.datePicker.setDate(Date() as Date, animated: true)
             } else {
                 let dateEntered = datePicker.date
                 UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
                 UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
                 UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+                  tabBarController?.selectedIndex = 0
             }
-            
-            
-            
         }
-        
-        
-        
-        
-        
-        
-        
         if mothersName?.isEmpty == false {
     UserDefaults.standard.set(mothersName, forKey: "mother")
         motherNameEntered.placeholder = mothersName
         motherNameEntered.text = nil
         }
-        
         if babysName?.isEmpty == false {
         UserDefaults.standard.set(babysName, forKey: "baby")
         babyNameEntered.placeholder = babysName
         babyNameEntered.text = nil
         }
-        
-        
-        
-        
-        
     }
     
    

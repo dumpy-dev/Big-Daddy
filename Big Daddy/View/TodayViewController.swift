@@ -191,7 +191,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-   weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
+   weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
 //       (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
