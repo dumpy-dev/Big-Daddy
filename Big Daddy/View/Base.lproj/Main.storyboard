@@ -989,29 +989,29 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wam-YS-7lA" userLabel="Cell Titles View">
                                         <rect key="frame" x="0.0" y="314" width="414" height="38"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="71q-w2-KRa" userLabel="Cell Titles Stack View">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="71q-w2-KRa" userLabel="Cell Titles Stack View">
                                                 <rect key="frame" x="8" y="7.6666666666666856" width="398" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Hx-73-QaZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="23"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-dw-Lcd">
-                                                        <rect key="frame" x="107" y="0.0" width="77" height="23"/>
+                                                        <rect key="frame" x="102" y="0.0" width="92" height="23"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MRS-LX-jij">
-                                                        <rect key="frame" x="214" y="0.0" width="77" height="23"/>
+                                                        <rect key="frame" x="204" y="0.0" width="92" height="23"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dzl-az-VNp">
-                                                        <rect key="frame" x="321" y="0.0" width="77" height="23"/>
+                                                        <rect key="frame" x="306" y="0.0" width="92" height="23"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1055,7 +1055,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qKj-j0-wUm" userLabel="Cell Labels Stack">
-                                                            <rect key="frame" x="30" y="3" width="354" height="25"/>
+                                                            <rect key="frame" x="30" y="9.6666666666666643" width="354" height="25"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-Um-lYU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="81" height="25"/>
@@ -1088,7 +1088,7 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="qKj-j0-wUm" firstAttribute="top" secondItem="kAc-PA-wfC" secondAttribute="topMargin" constant="-8" id="DNt-FA-oWp"/>
+                                                        <constraint firstItem="qKj-j0-wUm" firstAttribute="centerY" secondItem="kAc-PA-wfC" secondAttribute="centerY" id="UGE-nO-UFi"/>
                                                         <constraint firstItem="qKj-j0-wUm" firstAttribute="leading" secondItem="kAc-PA-wfC" secondAttribute="leadingMargin" constant="10" id="UJM-4H-n2F"/>
                                                         <constraint firstItem="qKj-j0-wUm" firstAttribute="centerX" secondItem="kAc-PA-wfC" secondAttribute="centerX" id="Zs5-uT-XJV"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="qKj-j0-wUm" secondAttribute="trailing" constant="10" id="jHb-b4-hgN"/>
@@ -1141,432 +1141,33 @@
             </objects>
             <point key="canvasLocation" x="2031.8840579710147" y="1604.3478260869567"/>
         </scene>
-        <!--View Controller-->
+        <!--Terms And Conditions View Controller-->
         <scene sceneID="9YK-Jy-Ujt">
             <objects>
-                <viewController id="ia1-nc-qRt" sceneMemberID="viewController">
+                <viewController id="ia1-nc-qRt" customClass="TermsAndConditionsViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="18g-mZ-Xtn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82B-9A-Uwh">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-DAo
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Medical information disclaimer
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">1.	Credit
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">1.1	This document was created using a template from SEQ Legal (</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="https://seqlegal.com">
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <url key="NSLink" string="https://seqlegal.com"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">).
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">You must retain the above credit. Use of this document without the credit is an infringement of copyright. However, you can purchase from us an equivalent document that does not include the credit.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">2.	No advice
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">2.1	Our website contains general medical information.
-2.2	The medical information is not advice and should not be treated as such.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">3.	No warranties
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">3.1	The medical information on our website is provided without any representations or warranties, express or implied.
-3.2	Without limiting the scope of Section 3.1, we do not warrant or represent that the medical information on this website:
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">(a)	will be constantly available, or available at all; or
-(b)	is true, accurate, complete, current or non-misleading.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" firstLineHeadIndent="30" headIndent="60" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">4.	Medical assistance
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">4.1	You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider.
-4.2	If you have any specific questions about any medical matter, you should consult your doctor or other professional healthcare provider.
-4.3	If you think you may be suffering from any medical condition, you should seek immediate medical attention.
-4.4	You should never delay seeking medical advice, disregard medical advice or discontinue medical treatment because of information on our website.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">5.	Interactive features
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">5.1	Our website includes interactive features that allow users to communicate with us.
-5.2	You acknowledge that, because of the limited nature of communication through our website's interactive features, any assistance you may receive using any such features is likely to be incomplete and may even be misleading.
-5.3	Any assistance you may receive using any our website's interactive features does not constitute specific advice and accordingly should not be relied upon without further independent confirmation.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">6.	Limits upon exclusions of liability
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">6.1	Nothing in this disclaimer will:
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" headIndent="30" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">(a)	limit or exclude any liability for death or personal injury resulting from negligence;
-(b)	limit or exclude any liability for fraud or fraudulent misrepresentation;
-(c)	limit any liabilities in any way that is not permitted under applicable law; or
-(d)	exclude any liabilities that may not be excluded under applicable law.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" firstLineHeadIndent="30" headIndent="60" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="0.0">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-DAo
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Free medical information disclaimer: drafting notes
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">This is a medical disclaimer document, designed for use on a website publishing medical information, for the purpose of disclaiming liability - or rather attempting to disclaim liability - in relation to that information. 
-Such medical information may relate to disease, injury, drugs and other treatments, medical devices and/or health products.
-The document asserts that the medical informaiton does not amount to advice, and if advice is needed an appropriate professional help should be sought. The document also asserts that no warranties or representations are given in respect of the medical information, and that the website operator should not be held liable if a user suffers any injury or loss after relying upon the medical information.
-The disclaimer may be used independently or as part of a more general legal/contractual document.
-NB the courts have many tools they can use to render disclaimers ineffective, and you should not rely upon any template disclaimer of liability without first taking professional advice (and usually not even then).
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Section 1: Credit
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Section: Free documents licensing warning
-Optional element. Although you need to retain the credit, you should remove the inline copyright warning from this document before use.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Section 5: Interactive features
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Does the website include any interactive features through which information or assistance may be provided to users?
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Section 6: Limits upon exclusions of liability
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="30">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Section 6.1
-Do not delete this provision (except upon legal advice). Without this provision, the specific limitations and exclusions of liability in the document are more likely to be unenforceable.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="11" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="10" tailIndent="425.19999999999993" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82B-9A-Uwh">
+                                <rect key="frame" x="15" y="94" width="384" height="588"/>
+                                <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="82B-9A-Uwh" firstAttribute="top" secondItem="o9F-z9-bgE" secondAttribute="top" id="5oE-7e-NjF"/>
-                            <constraint firstItem="82B-9A-Uwh" firstAttribute="bottom" secondItem="o9F-z9-bgE" secondAttribute="bottom" id="DIp-0S-bCy"/>
-                            <constraint firstItem="82B-9A-Uwh" firstAttribute="leading" secondItem="o9F-z9-bgE" secondAttribute="leading" id="kx4-RZ-KJD"/>
-                            <constraint firstItem="82B-9A-Uwh" firstAttribute="trailing" secondItem="o9F-z9-bgE" secondAttribute="trailing" id="vFd-Nq-RIA"/>
+                            <constraint firstItem="o9F-z9-bgE" firstAttribute="bottom" secondItem="82B-9A-Uwh" secondAttribute="bottom" constant="5" id="HhN-yg-QSS"/>
+                            <constraint firstItem="82B-9A-Uwh" firstAttribute="leading" secondItem="o9F-z9-bgE" secondAttribute="leading" constant="15" id="JSd-VP-lrB"/>
+                            <constraint firstItem="82B-9A-Uwh" firstAttribute="trailing" secondItem="o9F-z9-bgE" secondAttribute="trailing" constant="-15" id="u7l-xE-vTK"/>
+                            <constraint firstItem="82B-9A-Uwh" firstAttribute="top" secondItem="o9F-z9-bgE" secondAttribute="top" constant="30" id="yV6-GK-7T3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o9F-z9-bgE"/>
                     </view>
+                    <connections>
+                        <outlet property="contentField" destination="82B-9A-Uwh" id="o2f-sz-AR8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7D-mF-8qM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
