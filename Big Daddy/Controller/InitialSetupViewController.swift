@@ -177,10 +177,10 @@ class setupVC6 : UIViewController {
             
             }   else {
                 let dateEntered = datePicker.date
-                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+              //  UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
-                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+             //   UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+              //  UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
                   performSegue(withIdentifier: "homeSegue", sender: self)
             }
         
@@ -215,10 +215,10 @@ class setupVC6 : UIViewController {
                 self.datePicker.setDate(Date() as Date, animated: true)
             } else {
                 let dateEntered = datePicker.date
-                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+            //    UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
-                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+               // UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+              //  UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
                   performSegue(withIdentifier: "homeSegue", sender: self)
             }
             

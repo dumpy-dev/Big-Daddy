@@ -70,6 +70,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             
             print("\(motherNameEntered.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
             
+            //TODO:- this isn't working!
+            
             if weeksLeft >= 40 {
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
                 alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
@@ -77,10 +79,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 self.datePicker.setDate(Date() as Date, animated: true)
             } else {
                 let dateEntered = datePicker.date
-                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+              UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
-                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+            UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+               UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
                   tabBarController?.selectedIndex = 0
             }
             
@@ -90,7 +92,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         } else {
             
             // This calculates the time until the baby is born from a known due date
-            datePicker.minimumDate = Date()
+           // datePicker.minimumDate = Date()
             
             // The number of days elapsed is calculated
             let now = Date()
@@ -118,10 +120,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 self.datePicker.setDate(Date() as Date, animated: true)
             } else {
                 let dateEntered = datePicker.date
-                UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+               UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-                UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
-                UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
+               UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
+              UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
                   tabBarController?.selectedIndex = 0
             }
         }

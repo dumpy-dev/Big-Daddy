@@ -10,9 +10,6 @@ import UIKit
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-    
-    
-
     // MARK:- Code for the Setup Popup
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
@@ -26,7 +23,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var viewCount = 0
     var isDisplayingFirstCell = true
 
-    @IBOutlet weak var babyAgeLabel: UILabel!
+    //@IBOutlet weak var babyAgeLabel: UILabel!
     var selectedPerson = ""
     var selectionTag = 0
     
@@ -86,9 +83,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: Setup for the tableview
     @IBOutlet weak var weeklyTableView: UITableView!
     var storedOffsets = [Int: CGFloat]()
-    
-    
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 38
     }
     
@@ -98,40 +93,29 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
      func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
         guard let tableViewCell = cell as? WeekTableViewCell else { return }
-        
         tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
         tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
     }
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return sizingView.frame.height
     }
-    
-    
-     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let tableViewCell = cell as? WeekTableViewCell else { return }
-        
         storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
     
     // viewDidLoad and viewWillAppear
- override var prefersStatusBarHidden: Bool {
+    override var prefersStatusBarHidden: Bool {
        return true
     }
     
-   
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        
-        
         tabBar.isEnabled = false
-        
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
         //TODO:- Reinstate this to make viewcount work
         viewCount = numberOfViews as! Int
@@ -152,14 +136,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             
          } else {
-                
-                
-        
-        //TODO:- Reinstate these 2 to make setup popup work
-       //  weeklyTableView.alpha = 0
-           //     animateIn()
-                datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-                if mothersNameField.isEditing == true {
+            datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+            if mothersNameField.isEditing == true {
                     mothersNameField.becomeFirstResponder()
             }
                 mothersNameField.delegate = self
@@ -171,10 +149,17 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidAppear(_ animated: Bool) {
       
+      
         super.viewWillAppear(animated)
-        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? Date()
+        let fortyWeeksInDays = 280
         let now = Date()
-        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate).day
+        var dateComponent = DateComponents()
+        dateComponent.day = fortyWeeksInDays
+        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
+        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
+          print("This is the due date: \(dueDate)")
+        
+        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
         let weeksLeft : Int = diffInDays!/7
      //   let remainderDays : Int = diffInDays!%7
         let weeksElapsed : Int = 40 - weeksLeft
@@ -198,6 +183,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
      weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
             }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is articlesForTodayViewController {
           
@@ -218,8 +204,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
 
-    func centerTable()
-    {
+    func centerTable() {
         let midX:CGFloat = self.weeklyTableView.bounds.midX
         let midY:CGFloat = self.weeklyTableView.bounds.midY
         let midPoint:CGPoint = CGPoint(x: midX, y: midY)

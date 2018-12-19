@@ -23,6 +23,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     var seconds = 0
     var secondarySeconds = 0
     var timer = Timer()
+    var secondaryTimer = Timer()
     var isTimerRunning = false
     var isSecondaryTimerRunning = false
     var min = 0
@@ -46,13 +47,12 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     
     // MARK:- Timer functions set up
     func runTimer() {
-
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateLabels(t:))), userInfo: nil, repeats: true)
          isTimerRunning = true
     }
     
     func runSecondaryTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateSecondaryTimer)), userInfo: nil, repeats: true)
+        secondaryTimer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateSecondaryTimer)), userInfo: nil, repeats: true)
         isSecondaryTimerRunning = true
     }
     
@@ -63,7 +63,6 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     
     @objc func updateSecondaryTimer() {
         secondarySeconds += 1
-        
     }
     
     func timeString(time:TimeInterval) -> String {
@@ -74,43 +73,56 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     }
     
   @objc func pauseWhenBackground() {
-   // if isTimerRunning == true {
+    let shared = UserDefaults.standard
+    if isTimerRunning == true {
         self.timer.invalidate()
         let strengthOfContraction = strengthSlider.value
-        let shared = UserDefaults.standard
         shared.set(Date(), forKey: "savedTime")
         shared.set(strengthOfContraction, forKey: "strengthOfContraction")
-        print("This is the saved time: \(Date())")
-        print("this is the saved strength: \(UserDefaults.standard.object(forKey: "strengthOfContraction"))")
- //   }
+        }
+        if isSecondaryTimerRunning == true {
+        self.secondaryTimer.invalidate()
+        shared.set(Date(), forKey: "savedSecondaryTime")
+        shared.set(self.secondarySeconds, forKey: "savedInterval")
+        }
     }
     
   @objc func willEnterForeground() {
-
     if isTimerRunning == true {
-    if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
+        if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
             (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
             self.refresh(mins: diffMins, secs: diffSecs)
-        }
+            UserDefaults.standard.removeObject(forKey: "savedTime")
+            }
         if let savedStrength = UserDefaults.standard.object(forKey: "strengthOfContraction") {
-//            (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
-//            self.refresh(mins: diffMins, secs: diffSecs)
             strengthSlider.value = savedStrength as! Float
+            }
         }
-    }
-    //TODO:- add code here to update secondary contraction gap timer values on entering foreground
-    }
+    if isSecondaryTimerRunning == true {
+        runSecondaryTimer()
+        self.updateSecondaryTimer()
+        if let savedDate = UserDefaults.standard.object(forKey: "savedSecondaryTimer") as? Date {
+            (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
+            print(diffMins, diffSecs)
+            self.refreshSecondaryTimer(mins: diffMins, secs: diffSecs)
+            UserDefaults.standard.removeObject(forKey: "savedSecondaryTime")
+           
+        }
+        }
+        }
     
     
     @objc func updateLabels(t: Timer) {
         
-        if (self.sec == 59) {
-            self.min += 1
-            self.sec = 0
-        } else {
-            self.sec += 1
-        }
-        self.timerLabel.text = String(format: "%02i:%02i", self.min, self.sec)
+        self.sec += 1
+        self.timerLabel.text = String("\(self.sec)s")
+//        if (self.sec == 59) {
+//            self.min += 1
+//            self.sec = 0
+//        } else {
+//            self.sec += 1
+//        }
+        // self.timerLabel.text = String(format: "%02i%02i", self.min, self.sec)
     }
     
     static func getTimeDifference(startDate: Date) -> (Int, Int) {
@@ -123,15 +135,24 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
        
         self.min += mins
         self.sec += secs
-        self.timerLabel.text = String(format: "%02i:%02i", self.min, self.sec)
+        self.timerLabel.text = String("\(self.sec)s")
+        //self.timerLabel.text = String(format: "%02i:%02i", self.min, self.sec)
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(ContractionCounterViewController.updateLabels(t:))), userInfo: nil, repeats: true)
     }
     
+    func refreshSecondaryTimer(mins: Int, secs: Int){
+        self.min += mins
+        self.secondarySeconds += secs
+        //  self.timerLabel.text = String("\(self.sec)s")
+        self.secondaryTimer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateSecondaryTimer)), userInfo: nil, repeats: true)
+        
+    }
+    
+   
     // Button actions
     
     @IBAction func stopPressed(_ sender: Any) {
-        
-        
+
         if isTimerRunning == true {
             self.timer.invalidate()
             min = 0
@@ -147,20 +168,25 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
            
             runSecondaryTimer()
             timerTable.reloadData()
-            timerLabel.text = "00:00"
+            timerLabel.text = "0"
             strengthSlider.value = 0
             strengthLabel.text = "0"
+            seconds = 0
         } else {
             print("timer is already stopped")
+            self.secondaryTimer.invalidate()
         }
     }
     
     @IBAction func startPressed(_ sender: AnyObject) {
-        
-            timer.invalidate()
+       
+        // seconds = 0
+            diffMins = 0
+            diffSecs = 0
+            secondaryTimer.invalidate()
             runTimer()
             let timerItem = ContractionCounterIntervalRealm()
-        print("\(secondarySeconds)")
+        
         timerItem.interval = secondarySeconds
             try! self.realm.write({
                 self.realm.add(timerItem)
@@ -191,12 +217,13 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
 
             self.isTimerRunning = false
             self.timer.invalidate()
+            self.secondaryTimer.invalidate()
             self.seconds = 0
             self.min = 0
             self.sec = 0
             //self.realTimeArray.append(Date())
             self.timerTable.reloadData()
-            self.timerLabel.text = "00:00"
+            self.timerLabel.text = "0s"
 //            self.realTimeArray = []
 //            self.contractionTimeArray  = []
 //            self.gapTimeArray = []
@@ -217,6 +244,9 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         super.didReceiveMemoryWarning()
     }
     override func viewDidAppear(_ animated: Bool) {
+        if isTimerRunning == false {
+            self.secondaryTimer.invalidate()
+        }
         willEnterForeground()
     }
     override func viewDidDisappear(_ animated: Bool) {
@@ -224,14 +254,15 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     }
     
     // MARK:- Setup the table for displaying results
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.timerData.count
     }
-    
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ContractionCounterTableViewCell
         let time = timerData[indexPath.row]
@@ -239,7 +270,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .medium
         cell.realTimeLabel.text = "\(dateFormatter.string(from: time.timeOfDay! ))"
-         cell.contractionTimeLabel!.text = "\(time.lengthOfContraction) s"
+        cell.contractionTimeLabel!.text = "\(time.lengthOfContraction)"
         cell.contractionStrengthLabel!.text = "\(time.strengthOfContraction)"
         if indexPath.row == 0 {
             cell.contractionGapLabel!.text = "-"
@@ -257,20 +288,16 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         }
         return cell
     }
-
 }
 
 class ContractionCounterTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var realTimeLabel: UILabel!
     @IBOutlet weak var contractionTimeLabel: UILabel!
     @IBOutlet weak var contractionGapLabel: UILabel!
-
     @IBOutlet weak var contractionStrengthLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

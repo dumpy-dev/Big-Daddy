@@ -508,17 +508,17 @@
                                 </connections>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-4C-v0u">
-                                <rect key="frame" x="20" y="635" width="84" height="32"/>
+                                <rect key="frame" x="20" y="616" width="122" height="51"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTi-UG-4Bh">
-                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="51"/>
                                         <state key="normal" image="rewind"/>
                                         <connections>
                                             <action selector="backPressed:" destination="XrW-UV-xMG" eventType="touchUpInside" id="qzn-GH-TSD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vf-l1-yeC">
-                                        <rect key="frame" x="52" y="0.0" width="32" height="32"/>
+                                        <rect key="frame" x="71" y="0.0" width="51" height="51"/>
                                         <state key="normal" image="update-arrow"/>
                                         <connections>
                                             <action selector="restartPressed:" destination="XrW-UV-xMG" eventType="touchUpInside" id="xRZ-5G-QNv"/>
@@ -527,7 +527,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5V-Lo-ASg">
-                                <rect key="frame" x="362" y="84" width="32" height="32"/>
+                                <rect key="frame" x="343" y="84" width="51" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="U5V-Lo-ASg" secondAttribute="height" multiplier="1:1" id="Vli-OG-Hi4"/>
                                 </constraints>
@@ -893,10 +893,10 @@
                                         <rect key="frame" x="8" y="28" width="398" height="266"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3K4-Qy-RfH">
-                                                <rect key="frame" x="99.666666666666671" y="0.0" width="198.66666666666663" height="172.33333333333334"/>
+                                                <rect key="frame" x="84.666666666666671" y="0.0" width="228.66666666666663" height="188.66666666666666"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XJI-qZ-sfI">
-                                                        <rect key="frame" x="33.999999999999986" y="0.0" width="130.66666666666663" height="75"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XJI-qZ-sfI">
+                                                        <rect key="frame" x="88.666666666666671" y="0.0" width="51.333333333333329" height="66.333333333333329"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="75" id="a5H-0q-VZ9"/>
                                                         </constraints>
@@ -905,10 +905,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rIa-xt-cBC" userLabel="Play Buttons Stack">
-                                                        <rect key="frame" x="0.0" y="75" width="198.66666666666666" height="97.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="66.333333333333343" width="228.66666666666666" height="122.33333333333334"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WS9-Ee-Jfn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="97.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="122.33333333333333"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="WS9-Ee-Jfn" secondAttribute="height" multiplier="32:79" id="WDw-wW-6Fi"/>
                                                                 </constraints>
@@ -920,7 +920,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I82-f6-Mlv">
-                                                                <rect key="frame" x="79.666666666666671" y="0.0" width="39.333333333333329" height="97.333333333333329"/>
+                                                                <rect key="frame" x="89.666666666666671" y="0.0" width="49.333333333333329" height="122.33333333333333"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="I82-f6-Mlv" secondAttribute="height" multiplier="32:79" id="J0g-Md-nKs"/>
                                                                 </constraints>
@@ -930,7 +930,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kr-iy-tg3">
-                                                                <rect key="frame" x="159" y="0.0" width="39.666666666666657" height="97.333333333333329"/>
+                                                                <rect key="frame" x="179" y="0.0" width="49.666666666666657" height="122.33333333333333"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="0Kr-iy-tg3" secondAttribute="height" multiplier="32:79" id="w9M-5B-Jsh"/>
                                                                 </constraints>
@@ -946,25 +946,25 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-99-HZA">
-                                                <rect key="frame" x="20" y="192.33333333333331" width="358" height="73.666666666666686"/>
+                                                <rect key="frame" x="20" y="208.66666666666669" width="358" height="57.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraction Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jgx-S3-X00">
-                                                        <rect key="frame" x="105.66666666666666" y="0.0" width="147" height="37"/>
+                                                        <rect key="frame" x="105.66666666666666" y="0.0" width="147" height="28.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-Sd-0sk" userLabel="Slider Stack">
-                                                        <rect key="frame" x="15" y="37" width="328" height="36.666666666666657"/>
+                                                        <rect key="frame" x="15" y="28.666666666666629" width="328" height="28.666666666666671"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="lfF-YX-18c">
-                                                                <rect key="frame" x="-2" y="0.0" width="277.66666666666669" height="37.666666666666664"/>
+                                                                <rect key="frame" x="-2" y="0.0" width="277.66666666666669" height="29.666666666666668"/>
                                                                 <connections>
                                                                     <action selector="strengthSlinder:" destination="VWn-bO-TnC" eventType="valueChanged" id="klY-LX-X1O"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-fO-We2">
-                                                                <rect key="frame" x="293.66666666666669" y="0.0" width="34.333333333333314" height="36.666666666666664"/>
+                                                                <rect key="frame" x="293.66666666666669" y="0.0" width="34.333333333333314" height="28.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2315,31 +2315,31 @@
         </scene>
     </scenes>
     <resources>
-        <image name="articlesButton" width="24" height="24"/>
+        <image name="articlesButton" width="38.400001525878906" height="38.400001525878906"/>
         <image name="articlesOnboarding" width="200" height="200"/>
-        <image name="balancing-scale-variant" width="128" height="128"/>
-        <image name="cancel" width="128" height="128"/>
+        <image name="balancing-scale-variant" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="cancel" width="102.40000152587891" height="102.40000152587891"/>
         <image name="continueArrow" width="150" height="150"/>
         <image name="dislike" width="300" height="300"/>
         <image name="doneSettings" width="300" height="300"/>
-        <image name="information" width="32" height="32"/>
+        <image name="information" width="51.200000762939453" height="51.200000762939453"/>
         <image name="like" width="300" height="300"/>
-        <image name="measuring-tape" width="64" height="64"/>
-        <image name="play-button-sing" width="32" height="32"/>
-        <image name="plus" width="128" height="128"/>
+        <image name="measuring-tape" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="play-button-sing" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="plus" width="102.40000152587891" height="102.40000152587891"/>
         <image name="resetSettings" width="300" height="300"/>
-        <image name="rewind" width="32" height="32"/>
-        <image name="right-arrow" width="128" height="128"/>
+        <image name="rewind" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="right-arrow" width="102.40000152587891" height="102.40000152587891"/>
         <image name="rightArrowOnboarding" width="200" height="200"/>
         <image name="seahorseOnboarding" width="200" height="200"/>
-        <image name="settings@x3" width="24" height="24"/>
+        <image name="settings@x3" width="57.599998474121094" height="57.599998474121094"/>
         <image name="skipToEnd" width="150" height="150"/>
-        <image name="stop" width="32" height="32"/>
-        <image name="tickBlue" width="128" height="128"/>
-        <image name="todayButton" width="24" height="24"/>
+        <image name="stop" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="tickBlue" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="todayButton" width="38.400001525878906" height="38.400001525878906"/>
         <image name="toolsIcon" width="24" height="24"/>
         <image name="toolsOnboarding" width="200" height="200"/>
-        <image name="update-arrow" width="32" height="32"/>
+        <image name="update-arrow" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2pe-YH-MQ5"/>
