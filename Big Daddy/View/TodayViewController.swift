@@ -401,19 +401,19 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
                  var babyWeeks : [Int : String] = [
                 1 : "Baby is not yet in existence",
-                2 :"""
-                Baby is not yet in existence
-                """,
+                2 : "Baby is not yet in existence",
                 3 : """
-                    When men ejaculate, they release around 100 million sperm. Of these, only a few hundred actually reach the woman’s egg. On the surface of the egg are receptors which make sure only one sperm gets in.
+                When men ejaculate, they release around 100 million sperm. Of these, only a few hundred actually reach the woman’s egg. On the surface of the egg are receptors which make sure only one sperm gets in.
+                
                 """,
                 4 : """
                 Your baby is only just about real and you could only just about see it with the naked eye.
+                
                 """,
                 5 : """
                 Congratulations! You’re going to be a Big Daddy!
                     
-                Your baby may only be the size of a peppercorn, but he or she is doing some serious growing. Incredibly, their heart is already functioning and blood is starting to circulate around their body. Their brain and spinal cord are also developing, and a string of blood vessels – which will eventually become the baby’s umbilical cord – connects the baby to \(mother).  This umbilical cord is a life line which will deliver essential oxygen and nutrients from \(mother) to baby.
+                Your baby may only be the size of a peppercorn, but he or she is doing some serious growing. Incredibly, their heart is already functioning and blood is starting to circulate around their body. Their brain and spinal cord are also developing, and a string of blood vessels – which will eventually become the baby’s umbilical cord – connects the baby to \(mother).  This umbilical cord is a lifeline which will deliver essential oxygen and nutrients from \(mother) to baby.
 
                 """,
                 6 : """
@@ -423,13 +423,16 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
                 """,
                 7 :"""
-                This week, your peanut is fast becoming a little brain box! Their head is growing faster than [X] to make room for their expanding and increasingly complex brain. It won’t be too long before their brain will start to process sounds and light from inside \(mother)’s uterus. In other news, your baby’s inner ear is starting to develop and their arms and legs are getting longer. Their sex organs are also taking shape, but don’t start painting the nursery yet – it’s still too early to tell on a scan whether they’re a boy or a girl.
+                This week, your peanut is fast becoming a little brain box! Their head is growing faster than the Incredible Hulk to make room for their expanding and increasingly complex brain. It won’t be too long before their brain will start to process sounds and light from inside \(mother)’s uterus. In other news, your baby’s inner ear is starting to develop and their arms and legs are getting longer. Their sex organs are also taking shape, but don’t start painting the nursery yet – it’s still too early to tell on a scan whether they’re a boy or a girl.
+                
                 """,
                 8 : """
                 Breaking news: this week, your baby’s tail has almost completely disappeared! Phew. Their tail will be replaced by their tailbone (coccyx), which is at the base of their spine. Your baby’s limbs are getting longer still, and there are notches visible on their hands where tiny little fingers will develop. Their facial features are becoming more defined, and their eyes have tiny eyelids.
+                
                 """,
                 9 : """
                 This is a big week for your little eyeball: all their body parts are now present! Although your baby doesn’t look like a tadpole any more, their fingers and toes are still webbed, Kermit-style. Your baby’s eyes are getting bigger and their mouth and tongue are developing quickly, with tiny tastebuds starting to appear. \(mother)’s placenta is almost fully functioning and will soon provide vital nutrients to your baby.
+                
                 """,
                 10 : """
                 This week, your baby has got more moves than Jagger as they discover that they can wriggle their arms and legs. \(mother) won't be able to feel these jerky movements quite yet, but it will only be a couple of months before those first flutters are felt.
@@ -439,151 +442,164 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 """,
                 11 : """
                 Good news: your baby now looks less like E.T. and more like a miniature human. They have developed almost all of their critical organs and body parts, and will spend the next six months getting bigger, stronger and ready for the outside world. Your baby’s fingers and toes are no longer webbed, and they even have tiny fingernails. Their eyelids have grown, and their eyes will stay closed for another few months.
+                
                 """,
                 12 : """
                 This week, your baby is the size of a chicken nugget (or an average-sized human testicle, if you prefer). Their face is perfectly formed – their eyes have moved closer together and they even have tiny little lobes on their ears. Your baby is busy practising their facial expressions, and can even now open their mouth, yawn, hiccup and swallow. At the moment, their skeleton is made up of rubbery cartilage (like your own ear or nose), but will now start to harden into bone.
+                
                 """,
                 13 :"""
-                    It’s still way too early to be able to tell on a scan whether you’re having a little boy or girl, but your baby’s sex organs are now fully developed. Their toes are now fully formed and their unique fingerprints are starting to show. Your baby’s head now accounts for around a third of its whole length, as the part of the brain responsible for problem solving and memory is starting to develop.
-                    """,
+                It’s still way too early to be able to tell on a scan whether you’re having a little boy or girl, but your baby’s sex organs are now fully developed. Their toes are now fully formed and their unique fingerprints are starting to show. Your baby’s head now accounts for around a third of its whole length, as the part of the brain responsible for problem solving and memory is starting to develop.
+                
+                """,
                 14 : """
-                    This week, your baby is starting to drink their own urine. We know – is that really necessary? Actually, it is. Your baby swallows the amniotic fluid and it passes out again as urine. And then they swallow it again. And again. This not only helps their lungs to develop, but also allows their newly functioning kidneys to start doing their job. (On the other hand, perhaps they just do it because it’s sterile and they like the taste).
+                This week, your baby is starting to drink their own urine. We know – is that really necessary? Actually, it is. Your baby swallows the amniotic fluid and it passes out again as urine. And then they swallow it again. And again. This not only helps their lungs to develop, but also allows their newly functioning kidneys to start doing their job. (On the other hand, perhaps they just do it because it’s sterile and they like the taste).
                     
-                    Your baby is also sprouting fine hairs all over their body and head. This hair is called lanugo and is thought to help regulate your baby’s temperature inside the womb.
+                Your baby is also sprouting fine hairs all over their body and head. This hair is called lanugo and is thought to help regulate your baby’s temperature inside the womb.
                     
                 """,
                 15 : """
-                    Whether you’re into deep house or light opera, it’s time to put the music on – this week, your baby can hear muffled sounds from the outside world as well as the sound of \(mother)’s voice, heart and tummy. Even though your baby’s eyes are still closed, they are becoming sensitive to light shining on \(mother)’s bump. That’s right – get the disco lights on and start singing to your baby.
+                Whether you’re into deep house or light opera, it’s time to put the music on – this week, your baby can hear muffled sounds from the outside world as well as the sound of \(mother)’s voice, heart and tummy. Even though your baby’s eyes are still closed, they are becoming sensitive to light shining on \(mother)’s bump. That’s right – get the disco lights on and start singing to your baby.
                     
-                    Your baby’s body parts are all now present, and they are practising inhaling and exhaling the amniotic fluid. Who are we kidding? It’s wee. They’re practising swallowing the wee.
+                Your baby’s body parts are all now present, and they are practising inhaling and exhaling the amniotic fluid. Who are we kidding? It’s wee. They’re practising swallowing the wee.
                     
                 """,
                 16 : """
                 This week, your baby is getting a big workout as they start to flex their muscles and build up strength in their limbs. Their hands can form a fist and their neck is strong enough to sit upright on their body. Over the next few weeks, your baby will have a massive growth spurt.
+                
                 """,
                 17 : """
                 A fatty substance known as myelin has started to cover your baby’s spinal cord. This is an important stage in their development, as it helps messages from the nerves to the brain to travel as quickly as possible. Their hearing is becoming more and more sensitive, and they may start to respond to loud noises in the outside world by kicking, wriggling or punching. Your baby’s facial features are becoming even more defined, and their eyebrows and eyelashes are starting to grow. Their eyes are moving around under those tightly shut eyelids.
+                    
                 """,
                 18 : """
                 Who ate all the pies? \(baby), apparently! This week, they’re piling on the pounds and now have a little layer of fat under their skin. They still look pretty wrinkly, although their ears have finally moved up from the jawline into a more usual position. Girl-babies now have immature eggs developing in their ovaries, and have a fully-formed vagina, womb and fallopian tubes. Boybies’ testicles are moving down and their tiny penis is fully formed. If you’re planning on finding out the sex of your baby, those all-important details should now be visible on a scan.
+                    
                 """,
                 19 : """
                 This week, your baby’s eyes are in their final position and are making random movements under their eyelids. Their arms and legs are now in proportion to the rest of their body. If you (like many dads-to-be) are mourning the loss of your shiny locks, try not to be envious of the hairs sprouting from your baby’s scalp this week. Your baby’s brain is developing rapidly, and is starting to form distinct areas for processing different senses, from sight to smells.
+                    
                 """,
                 20 : """
-                    At the moment, your baby’s skin is covered in a greasy, cheesy substance called vernix. This protects the baby’s skin from the effects of spending months floating around in amniotic fluid and (you might want to look away now if you’re squeamish) acts as a lubricant during birth. Lovely. On a less gruesome note, your baby’s milk and adult teeth are now in place under their gums.
+                At the moment, your baby’s skin is covered in a greasy, cheesy substance called vernix. This protects the baby’s skin from the effects of spending months floating around in amniotic fluid and (you might want to look away now if you’re squeamish) acts as a lubricant during birth. Lovely. On a less gruesome note, your baby’s milk and adult teeth are now in place under their gums.
                     
                 """,
                 21 : """
-                    This is a milestone week for your baby, as it’s the first time that they weigh more than \(mother)’s placenta. #babygoals. Both baby and placenta (and \(mother)) will keep growing throughout the pregnancy, but the baby will keep getting bigger and bigger than the placenta.
+                This is a milestone week for your baby, as it’s the first time that they weigh more than \(mother)’s placenta. #babygoals. Both baby and placenta (and \(mother)) will keep growing throughout the pregnancy, but the baby will keep getting bigger and bigger than the placenta.
                     
-                    Your baby is now also covered in downy hair, called lanugo. No-one really knows why babies grow lanugo, but it’s possible that it could be to keep the baby’s temperature just right. But before you start worrying that they’ll come out hairier than Chewbacca, rest assured that lanugo usually disappears before birth, although it might be visible in very premature babies.
+                Your baby is now also covered in downy hair, called lanugo. No-one really knows why babies grow lanugo, but it’s possible that it could be to keep the baby’s temperature just right. But before you start worrying that they’ll come out hairier than Chewbacca, rest assured that lanugo usually disappears before birth, although it might be visible in very premature babies.
+                    
                 """,
                 22 : """
-                    This week, your baby is busy creating its first poo. This black, sticky poo (known as meconium) is made up of all the things your baby is eating in the womb – from amniotic fluid to dead skin cells. This milestone first poo will be stored in the baby’s bowels until they’re born.
+                This week, your baby is busy creating its first poo. This black, sticky poo (known as meconium) is made up of all the things your baby is eating in the womb – from amniotic fluid to dead skin cells. This milestone first poo will be stored in the baby’s bowels until they’re born.
                     
-                    In other news, your baby now looks like a miniature newborn as all their body parts are fully present and correct. Their bones contain bone marrow, which is crucial for producing blood cells. And like a baby POTUS, their tiny hands are moving constantly.
+                In other news, your baby now looks like a miniature newborn as all their body parts are fully present and correct. Their bones contain bone marrow, which is crucial for producing blood cells. And like a baby POTUS, their tiny hands are moving constantly.
                     
-                    """,
+                """,
                 23 : """
-                    Your baby’s hearing is getting better with every day. Now they can hear sounds from near and far – from the sound of your voice (and snores and farts) to the sound of fireworks. Their ears can now send signals to their brain whenever they hear a sound, and will soon start to respond to more sounds by kicking and wriggling. Once they do, you can have a competition with \(mother) to see whose music your baby prefers. (And if the baby wriggles more to her music, you can always say that kicking means they want it to stop).
+                Your baby’s hearing is getting better with every day. Now they can hear sounds from near and far – from the sound of your voice (and snores and farts) to the sound of fireworks. Their ears can now send signals to their brain whenever they hear a sound, and will soon start to respond to more sounds by kicking and wriggling. Once they do, you can have a competition with \(mother) to see whose music your baby prefers. (And if the baby wriggles more to her music, you can always say that kicking means they want it to stop).
                     
-                    Your baby’s lungs still don’t work properly, and they are getting all the oxygen they need from the placenta. This doesn’t stop them practising their breathing movements by swallowing more amniotic fluid, though. Before now, your baby’s liver and spleen were producing their red blood cells; this job has now been taken over by their bone marrow.
+                Your baby’s lungs still don’t work properly, and they are getting all the oxygen they need from the placenta. This doesn’t stop them practising their breathing movements by swallowing more amniotic fluid, though. Before now, your baby’s liver and spleen were producing their red blood cells; this job has now been taken over by their bone marrow.
                     
-                    """,
+                """,
                 24 : """
-                    It’s another milestone week for your baby, as they may now be able to survive outside the womb with specialist care. Their skin is still pretty translucent, but is becoming more resilient every day. Their heart rate has slowed down a little, but at 140 beats per minute, it’s still a lot faster than yours. Their eyelids are still closed, and their bones are getting harder and harder.
-                    """,
+                It’s another milestone week for your baby, as they may now be able to survive outside the womb with specialist care. Their skin is still pretty translucent, but is becoming more resilient every day. Their heart rate has slowed down a little, but at 140 beats per minute, it’s still a lot faster than yours. Their eyelids are still closed, and their bones are getting harder and harder.
+                    
+                """,
                 25 : """
-                    This week, you might notice your baby becoming more responsive to noises and sensations from the outside world. Their hearing is now really acute, so loud noises might make them startle. They also might start turning their head to a light shining on the bump. Their head is still a bit too large for their body, but they’re making up for it by practising awesome facial expressions such as frowning.
-                    """,
+                This week, you might notice your baby becoming more responsive to noises and sensations from the outside world. Their hearing is now really acute, so loud noises might make them startle. They also might start turning their head to a light shining on the bump. Their head is still a bit too large for their body, but they’re making up for it by practising awesome facial expressions such as frowning.
+                    
+                """,
                 26 : """
+                We’re telling you now – there is almost nothing cuter (and more hilarious) than a baby with hiccups. Amazingly, babies in the womb get hiccups too. \(mother) will probably notice it first, but as her bump grows bigger you might even be able to see or feel the tiny twitches of hiccups.
                     
-                    We’re telling you now – there is almost nothing cuter (and more hilarious) than a baby with hiccups. Amazingly, babies in the womb get hiccups too. \(mother) will probably notice it first, but as her bump grows bigger you might even be able to see or feel the tiny twitches of hiccups.
+                This week, tiny air sacs are developing in your baby’s lungs – this will help them to absorb oxygen into their blood after they’re born. Your baby’s hand-eye co-ordination is improving every day, and they often bring their hands and feet to their mouth. Incredibly, your baby’s tastebuds are now fully developed.
                     
-                    This week, tiny air sacs are developing in your baby’s lungs – this will help them to absorb oxygen into their blood after they’re born. Your baby’s hand-eye co-ordination is improving every day, and they often bring their hands and feet to their mouth. Incredibly, your baby’s tastebuds are now fully developed.
-                    
-                    """,
+                """,
                 27 : """
-                    It’s the final week of the second trimester! This week, your baby’s eyes are finally open – not that there’s a lot for them to see at the moment. Soon, they’ll start learning how to blink. Your baby’s lungs are still developing, and a substance called surfactant is starting to coat the inside of the lungs. This stops their airways from sticking together, so that the tiny air sacs can inflate properly once they’re born and take their first breaths.
+                It’s the final week of the second trimester! This week, your baby’s eyes are finally open – not that there’s a lot for them to see at the moment. Soon, they’ll start learning how to blink. Your baby’s lungs are still developing, and a substance called surfactant is starting to coat the inside of the lungs. This stops their airways from sticking together, so that the tiny air sacs can inflate properly once they’re born and take their first breaths.
                     
                     Your baby is now getting into a regular cycle or waking and sleeping, and may even begin to dream soon.
                     
-                    """,
+                """,
                 28 : """
-                    It’s a big week – welcome to the third (and final) trimester! Your baby is now perfectly formed, and is taking up quite a lot of space inside \(mother). At around this stage, many babies start to turn head down in the womb, to get ready for birth. The midwife or GP will tell \(mother) at her antenatal appointments what position the baby is in, but don’t worry if they’re not head down yet – there’s still plenty of time (and room) for them to keep changing position over the next few weeks.
+                It’s a big week – welcome to the third (and final) trimester! Your baby is now perfectly formed, and is taking up quite a lot of space inside \(mother). At around this stage, many babies start to turn head down in the womb, to get ready for birth. The midwife or GP will tell \(mother) at her antenatal appointments what position the baby is in, but don’t worry if they’re not head down yet – there’s still plenty of time (and room) for them to keep changing position over the next few weeks.
                     
-                    Your baby’s eyebrows and eyelashes are growing longer every day, as is the hair on their head (don’t be jealous, now). Their lungs are still developing, but your baby has a rhythmic pattern of breathing the amniotic fluid in and out.
+                Your baby’s eyebrows and eyelashes are growing longer every day, as is the hair on their head (don’t be jealous, now). Their lungs are still developing, but your baby has a rhythmic pattern of breathing the amniotic fluid in and out.
                     
-                    """,
+                """,
                 29 : """
-                    Your baby is piling on the pounds at the moment, and is probably being very active. Their hearing is now excellent, and \(mother)’s voice and heartbeat is starting to become familiar to them. If you keep talking to the bump regularly, they may even recognize your voice and be soothed by it after they’re born.
+                Your baby is piling on the pounds at the moment, and doing regular HIIT workouts in their underwater studio. Their hearing is now excellent, and \(mother)’s voice and heartbeat is starting to become familiar to them. If you keep talking to the bump regularly, they may even recognize your voice and be soothed by it after they’re born.
                     
                     Try putting your ear to \(mother)’s bump every now and then – if it’s in exactly the right position, you might be able to hear your baby’s heartbeat.
                     
-                    """,
+                """,
                 30 : """
-                    This week, your baby’s brain is growing rapidly and is developing into distinct areas. Each of these areas will be responsible for processing different things, from memories to movement and emotions. The amniotic sac has now stopped growing, and will just keep on stretching as the baby gets bigger and bigger.
-                    """,
+                This week, your baby’s brain is growing rapidly and is developing into distinct areas. Each of these areas will be responsible for processing different things, from memories to movement and emotions.
+                    
+                The amniotic sac has now stopped growing, and will just keep on stretching as the baby gets bigger and bigger.
+                    
+                """,
                 31 : """
-                    By now, 75% of babies are in a head down position. But don’t worry if your baby isn’t; a bit like Tom Daley mid-dive, there’s still time for them to turn.
+                By now, 75% of babies are in a head down position. But don’t worry if your baby isn’t; a bit like Tom Daley mid-dive, there’s still time for them to turn.
                     
-                    Your baby has now developed their sucking reflex, and is probably sucking away on their thumb and fingers. Their eyes can now focus, although it’s pretty dark and murky in there so there isn’t much by way of entertainment. Your baby’s lungs are still developing, and although they still wouldn’t be able to breathe on their own if they were born now, they’re not far off.
+                Your baby has now developed their sucking reflex, and is probably sucking away on their thumb and fingers. Their eyes can now focus, although it’s pretty dark and murky in there so there isn’t much by way of entertainment. Your baby’s lungs are still developing, and although they still wouldn’t be able to breathe on their own if they were born now, they’re not far off.
                     
-                    """,
+                """,
                 32 : """
-                    A bit of good news this week: if your baby is born now, they have an excellent chance of thriving. Their vital organs are all in situ, and just need a little bit more time for fine tuning.
+                A bit of good news this week: if your baby is born now, they have an excellent chance of thriving. Their vital organs are all in situ, and just need a little bit more time for fine tuning.
                     
-                    From now on, your baby is concentrating on chubbing up. They’ll still get a bit longer before they’re born, but the rate of length growth has slowed down. All this growing means there’s a lot less space to move around in. The vernix (that greasy, cheesy substance) and lanugo (the downy hair) have started to disappear, and their skin looks a lot less translucent as they put more and more weight on.
+                From now on, your baby is concentrating on chubbing up. They’ll still get a bit longer before they’re born, but the rate of length growth has slowed down. All this growing means there’s a lot less space to move around in. The vernix (that greasy, cheesy substance) and lanugo (the downy hair) have started to disappear, and their skin looks a lot less translucent as they put more and more weight on.
                     
-                    """,
+                """,
                 33 : """
-                    This week, your baby’s brain and nervous system is fully developed. All of their bones are continuing to harden except for the skull (which stays soft to help it squeeze through the birth canal. Sorry. TMI.). Their fingernails are growing well, and may even now reach the top of their fingers.
-                    """,
+                This week, your baby’s brain and nervous system is fully developed. All of their bones are continuing to harden except for the skull (which stays soft to help it squeeze through the birth canal. Sorry. TMI.). Their fingernails are growing well, and may even now reach the top of their fingers.
+                
+                """,
                 34 : """
-                    Even better news this week – most babies born now are in rude health. Their lungs are still not completely developed, but any breathing problems they have after birth are usually easy to treat.
+                Even better news this week – most babies born now are in rude health. Their lungs are still not completely developed, but any breathing problems they have after birth are usually easy to treat.
                     
-                    Your baby is probably now in their final position for birth, and the amount of amniotic fluid around them won’t now increase any more. Your baby’s hearing is more acute than ever, and they’re probably enjoying listening in on every conversation, Watergate-style, and picking up on familiar sounds.
+                Your baby is probably now in their final position for birth, and the amount of amniotic fluid around them won’t now increase any more. Your baby’s hearing is more acute than ever, and they’re probably enjoying listening in on every conversation, Watergate-style, and picking up on familiar sounds.
                     
-                    """,
+                """,
                 35 : """
-                    From now on, your baby is focused on getting as chubby as possible before the big day. In fact, over the next few weeks, they’ll gain almost 30 grams per day. That’s more than the weight of an AA battery every day.
+                From now on, your baby is focused on getting as chubby as possible before the big day. In fact, over the next few weeks, they’ll gain almost 30 grams per day. That’s more than the weight of an AA battery every day.
                     
-                    Your baby’s eyes now dilate in the light, which will help them prepare for the dazzling world outside the abyss. They’re practising their sucking movements to help them feed in the big wide world, and are so short of room that they’re now curled up tightly. Try watching \(mother)’s bump when she says the baby is moving and you might even be able to see it.
+                Your baby’s eyes now dilate in the light, which will help them prepare for the dazzling world outside the abyss. They’re practising their sucking movements to help them feed in the big wide world, and are so short of room that they’re now curled up tightly. Try watching \(mother)’s bump when she says the baby is moving and you might even be able to see it.
                     
-                    """,
+                """,
                 36 : """
-                    This week, your baby’s lungs and digestive system are finally fully developed. This means they’ll be able to breathe and feed on their own whenever they’re born. There won’t be much of that downy lanugo and greasy vernix over their body, but there might still be patches visible now.
+                This week, your baby’s lungs and digestive system are finally fully developed. This means they’ll be able to breathe and feed on their own whenever they’re born. There won’t be much of that downy lanugo and greasy vernix over their body, but there might still be patches visible now.
                     
-                    Your baby doesn’t have much room left at all now, and their head may now have started to “engage” (when it drops into a lower position, ready for birth). If you’re having a boy, his testes are starting to descend into his scrotum.
+                Your baby doesn’t have much room left at all now, and their head may now have started to “engage” (when it drops into a lower position, ready for birth). If you’re having a boy, his testes are starting to descend into his scrotum.
                     
-                    """,
+                """,
                 37 : """
-                    This is a big week – even though the due date is still three weeks away, your baby is now full term! He or she is busily gaining weight, practising frowns and pouts and may even be turning towards familiar sounds.
+                This is a big week – even though the due date is still three weeks away, your baby is now full term! He or she is busily gaining weight, practising frowns and pouts and may even be turning towards familiar sounds.
                     
-                    Your baby’s gut now contains plenty of meconium (that epic first poo), and the downy lanugo hair all over your baby’s body has almost all been replaced with very fine vellus hairs instead.
+                Your baby’s gut now contains plenty of meconium (that epic first poo), and the downy lanugo hair all over your baby’s body has almost all been replaced with very fine vellus hairs instead.
                     
-                    """,
+                """,
                 38 : """
-                    This week, your baby’s bones have all hardened and their organs are fully developed. They have a strong grasp reflex and might even be holding onto their own umbilical cord. It’s only a matter of days now until that tiny hand will be clutching your finger.
-                    """,
+                This week, your baby’s bones have all hardened and their organs are fully developed. They have a strong grasp reflex and might even be holding onto their own umbilical cord. It’s only a matter of days now until that tiny hand will be clutching your finger.
+                
+                """,
                 39 : """
-                    Even though your baby’s eyes are completely developed, they won’t be able to see far at all until a few weeks after they are born. [REF – LIVING IN A BLURRY WORLD].
+                Even though your baby’s eyes are completely developed, they won’t be able to see far at all until a few weeks after they are born.
                     
-                    Their lungs are working well and they are taking around forty rhythmical breaths every minute. This baby is ready to join the world (and \(mother) is probably more than ready to evict them).
+                Their lungs are working well and they are taking around forty rhythmical breaths every minute. This baby is ready to join the world (and \(mother) is probably more than ready to evict them).
                     
-                    """,
+                """,
                 40 : """
-                    This week, your baby is around the same length as its umbilical cord. Or a rack of ribs. Whichever you prefer. And even though their eviction notice has been served, they don’t have any intention of slowing down. Even their hair and fingernails are growing, and the chances of them coming out looking like the love child of Wolverine and Rapunzel are increasing every day.
-                    """
+                This week, your baby is around the same length as its umbilical cord. Or a rack of ribs. Whichever you prefer. And even though their eviction notice has been served, they don’t have any intention of slowing down. Even their hair and fingernails are growing, and the chances of them coming out looking like the love child of Wolverine and Rapunzel are increasing every day.
+                    
+                """
                 ]
                 
                 cell.textView.setContentOffset(CGPoint.zero, animated: false)
-           
-                
-                 cell.textView.isScrollEnabled = false
+                cell.textView.isScrollEnabled = false
                 cell.textView.text = babyWeeks[collectionView.tag + 3]
-                 cell.textView.isScrollEnabled = true
+                cell.textView.isScrollEnabled = true
                 
             } else if indexPath.item == 2 {
                    let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"

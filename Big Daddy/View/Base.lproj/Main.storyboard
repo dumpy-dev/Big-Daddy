@@ -1260,7 +1260,7 @@
                                                                         <rect key="frame" x="16" y="124" width="288" height="312"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDi-U9-l7m">
-                                                                                <rect key="frame" x="89" y="66" width="194" height="199"/>
+                                                                                <rect key="frame" x="47" y="40" width="194" height="199"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="VDi-U9-l7m" secondAttribute="height" multiplier="1:1" id="3VH-CS-YEa"/>
                                                                                 </constraints>
@@ -1950,10 +1950,10 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y06-sE-FTZ">
                                         <rect key="frame" x="9" y="208" width="336.33333333333331" height="200"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Swipe to see how your baby and the mum-to-be are getting on this week, and to check out awesome articles and fun facts.">
+                                            <fragment content="Swipe to see how your baby and the mum-to-be are getting on this week, and to check out awesome articles and fun facts">
                                                 <attributes>
                                                     <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <font key="NSFont" size="24" name="GillSans"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="29.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops>
@@ -2055,9 +2055,9 @@
                                         <rect key="frame" x="77" y="0.0" width="200" height="200"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-gV-CVY">
-                                        <rect key="frame" x="3" y="276" width="348" height="200"/>
+                                        <rect key="frame" x="2.6666666666666572" y="276" width="349" height="200"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Get yourself Daddy ready with our checklists, baby decoder and contraction timer">
+                                            <fragment content="Get yourself Daddy-ready with our checklists, baby decoder and contraction timer">
                                                 <attributes>
                                                     <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

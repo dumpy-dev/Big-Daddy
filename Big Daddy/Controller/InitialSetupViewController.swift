@@ -9,19 +9,17 @@
 import UIKit
 
 class InitialSetupViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
-   
+
     var pageControl = UIPageControl()
     
     // MARK: UIPageViewControllerDataSource
-    
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: "setupVC1"),
                 self.newVc(viewController: "setupVC2"),
                 self.newVc(viewController: "setupVC3"),
                 self.newVc(viewController: "setupVC4"),
                 self.newVc(viewController: "setupVC5"),
-                self.newVc(viewController: "setupVC6"),]
+                self.newVc(viewController: "setupVC6")]
     }()
     
     override var prefersStatusBarHidden: Bool {
