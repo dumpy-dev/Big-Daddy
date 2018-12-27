@@ -25,7 +25,7 @@ print("view did load")
         print("view appeared")
         if let numberOfViews = UserDefaults.standard.object(forKey: "newViews") {
             print("this screen has already been viewed before")
-            let viewCount = 2
+             let viewCount = 2
             UserDefaults.standard.set(viewCount, forKey: "newViews")
              performSegue(withIdentifier: "secondUseSegue", sender: self)
         } else {

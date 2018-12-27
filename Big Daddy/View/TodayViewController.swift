@@ -17,17 +17,14 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateSwitch: UISwitch!
     
-   
     // MARK - code for remaining functionality
     @IBOutlet weak var sizingView: UIView!
     var viewCount = 0
     var isDisplayingFirstCell = true
-
-    //@IBOutlet weak var babyAgeLabel: UILabel!
     var selectedPerson = ""
     var selectionTag = 0
     
-    // Setup the arrays and dictionaries
+    // MARK:- Setup the arrays and dictionaries
     
     let babySizeImageArray = ["week0-3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a dry martini", "the height of a beer bottle", "the length of a tube of pringles", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the size of a violin", "the weight of War and Peace", "the height of a PC tower", "the weight of a tomahawk steak", "the weight of a cricket bat", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the size of a brick", "the height of a car tyre", "the weight of a six-pack", "the length of a wood saw", "the length of a full rack of ribs"]
@@ -62,43 +59,40 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
     
-    // viewDidLoad and viewWillAppear
+    // MARK:- viewDidLoad and viewWillAppear
     override var prefersStatusBarHidden: Bool {
        return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         tabBar.isEnabled = false
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
-        //TODO:- Reinstate this to make viewcount work
-        viewCount = numberOfViews as! Int
-  
         
-            
-    if viewCount >= 2 {
-                
-        weeklyTableView.alpha = 1
-//   datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-//        if mothersNameField.isEditing == true {
-//            mothersNameField.becomeFirstResponder()
-//        }
-//        mothersNameField.delegate = self
-//   weeklyTableView.allowsSelection = false
-         //weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
-      
-            
-            
-         } else {
-            datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-            if mothersNameField.isEditing == true {
-                    mothersNameField.becomeFirstResponder()
-            }
-                mothersNameField.delegate = self
-                weeklyTableView.allowsSelection = false
-                //weeklyTableView?.decelerationRate = UIScrollViewDecelerationRateFast
-            }
+        let fortyWeeksInDays = 280
+        let now = Date()
+        var dateComponent = DateComponents()
+        dateComponent.day = fortyWeeksInDays
+        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
+        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
+        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
+        let weeksLeft : Int = diffInDays!/7
+        let weeksElapsed : Int = 40 - weeksLeft
+        selectionTag = 0
         
+        self.navigationController?.isNavigationBarHidden = true
+        selectedPerson = ""
+        
+        let displayedWeeksElapsed = weeksElapsed - 3
+        
+        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
+            let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+            weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
+        } else if displayedWeeksElapsed <= 3 {
+            let indexPath = IndexPath(row: 0, section: 0)
+            weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -115,12 +109,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
         let weeksLeft : Int = diffInDays!/7
-     //   let remainderDays : Int = diffInDays!%7
+  
         let weeksElapsed : Int = 40 - weeksLeft
-       // let remainderDaysElapsed : Int = 7 - remainderDays
-    
-//        weekCollectionView.reloadData()
-        
         selectionTag = 0
      
         self.navigationController?.isNavigationBarHidden = true
@@ -131,7 +121,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
    weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
-//       (at: indexPath, at: UITableViewScrollPosition.middle, animated: true)
         } else if displayedWeeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
      weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
@@ -140,13 +129,12 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is articlesForTodayViewController {
-          
+            // No action currently
         } else {
             let tag = segue.destination as? ThisWeekViewController
             tag?.selectedTag = selectionTag
         }
     }
-
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.centerTable()
@@ -223,13 +211,9 @@ extension UICollectionView {
         }
         if closestCellIndex != -1 {
             // self.scrollToRow(at: IndexPath(row:closestCellIndex, section: 0), at: .middle, animated: true)
-            
         }
     }
-    
 }
-
-
 
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -237,7 +221,6 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.sizingView.frame.width
         let height = self.sizingView.frame.height
-        
         return CGSize(width: width, height: height)
     }
     
@@ -247,9 +230,6 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return 4
     }
    
-
-  
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
             print("collection view is moving!")
@@ -279,20 +259,12 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! WeekCollectionViewCell2
-
-            
-            
-            
-//            let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
-           // let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
-
             if collectionView.tag != 0 {
                 let weekNumber = String(collectionView.tag + 3)
                 cell.weekLabel.text = "WEEK \(weekNumber)"
             } else {
                 let weekNumber = "0-3"
                 cell.weekLabel.text = "WEEK \(weekNumber)"
-                
             }
             
             
@@ -510,6 +482,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
             } else if indexPath.item == 2 {
                 let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
                 let motherMiddle : String = UserDefaults.standard.string(forKey: "mother") ?? "your partner"
+                // MARK:- Mother updates start here
                 var motherWeeks : [Int : String] = [
                     1 : "Baby is not yet in existence",
                     2 : "Baby is not yet in existence",
@@ -739,7 +712,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 let baby : String = UserDefaults.standard.string(forKey: "baby") ?? "your baby"
                 let mother : String  = UserDefaults.standard.string(forKey: "mother") ?? "Your partner"
                 let motherMiddle : String = UserDefaults.standard.string(forKey: "mother") ?? "your partner"
-                // MARK :- Facts listed below
+                // MARK :- Fun Facts start here
                 var factWeeks : [Int : String] = [
                     1 : "Baby is not yet in existence",
                     2 : "Baby is not yet in existence",
