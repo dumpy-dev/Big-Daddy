@@ -86,7 +86,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     let clothesArray : [String] = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs"]
     let travelArray : [String] = ["Carseat", "Mirror", "Sunshade", "Pram (with Bassinet)", " Travel Cot", "Baby Carrier", "Changing Bag", "Foldable Changing Mat"]
     let nappyArray : [String] = ["Nappies", "Nappy Bags", "Wipes", "Bottom Cream", "Changing Mat"]
-    let healthArray : [String] = ["Thermometer", "Sudacrem", "Calpol", "Nail Scissors"]
+    let healthArray : [String] = ["Thermometer", "Sudocrem", "Calpol", "Nail Scissors"]
     let bathArray : [String] = ["Bath Thermometer", "Towels", "Flannels", "Baby Bath", "Baby Bubblebath"]
     let sleepingArray : [String] = ["Cot", "Moses Basket", "Swaddling Blankets", "Comforter", "Sleeping Bag", "Sheets", "Waterproof Sheet", "Blanket", "White Noise", "Cot Mattress"]
     let feedingArray : [String] = ["Bottles", "Steriliser", "Formula", "Breast Pump", "Nipple Shield", "Nipple Barrier Cream", "Breast Feeding Cover"]
