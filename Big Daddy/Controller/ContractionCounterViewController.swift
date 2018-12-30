@@ -28,6 +28,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     var min = 0
     var sec = 0
     var secondarySec = 0
+    var secondaryMin = 0
     var diffMins = 0
     var diffSecs = 0
     
@@ -81,16 +82,14 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     }
     
     @objc func updateSecondaryTimerLabel(t: Timer) {
-        self.secondarySec += 1
-        self.secondaryTimerLabel.text = String("\(self.secondarySec)s")
-        //self.timerLabel.text = String("\(self.sec)s")
-        //        if (self.sec == 59) {
-        //            self.min += 1
-        //            self.sec = 0
-        //        } else {
-        //            self.sec += 1
-        //        }
-        // self.timerLabel.text = String(format: "%02i%02i", self.min, self.sec)
+    
+                if (self.secondarySec == 59) {
+                    self.secondaryMin += 1
+                    self.secondarySec = 0
+                } else {
+                    self.secondarySec += 1
+                }
+         self.secondaryTimerLabel.text = String(format: "%02im%02is", self.secondaryMin, self.secondarySec)
     }
     
     
@@ -103,9 +102,10 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     }
     
     func refreshSecondaryTimer(mins: Int, secs: Int) {
-        self.min += mins
-        self.secondarySeconds += secs
-        self.secondaryTimerLabel.text = String("\(self.secondarySec)s")
+        self.secondaryMin += mins
+        self.secondarySec += secs
+         self.secondaryTimerLabel.text = String(format: "%02im%02is", self.secondaryMin, self.secondarySec)
+
         self.secondaryTimer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ContractionCounterViewController.updateSecondaryTimerLabel(t:))), userInfo: nil, repeats: true)
     }
     
@@ -130,9 +130,11 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
   @objc func willEnterForeground() {
     let shared = UserDefaults.standard
         if isTimerRunning == true {
+            
             if let savedDate = shared.object(forKey: "savedTime") as? Date {
             (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
-            self.refresh(mins: diffMins, secs: diffSecs)
+            
+                self.refresh(mins: diffMins, secs: diffSecs)
             shared.removeObject(forKey: "savedTime")
             }
             if let savedStrength = UserDefaults.standard.object(forKey: "strengthOfContraction") {
@@ -140,9 +142,10 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
             }
         }
         if isSecondaryTimerRunning == true {
-            
+           // print(diffMins, diffSecs)
             if let savedDate = shared.object(forKey: "savedTime") as? Date {
                 (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
+                print(diffMins, diffSecs)
                 self.refreshSecondaryTimer(mins: diffMins, secs: diffSecs)
                 shared.removeObject(forKey: "savedSecondaryTime")
             }
@@ -197,7 +200,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
             runSecondaryTimer()
             timerTable.reloadData()
             timerLabel.text = "0s"
-            secondaryTimerLabel.text = "0s"
+            secondaryTimerLabel.text = "00m00s"
             secondarySec = 0
             strengthSlider.value = 0
             strengthLabel.text = "0"

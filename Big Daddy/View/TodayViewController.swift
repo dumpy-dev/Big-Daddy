@@ -97,7 +97,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidAppear(_ animated: Bool) {
       
-      
         super.viewWillAppear(animated)
         let fortyWeeksInDays = 280
         let now = Date()
@@ -127,14 +126,14 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
             }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is articlesForTodayViewController {
-            // No action currently
-        } else {
-            let tag = segue.destination as? ThisWeekViewController
-            tag?.selectedTag = selectionTag
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is articlesForTodayViewController {
+//            // No action currently
+//        } else {
+//            let tag = segue.destination as? ThisWeekViewController
+//            tag?.selectedTag = selectionTag
+//        }
+//    }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.centerTable()
@@ -299,7 +298,9 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
                 """,
                 7 :"""
-                This week, your peanut is fast becoming a little brain box! Their head is growing faster than the Incredible Hulk to make room for their expanding and increasingly complex brain. It won’t be too long before their brain will start to process sounds and light from inside \(motherMiddle)’s uterus. In other news, \(baby)’s inner ear is starting to develop and their arms and legs are getting longer. Their sex organs are also taking shape, but don’t start painting the nursery yet – it’s still too early to tell on a scan whether they’re a boy or a girl.
+                This week, your peanut is fast becoming a little brain box! Their head is growing faster than the Incredible Hulk to make room for their expanding and increasingly complex brain. It won’t be too long before their brain will start to process sounds and light from inside \(motherMiddle)’s uterus.
+                    
+                In other news, \(baby)’s inner ear is starting to develop and their arms and legs are getting longer. Their sex organs are also taking shape, but don’t start painting the nursery yet – it’s still too early to tell on a scan whether they’re a boy or a girl.
                 
                 """,
                 8 : """
@@ -307,25 +308,27 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 
                 """,
                 9 : """
-                This is a big week for your little eyeball: all their body parts are now present! Although \(baby) doesn’t look like a tadpole any more, their fingers and toes are still webbed, Kermit-style. \(baby)'s eyes are getting bigger and their mouth and tongue are developing quickly, with tiny tastebuds starting to appear. \(mother)’s placenta is almost fully functioning and will soon provide vital nutrients to \(baby).
+                This is a big week for your little eyeball: all their body parts are now present! Although \(baby) doesn’t look like a tadpole any more, their fingers and toes are still webbed, Kermit-style. \(baby)’s eyes are getting bigger and their mouth and tongue are developing quickly, with tiny tastebuds starting to appear. \(mother)’s placenta is almost fully functioning and will soon provide vital nutrients to \(baby).
                 
                 """,
                 10 : """
-                This week, \(baby) has got more moves than Jagger as they discover that they can wriggle their arms and legs. \(mother) won't be able to feel these jerky movements quite yet, but it will only be a couple of months before those first flutters are felt.
+                This week, \(baby) has got more moves than Jagger as they discover that they can wriggle their arms and legs. \(mother) won’t be able to feel these jerky movements quite yet, but it will only be a couple of months before those first flutters are felt.
                     
                 Amazingly, \(baby)’s jawbones already contain all of their milk teeth. Their heart is fully developed and is beating at around 180 beats per minute – that’s up to three times the speed of yours.
 
                 """,
                 11 : """
-                Good news: \(baby) now looks less like E.T. and more like a miniature human. They have developed almost all of their critical organs and body parts, and will spend the next six months getting bigger, stronger and ready for the outside world. \(babyStart)’s fingers and toes are no longer webbed, and they even have tiny fingernails. Their eyelids have grown, and their eyes will stay closed for another few months.
+                Good news: \(baby) now looks less like E.T. and more like a miniature human. They have developed almost all of their critical organs and body parts, and will spend the next six months getting bigger, stronger and ready for the outside world.
+                
+                \(babyStart)’s fingers and toes are no longer webbed, and they even have tiny fingernails. Their eyelids have grown, and their eyes will stay closed for another few months.
                 
                 """,
                 12 : """
-                This week, \(baby) is the size of a chicken nugget (or an average-sized human testicle, if you prefer). Their face is perfectly formed – their eyes have moved closer together and they even have tiny little lobes on their ears. \(babyStart) is busy practising their facial expressions, and can even now open their mouth, yawn, hiccup and swallow. At the moment, their skeleton is made up of rubbery cartilage (like your own ear or nose), but will now start to harden into bone.
+                This week, \(baby) is the size of a chicken nugget (or an average-sized human testicle, if you prefer). Their face is perfectly formed – their eyes have moved closer together and they even have tiny little lobes on their ears. \(babyStart) is busy practising their facial expressions, and can now open their mouth, yawn, hiccup and swallow. At the moment, their skeleton is made up of rubbery cartilage (like your own ear or nose), but will now start to harden into bone.
                 
                 """,
                 13 :"""
-                It’s still way too early to be able to tell on a scan whether you’re having a little boy or girl, but \(baby)’s sex organs are now fully developed. Their toes are now fully formed and their unique fingerprints are starting to show. \(babyStart)’s head now accounts for around a third of its whole length, as the part of the brain responsible for problem solving and memory is starting to develop.
+                It’s still too early to be able to tell on a scan whether you’re having a little boy or girl, but \(baby)’s sex organs are now fully developed. Their toes are now fully formed and their unique fingerprints are starting to show. \(babyStart)’s head now accounts for around a third of its whole length, as the part of the brain responsible for problem solving and memory is starting to develop.
                 
                 """,
                 14 : """
@@ -335,7 +338,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     
                 """,
                 15 : """
-                Whether you’re into deep house or light opera, it’s time to put the music on – this week, \(baby) can hear muffled sounds from the outside world as well as the sound of \(motherMiddle)’s voice, heart and tummy. Even though \(baby)’s eyes are still closed, they are becoming sensitive to light shining on \(motherMiddle)’s bump. That’s right – get the disco lights on and start singing to your \(baby).
+                Whether you’re into deep house or light opera, it’s time to put the music on – this week, \(baby) can hear muffled sounds from the outside world as well as the sound of \(motherMiddle)’s voice, heart and tummy. Even though \(baby)’s eyes are still closed, they are becoming sensitive to light shining on \(motherMiddle)’s bump. That’s right – get the disco lights on and start singing to \(baby).
                     
                 \(babyStart)’s body parts are all now present, and they are practising inhaling and exhaling the amniotic fluid. Who are we kidding? It’s wee. They’re practising swallowing the wee.
                     
@@ -351,7 +354,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     
                 """,
                 18 : """
-                Who ate all the pies? \(baby), apparently! This week, they’re piling on the pounds and now have a little layer of fat under their skin. They still look pretty wrinkly, although their ears have finally moved up from the jawline into a more usual position. Girl-babies now have immature eggs developing in their ovaries, and have a fully-formed vagina, womb and fallopian tubes. Boybies’ testicles are moving down and their tiny penis is fully formed. If you’re planning on finding out the sex of \(baby), those all-important details should now be visible on a scan.
+                Who ate all the pies? \(babyStart), apparently! This week, they’re piling on the pounds and now have a little layer of fat under their skin. They still look pretty wrinkly, although their ears have finally moved up from the jawline into a more usual position. Girl-babies now have immature eggs developing in their ovaries, and have a fully-formed vagina, womb and fallopian tubes. Boybies’ testicles are moving down and their tiny penis is fully formed. If you’re planning on finding out the sex of \(baby), those all-important details should now be visible on a scan.
                     
                 """,
                 19 : """
@@ -363,7 +366,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     
                 """,
                 21 : """
-                This is a milestone week for \(baby), as it’s the first time that they weigh more than \(motherMiddle)’s placenta. #babygoals. Both \(baby) and placenta (and \(motherMiddle)) will keep growing throughout the pregnancy, but \(baby) will keep getting bigger and bigger than the placenta.
+                This is a milestone week for \(baby), as it’s the first time that they weigh more than \(motherMiddle)’s placenta. #babygoals. Both \(baby) and the placenta (and \(motherMiddle)) will keep growing throughout the pregnancy, but \(baby) will keep getting bigger and bigger than the placenta.
                     
                 \(babyStart) is now also covered in downy hair, called lanugo. No-one really knows why babies grow lanugo, but it’s possible that it could be to keep \(baby)’s temperature just right. But before you start worrying that they’ll come out hairier than Chewbacca, rest assured that lanugo usually disappears before birth, although it might be visible in very premature babies.
                     
@@ -397,7 +400,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 27 : """
                 It’s the final week of the second trimester! This week, \(baby)’s eyes are finally open – not that there’s a lot for them to see at the moment. Soon, they’ll start learning how to blink. \(babyStart)’s lungs are still developing, and a substance called surfactant is starting to coat the inside of the lungs. This stops their airways from sticking together, so that the tiny air sacs can inflate properly once they’re born and take their first breaths.
                     
-                    \(babyStart) is now getting into a regular cycle or waking and sleeping, and may even begin to dream soon.
+                \(babyStart) is now getting into a regular cycle or waking and sleeping, and may even begin to dream soon.
                     
                 """,
                 28 : """
@@ -409,7 +412,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 29 : """
                 \(babyStart) is piling on the pounds at the moment, and doing regular HIIT workouts in their underwater studio. Their hearing is now excellent, and \(motherMiddle)’s voice and heartbeat is starting to become familiar to them. If you keep talking to the bump regularly, they may even recognize your voice and be soothed by it after they’re born.
                     
-                    Try putting your ear to \(motherMiddle)’s bump every now and then – if it’s in exactly the right position, you might be able to hear \(baby)’s heartbeat.
+                Try putting your ear to \(motherMiddle)’s bump every now and then – if it’s in exactly the right position, you might be able to hear \(baby)’s heartbeat.
                     
                 """,
                 30 : """
@@ -699,7 +702,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     
                     If \(motherMiddle) is worrying about things that need to be done before the baby arrives, suggest that she writes down everything that needs to be done. Then you can divide up the most important tasks between you, and even draft in family members or friends to help out if you need. The most important thing is that \(motherMiddle) takes it easy, and the baby definitely won’t notice if the stairs haven't been hoovered.
                     
-                    In the next two weeks you will have your baby. You'll have first smiles and first steps, sleepless nights and teething. This is your gift, your curse. Who are you? You're a Big Daddy.
+                    In the next two weeks you will have your baby. You'll have first smiles and first steps, sleepless nights and teething. This is your gift, your curse. Who are you? You’re a Big Daddy.
                     
                     """
                 ]
@@ -717,7 +720,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     1 : "Baby is not yet in existence",
                     2 : "Baby is not yet in existence",
                     3 : """
-                    Around 84 in 100 couples will get pregnant within the first year of trying. Get on it; unlike your bed, your mother can't make a baby for you.
+                    Around 84 in 100 couples will get pregnant within the first year of trying. Get on it; unlike your bed, your mother can’t make a baby for you.
                     
                     """,
                     4 : """
@@ -817,7 +820,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     
                     """,
                     28 : """
-                    Feeling like you wish you could help /(mother) more with her pregnancy? Be careful what you wish for - male emperor penguins are responsible for keeping their partner's egg warm, while she goes and has a nice meal. For several weeks.
+                    Feeling like you wish you could help \(mother) more with her pregnancy? Be careful what you wish for - male emperor penguins are responsible for keeping their partner’s egg warm, while she goes and has a nice meal. For several weeks.
                     
                     """,
                     29 : """
