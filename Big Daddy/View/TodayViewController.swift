@@ -11,7 +11,7 @@ import UIKit
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     // MARK:- Code for the Setup Popup
-    @IBOutlet weak var tabBar: UITabBarItem!
+   @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -67,7 +67,9 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        tabBar.isEnabled = false
+      tabBar.isEnabled = false
+        //self.tabBarController?.tabBar.shadowImage = UIImage()
+      //  self.tabBarController?.tabBar.barStyle = .black
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
         
         let fortyWeeksInDays = 280

@@ -111,8 +111,8 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     
     // MARK:- Background functions
     
-  @objc func pauseWhenBackground() {
-    let shared = UserDefaults.standard
+    @objc func pauseWhenBackground() {
+        let shared = UserDefaults.standard
         if isTimerRunning == true {
             self.timer.invalidate()
             let strengthOfContraction = strengthSlider.value
@@ -127,24 +127,21 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         }
     }
     
-  @objc func willEnterForeground() {
-    let shared = UserDefaults.standard
+    @objc func willEnterForeground() {
+        let shared = UserDefaults.standard
         if isTimerRunning == true {
-            
             if let savedDate = shared.object(forKey: "savedTime") as? Date {
-            (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
-            
+                (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
                 self.refresh(mins: diffMins, secs: diffSecs)
-            shared.removeObject(forKey: "savedTime")
+                shared.removeObject(forKey: "savedTime")
             }
             if let savedStrength = UserDefaults.standard.object(forKey: "strengthOfContraction") {
-            strengthSlider.value = savedStrength as! Float
+                strengthSlider.value = savedStrength as! Float
             }
         }
         if isSecondaryTimerRunning == true {
-           // print(diffMins, diffSecs)
-            if let savedDate = shared.object(forKey: "savedTime") as? Date {
-                (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
+           if let savedDate = shared.object(forKey: "savedTime") as? Date {
+            (diffMins, diffSecs) = ContractionCounterViewController.getTimeDifference(startDate: savedDate)
                 print(diffMins, diffSecs)
                 self.refreshSecondaryTimer(mins: diffMins, secs: diffSecs)
                 shared.removeObject(forKey: "savedSecondaryTime")
@@ -162,7 +159,6 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
 //            if let savedInterval = UserDefaults.standard.object(forKey: "savedInterval") {
 //                print(savedInterval)
 //            }
-            
         }
     }
     
@@ -171,10 +167,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         let components = calendar.dateComponents([.minute, .second], from: startDate, to: Date())
         return(components.minute!, components.second!)
     }
-    
-   
-    
-   
+
     // MARK:- Button and Slider actions
     
     @IBAction func strengthSlinder(_ sender: Any) {
