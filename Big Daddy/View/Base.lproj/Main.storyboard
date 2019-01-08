@@ -1495,7 +1495,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tNl-ft-Evr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" image="todayButton" id="MOW-hs-vK2"/>
+                    <tabBarItem key="tabBarItem" tag="100" title="Today" image="todayButton" id="MOW-hs-vK2"/>
                     <navigationItem key="navigationItem" id="a1f-YO-nSV"/>
                     <connections>
                         <outlet property="datePicker" destination="2Cq-Dp-HyX" id="rdF-1G-CyX"/>

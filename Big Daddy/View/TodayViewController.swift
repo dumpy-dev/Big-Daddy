@@ -65,23 +65,53 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
        return true
     }
     
-
+    func refreshWeeksElapsed () {
+        let fortyWeeksInDays = 280
+        let now = Date()
+        var dateComponent = DateComponents()
+        dateComponent.day = fortyWeeksInDays
+        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
+        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
+        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
+        let weeksLeft : Int = diffInDays!/7
+        let weeksElapsed : Int = 40 - weeksLeft
+        
+        let displayedWeeksElapsed = weeksElapsed - 3
+        
+                if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
+                    let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+                    weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
+                } else if weeksElapsed <= 3 {
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
+                }
+    }
+//        selectionTag = 0
+//
+//        self.navigationController?.isNavigationBarHidden = true
+//        selectedPerson = ""
+//
+//        let displayedWeeksElapsed = weeksElapsed - 3
+//
+//        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
+//            let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+//            weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
+//        } else if displayedWeeksElapsed <= 3 {
+//            let indexPath = IndexPath(row: 0, section: 0)
+//            weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
+//        }
+//    }
     
     override func viewDidLoad() {
       
         tabBarController?.delegate = self
         
-        
-        func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-            print("Test")
-        }
-        
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-     // tabBar.isEnabled = false
-        //self.tabBarController?.tabBar.shadowImage = UIImage()
-      //  self.tabBarController?.tabBar.barStyle = .black
+     
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
+        
+      //  refreshWeeksElapsed()
         
         let fortyWeeksInDays = 280
         let now = Date()
@@ -92,25 +122,26 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
         let weeksLeft : Int = diffInDays!/7
         let weeksElapsed : Int = 40 - weeksLeft
-        selectionTag = 0
         
+        selectionTag = 0
         self.navigationController?.isNavigationBarHidden = true
         selectedPerson = ""
         
         let displayedWeeksElapsed = weeksElapsed - 3
-        
-        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
+
+        if weeksElapsed <= 40 && weeksElapsed >= 4 {
             let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
             weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
-        } else if displayedWeeksElapsed <= 3 {
+        } else if weeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
             weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
     }
     
-    
+    // MARK:- TabBar Controller setup
+
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
+
         let fortyWeeksInDays = 280
         let now = Date()
         var dateComponent = DateComponents()
@@ -120,16 +151,20 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
         let weeksLeft : Int = diffInDays!/7
         let weeksElapsed : Int = 40 - weeksLeft
-        selectionTag = 0
-        
-        self.navigationController?.isNavigationBarHidden = true
-        selectedPerson = ""
-        
-        let displayedWeeksElapsed = weeksElapsed - 3
-        
-        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
-        weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
-    }
+            if weeksElapsed >= 1 && weeksElapsed <= 40 {
+                var displayedWeeksElapsed = weeksElapsed - 3
+                if displayedWeeksElapsed == -1 {
+                    displayedWeeksElapsed = displayedWeeksElapsed + 1
+                } else if displayedWeeksElapsed == -2 {
+                    displayedWeeksElapsed = displayedWeeksElapsed + 2
+                } else if displayedWeeksElapsed == -3 {
+                    displayedWeeksElapsed = displayedWeeksElapsed + 3
+                }
+                let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+                weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
+            }
+        }
+    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -141,23 +176,30 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         dateComponent.day = fortyWeeksInDays
         let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
         let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
-          print("This is the due date: \(dueDate)")
-        
         let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
         let weeksLeft : Int = diffInDays!/7
-  
-        let weeksElapsed : Int = 40 - weeksLeft
-        selectionTag = 0
-     
-        self.navigationController?.isNavigationBarHidden = true
-        selectedPerson = ""
 
-        let displayedWeeksElapsed = weeksElapsed - 3
+        let weeksElapsed : Int = 40 - weeksLeft
         
-        if displayedWeeksElapsed <= 40 && displayedWeeksElapsed >= 4 {
+//        selectionTag = 0
+//
+        self.navigationController?.isNavigationBarHidden = true
+//        selectedPerson = ""
+
+        var displayedWeeksElapsed = weeksElapsed - 3
+        if displayedWeeksElapsed == -1 {
+            displayedWeeksElapsed = displayedWeeksElapsed + 1
+        } else if displayedWeeksElapsed == -2 {
+            displayedWeeksElapsed = displayedWeeksElapsed + 2
+        } else if displayedWeeksElapsed == -3 {
+            displayedWeeksElapsed = displayedWeeksElapsed + 3
+        }
+        print(displayedWeeksElapsed)
+        
+        if weeksElapsed <= 40 && weeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
    weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
-        } else if displayedWeeksElapsed <= 3 {
+        } else if weeksElapsed <= 3 {
             let indexPath = IndexPath(row: 0, section: 0)
      weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
@@ -172,6 +214,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        }
 //    }
 
+    
+        
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.centerTable()
     }
