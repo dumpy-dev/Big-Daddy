@@ -16,6 +16,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var mothersNameField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateSwitch: UISwitch!
+  
     
     // MARK - code for remaining functionality
     @IBOutlet weak var sizingView: UIView!
@@ -109,7 +110,25 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("working")
+        
+        let fortyWeeksInDays = 280
+        let now = Date()
+        var dateComponent = DateComponents()
+        dateComponent.day = fortyWeeksInDays
+        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
+        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
+        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
+        let weeksLeft : Int = diffInDays!/7
+        let weeksElapsed : Int = 40 - weeksLeft
+        selectionTag = 0
+        
+        self.navigationController?.isNavigationBarHidden = true
+        selectedPerson = ""
+        
+        let displayedWeeksElapsed = weeksElapsed - 3
+        
+        let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
+        weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
     }
     
     
