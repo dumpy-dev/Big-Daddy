@@ -7,12 +7,62 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LoadingViewController: UIViewController {
 
+    let realm = try! Realm()
+    var viewCountData:Results<UserDataRealm> {
+        get {
+            return realm.objects(UserDataRealm.self)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-print("view did load")
+    
+        print("this is the view count: \(viewCountData.count)")
+        
+        if viewCountData.count == 0 {
+                        print("new view")
+                        let newViewRegistered = 1
+                        let primaryKey = "First View"
+            let viewCountRealm = UserDataRealm()
+                       // let viewCountRealm = realm.object(ofType: UserDataRealm.self, forPrimaryKey: primaryKey)
+                        viewCountRealm.viewCount = 1
+            viewCountRealm.primaryKey = "ViewCounter"
+                        try! self.realm.write({
+                            self.realm.add(viewCountRealm)
+                        })
+      
+        } else {
+            print("not new view")
+        }
+            
+//            print("new view")
+//            let newViewRegistered = 1
+//            let primaryKey = "First View"
+//            let viewCountRealm = realm.object(ofType: UserDataRealm.self, forPrimaryKey: primaryKey)
+//            viewCountRealm!.viewCount = 1
+//            try! self.realm.write({
+//                self.realm.add(viewCountRealm!)
+//            })
+//        } else {
+//            print("not new view")
+//        }
+        
+//        let currentViewCount = viewCountData
+//        print("this is the inital view count: \(currentViewCount)")
+//        //let updatedViewCount = currentViewCount.viewCount + 1
+//        
+//        let numberOfViews = UserDataRealm()
+//        //numberOfViews.viewCount = updatedViewCount
+//        try! self.realm.write({
+//            self.realm.add(numberOfViews, update: true)
+//        })
+//        let newViewCount = viewCountData[0].viewCount
+//        print("this is the new view count: \(newViewCount)")
+        
         // Do any additional setup after loading the view.
     }
 

@@ -147,7 +147,7 @@ class setupVC6 : UIViewController {
     
     @IBAction func continuePressed(_ sender: Any) {
         
-        if dueDateSwitch.isOn {
+        if dueDateSwitch.isOn {     // calculating the due date form the last period
             datePicker.minimumDate = nil
             let daysToAdd = 280
             let calculatedDueDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: datePicker.date)
@@ -158,12 +158,12 @@ class setupVC6 : UIViewController {
             let remainderDays : Int = diffInDays!%7
             let remainderDaysElapsed : Int = 7 - remainderDays
          
-            if weeksLeft >= 40 {
+                if weeksLeft >= 40 {
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
                 alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 self.datePicker.setDate(Date() as Date, animated: true)
-            } else if remainderDays < 0 || weeksLeft < 0 {
+                } else if remainderDays < 0 || weeksLeft < 0 {
                 
                 print("this are \(remainderDaysElapsed) remaninder days left")
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be in the past", preferredStyle: UIAlertController.Style.alert)
@@ -173,17 +173,14 @@ class setupVC6 : UIViewController {
                 
                 self.datePicker.setDate(Date() as Date, animated: true)
             
-            }   else {
+                } else {
                 let dateEntered = datePicker.date
-              //  UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+              
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-             //   UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
-              //  UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
-                  performSegue(withIdentifier: "homeSegue", sender: self)
-            }
+                performSegue(withIdentifier: "homeSegue", sender: self)
+                }
         
         } else {
-            
             // This calculates the time until the baby is born from a known due date
         
             let now = Date()
@@ -212,12 +209,9 @@ class setupVC6 : UIViewController {
 
                 self.datePicker.setDate(Date() as Date, animated: true)
             } else {
-                let dateEntered = datePicker.date
-            //    UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
+              
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-               // UserDefaults.standard.set(weeksElapsed, forKey: "WeeksElapsed")
-              //  UserDefaults.standard.set(remainderDaysElapsed, forKey: "RemainderDaysElapsed")
-                  performSegue(withIdentifier: "homeSegue", sender: self)
+                performSegue(withIdentifier: "homeSegue", sender: self)
             }
             
         }

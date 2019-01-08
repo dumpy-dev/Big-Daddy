@@ -8,10 +8,10 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarDelegate {
 
     // MARK:- Code for the Setup Popup
-   @IBOutlet weak var tabBar: UITabBarItem!
+    @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!

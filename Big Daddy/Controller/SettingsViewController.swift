@@ -144,11 +144,15 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         motherNameEntered.placeholder = UserDefaults.standard.object(forKey: "mother") as? String
         babyNameEntered.placeholder = UserDefaults.standard.object(forKey: "baby") as? String
         
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+            if let previouslyEnteredDueDate = UserDefaults.standard.object(forKey: "DueDate") {
+                
+                self.datePicker.setDate(previouslyEnteredDueDate as! Date, animated: false)
+            }
+        
         
         self.motherNameEntered.delegate = self
         self.babyNameEntered.delegate = self
@@ -247,11 +251,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        if let previouslyEnteredDate = UserDefaults.standard.object(forKey: "dateEntered") {
-        self.datePicker.setDate(previouslyEnteredDate as! Date, animated: true)
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        if let previouslyEnteredDate = UserDefaults.standard.object(forKey: "dateEntered") {
+//        self.datePicker.setDate(previouslyEnteredDate as! Date, animated: true)
+//        }
+//    }
     
     
     @IBAction func sexPicked(_ sender: UISegmentedControl) {

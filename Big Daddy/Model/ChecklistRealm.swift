@@ -48,3 +48,11 @@ class ContractionCounterIntervalRealm: Object {
     @objc dynamic var interval : Int = 0
     @objc dynamic var intervalTime : String = ""
 }
+
+class UserDataRealm: Object {
+    @objc dynamic var viewCount : Int = 0
+    @objc dynamic var primaryKey : String = ""
+    override static func primaryKey() -> String? {
+        return "primaryKey"
+    }
+}
