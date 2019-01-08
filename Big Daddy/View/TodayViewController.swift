@@ -8,10 +8,10 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarDelegate {
+class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarControllerDelegate {
 
     // MARK:- Code for the Setup Popup
-    @IBOutlet weak var tabBar: UITabBarItem!
+   // @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet var setupPopup: UIView!
     @IBOutlet weak var mothersNameField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -64,10 +64,20 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
        return true
     }
     
+
+    
     override func viewDidLoad() {
+      
+        tabBarController?.delegate = self
+        
+        
+        func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+            print("Test")
+        }
+        
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-      tabBar.isEnabled = false
+     // tabBar.isEnabled = false
         //self.tabBarController?.tabBar.shadowImage = UIImage()
       //  self.tabBarController?.tabBar.barStyle = .black
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
@@ -96,6 +106,12 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
     }
+    
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("working")
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
       
