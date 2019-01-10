@@ -42,7 +42,7 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["chrisjdeutsch@gmail.com"])
+            mail.setToRecipients(["info@thebigdaddyapp.com"])
             mail.setSubject("Feedback")
         //mail.setMessageBody("<p>Set default email text here as needed.</p>", isHTML: true)
             present(mail, animated: true, completion: nil)

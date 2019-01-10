@@ -42,8 +42,6 @@ UserDefaults.standard.set(mothersName.text, forKey: "mother")
                     let remainderDays : Int = diffInDays!%7
                     let remainderDaysElapsed : Int = 7 - remainderDays
         
-             print("\(mothersName.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
-        
                     if weeksLeft >= 40 {
         
                         let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)

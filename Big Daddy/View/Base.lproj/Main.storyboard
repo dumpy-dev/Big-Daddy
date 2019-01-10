@@ -451,8 +451,8 @@
                                 <rect key="frame" x="0.0" y="375.66666666666674" width="414" height="311.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="KWx-Pa-d1J">
-                                        <rect key="frame" x="10" y="20" width="394" height="92"/>
-                                        <string key="text">If we have got it right, please help us spread the word! If you've found a bug, want a new feature or have something else to say, then get in touch so we can sort it.</string>
+                                        <rect key="frame" x="10" y="20" width="394" height="115"/>
+                                        <string key="text">If we have got it right, please help us spread the word! If you've found a bug, want a new feature or have something else to say, then get in touch so we can sort it. You can email us on info@thebigdaddyapp.com</string>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -694,7 +694,7 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e9-Xr-uaU">
                             <rect key="frame" x="63" y="68" width="49" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="cancel"/>
+                            <state key="normal" image="backButton"/>
                             <connections>
                                 <action selector="addCancelled:" destination="nqU-FL-ZaU" eventType="touchUpInside" id="lAN-uR-1in"/>
                             </connections>
@@ -702,7 +702,7 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuZ-yu-dXA">
                             <rect key="frame" x="176" y="68" width="49" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="plus"/>
+                            <state key="normal" image="addButton"/>
                             <connections>
                                 <action selector="addCompleted:" destination="nqU-FL-ZaU" eventType="touchUpInside" id="Pz8-US-6gn"/>
                             </connections>
@@ -1305,13 +1305,24 @@
                                                                                     <constraint firstAttribute="width" secondItem="VDi-U9-l7m" secondAttribute="height" multiplier="1:1" id="3VH-CS-YEa"/>
                                                                                 </constraints>
                                                                             </imageView>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8t-kQ-v7K" userLabel="rightArrows">
+                                                                                <rect key="frame" x="273" y="141" width="15" height="30"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="30" id="dqQ-MJ-rFb"/>
+                                                                                    <constraint firstAttribute="width" constant="15" id="hLI-bQ-nci"/>
+                                                                                </constraints>
+                                                                                <state key="normal" image="rightArrowSingle"/>
+                                                                            </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="VDi-U9-l7m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9lY-eC-ma2" secondAttribute="leadingMargin" constant="5" id="0Td-wm-ZKB"/>
                                                                             <constraint firstItem="VDi-U9-l7m" firstAttribute="centerY" secondItem="9lY-eC-ma2" secondAttribute="centerY" id="253-HE-bYb"/>
                                                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="VDi-U9-l7m" secondAttribute="trailing" constant="5" id="6nM-Uu-pdU"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="G8t-kQ-v7K" secondAttribute="trailing" id="hSF-HK-Cm8"/>
+                                                                            <constraint firstItem="G8t-kQ-v7K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VDi-U9-l7m" secondAttribute="trailing" constant="10" id="o9W-FN-wCN"/>
                                                                             <constraint firstItem="VDi-U9-l7m" firstAttribute="centerX" secondItem="9lY-eC-ma2" secondAttribute="centerX" id="tz1-sT-k0f"/>
+                                                                            <constraint firstItem="G8t-kQ-v7K" firstAttribute="centerY" secondItem="9lY-eC-ma2" secondAttribute="centerY" id="ue9-jL-PNu"/>
                                                                             <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="VDi-U9-l7m" secondAttribute="bottom" constant="5" id="wq4-8l-gAK"/>
                                                                             <constraint firstItem="VDi-U9-l7m" firstAttribute="top" secondItem="9lY-eC-ma2" secondAttribute="topMargin" constant="5" id="yra-aS-ES4"/>
                                                                         </constraints>
@@ -2354,10 +2365,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addButton" width="100" height="100"/>
         <image name="articlesButton" width="38.400001525878906" height="38.400001525878906"/>
         <image name="articlesOnboarding" width="200" height="200"/>
+        <image name="backButton" width="100" height="100"/>
         <image name="balancing-scale-variant" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="cancel" width="102.40000152587891" height="102.40000152587891"/>
         <image name="continueArrow" width="150" height="150"/>
         <image name="dislike" width="300" height="300"/>
         <image name="doneSettings" width="300" height="300"/>
@@ -2365,10 +2377,10 @@
         <image name="like" width="300" height="300"/>
         <image name="measuring-tape" width="51.200000762939453" height="51.200000762939453"/>
         <image name="play-button-sing" width="51.200000762939453" height="51.200000762939453"/>
-        <image name="plus" width="102.40000152587891" height="102.40000152587891"/>
         <image name="resetSettings" width="300" height="300"/>
         <image name="rewind" width="51.200000762939453" height="51.200000762939453"/>
         <image name="rightArrowOnboarding" width="200" height="200"/>
+        <image name="rightArrowSingle" width="50" height="100"/>
         <image name="seahorseOnboarding" width="200" height="200"/>
         <image name="settings@x3" width="57.599998474121094" height="57.599998474121094"/>
         <image name="skipToEnd" width="150" height="150"/>

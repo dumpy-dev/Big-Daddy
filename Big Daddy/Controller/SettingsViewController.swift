@@ -61,8 +61,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 let remainderDays : Int = diffInDays!%7
                 let remainderDaysElapsed : Int = 7 - remainderDays
             
-                print("\(motherNameEntered.text)'s due date is \(calculatedDueDate!) which means she is \(weeksElapsed) weeks along")
-            
             //TODO:- this isn't working!
             
             if weeksLeft >= 40 {
