@@ -122,8 +122,12 @@ class TermsAndConditionsViewController : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if textIdentifier == 1 {
             contentField.text = """
+            The Big Daddy
+            Version 1.2.0
+            © Copyright 2019 Dumpy Devs Ltd
             
-                Medical information disclaimer
+            
+            Medical information disclaimer
             
             1.    Credit
             1.1    This document was created using a template from SEQ Legal (https://seqlegal.com).
@@ -153,17 +157,21 @@ class TermsAndConditionsViewController : UIViewController {
             """
         } else if textIdentifier == 2 {
             contentField.text = """
+            The Big Daddy
+            Version 1.2.0
+            © Copyright 2019 Dumpy Devs Ltd
+            
             
             Image Credits
             
-            Icons made by:
-            - Freepik
-            - Smashicon
-            - Pixel Perfect
-            - Pixel Buddha
-            - Roundicons
+            Icons by:
+                - Freepik
+                - Smashicon
+                - Pixel Perfect
+                - Pixel Buddha
+                - Roundicons
             
-            from www.flaticon.com
+            at www.flaticon.com
 
             """
         } else {
