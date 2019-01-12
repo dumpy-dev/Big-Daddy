@@ -262,8 +262,11 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         let alertController = UIAlertController(title: "Reset", message: "This will reset all of your contraction times. Are you sure?", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Reset", style: UIAlertAction.Style.default){
             UIAlertAction in
-            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-            UserDefaults.standard.synchronize()
+            // UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            UserDefaults.standard.removeObject(forKey: "savedTime")
+            UserDefaults.standard.removeObject(forKey: "strengthOfContraction")
+            UserDefaults.standard.removeObject(forKey: "savedSecondaryTime")
+           // UserDefaults.standard.synchronize()
             
             let times = self.realm.objects(ContractionCounterRealm.self)
                 try! self.realm.write ({
@@ -327,7 +330,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         let time = timerData[indexPath.row]
         let interval = intervalData[indexPath.row]
         let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .medium
+        dateFormatter.timeStyle = .short
         cell.realTimeLabel.text = "\(dateFormatter.string(from: time.timeOfDay! ))"
         cell.contractionTimeLabel!.text = "\(time.lengthOfContraction)"
         cell.contractionStrengthLabel!.text = "\(time.strengthOfContraction)"
