@@ -10,15 +10,7 @@ import UIKit
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarControllerDelegate {
 
-    // MARK:- Code for the Setup Popup
-   // @IBOutlet weak var tabBar: UITabBarItem!
-    @IBOutlet var setupPopup: UIView!
-    @IBOutlet weak var mothersNameField: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var dateSwitch: UISwitch!
-  
-    
-    // MARK - code for remaining functionality
+    // MARK - Setup basic variables
     @IBOutlet weak var sizingView: UIView!
     var viewCount = 0
     var isDisplayingFirstCell = true
@@ -26,7 +18,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var selectionTag = 0
     
     // MARK:- Setup the arrays and dictionaries
-    
     let babySizeImageArray = ["week0-3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a dry martini", "the height of a beer bottle", "the length of a tube of pringles", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the size of a violin", "the weight of War and Peace", "the height of a PC tower", "the weight of a tomahawk steak", "the weight of a cricket bat", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the weight of a brick", "the height of a car tyre", "the weight of a six-pack", "the length of a wood saw", "the length of a full rack of ribs"]
     let weightArray = ["week1to3", "0.01g", "0.2g", "0.4g", "0.8g", "1g", "2g", "4g", "8g", "14g", "23g", "45g", "70g", "100g", "140g", "190g", "240g", "300g", "360g", "430g", "500g", "600g", "660g", "760g", "875g", "1kg", "1.1kg", "1.3kg", "1.5kg", "1.7kg", "1.9kg", "2.1kg", "2.4kg", "2.6kg", "2.9kg", "3.1kg", "3.3kg", "3.5kg", "3.5kg", "3.5kg"]
@@ -66,34 +57,33 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
  
     override func viewDidLoad() {
-      
-        tabBarController?.delegate = self
-        
         super.viewDidLoad()
+        tabBarController?.delegate = self
         self.navigationController?.isNavigationBarHidden = true
-     
+        
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
-        
-      //  refreshWeeksElapsed()
-        
+  
+        // This is the code to calculate the current week of pregnancy
         let fortyWeeksInDays = 280
-        let now = Date()
+        let startDate = Date()
         var dateComponent = DateComponents()
         dateComponent.day = fortyWeeksInDays
-        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
-        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
-        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
-        print("week diff in days: \(diffInDays)")
-        let weeksLeft : Int = diffInDays!/7
-        let weeksElapsed : Int = 39 - weeksLeft
-        let remainderDays : Int = diffInDays!%7
-        let remainderDaysElapsed : Int = 7 - remainderDays
+        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: startDate)
+        let endDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
+        let diff = endDate!.interval(ofComponent: .day, fromDate: startDate)
         
-        selectionTag = 0
-        self.navigationController?.isNavigationBarHidden = true
-        selectedPerson = ""
-        print("weeks left: \(weeksLeft)")
-        print("this is the number of elapsed weeks: \(weeksElapsed) and remainder days \(remainderDays) and remainder days elapsed \(remainderDaysElapsed)")
+        let weeksLeft : Int = diff/7
+        var weeksElapsed : Int = 39 - weeksLeft
+        let remainderDays : Int = diff%7
+        let remainderDaysElapsed : Int = 7 - remainderDays
+        if remainderDaysElapsed == 7 {
+            weeksElapsed += 1
+        }
+        
+        print("this is the difference in days \(diff), this is the number of elapsed weeks: \(weeksElapsed) and remainder days \(remainderDays) and remainder days elapsed \(remainderDaysElapsed)")
+        
+        // END OF CODE
+        
         let displayedWeeksElapsed = weeksElapsed - 3
 
         if weeksElapsed <= 40 && weeksElapsed >= 4 {
@@ -109,15 +99,27 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 
+        // This is the code to calculate the current week of pregnancy
         let fortyWeeksInDays = 280
-        let now = Date()
+        let startDate = Date()
         var dateComponent = DateComponents()
         dateComponent.day = fortyWeeksInDays
-        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
-        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
-        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
-        let weeksLeft : Int = diffInDays!/7
-        let weeksElapsed : Int = 39 - weeksLeft
+        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: startDate)
+        let endDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
+        let diff = endDate!.interval(ofComponent: .day, fromDate: startDate)
+        
+        let weeksLeft : Int = diff/7
+        var weeksElapsed : Int = 39 - weeksLeft
+        let remainderDays : Int = diff%7
+        let remainderDaysElapsed : Int = 7 - remainderDays
+        if remainderDaysElapsed == 7 {
+            weeksElapsed += 1
+        }
+        
+        print("this is the difference in days \(diff), this is the number of elapsed weeks: \(weeksElapsed) and remainder days \(remainderDays) and remainder days elapsed \(remainderDaysElapsed)")
+        
+        // END OF CODE
+        
             if weeksElapsed >= 1 && weeksElapsed <= 40 {
                 var displayedWeeksElapsed = weeksElapsed - 3
                 if displayedWeeksElapsed == -1 {
@@ -137,57 +139,28 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidAppear(_ animated: Bool) {
       
         super.viewWillAppear(animated)
-        
+     
+    // This is the code to calculate the current week of pregnancy
         let fortyWeeksInDays = 280
-        let now = Date()
+        let startDate = Date()
         var dateComponent = DateComponents()
         dateComponent.day = fortyWeeksInDays
-        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
-        let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
-        var diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
-        print(now)
-        print(dueDate)
-        //let weeksLeft : Int = diffInDays!/7
-
-//        var weeksElapsed : Int = 39 - weeksLeft
-        
-//        let remainderDays : Int = diffInDays!%7
-//        let remainderDaysElapsed : Int = 7 - remainderDays
-////        if remainderDaysElapsed == 7 {
-////            weeksElapsed += 1
-////        }
-        
-       
-       
-//        print("this is the difference in days \(diffInDays), this is the number of elapsed weeks: \(weeksElapsed) and remainder days \(remainderDays) and remainder days elapsed \(remainderDaysElapsed)")
-        
-        
-        let startDate = Date()
+        let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: startDate)
         let endDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
         let diff = endDate!.interval(ofComponent: .day, fromDate: startDate)
-        print("The new difference: \(diff)")
+     
         let weeksLeft : Int = diff/7
-         var weeksElapsed : Int = 39 - weeksLeft
-        let remainderDays : Int = diffInDays!%7
+        var weeksElapsed : Int = 39 - weeksLeft
+        let remainderDays : Int = diff%7
         let remainderDaysElapsed : Int = 7 - remainderDays
                 if remainderDaysElapsed == 7 {
                     weeksElapsed += 1
                 }
-        print("weeks left: \(weeksLeft)")
-         print("this is the difference in days \(diff), this is the number of elapsed weeks: \(weeksElapsed) and remainder days \(remainderDays) and remainder days elapsed \(remainderDaysElapsed)")
-        
-        
-        
-        
-        
-        
-        
-        
-//        selectionTag = 0
-//
-        self.navigationController?.isNavigationBarHidden = true
-//        selectedPerson = ""
 
+        print("this is the difference in days \(diff), this is the number of elapsed weeks: \(weeksElapsed) and remainder days \(remainderDays) and remainder days elapsed \(remainderDaysElapsed)")
+        
+    // END OF CODE
+        
         
         var displayedWeeksElapsed = weeksElapsed - 3
         if displayedWeeksElapsed == -1 {
