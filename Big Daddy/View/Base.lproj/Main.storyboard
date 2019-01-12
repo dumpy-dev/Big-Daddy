@@ -162,12 +162,13 @@
                                         <date key="date" timeIntervalSinceReferenceDate="541933490.46746802">
                                             <!--2018-03-05 09:04:50 +0000-->
                                         </date>
-                                        <date key="minimumDate" timeIntervalSinceReferenceDate="504964800">
-                                            <!--2017-01-01 12:00:00 +0000-->
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="283996800">
+                                            <!--2010-01-01 00:00:00 +0000-->
                                         </date>
-                                        <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
-                                            <!--2037-12-31 11:00:00 +0000-->
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="3124051200">
+                                            <!--2099-12-31 00:00:00 +0000-->
                                         </date>
+                                        <locale key="locale" localeIdentifier="en"/>
                                         <connections>
                                             <action selector="dueDatePicked:" destination="fMg-pk-Aaf" eventType="valueChanged" id="cef-qM-dq2"/>
                                         </connections>
