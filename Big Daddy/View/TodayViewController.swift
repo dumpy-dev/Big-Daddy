@@ -120,13 +120,15 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: now)
         let dueDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
         let diffInDays = Calendar.current.dateComponents([.day], from: now, to: dueDate!).day
+        print("week diff in days: \(diffInDays)")
         let weeksLeft : Int = diffInDays!/7
         let weeksElapsed : Int = 40 - weeksLeft
         
         selectionTag = 0
         self.navigationController?.isNavigationBarHidden = true
         selectedPerson = ""
-        
+        print("weeks left: \(weeksLeft)")
+        print("this is the number of elapsed weeks: \(weeksElapsed)")
         let displayedWeeksElapsed = weeksElapsed - 3
 
         if weeksElapsed <= 40 && weeksElapsed >= 4 {
@@ -194,7 +196,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else if displayedWeeksElapsed == -3 {
             displayedWeeksElapsed = displayedWeeksElapsed + 3
         }
-        print(displayedWeeksElapsed)
+
         
         if weeksElapsed <= 40 && weeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
@@ -274,7 +276,6 @@ extension UICollectionView {
     func stopScrolling() {
         // self.decelerationRate = UIScrollView.DecelerationRate.fast
         let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 2))
-        print(visibleCenterPositionOfScrollView)
         var closestCellIndex = -1
         var closestDistance: Float = .greatestFiniteMagnitude
         for i in 0..<self.visibleCells.count {
@@ -312,7 +313,6 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-            print("collection view is moving!")
         }
         if indexPath.item == 0 {
             // weeklyTableView.isScrollEnabled = true

@@ -68,7 +68,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 self.datePicker.setDate(Date() as Date, animated: true)
-            } else if weeksLeft <= 0 {
+            } else if weeksLeft < 0 {
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
                 alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
@@ -100,11 +100,20 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                     alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alertController, animated: true, completion: nil)
                     self.datePicker.setDate(Date() as Date, animated: true)
-                } else if weeksLeft <= 0 {
-                    let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be in the past", preferredStyle: UIAlertController.Style.alert)
+                } else if weeksLeft < 0 {
+                    let displayWeeksLeft = -(weeksLeft)
+                    print("this many weeks left: \(displayWeeksLeft)")
+                    if weeksLeft >= -1 {
+                    let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be in the past!", preferredStyle: UIAlertController.Style.alert)
                     alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alertController, animated: true, completion: nil)
                     self.datePicker.setDate(Date() as Date, animated: true)
+                    } else {
+                        let alertController = UIAlertController(title: "Due Date", message: "Your baby should have been born \(displayWeeksLeft) weeks ago. Call a midwife!", preferredStyle: UIAlertController.Style.alert)
+                        alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
+                        self.datePicker.setDate(Date() as Date, animated: true)
+                    }
                 } else {
                     let dateEntered = datePicker.date
                     UserDefaults.standard.set(dateEntered, forKey: "dateEntered")
