@@ -57,6 +57,7 @@
 		2447DFB9217E089F00A011AA /* Vitamins.html in Resources */ = {isa = PBXBuildFile; fileRef = 2447DFB8217E089F00A011AA /* Vitamins.html */; };
 		2451969021374230008D4CF4 /* babyChecklistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2451968F2137422F008D4CF4 /* babyChecklistCollectionViewController.swift */; };
 		24519692213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24519691213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift */; };
+		2454B62621EAA94100EB7BE4 /* Announcing the Pregnancy.html in Resources */ = {isa = PBXBuildFile; fileRef = 2454B62521EAA94100EB7BE4 /* Announcing the Pregnancy.html */; };
 		24672129219224FA00B427F9 /* InitialSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24672128219224FA00B427F9 /* InitialSetupViewController.swift */; };
 		2467212D2198C25700B427F9 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467212C2198C25700B427F9 /* SetupViewController.swift */; };
 		246BE866210DB4690087B095 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BE865210DB4690087B095 /* RatingsViewController.swift */; };
@@ -138,6 +139,7 @@
 		2447DFB8217E089F00A011AA /* Vitamins.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Vitamins.html; sourceTree = "<group>"; };
 		2451968F2137422F008D4CF4 /* babyChecklistCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = babyChecklistCollectionViewController.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Controller/babyChecklistCollectionViewController.swift"; sourceTree = "<absolute>"; };
 		24519691213742CC008D4CF4 /* babyChecklistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babyChecklistCollectionViewCell.swift; sourceTree = "<group>"; };
+		2454B62521EAA94100EB7BE4 /* Announcing the Pregnancy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Announcing the Pregnancy.html"; sourceTree = "<group>"; };
 		24672128219224FA00B427F9 /* InitialSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupViewController.swift; sourceTree = "<group>"; };
 		2467212C2198C25700B427F9 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		246BE865210DB4690087B095 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				2489222B21722FC400EE1F98 /* Alcohol.html */,
 				2489222D217238EA00EE1F98 /* Amniocentesis.html */,
+				2454B62521EAA94100EB7BE4 /* Announcing the Pregnancy.html */,
 				2447DF612177BD1D00A011AA /* Anomaly Scan.html */,
 				2447DF632177C1D300A011AA /* Antenatal Classes.html */,
 				2447DF682177C30700A011AA /* Assisted Delivery.html */,
@@ -410,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2454B62621EAA94100EB7BE4 /* Announcing the Pregnancy.html in Resources */,
 				2447DF732177C38900A011AA /* Braxton Hicks.html in Resources */,
 				2447DF952179266700A011AA /* Labour.html in Resources */,
 				2447DF772177C3A400A011AA /* Cravings.html in Resources */,
