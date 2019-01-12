@@ -12,7 +12,7 @@
 		24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428646F204D3E9700E54FCF /* SettingsViewController.swift */; };
 		242864922057270800E54FCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242864912057270800E54FCF /* TodayViewController.swift */; };
 		242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */ = {isa = PBXBuildFile; fileRef = 242F3790211F16C300ADE38E /* Caesarean Section.html */; };
-		242F3796211F1C1E00ADE38E /* Announcing the Pregnancy.html in Resources */ = {isa = PBXBuildFile; fileRef = 242F3795211F1C1E00ADE38E /* Announcing the Pregnancy.html */; };
+		242F3796211F1C1E00ADE38E /* Announcing The Pregnancy.html in Resources */ = {isa = PBXBuildFile; fileRef = 242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */; };
 		2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */; };
 		2445DF58207811750043590E /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF57207811750043590E /* TodayCollectionViewCell.swift */; };
 		2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF59207819740043590E /* TodayDetailViewController.swift */; };
@@ -94,7 +94,7 @@
 		2428646F204D3E9700E54FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242864912057270800E54FCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = ../View/TodayViewController.swift; sourceTree = "<group>"; };
 		242F3790211F16C300ADE38E /* Caesarean Section.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Caesarean Section.html"; sourceTree = "<group>"; };
-		242F3795211F1C1E00ADE38E /* Announcing the Pregnancy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Announcing the Pregnancy.html"; sourceTree = "<group>"; };
+		242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Announcing The Pregnancy.html"; sourceTree = "<group>"; };
 		2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF57207811750043590E /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 			children = (
 				2489222B21722FC400EE1F98 /* Alcohol.html */,
 				2489222D217238EA00EE1F98 /* Amniocentesis.html */,
-				242F3795211F1C1E00ADE38E /* Announcing the Pregnancy.html */,
+				242F3795211F1C1E00ADE38E /* Announcing The Pregnancy.html */,
 				2447DF612177BD1D00A011AA /* Anomaly Scan.html */,
 				2447DF632177C1D300A011AA /* Antenatal Classes.html */,
 				2447DF682177C30700A011AA /* Assisted Delivery.html */,
@@ -423,7 +423,7 @@
 				2447DF7D2177C3D500A011AA /* Decoding Midwife Notes.html in Resources */,
 				2447DFAB217E083000A011AA /* Signs of Labour.html in Resources */,
 				2447DF7B2177C3C500A011AA /* Dating Scan.html in Resources */,
-				242F3796211F1C1E00ADE38E /* Announcing the Pregnancy.html in Resources */,
+				242F3796211F1C1E00ADE38E /* Announcing The Pregnancy.html in Resources */,
 				2447DFA9217E082200A011AA /* Sex.html in Resources */,
 				2447DF8F2179264A00A011AA /* Holidays.html in Resources */,
 				2447DFA7217E081600A011AA /* Premature Babies.html in Resources */,

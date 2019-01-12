@@ -123,6 +123,12 @@ class setupVC5 : UIViewController, UITextFieldDelegate {
     }
     
     @IBOutlet weak var advanceButtonOutlet: UIButton!
+    @IBOutlet weak var babyTick: UIButton!
+    @IBOutlet weak var babyText: UITextField!
+    @IBAction func babyNameEntered(_ sender: Any) {
+    UserDefaults.standard.set(babyText.text, forKey: "baby")
+    
+    }
     @IBAction func advanceButtonPressed(_ sender: Any) {
         
     }
@@ -133,15 +139,16 @@ class setupVC5 : UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ partnersName: UITextField) -> Bool {
         self.view.endEditing(true)
         
+     
         UIButton.animate(withDuration: 0.3, delay: 0.0, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.advanceButtonOutlet.alpha = 1.0
         }, completion: nil)
         
         
-        
         return true
     }
     
+
     
 }
 
