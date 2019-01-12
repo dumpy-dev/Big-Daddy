@@ -122,12 +122,23 @@ class setupVC5 : UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(partnersName.text, forKey: "mother")
     }
     
+    @IBOutlet weak var advanceButtonOutlet: UIButton!
+    @IBAction func advanceButtonPressed(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         partnersName.delegate = self
     }
     
     func textFieldShouldReturn(_ partnersName: UITextField) -> Bool {
         self.view.endEditing(true)
+        
+        UIButton.animate(withDuration: 0.3, delay: 0.0, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+            self.advanceButtonOutlet.alpha = 1.0
+        }, completion: nil)
+        
+        
+        
         return true
     }
     

@@ -17,7 +17,9 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     var checklistIdentifier : Int = 0
     @IBOutlet weak var checklistTable: UITableView!
     @IBOutlet var addPopupView: UIView!
+    @IBOutlet var helpPopupView: UIView!
     
+    @IBOutlet weak var helpViewLabel: UILabel!
     // MARK:- Setup Realm
     let realm = try! Realm()
     var itemChecklist:Results<ChecklistRealm> {
@@ -123,23 +125,23 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         } else {
                 return todoDatabase.count
         }
-        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bagCell = tableView.dequeueReusableCell(withIdentifier: "checklistCell") as! HospitalBagTableViewCell
         
         bagCell.tick.image = nil
-        func babyChecklistUpdate(){
-            let primaryKey = bagCell.itemName.text
-            let babyChecklistItem = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
-            if babyChecklistItem?.itemCompleted == true {
-                bagCell.itemName.alpha = 0.3
-                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                bagCell.tick.alpha = 0.3
-            } else {
-                bagCell.itemName.alpha = 1
-                bagCell.tick.alpha = 1
-            }
+            func babyChecklistUpdate(){
+                let primaryKey = bagCell.itemName.text
+                let babyChecklistItem = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
+                    if babyChecklistItem?.itemCompleted == true {
+                        bagCell.itemName.alpha = 0.3
+                        bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+                        bagCell.tick.alpha = 0.3
+                    } else {
+                        bagCell.itemName.alpha = 1
+                        bagCell.tick.alpha = 1
+                    }
         }
         if checklistIdentifier == 1 {
                 let item = itemChecklist[indexPath.row]
@@ -289,7 +291,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     }
         
     
-    // MARK:- Functions for animating and adding values
+    // MARK:- Functions for animating and adding popup views
     
     func animateIn() {
         self.view.addSubview(addPopupView)
@@ -304,7 +306,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         UIView.animate(withDuration: 0.4) {
             self.addPopupView.alpha = 1
             self.addPopupView.transform = CGAffineTransform.identity
-    }
+        }
     }
     
     func animateOut() {
@@ -315,10 +317,46 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         addTextField.resignFirstResponder()
     }
     
+    func animateHelpIn() {
+        self.view.addSubview(helpPopupView)
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            self.checklistTable.alpha = 0.2
+        }, completion: nil)
+        addTextField.becomeFirstResponder()
+        helpPopupView.center.x = self.view.center.x
+        helpPopupView.frame.origin.y = self.view.frame.height / 4
+        helpPopupView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        helpPopupView.alpha = 0
+        UIView.animate(withDuration: 0.4) {
+            self.helpPopupView.alpha = 1
+            self.helpPopupView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateHelpOut() {
+        self.helpPopupView.removeFromSuperview()
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.checklistTable.alpha = 1.0
+        }, completion: nil)
+        addTextField.resignFirstResponder()
+    }
+    
+    
+    
     @IBOutlet weak var addTextField: UITextField!
     
     @IBAction func addPressed(_ sender: Any) {
         animateIn()
+    }
+    @IBAction func helpPressed(_ sender: Any) {
+        animateHelpIn()
+        if checklistIdentifier == 1 {
+            helpViewLabel.text = "Press + to add anything you want to take to the hospital and swipe to delete anything you don't need."
+        } else if checklistIdentifier == 2 {
+            helpViewLabel.text = "Add your top baby names here. \n\nPress + to add and swipe to delete."
+        } else {
+             helpViewLabel.text = "Add anything you need to get ready before B-Day. \n\nPress + to add and swipe to delete."
+        }
     }
     
     @IBAction func addCompleted(_ sender: Any) {
@@ -419,6 +457,9 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         animateOut()
     }
     
+    @IBAction func helpExitPressed(_ sender: Any) {
+        animateHelpOut()
+    }
     //MARK:- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()

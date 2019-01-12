@@ -28,7 +28,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK:- Setup the arrays and dictionaries
     
     let babySizeImageArray = ["week0-3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
-    let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a dry martini", "the height of a beer bottle", "the length of a tube of pringles", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the size of a violin", "the weight of War and Peace", "the height of a PC tower", "the weight of a tomahawk steak", "the weight of a cricket bat", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the size of a brick", "the height of a car tyre", "the weight of a six-pack", "the length of a wood saw", "the length of a full rack of ribs"]
+    let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a dry martini", "the height of a beer bottle", "the length of a tube of pringles", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the size of a violin", "the weight of War and Peace", "the height of a PC tower", "the weight of a tomahawk steak", "the weight of a cricket bat", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the weight of a brick", "the height of a car tyre", "the weight of a six-pack", "the length of a wood saw", "the length of a full rack of ribs"]
     let weightArray = ["week1to3", "0.01g", "0.2g", "0.4g", "0.8g", "1g", "2g", "4g", "8g", "14g", "23g", "45g", "70g", "100g", "140g", "190g", "240g", "300g", "360g", "430g", "500g", "600g", "660g", "760g", "875g", "1kg", "1.1kg", "1.3kg", "1.5kg", "1.7kg", "1.9kg", "2.1kg", "2.4kg", "2.6kg", "2.9kg", "3.1kg", "3.3kg", "3.5kg", "3.5kg", "3.5kg"]
     let lengthArray = ["week1to3", "1mm", "2mm", "4mm", "8mm", "1.6cm", "2.3cm", "3.4cm", "4.1cm", "5.4cm", "7.4cm", "8.5cm", "10.1cm", "11.6cm", "12.9cm", "14.2cm", "15cm", "25.6cm", "26.6cm", "27.8cm", "29cm", "30cm", "34.6cm", "35.6cm", "36.6cm", "37.6cm", "38.6cm", "39.9cm", "41.1cm", "42.4cm", "43.7cm", "45cm", "46.2cm", "47.4cm", "48.6cm", "49.8cm", "50.6cm", "51.2cm", "51.2cm", "51.2cm"]
   
@@ -369,7 +369,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 5 : """
                 Congratulations! You’re going to be a Big Daddy!
                     
-                \(babyStart) may only be the size of a peppercorn, but he or she is doing some serious growing. Incredibly, their heart is already functioning and blood is starting to circulate around their body. Their brain and spinal cord are also developing, and a string of blood vessels – which will eventually become the \(baby)’s umbilical cord – connects the\(baby) to \(motherMiddle).  This umbilical cord is a lifeline which will deliver essential oxygen and nutrients from \(motherMiddle) to \(baby).
+                \(babyStart) may only be the size of a peppercorn, but he or she is doing some serious growing. Incredibly, their heart is already functioning and blood is starting to circulate around their body. Their brain and spinal cord are also developing, and a string of blood vessels – which will eventually become \(baby)’s umbilical cord – connects \(baby) to \(motherMiddle).  This umbilical cord is a lifeline which will deliver essential oxygen and nutrients from \(motherMiddle) to \(baby).
 
                 """,
                 6 : """
@@ -389,7 +389,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 
                 """,
                 9 : """
-                This is a big week for your little eyeball: all their body parts are now present! Although \(baby) doesn’t look like a tadpole any more, their fingers and toes are still webbed, Kermit-style. \(baby)’s eyes are getting bigger and their mouth and tongue are developing quickly, with tiny tastebuds starting to appear. \(mother)’s placenta is almost fully functioning and will soon provide vital nutrients to \(baby).
+                This is a big week for your little eyeball: all their body parts are now present! Although \(baby) doesn’t look like a tadpole any more, their fingers and toes are still webbed, Kermit-style. \(babyStart)’s eyes are getting bigger and their mouth and tongue are developing quickly, with tiny tastebuds starting to appear. \(mother)’s placenta is almost fully functioning and will soon provide vital nutrients to \(baby).
                 
                 """,
                 10 : """
@@ -577,7 +577,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     4 : """
                     This week, \(motherMiddle)’s period is due. And if there’s a bun in the oven, that period will be AWOL. Her body will be starting to produce a hormone called human chorionic gonadotrophin (hCG) – which is what triggers the positive result on a pregnancy test.
                     
-                    \(mother) might be feeling a bit tired and moody which – confusingly – might be how she normally feels around this time of the month. It’s a bit of waiting game until that all-important pregnancy test.
+                    \(mother) might be feeling a bit tired and moody which – confusingly – might be how she normally feels around this time of the month. It’s a bit of a waiting game until that all-important pregnancy test.
                     
                     Some pregnancy tests are highly sensitive, and claim to give a reliable reading on the first day of the missed period. But if the test is negative, it’s so early that it doesn’t necessarily mean she’s not pregnant.
                     
