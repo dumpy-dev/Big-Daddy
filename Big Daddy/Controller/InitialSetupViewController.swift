@@ -194,14 +194,30 @@ class setupVC6 : UIViewController {
         } else {
             // This calculates the time until the baby is born from a known due date
         
-            let now = Date()
+            
             let calculatedDueDate = datePicker.date
-            let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate).day
-            let weeksLeft : Int = diffInDays!/7
-            let remainderDays : Int = diffInDays!%7
-            let weeksElapsed : Int = 40 - weeksLeft
+            
+            // This is the code to calculate the current week of pregnancy
+            let fortyWeeksInDays = 280
+            let startDate = Date()
+            var dateComponent = DateComponents()
+            dateComponent.day = fortyWeeksInDays
+            let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: startDate)
+            let endDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
+            let diff = endDate!.interval(ofComponent: .day, fromDate: startDate)
+            
+            let weeksLeft : Int = diff/7
+            var weeksElapsed : Int = 39 - weeksLeft
+            let remainderDays : Int = diff%7
             let remainderDaysElapsed : Int = 7 - remainderDays
-        
+            if remainderDaysElapsed == 7 {
+                weeksElapsed += 1
+            }
+            
+            print("this is the difference in days \(diff), this is the number of elapsed weeks: \(weeksElapsed) and remainder days \(remainderDays) and remainder days elapsed \(remainderDaysElapsed)")
+            
+            // END OF CODE
+            
             if weeksLeft >= 40 {
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
 

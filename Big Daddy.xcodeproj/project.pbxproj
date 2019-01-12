@@ -77,6 +77,7 @@
 		24AC094620D1BE4E0018532C /* HypnobirthingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */; };
 		24C1965C213ACF3700B07DBD /* decoderCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C1965B213ACF3700B07DBD /* decoderCollectionViewController.swift */; };
 		24C1965E213ACF5000B07DBD /* decoderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C1965D213ACF5000B07DBD /* decoderCollectionViewCell.swift */; };
+		24C9E8C721EA705400F623AA /* Postnatal Depression.html in Resources */ = {isa = PBXBuildFile; fileRef = 24C9E8C621EA705400F623AA /* Postnatal Depression.html */; };
 		24CC367E212066A200AD9CF7 /* IntroScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */; };
 		24CC3698212D3A5F00AD9CF7 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */; };
 		24CC3699212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3696212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift */; };
@@ -161,6 +162,7 @@
 		24AC094520D1BE4E0018532C /* HypnobirthingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypnobirthingViewController.swift; sourceTree = "<group>"; };
 		24C1965B213ACF3700B07DBD /* decoderCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decoderCollectionViewController.swift; sourceTree = "<group>"; };
 		24C1965D213ACF5000B07DBD /* decoderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = decoderCollectionViewCell.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Controller/decoderCollectionViewCell.swift"; sourceTree = "<absolute>"; };
+		24C9E8C621EA705400F623AA /* Postnatal Depression.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Postnatal Depression.html"; sourceTree = "<group>"; };
 		24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreenViewController.swift; sourceTree = "<group>"; };
 		24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekCollectionViewCell.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekCollectionViewCell.swift"; sourceTree = "<absolute>"; };
 		24CC3696212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekCollectionViewCell2.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekCollectionViewCell2.swift"; sourceTree = "<absolute>"; };
@@ -206,6 +208,7 @@
 				2447DF632177C1D300A011AA /* Antenatal Classes.html */,
 				2447DF682177C30700A011AA /* Assisted Delivery.html */,
 				2447DF6A2177C33000A011AA /* Blood Groups.html */,
+				2447DF9A21792AB700A011AA /* Bonding with the Bump.html */,
 				2447DF722177C38900A011AA /* Braxton Hicks.html */,
 				242F3790211F16C300ADE38E /* Caesarean Section.html */,
 				2447DF742177C39A00A011AA /* Couvade Syndrome.html */,
@@ -214,7 +217,6 @@
 				2447DF7A2177C3C500A011AA /* Dating Scan.html */,
 				2447DF7C2177C3D500A011AA /* Decoding Midwife Notes.html */,
 				2447DF7E2177C3EA00A011AA /* Driving.html */,
-				2447DF9A21792AB700A011AA /* Bonding with the Bump.html */,
 				2447DF802177C3F800A011AA /* Ectopic Pregnancy.html */,
 				2447DF822177C40400A011AA /* Exercising.html */,
 				2447DF842177C45500A011AA /* Feeding (the baby).html */,
@@ -230,6 +232,7 @@
 				2447DF982179269A00A011AA /* Morning Sickness.html */,
 				2447DF9C217E07AD00A011AA /* Pain Relief in Labour.html */,
 				2447DFA0217E07EA00A011AA /* Paternity Leave.html */,
+				24C9E8C621EA705400F623AA /* Postnatal Depression.html */,
 				2447DFA2217E07FB00A011AA /* Postnatal Depression in Dads.html */,
 				2447DFA4217E080800A011AA /* Pre-eclampsia.html */,
 				2447DFA6217E081600A011AA /* Premature Babies.html */,
@@ -443,6 +446,7 @@
 				2447DF752177C39A00A011AA /* Couvade Syndrome.html in Resources */,
 				2447DF792177C3BC00A011AA /* Dad's Role in Labour.html in Resources */,
 				2447DF642177C1D300A011AA /* Antenatal Classes.html in Resources */,
+				24C9E8C721EA705400F623AA /* Postnatal Depression.html in Resources */,
 				2447DF852177C45500A011AA /* Feeding (the baby).html in Resources */,
 				2447DFA5217E080800A011AA /* Pre-eclampsia.html in Resources */,
 				2447DF6B2177C33000A011AA /* Blood Groups.html in Resources */,

@@ -31,7 +31,40 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     var secondaryMin = 0
     var diffMins = 0
     var diffSecs = 0
+    @IBOutlet var helpPopup: UIView!
+    @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var lowerView: UIView!
     
+    func animateHelpIn() {
+        self.view.addSubview(helpPopup)
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            self.upperView.alpha = 0.2
+            self.lowerView.alpha = 0.2
+        }, completion: nil)
+        helpPopup.center.x = self.view.center.x
+        helpPopup.frame.origin.y = self.view.frame.height / 4
+        helpPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        helpPopup.alpha = 0
+        UIView.animate(withDuration: 0.4) {
+            self.helpPopup.alpha = 1
+            self.helpPopup.transform = CGAffineTransform.identity
+        }
+    }
+    func animateHelpOut() {
+        self.helpPopup.removeFromSuperview()
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.upperView.alpha = 1.0
+            self.lowerView.alpha = 1.0
+        }, completion: nil)
+    }
+    
+    
+    @IBAction func helpButtonPressed(_ sender: Any) {
+        animateHelpIn()
+    }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        animateHelpOut()
+    }
     // MARK:- Realm setup
    
     let realm = try! Realm()
