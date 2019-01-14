@@ -147,9 +147,6 @@ class setupVC5 : UIViewController, UITextFieldDelegate {
         
         return true
     }
-    
-
-    
 }
 
 class setupVC6 : UIViewController {
@@ -175,33 +172,22 @@ class setupVC6 : UIViewController {
             let weeksElapsed : Int = 40 - weeksLeft
             let remainderDays : Int = diffInDays!%7
             let remainderDaysElapsed : Int = 7 - remainderDays
-         
                 if weeksLeft >= 40 {
-                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
-                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-                self.datePicker.setDate(Date() as Date, animated: true)
+                    let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
+                    alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                    self.datePicker.setDate(Date() as Date, animated: true)
                 } else if remainderDays < 0 || weeksLeft < 0 {
-                
-                print("this are \(remainderDaysElapsed) remaninder days left")
-                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be in the past", preferredStyle: UIAlertController.Style.alert)
-                
-                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-                
-                self.datePicker.setDate(Date() as Date, animated: true)
-            
+                    let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be in the past", preferredStyle: UIAlertController.Style.alert)
+                    alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                    self.datePicker.setDate(Date() as Date, animated: true)
                 } else {
-                let dateEntered = datePicker.date
-              
-                UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
-                performSegue(withIdentifier: "homeSegue", sender: self)
+                    UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
+                    performSegue(withIdentifier: "homeSegue", sender: self)
                 }
-        
-        } else {
+            } else {
             // This calculates the time until the baby is born from a known due date
-        
-            
             let calculatedDueDate = datePicker.date
             
             // This is the code to calculate the current week of pregnancy
@@ -209,10 +195,8 @@ class setupVC6 : UIViewController {
             let startDate = Date()
             var dateComponent = DateComponents()
             dateComponent.day = fortyWeeksInDays
-            let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: startDate)
-            let endDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
-            let diff = endDate!.interval(ofComponent: .day, fromDate: startDate)
-            
+            let endDate = calculatedDueDate
+            let diff = endDate.interval(ofComponent: .day, fromDate: startDate)
             let weeksLeft : Int = diff/7
             var weeksElapsed : Int = 39 - weeksLeft
             let remainderDays : Int = diff%7
@@ -238,34 +222,10 @@ class setupVC6 : UIViewController {
                 alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 self.datePicker.setDate(Date() as Date, animated: true)
-            }
-            
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//            else if remainderDays < 0 || weeksLeft < 0 {
-//
-//                print("this are \(remainderDaysElapsed) remaninder days left")
-//                let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be in the past", preferredStyle: UIAlertController.Style.alert)
-//
-//                alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
-//                self.present(alertController, animated: true, completion: nil)
-//
-//                self.datePicker.setDate(Date() as Date, animated: true)
-//            }
-            else {
-            
+            } else {
                 UserDefaults.standard.set(calculatedDueDate, forKey: "DueDate")
                 performSegue(withIdentifier: "homeSegue", sender: self)
             }
-            
         }
     }
 }

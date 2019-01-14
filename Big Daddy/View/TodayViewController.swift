@@ -171,6 +171,15 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             displayedWeeksElapsed = displayedWeeksElapsed + 3
         }
 
+        if diff < 0 {
+            
+            print("minuses")
+            weeksElapsed = 40
+            displayedWeeksElapsed = 37
+           // displayedWeeksElapsed = 40
+//            let indexPath = IndexPath(row: 37, section: 0)
+//            weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
+        }
         
         if weeksElapsed <= 40 && weeksElapsed >= 4 {
         let indexPath = IndexPath(row: displayedWeeksElapsed, section: 0)
@@ -179,7 +188,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let indexPath = IndexPath(row: 0, section: 0)
      weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
-            }
+    }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.destination is articlesForTodayViewController {
