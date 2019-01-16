@@ -407,7 +407,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="u0b-Wc-odh" secondAttribute="height" multiplier="1:1" id="dcB-Iw-4Gr"/>
                                                 </constraints>
-                                                <state key="normal" title="Rate Us" image="ratingStars"/>
+                                                <state key="normal" image="ratingStars"/>
                                                 <connections>
                                                     <action selector="likePressed:" destination="d0P-9Q-7m7" eventType="touchUpInside" id="1sG-YW-qnO"/>
                                                     <action selector="likePressed:" destination="Dmh-iO-aoG" eventType="touchUpInside" id="Lmq-cT-cxW"/>
@@ -418,7 +418,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ZFH-lb-vpv" secondAttribute="height" multiplier="1:1" id="pL3-zx-GiO"/>
                                                 </constraints>
-                                                <state key="normal" title="Email Us" image="emailIcon"/>
+                                                <state key="normal" image="emailIcon"/>
                                                 <connections>
                                                     <action selector="dislikePressed:" destination="d0P-9Q-7m7" eventType="touchUpInside" id="aSy-2h-g65"/>
                                                     <action selector="dislikePressed:" destination="Dmh-iO-aoG" eventType="touchUpInside" id="yyF-7l-313"/>
