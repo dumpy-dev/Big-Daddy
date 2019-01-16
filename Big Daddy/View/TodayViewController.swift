@@ -736,7 +736,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     35 : """
                     Your baby has recently earned their black belt in kung fu, and \(motherMiddle) is feeling the effects. If she’s finding the kicks really uncomfortable, she can try moving around or going onto all fours to encourage the baby to change into a different position.
                     
-                    As the baby gets bigger, the movements will feel different. However, \(motherMiddle) should be keeping track of the baby’s usual movements, and must let the midwife know straight away if she thinks the movements have become less frequent.
+                    As the baby gets bigger, the movements will feel different. However, \(motherMiddle) should be keeping track of the baby’s usual movements, and must let the midwife know straight away if she thinks the movements have changed.
                     
                     """,
                     36 : """

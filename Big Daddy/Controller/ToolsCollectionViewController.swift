@@ -24,7 +24,7 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "search"), #imageLiteral(resourceName: "bodysuit"), #imageLiteral(resourceName: "rating"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
+        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "search"), #imageLiteral(resourceName: "bodysuit"), #imageLiteral(resourceName: "ratingStars"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
         arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Baby Decoder", "Baby Checklist", "Rate Us!", "T&Cs", "Credits"]
         arrayOfTypes = ["Timer", "Checklist", "Checklist", "BabyDecoder", "BabyChecklist", "General", "General", "General"]
         }
@@ -123,7 +123,7 @@ class TermsAndConditionsViewController : UIViewController {
         if textIdentifier == 1 {
             contentField.text = """
             The Big Daddy
-            Version 1.2.0
+            Version 1.2.1
             © Copyright 2019 Dumpy Devs Ltd
             
             
@@ -158,7 +158,7 @@ class TermsAndConditionsViewController : UIViewController {
         } else if textIdentifier == 2 {
             contentField.text = """
             The Big Daddy
-            Version 1.2.0
+            Version 1.2.1
             © Copyright 2019 Dumpy Devs Ltd
             
             

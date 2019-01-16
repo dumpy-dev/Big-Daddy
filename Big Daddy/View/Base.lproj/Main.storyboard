@@ -407,7 +407,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="u0b-Wc-odh" secondAttribute="height" multiplier="1:1" id="dcB-Iw-4Gr"/>
                                                 </constraints>
-                                                <state key="normal" image="like"/>
+                                                <state key="normal" title="Rate Us" image="ratingStars"/>
                                                 <connections>
                                                     <action selector="likePressed:" destination="d0P-9Q-7m7" eventType="touchUpInside" id="1sG-YW-qnO"/>
                                                     <action selector="likePressed:" destination="Dmh-iO-aoG" eventType="touchUpInside" id="Lmq-cT-cxW"/>
@@ -418,7 +418,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ZFH-lb-vpv" secondAttribute="height" multiplier="1:1" id="pL3-zx-GiO"/>
                                                 </constraints>
-                                                <state key="normal" image="dislike"/>
+                                                <state key="normal" title="Email Us" image="emailIcon"/>
                                                 <connections>
                                                     <action selector="dislikePressed:" destination="d0P-9Q-7m7" eventType="touchUpInside" id="aSy-2h-g65"/>
                                                     <action selector="dislikePressed:" destination="Dmh-iO-aoG" eventType="touchUpInside" id="yyF-7l-313"/>
@@ -1026,25 +1026,25 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-99-HZA" userLabel="Slider Stack">
-                                                <rect key="frame" x="14" y="237.66666666666671" width="366" height="54.333333333333343"/>
+                                                <rect key="frame" x="12" y="237.66666666666671" width="370" height="54.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraction Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jgx-S3-X00">
-                                                        <rect key="frame" x="109.66666666666666" y="0.0" width="146.99999999999997" height="27.333333333333332"/>
+                                                        <rect key="frame" x="111.66666666666666" y="0.0" width="146.99999999999997" height="27.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-Sd-0sk" userLabel="Silder + Label Stack">
-                                                        <rect key="frame" x="0.0" y="27.333333333333314" width="366" height="27"/>
+                                                        <rect key="frame" x="0.0" y="27.333333333333314" width="370" height="27"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="lfF-YX-18c">
-                                                                <rect key="frame" x="-2" y="0.0" width="341.33333333333331" height="28"/>
+                                                                <rect key="frame" x="-2" y="0.0" width="345.33333333333331" height="28"/>
                                                                 <connections>
                                                                     <action selector="strengthSlinder:" destination="VWn-bO-TnC" eventType="valueChanged" id="klY-LX-X1O"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-fO-We2">
-                                                                <rect key="frame" x="357.33333333333331" y="0.0" width="8.6666666666666856" height="27"/>
+                                                                <rect key="frame" x="361.33333333333331" y="0.0" width="8.6666666666666856" height="27"/>
                                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1256,7 +1256,7 @@ When the contraction stops, press stop. The next time a contraction starts, pres
 If it was a false alarm, press the reset button and blame the spicy curry. 
 </string>
                                     <attributes>
-                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" size="16" name="GillSans"/>
                                         <real key="NSKern" value="0.0"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
@@ -2303,13 +2303,13 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
         <image name="backButton" width="100" height="100"/>
         <image name="balancing-scale-variant" width="102.40000152587891" height="102.40000152587891"/>
         <image name="continueArrow" width="150" height="150"/>
-        <image name="dislike" width="300" height="300"/>
         <image name="doneSettings" width="300" height="300"/>
+        <image name="emailIcon" width="300" height="300"/>
         <image name="helpButton" width="24" height="24"/>
         <image name="information" width="51.200000762939453" height="51.200000762939453"/>
-        <image name="like" width="300" height="300"/>
         <image name="measuring-tape" width="51.200000762939453" height="51.200000762939453"/>
         <image name="play-button-sing" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="ratingStars" width="300" height="300"/>
         <image name="resetSettings" width="300" height="300"/>
         <image name="rewind" width="51.200000762939453" height="51.200000762939453"/>
         <image name="rightArrowOnboarding" width="200" height="200"/>

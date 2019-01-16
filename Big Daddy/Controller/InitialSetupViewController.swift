@@ -217,7 +217,7 @@ class setupVC6 : UIViewController {
 
                 self.datePicker.setDate(Date() as Date, animated: true)
 
-            } else if weeksLeft <= 0 {
+            } else if weeksLeft < 0 {
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be in the past", preferredStyle: UIAlertController.Style.alert)
                 alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
