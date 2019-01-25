@@ -30,7 +30,9 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
     @IBAction func likePressed(_ sender: Any) {
         if #available( iOS 10.3,*){
             SKStoreReviewController.requestReview()
-    }
+        } else {
+            print("ratings displayed more than 3 times")
+        }
     }
     
     // Dislike Pressed - send user to write email feedback

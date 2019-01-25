@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarControllerDelegate {
 
@@ -62,6 +63,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.isNavigationBarHidden = true
         
         let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
+        print("this is view number: \(numberOfViews)")
   
         // This is the code to calculate the current week of pregnancy
         let fortyWeeksInDays = 280

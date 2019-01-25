@@ -21,8 +21,6 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        print("this is the view count: \(viewCountData.count)")
-        
         if viewCountData.count == 0 {
                         print("new view")
                         let newViewRegistered = 1
@@ -75,7 +73,7 @@ class LoadingViewController: UIViewController {
         print("view appeared")
         if let numberOfViews = UserDefaults.standard.object(forKey: "newViews") {
             print("this screen has already been viewed before")
-             let viewCount = 2
+            let viewCount = numberOfViews as! Int + 1
             UserDefaults.standard.set(viewCount, forKey: "newViews")
              performSegue(withIdentifier: "secondUseSegue", sender: self)
         } else {
@@ -86,14 +84,4 @@ class LoadingViewController: UIViewController {
         performSegue(withIdentifier: "firstUseSegue", sender: self)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
