@@ -62,7 +62,16 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tabBarController?.delegate = self
         self.navigationController?.isNavigationBarHidden = true
         
-        let numberOfViews = UserDefaults.standard.object(forKey: "newViews") ?? 0
+        let numberOfViews = UserDefaults.standard.object(forKey: "newViews") as! Int ?? 0
+        
+        if numberOfViews == 5 {
+            if #available( iOS 10.3,*){
+                SKStoreReviewController.requestReview()
+            } else {
+                print("ratings displayed more than 3 times")
+            }
+        }
+        
         print("this is view number: \(numberOfViews)")
   
         // This is the code to calculate the current week of pregnancy
