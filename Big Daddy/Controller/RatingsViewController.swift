@@ -26,16 +26,18 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
         super.didReceiveMemoryWarning()
     }
     
-    // Like Pressed - send user to App Store Ratings
+
     @IBAction func likePressed(_ sender: Any) {
         if #available( iOS 10.3,*){
             SKStoreReviewController.requestReview()
         } else {
-            print("ratings displayed more than 3 times")
+            if let url = URL(string: "https://itunes.apple.com/gb/app/the-big-daddy/id1447942380?mt=8&fbclid=IwAR0ZlEWM9ocd2ncSBx0CiUnDxmiMjHAxoSW0CBEfro2tFwbDZOVcElx0OQc") {
+                UIApplication.shared.open(url, options: [:])
+            }
         }
     }
     
-    // Dislike Pressed - send user to write email feedback
+
     @IBAction func dislikePressed(_ sender: Any) {
         sendEmail()
     }

@@ -8,10 +8,11 @@
 
 import UIKit
 import StoreKit
+import UserNotifications
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarControllerDelegate {
 
-    // MARK - Setup basic variables
+    // MARK:- Setup basic variables
     @IBOutlet weak var sizingView: UIView!
     var viewCount = 0
     var isDisplayingFirstCell = true
@@ -21,6 +22,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK:- Setup the arrays and dictionaries
     let babySizeImageArray = ["week0-3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
     let babySizeLabelArray = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a dry martini", "the height of a beer bottle", "the length of a tube of pringles", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the size of a violin", "the weight of War and Peace", "the height of a PC tower", "the weight of a tomahawk steak", "the weight of a cricket bat", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the weight of a brick", "the height of a car tyre", "the weight of a six-pack", "the length of a wood saw", "the length of a full rack of ribs"]
+    let babySizeImageArray2 = ["week0-3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14", "week15", "week16", "week17", "week18", "week19", "week20", "week21", "week22", "week23", "week24", "week25", "week26", "week27", "week28", "week29", "week30", "week31", "week32", "week33", "week34", "week35", "week36", "week37", "week38", "week39", "week40", "week41", "week42"]
+    let babySizeLabelArray2 = ["still in beta", "the size of a grain of salt", "the size of a peppercorn", "the size of a snowflake", "the size of a peanut", "the size of a bee", "the size of an eyeball", "the size of a maki roll", "the size of a poker chip", "the size of a chicken nugget", "the size of a tennis ball", "the size of a deck of cards", "the size of a big mac", "the size of a can of coke", "the size of a pair of aviators", "the size of an iPhone 8", "the size of a dry martini", "the height of a beer bottle", "the length of a tube of pringles", "the size of a trowel", "the length of a sheet of A4", "the height of a bottle of wine", "the size of a hammer", "the size of a violin", "the weight of War and Peace", "the height of a PC tower", "the weight of a tomahawk steak", "the weight of a cricket bat", "the weight of an adult brain", "the weight of a roast chicken", "the size of a vinyl player", "the size of a dartboard", "the size of a small octopus", "the weight of a brick", "the height of a car tyre", "the weight of a six-pack", "the length of a wood saw", "the length of a full rack of ribs"]
     let weightArray = ["week1to3", "0.01g", "0.2g", "0.4g", "0.8g", "1g", "2g", "4g", "8g", "14g", "23g", "45g", "70g", "100g", "140g", "190g", "240g", "300g", "360g", "430g", "500g", "600g", "660g", "760g", "875g", "1kg", "1.1kg", "1.3kg", "1.5kg", "1.7kg", "1.9kg", "2.1kg", "2.4kg", "2.6kg", "2.9kg", "3.1kg", "3.3kg", "3.5kg", "3.5kg", "3.5kg"]
     let lengthArray = ["week1to3", "1mm", "2mm", "4mm", "8mm", "1.6cm", "2.3cm", "3.4cm", "4.1cm", "5.4cm", "7.4cm", "8.5cm", "10.1cm", "11.6cm", "12.9cm", "14.2cm", "15cm", "25.6cm", "26.6cm", "27.8cm", "29cm", "30cm", "34.6cm", "35.6cm", "36.6cm", "37.6cm", "38.6cm", "39.9cm", "41.1cm", "42.4cm", "43.7cm", "45cm", "46.2cm", "47.4cm", "48.6cm", "49.8cm", "50.6cm", "51.2cm", "51.2cm", "51.2cm"]
   
@@ -104,6 +107,10 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let indexPath = IndexPath(row: 0, section: 0)
             weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
+        
+        
+        
+        
     }
     
     // MARK:- TabBar Controller setup
@@ -199,6 +206,54 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let indexPath = IndexPath(row: 0, section: 0)
      weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
+        
+        // MARK: Setup local notifications
+      
+        let date = Date()
+        var dateArray : [Date] = []
+        var calculatedDaysRemaining = Calendar.current.dateComponents([.day], from: date, to: endDate!).day ?? 0
+        print(calculatedDaysRemaining)
+    
+        var newDate = endDate
+       
+        while calculatedDaysRemaining >= 0 {
+            let daysToSubtract = 7
+            var dateComponent = DateComponents()
+            dateComponent.day = -(daysToSubtract)
+            let newDate2 = Calendar.current.date(byAdding: dateComponent, to: newDate!)
+            dateArray.append(newDate2!)
+            calculatedDaysRemaining = calculatedDaysRemaining - 7
+            let newDate3 = newDate
+            newDate = Calendar.current.date(byAdding: dateComponent, to: newDate3!)
+        }
+        print(dateArray)
+        
+        var arrayValue = 36
+        var triggerID = "trigger"
+        var triggerInt = 0
+       
+        for i in dateArray {
+            
+            let baby = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
+            var dateComps = Calendar.current.dateComponents([.year, .month, .day], from: i)
+            dateComps.hour = 10
+            dateComps.minute = 00
+         let notificationContent  = UNMutableNotificationContent()
+            notificationContent.title = "\(baby) is growing"
+         notificationContent.body = "Your baby has levelled up and is now \(babySizeLabelArray[arrayValue])!"
+         notificationContent.sound = UNNotificationSound.default
+         triggerID = String("trigger\(triggerInt)")
+            
+        triggerInt = triggerInt + 1
+         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComps, repeats: false)
+         let request = UNNotificationRequest(identifier: triggerID, content: notificationContent, trigger: trigger)
+         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+         arrayValue = arrayValue - 1
+            print(notificationContent.body)
+            print(dateComps)
+            print(triggerID)
+        }
+ 
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -326,7 +381,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     }
             let baby = UserDefaults.standard.string(forKey: "baby") ?? "your baby"
                     if baby.isEmpty == true {
-                        cell.babySize.text = "your baby is \(sizeComparison)"
+                        cell.babySize.text = "Your baby is \(sizeComparison)"
                     } else {
                         cell.babySize.text = "\(baby) is \(sizeComparison)"
                     }
