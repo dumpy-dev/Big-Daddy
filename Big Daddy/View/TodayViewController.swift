@@ -60,8 +60,24 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
        return true
     }
  
+    @IBAction func handleTap(recognizer:UITapGestureRecognizer) {
+        
+        print("tapped")
+        //            let translation = recognizer.translation(in: self.view)
+        //            if let view = recognizer.view {
+        //                view.center = CGPoint(x:view.center.x + translation.x,
+        //                                      y:view.center.y + translation.y)
+        //            }
+        //            recognizer.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+       
+        
         tabBarController?.delegate = self
         self.navigationController?.isNavigationBarHidden = true
         
@@ -153,20 +169,28 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        center.removeAllDeliveredNotifications()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
-      
+        
         super.viewWillAppear(animated)
-     
-    // This is the code to calculate the current week of pregnancy
+        
+        print("view displayed")
+     let center = UNUserNotificationCenter.current()
+        
+       
+        
         let fortyWeeksInDays = 280
         let startDate = Date()
         var dateComponent = DateComponents()
-        dateComponent.day = fortyWeeksInDays
+            dateComponent.day = fortyWeeksInDays
         let defaultDueDate = Calendar.current.date(byAdding: dateComponent, to: startDate)
         let endDate = UserDefaults.standard.object(forKey: "DueDate") as? Date ?? defaultDueDate
         let diff = endDate!.interval(ofComponent: .day, fromDate: startDate)
-     
         let weeksLeft : Int = diff/7
         var weeksElapsed : Int = 39 - weeksLeft
         let remainderDays : Int = diff%7
@@ -176,10 +200,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
 
         print("this is the difference in days \(diff), this is the number of elapsed weeks: \(weeksElapsed) and remainder days \(remainderDays) and remainder days elapsed \(remainderDaysElapsed)")
-        
-    // END OF CODE
-        
-        
+   
         var displayedWeeksElapsed = weeksElapsed - 3
         if displayedWeeksElapsed == -1 {
             displayedWeeksElapsed = displayedWeeksElapsed + 1
@@ -190,13 +211,9 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
         if diff < 0 {
-            
             print("minuses")
             weeksElapsed = 40
             displayedWeeksElapsed = 37
-           // displayedWeeksElapsed = 40
-//            let indexPath = IndexPath(row: 37, section: 0)
-//            weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: false)
         }
         
         if weeksElapsed <= 40 && weeksElapsed >= 4 {
@@ -250,21 +267,17 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
          UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
          arrayValue = arrayValue - 1
             print(notificationContent.body)
-            print(dateComps)
+            print("this is dateComps: \(dateComps)")
             print(triggerID)
         }
  
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                print("These are the pending requests post-deletion: \(request)")
+            }
+        })
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination is articlesForTodayViewController {
-//            // No action currently
-//        } else {
-//            let tag = segue.destination as? ThisWeekViewController
-//            tag?.selectedTag = selectionTag
-//        }
-//    }
-
+ 
     
         
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -346,6 +359,9 @@ extension UICollectionView {
 }
 
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    
+   
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
