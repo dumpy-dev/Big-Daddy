@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Article {
     let keyword : String
     let name : String
