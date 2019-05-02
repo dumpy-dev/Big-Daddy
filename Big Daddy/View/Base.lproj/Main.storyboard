@@ -1026,25 +1026,25 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-99-HZA" userLabel="Slider Stack">
-                                                <rect key="frame" x="4" y="237.66666666666671" width="386" height="54.333333333333343"/>
+                                                <rect key="frame" x="2" y="237.66666666666671" width="390" height="54.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraction Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jgx-S3-X00">
-                                                        <rect key="frame" x="119.66666666666666" y="0.0" width="146.99999999999997" height="27.333333333333332"/>
+                                                        <rect key="frame" x="121.66666666666666" y="0.0" width="146.99999999999997" height="27.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-Sd-0sk" userLabel="Silder + Label Stack">
-                                                        <rect key="frame" x="0.0" y="27.333333333333314" width="386" height="27"/>
+                                                        <rect key="frame" x="0.0" y="27.333333333333314" width="390" height="27"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="lfF-YX-18c">
-                                                                <rect key="frame" x="-2" y="0.0" width="361.33333333333331" height="28"/>
+                                                                <rect key="frame" x="-2" y="0.0" width="365.33333333333331" height="28"/>
                                                                 <connections>
                                                                     <action selector="strengthSlinder:" destination="VWn-bO-TnC" eventType="valueChanged" id="klY-LX-X1O"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-fO-We2">
-                                                                <rect key="frame" x="377.33333333333331" y="0.0" width="8.6666666666666856" height="27"/>
+                                                                <rect key="frame" x="381.33333333333331" y="0.0" width="8.6666666666666856" height="27"/>
                                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2239,32 +2239,13 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                         <viewLayoutGuide key="safeArea" id="7FE-VY-U2p"/>
                     </view>
                     <connections>
-                        <segue destination="K1h-Mi-lD6" kind="show" identifier="firstUseSegue2" id="rIZ-xF-OB9"/>
                         <segue destination="4RV-b3-94j" kind="show" identifier="secondUseSegue" animates="NO" id="sFO-6i-VIq"/>
                         <segue destination="QJJ-8x-CJW" kind="show" identifier="firstUseSegue" id="xQN-6P-G51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tww-4r-uD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7057" y="-471"/>
-        </scene>
-        <!--Onboarding View Controller-->
-        <scene sceneID="KpO-gO-tBE">
-            <objects>
-                <viewController id="K1h-Mi-lD6" customClass="OnboardingViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="egV-CQ-Bu2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="U4x-8Y-YTN"/>
-                    </view>
-                    <connections>
-                        <segue destination="4RV-b3-94j" kind="show" identifier="onboardingSegue" id="d7q-Dj-Lgb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fWf-bi-Ic7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1872" y="1261"/>
+            <point key="canvasLocation" x="-6870" y="361"/>
         </scene>
         <!--Tools-->
         <scene sceneID="Kuz-yL-Fe2">
@@ -2337,7 +2318,7 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
     <inferredMetricsTieBreakers>
         <segue reference="2pe-YH-MQ5"/>
         <segue reference="ho7-ss-gWS"/>
-        <segue reference="HdG-oj-wdQ"/>
+        <segue reference="sFO-6i-VIq"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

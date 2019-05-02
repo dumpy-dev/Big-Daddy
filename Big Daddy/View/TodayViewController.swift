@@ -45,7 +45,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
     }
     
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return sizingView.frame.height
     }
@@ -74,24 +73,24 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-       
-        
         tabBarController?.delegate = self
         self.navigationController?.isNavigationBarHidden = true
         
-        let numberOfViews = UserDefaults.standard.object(forKey: "newViews") as! Int ?? 0
-        
-        if numberOfViews == 5 {
-            if #available( iOS 10.3,*){
-                SKStoreReviewController.requestReview()
-            } else {
-                print("ratings displayed more than 3 times")
+        if let viewCount = UserDefaults.standard.object(forKey: "newViews") {
+            
+            let numberOfViews = viewCount as! Int
+            if numberOfViews == 5 {
+                if #available( iOS 10.3,*){
+                    SKStoreReviewController.requestReview()
+                } else {
+                    print("ratings displayed more than 3 times")
+                }
             }
+             print("this is view number: \(numberOfViews)")
         }
         
-        print("this is view number: \(numberOfViews)")
+       
+       
   
         // This is the code to calculate the current week of pregnancy
         let fortyWeeksInDays = 280
@@ -123,10 +122,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let indexPath = IndexPath(row: 0, section: 0)
             weeklyTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
         }
-        
-        
-        
-        
     }
     
     // MARK:- TabBar Controller setup
@@ -257,7 +252,9 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             dateComps.minute = 00
          let notificationContent  = UNMutableNotificationContent()
             notificationContent.title = "\(baby) is growing"
-         notificationContent.body = "Your baby has levelled up and is now \(babySizeLabelArray[arrayValue])!"
+            //while arrayValue <= 36 {
+            notificationContent.body = "Your baby has levelled up and is now \(babySizeLabelArray[arrayValue])!"
+           // }
          notificationContent.sound = UNNotificationSound.default
          triggerID = String("trigger\(triggerInt)")
             
@@ -265,7 +262,15 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
          let trigger = UNCalendarNotificationTrigger(dateMatching: dateComps, repeats: false)
          let request = UNNotificationRequest(identifier: triggerID, content: notificationContent, trigger: trigger)
          UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-         arrayValue = arrayValue - 1
+            print("old array value: \(arrayValue)")
+        
+            
+            arrayValue = arrayValue - 1
+            if arrayValue < 0 {
+                arrayValue = 0
+            }
+            
+              print("new array value: \(arrayValue)")
             print(notificationContent.body)
             print("this is dateComps: \(dateComps)")
             print(triggerID)
@@ -278,8 +283,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         })
     }
  
-    
-        
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.centerTable()
     }
