@@ -90,7 +90,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             // This calculates the time until the baby is born from a known due date
             let now = Date()
                 datePicker.datePickerMode = UIDatePicker.Mode.date
-                var dateFormatter = DateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd MMM yyyy"
                 let selectedDate = dateFormatter.string(from: datePicker.date)
                 print(selectedDate)

@@ -169,9 +169,9 @@ class setupVC6 : UIViewController {
             let now = Date()
             let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate!).day
             let weeksLeft : Int = diffInDays!/7
-            let weeksElapsed : Int = 40 - weeksLeft
+            // let weeksElapsed : Int = 40 - weeksLeft
             let remainderDays : Int = diffInDays!%7
-            let remainderDaysElapsed : Int = 7 - remainderDays
+            //let remainderDaysElapsed : Int = 7 - remainderDays
                 if weeksLeft >= 40 {
                     let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
                     alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
