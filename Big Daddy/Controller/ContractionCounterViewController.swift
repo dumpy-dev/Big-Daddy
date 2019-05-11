@@ -35,6 +35,8 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var lowerView: UIView!
     
+    // The Help Button
+    
     func animateHelpIn() {
         self.view.addSubview(helpPopup)
         UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
@@ -50,6 +52,7 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
             self.helpPopup.transform = CGAffineTransform.identity
         }
     }
+    
     func animateHelpOut() {
         self.helpPopup.removeFromSuperview()
         UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
@@ -58,13 +61,14 @@ class ContractionCounterViewController: UIViewController, UITableViewDelegate, U
         }, completion: nil)
     }
     
-    
     @IBAction func helpButtonPressed(_ sender: Any) {
         animateHelpIn()
     }
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         animateHelpOut()
     }
+    
     // MARK:- Realm setup
    
     let realm = try! Realm()
