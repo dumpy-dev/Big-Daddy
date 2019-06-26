@@ -11,16 +11,19 @@ import RealmSwift
 
 class LoadingViewController: UIViewController {
 
-    let realm = try! Realm()
-    var viewCountData:Results<UserDataRealm> {
-        get {
-            return realm.objects(UserDataRealm.self)
-        }
-    }
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        
+        let realm = try! Realm()
+        var viewCountData:Results<UserDataRealm> {
+            get {
+                return realm.objects(UserDataRealm.self)
+            }
+        }
+        
 //        if viewCountData.count == 0 {
 //                        print("new view")
 //                        let newViewRegistered = 1

@@ -39,15 +39,16 @@ class ContractionCounterRealm: Object {
     
     @objc dynamic var timeOfDay : Date? = nil
     @objc dynamic var lengthOfContraction : String = ""
-    @objc dynamic var interval : Int = 0
+    @objc dynamic var intervalString : String = ""
+   // @objc dynamic var interval : String = ""
     @objc dynamic var strengthOfContraction : Int = 0
     
 }
 
-class ContractionCounterIntervalRealm: Object {
-    @objc dynamic var interval : Int = 0
-    @objc dynamic var intervalTime : String = ""
-}
+//class ContractionCounterIntervalRealm: Object {
+//    @objc dynamic var interval : Int = 0
+//    @objc dynamic var intervalTime : String = ""
+//}
 
 class UserDataRealm: Object {
     @objc dynamic var viewCount : Int = 0
