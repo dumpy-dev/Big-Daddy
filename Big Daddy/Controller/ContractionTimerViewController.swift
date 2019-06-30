@@ -19,6 +19,8 @@ class ContractionTimerViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var strengthValue: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var tableAndTitleView: UIStackView!
     
     @IBOutlet var helpPopup: UIView!
     var timer = Timer()
@@ -48,8 +50,8 @@ class ContractionTimerViewController: UIViewController, UITableViewDelegate, UIT
     func animateHelpIn() {
                 self.view.addSubview(helpPopup)
                 UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                    // self.upperView.alpha = 0.2
-                    // self.lowerView.alpha = 0.2
+                     self.topView.alpha = 0.2
+                     self.tableAndTitleView.alpha = 0.2
                 }, completion: nil)
                 helpPopup.center.x = self.view.center.x
                 helpPopup.frame.origin.y = self.view.frame.height / 4
@@ -58,14 +60,15 @@ class ContractionTimerViewController: UIViewController, UITableViewDelegate, UIT
                 UIView.animate(withDuration: 0.4) {
                     self.helpPopup.alpha = 1
                     self.helpPopup.transform = CGAffineTransform.identity
+                    
                 }
             }
     
             func animateHelpOut() {
                 self.helpPopup.removeFromSuperview()
                 UIView.animate(withDuration: 0.4, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-//                    self.upperView.alpha = 1.0
-//                    self.lowerView.alpha = 1.0
+                    self.topView.alpha = 1.0
+                   self.tableAndTitleView.alpha = 1.0
                 }, completion: nil)
             }
     

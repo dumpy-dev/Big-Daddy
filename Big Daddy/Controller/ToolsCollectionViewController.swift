@@ -123,7 +123,7 @@ class TermsAndConditionsViewController : UIViewController {
         if textIdentifier == 1 {
             contentField.text = """
             The Big Daddy
-            Version 1.2.2
+            Version 1.2.4
             © Copyright 2019 Dumpy Devs Ltd
             
             
@@ -158,7 +158,7 @@ class TermsAndConditionsViewController : UIViewController {
         } else if textIdentifier == 2 {
             contentField.text = """
             The Big Daddy
-            Version 1.2.2
+            Version 1.2.4
             © Copyright 2019 Dumpy Devs Ltd
             
             

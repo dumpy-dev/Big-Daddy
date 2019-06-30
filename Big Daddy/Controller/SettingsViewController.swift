@@ -174,12 +174,3 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
   
 }
 
-
-
-
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        if let previouslyEnteredDate = UserDefaults.standard.object(forKey: "dateEntered") {
-//        self.datePicker.setDate(previouslyEnteredDate as! Date, animated: true)
-//        }
-//    }
