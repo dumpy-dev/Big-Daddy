@@ -289,17 +289,18 @@
         <!--MainTabBarController-->
         <scene sceneID="MWa-eD-5nh">
             <objects>
-                <tabBarController title="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="4RV-b3-94j" sceneMemberID="viewController">
+                <tabBarController title="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="4RV-b3-94j" customClass="TabBarViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="ct2-Dc-b6O">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <outlet property="mainTabBar" destination="ct2-Dc-b6O" id="6MH-6y-rx6"/>
                         <segue destination="zHR-xX-DUl" kind="relationship" relationship="viewControllers" id="9bb-uc-WgU"/>
                         <segue destination="hGF-uU-vCa" kind="relationship" relationship="viewControllers" id="lL8-yj-A3M"/>
                         <segue destination="sjR-hL-0lb" kind="relationship" relationship="viewControllers" id="tq5-2d-1HL"/>
@@ -1968,6 +1969,8 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                     <tabBarItem key="tabBarItem" tag="100" title="Today" image="todayButton" id="MOW-hs-vK2"/>
                     <navigationItem key="navigationItem" id="a1f-YO-nSV"/>
                     <connections>
+                        <outlet property="mainStackView" destination="boV-AO-v6k" id="hQB-Y9-y8L"/>
+                        <outlet property="mainView" destination="nem-uQ-fUv" id="Ipx-UL-CGD"/>
                         <outlet property="sizingView" destination="sKB-tk-YkW" id="LNr-BT-6X0"/>
                         <outlet property="weeklyTableView" destination="bDS-ke-aH1" id="tG6-4d-IA1"/>
                     </connections>

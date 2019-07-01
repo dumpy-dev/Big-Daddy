@@ -11,7 +11,14 @@ import StoreKit
 import UserNotifications
 
 class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarControllerDelegate {
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    @IBOutlet var mainView: UIView!
+    @IBOutlet weak var mainStackView: UIStackView!
+    
     // MARK:- Setup basic variables
     @IBOutlet weak var sizingView: UIView!
     var viewCount = 0
@@ -55,9 +62,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK:- viewDidLoad and viewWillAppear
-    override var prefersStatusBarHidden: Bool {
-       return true
-    }
+  
  
     @IBAction func handleTap(recognizer:UITapGestureRecognizer) {
         
@@ -73,7 +78,11 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      weeklyTableView.alpha = 0
+        mainStackView.alpha = 0
         tabBarController?.delegate = self
+       
+       
         self.navigationController?.isNavigationBarHidden = true
         
         if let viewCount = UserDefaults.standard.object(forKey: "newViews") {
@@ -173,7 +182,11 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        
+        UIView.animate(withDuration: 0.6, delay: 0.0, animations: {
+            
+            self.weeklyTableView.alpha = 1
+            self.mainStackView.alpha = 1
+            })
         print("view displayed")
      let center = UNUserNotificationCenter.current()
         
