@@ -291,6 +291,7 @@
             <objects>
                 <tabBarController title="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="4RV-b3-94j" customClass="TabBarViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="ct2-Dc-b6O">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -384,6 +385,7 @@
                         <segue destination="B3j-2f-t6D" kind="show" identifier="babyChecklistSegue" id="qtw-sC-T2I"/>
                         <segue destination="TJz-JO-hNI" kind="show" identifier="decoderSegue" id="Vo7-aj-Wjy"/>
                         <segue destination="bI7-cz-aqT" kind="show" identifier="toolsTimerSegue" id="N9p-gM-Wbf"/>
+                        <segue destination="TGs-kr-DUo" kind="show" identifier="upgradeSegue" id="4Y3-0b-Ijw"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nj2-Aa-f4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,7 +483,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQY-mu-ThL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Dmh-iO-aoG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="236.23188405797103" y="1602.717391304348"/>
+            <point key="canvasLocation" x="368" y="1604"/>
         </scene>
         <!--Hypnobirthing-->
         <scene sceneID="F8u-hK-I1n">
@@ -605,12 +607,12 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checklistCell" id="eN1-0z-ukk" customClass="HospitalBagTableViewCell" customModule="Big_Daddy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eN1-0z-ukk" id="rOV-hJ-0SP">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eN1-0z-ukk" id="rOV-hJ-0SP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checklist Item" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zWo-ev-2B5">
-                                                    <rect key="frame" x="30" y="11" width="317" height="25"/>
+                                                    <rect key="frame" x="34" y="11" width="317" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="H62-p9-gf9"/>
                                                         <constraint firstAttribute="width" constant="317" id="wpy-AF-eLD"/>
@@ -620,7 +622,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickBlue" translatesAutoresizingMaskIntoConstraints="NO" id="rYD-HG-zmX">
-                                                    <rect key="frame" x="364" y="11.666666666666664" width="22" height="21"/>
+                                                    <rect key="frame" x="368" y="11.666666666666664" width="22" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="1af-NM-hK9"/>
                                                         <constraint firstAttribute="width" constant="22" id="RNW-b7-KEU"/>
@@ -1028,25 +1030,25 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-99-HZA" userLabel="Slider Stack">
-                                                <rect key="frame" x="20" y="237.66666666666671" width="354" height="54.333333333333343"/>
+                                                <rect key="frame" x="14" y="237.66666666666671" width="366" height="54.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraction Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jgx-S3-X00">
-                                                        <rect key="frame" x="103.66666666666666" y="0.0" width="147" height="27.333333333333332"/>
+                                                        <rect key="frame" x="109.66666666666666" y="0.0" width="146.99999999999997" height="27.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-Sd-0sk" userLabel="Silder + Label Stack">
-                                                        <rect key="frame" x="0.0" y="27.333333333333314" width="354" height="27"/>
+                                                        <rect key="frame" x="0.0" y="27.333333333333314" width="366" height="27"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="lfF-YX-18c">
-                                                                <rect key="frame" x="-2" y="0.0" width="329.33333333333331" height="28"/>
+                                                                <rect key="frame" x="-2" y="0.0" width="341.33333333333331" height="28"/>
                                                                 <connections>
                                                                     <action selector="strengthSlinder:" destination="VWn-bO-TnC" eventType="valueChanged" id="klY-LX-X1O"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-fO-We2">
-                                                                <rect key="frame" x="345.33333333333331" y="0.0" width="8.6666666666666856" height="27"/>
+                                                                <rect key="frame" x="357.33333333333331" y="0.0" width="8.6666666666666856" height="27"/>
                                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1139,28 +1141,28 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qKj-j0-wUm" userLabel="Cell Labels Stack">
-                                                            <rect key="frame" x="10" y="11.666666666666664" width="300" height="21"/>
+                                                            <rect key="frame" x="10" y="11.666666666666664" width="394" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-Um-lYU">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="91" height="21"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-LG-Rg1">
-                                                                    <rect key="frame" x="77.666666666666686" y="0.0" width="67.333333333333314" height="21"/>
+                                                                    <rect key="frame" x="101" y="0.0" width="91" height="21"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-fE-thT">
-                                                                    <rect key="frame" x="155" y="0.0" width="67.666666666666686" height="21"/>
+                                                                    <rect key="frame" x="202" y="0.0" width="91" height="21"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiJ-CW-bgb" userLabel="Contraction Strength Label">
-                                                                    <rect key="frame" x="232.66666666666666" y="0.0" width="67.333333333333343" height="21"/>
+                                                                    <rect key="frame" x="303" y="0.0" width="91" height="21"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1433,28 +1435,28 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="73F-ZK-DZ3">
-                                                            <rect key="frame" x="10" y="12.000000000000002" width="295" height="19.666666666666671"/>
+                                                            <rect key="frame" x="10" y="12.000000000000002" width="389" height="19.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqc-y0-AFl">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="19.666666666666668"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="80.666666666666671" height="19.666666666666668"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuE-mT-lcq">
-                                                                    <rect key="frame" x="79.333333333333329" y="0.0" width="57.333333333333329" height="19.666666666666668"/>
+                                                                    <rect key="frame" x="102.66666666666669" y="0.0" width="81" height="19.666666666666668"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-Pe-NrO">
-                                                                    <rect key="frame" x="158.66666666666666" y="0.0" width="57" height="19.666666666666668"/>
+                                                                    <rect key="frame" x="205.66666666666666" y="0.0" width="80.666666666666657" height="19.666666666666668"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoM-dU-9PC">
-                                                                    <rect key="frame" x="237.66666666666666" y="0.0" width="57.333333333333343" height="19.666666666666668"/>
+                                                                    <rect key="frame" x="308.33333333333331" y="0.0" width="80.666666666666686" height="19.666666666666668"/>
                                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                     <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1578,6 +1580,115 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
             </objects>
             <point key="canvasLocation" x="3418.840579710145" y="1603.5326086956522"/>
         </scene>
+        <!--Upgrade-->
+        <scene sceneID="EnY-BE-RJW">
+            <objects>
+                <viewController title="Upgrade" id="TGs-kr-DUo" customClass="UpgradeViewController" customModule="Big_Daddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rkA-i7-75T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zE8-7i-M0v">
+                                <rect key="frame" x="20" y="84" width="374" height="58.666666666666657"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Upgrade to get all of the benefits of the full Big Daddy app. For a one-off purchase you will get complete access, including:">
+                                        <attributes>
+                                            <color key="NSColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="GillSans"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="eCh-eN-Kqs">
+                                <rect key="frame" x="18.666666666666657" y="175.66666666666663" width="377" height="163"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• 40+ original, reliable articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRY-iP-YAV">
+                                        <rect key="frame" x="0.0" y="0.0" width="203.66666666666666" height="19.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Contraction timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyb-hq-SXx">
+                                        <rect key="frame" x="0.0" y="28.666666666666686" width="137.33333333333334" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Baby checklist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRy-K0-Je1">
+                                        <rect key="frame" x="0.0" y="57.333333333333336" width="107.66666666666667" height="19.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Baby decoder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNk-GW-iI3">
+                                        <rect key="frame" x="0.0" y="86.000000000000028" width="105.33333333333333" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Hospital bag checklist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJF-0W-T3o">
+                                        <rect key="frame" x="0.0" y="114.66666666666666" width="160" height="19.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="• Extra customisable to your baby and partner's names" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-9W-enl">
+                                        <rect key="frame" x="0.0" y="143.33333333333334" width="377" height="19.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GYE-VF-Nqg">
+                                <rect key="frame" x="84" y="388.66666666666669" width="246" height="130.00000000000006"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJa-9x-5ip">
+                                        <rect key="frame" x="0.0" y="0.0" width="246" height="30"/>
+                                        <state key="normal" title="Upgrade Now!"/>
+                                        <connections>
+                                            <action selector="upgradePressed:" destination="TGs-kr-DUo" eventType="touchUpInside" id="T4Z-t7-MAh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPGRADE NOT YET PURCHASE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOf-od-qge">
+                                        <rect key="frame" x="0.0" y="50" width="246" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2G-gB-paO">
+                                        <rect key="frame" x="0.0" y="100" width="246" height="30"/>
+                                        <state key="normal" title="Restore Purchases"/>
+                                        <connections>
+                                            <action selector="restorePressed:" destination="TGs-kr-DUo" eventType="touchUpInside" id="qBH-uk-rxl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.027450980390000001" green="0.43921568630000002" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GYE-VF-Nqg" firstAttribute="centerX" secondItem="rkA-i7-75T" secondAttribute="centerX" id="CeY-3C-SPU"/>
+                            <constraint firstItem="eCh-eN-Kqs" firstAttribute="top" secondItem="zE8-7i-M0v" secondAttribute="bottom" constant="33" id="PrU-tr-hdA"/>
+                            <constraint firstItem="GYE-VF-Nqg" firstAttribute="top" secondItem="eCh-eN-Kqs" secondAttribute="bottom" constant="50" id="RAD-HT-LQe"/>
+                            <constraint firstItem="Kah-eQ-Mac" firstAttribute="trailing" secondItem="zE8-7i-M0v" secondAttribute="trailing" constant="20" id="WPN-HB-4Lb"/>
+                            <constraint firstItem="zE8-7i-M0v" firstAttribute="leading" secondItem="Kah-eQ-Mac" secondAttribute="leading" constant="20" id="kYv-PI-vJx"/>
+                            <constraint firstItem="zE8-7i-M0v" firstAttribute="top" secondItem="Kah-eQ-Mac" secondAttribute="top" constant="20" id="tbJ-91-av5"/>
+                            <constraint firstItem="Kah-eQ-Mac" firstAttribute="trailing" secondItem="eCh-eN-Kqs" secondAttribute="trailing" constant="18.329999999999998" id="wX4-H9-wL2"/>
+                            <constraint firstItem="zE8-7i-M0v" firstAttribute="centerX" secondItem="rkA-i7-75T" secondAttribute="centerX" id="ySE-J9-Vzd"/>
+                            <constraint firstItem="eCh-eN-Kqs" firstAttribute="leading" secondItem="Kah-eQ-Mac" secondAttribute="leading" constant="18.670000000000002" id="zen-lm-sWI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kah-eQ-Mac"/>
+                    </view>
+                    <connections>
+                        <outlet property="updateLabel" destination="bOf-od-qge" id="tb7-ls-FMR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DiX-Fq-voo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-355.07246376811599" y="1603.5326086956522"/>
+        </scene>
         <!--Today-->
         <scene sceneID="zW6-56-cqC">
             <objects>
@@ -1619,7 +1730,7 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o8j-WI-RgG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="575"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="575"/>
                                                     <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="20" id="PG0-aN-q8O">
                                                         <size key="itemSize" width="320" height="540"/>
@@ -1907,10 +2018,19 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                                             <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="padlockLight" translatesAutoresizingMaskIntoConstraints="NO" id="7al-yc-HqT">
+                                            <rect key="frame" x="384" y="12.666666666666664" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="Poq-73-y8Z"/>
+                                                <constraint firstAttribute="height" constant="20" id="WYC-id-LLa"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.027450980390000001" green="0.3803921569" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
+                                        <constraint firstItem="7al-yc-HqT" firstAttribute="centerY" secondItem="hFY-4i-8FB" secondAttribute="centerY" id="552-ih-xQ2"/>
                                         <constraint firstItem="8Ls-xL-oRG" firstAttribute="leading" secondItem="hFY-4i-8FB" secondAttribute="leadingMargin" constant="5" id="QXc-00-3tY"/>
+                                        <constraint firstAttribute="trailing" secondItem="7al-yc-HqT" secondAttribute="trailing" constant="10" id="X1F-SE-bB7"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="8Ls-xL-oRG" secondAttribute="bottom" constant="10" id="ghr-qg-AQ4"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="8Ls-xL-oRG" secondAttribute="trailing" constant="19" id="k9L-Gq-u9p"/>
                                         <constraint firstItem="8Ls-xL-oRG" firstAttribute="top" secondItem="hFY-4i-8FB" secondAttribute="top" constant="10" id="vqk-QC-yA4"/>
@@ -1918,7 +2038,7 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="articleLabel" destination="8Ls-xL-oRG" id="LC8-13-cV8"/>
-                                    <segue destination="lci-sr-2SG" kind="show" identifier="articleSelectedSegue" id="2pe-YH-MQ5"/>
+                                    <outlet property="articlePadlock" destination="7al-yc-HqT" id="vnW-Q6-s8v"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1930,9 +2050,34 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                     <navigationItem key="navigationItem" title="Articles" id="7O6-f1-u8G"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="X6a-JH-Ilj" id="Mhh-Hh-PNx"/>
+                        <outlet property="upgradePopup" destination="YQh-ob-uHT" id="VbN-sC-XGu"/>
+                        <segue destination="lci-sr-2SG" kind="show" identifier="articleSelectedSegue" id="WxF-RL-SRa"/>
+                        <segue destination="TGs-kr-DUo" kind="show" identifier="upgradeArticlesSegue" id="dLm-we-ler"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcK-Jo-2gI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="YQh-ob-uHT" userLabel="upgradePopup">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-Ho-t4v">
+                            <rect key="frame" x="10" y="-6.6666666666666643" width="220" height="83.333333333333314"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="u5k-Ho-t4v" secondAttribute="height" multiplier="361:137" id="TN0-2X-ZIQ"/>
+                            </constraints>
+                            <state key="normal" image="upgradeButton"/>
+                            <connections>
+                                <action selector="upgradePressed:" destination="uaW-it-e30" eventType="touchUpInside" id="L2f-Yw-75v"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="u5k-Ho-t4v" firstAttribute="leading" secondItem="YQh-ob-uHT" secondAttribute="leading" constant="10" id="CrX-9T-iqN"/>
+                        <constraint firstItem="u5k-Ho-t4v" firstAttribute="centerX" secondItem="YQh-ob-uHT" secondAttribute="centerX" id="IUE-56-Lkx"/>
+                        <constraint firstItem="u5k-Ho-t4v" firstAttribute="centerY" secondItem="YQh-ob-uHT" secondAttribute="centerY" id="x9q-Qm-Svs"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="ZFq-gB-9XO"/>
+                </view>
                 <searchDisplayController id="X6a-JH-Ilj">
                     <connections>
                         <outlet property="delegate" destination="uaW-it-e30" id="Bdq-sW-MFs"/>
@@ -2478,6 +2623,7 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
         <image name="helpButton" width="24" height="24"/>
         <image name="information" width="32" height="32"/>
         <image name="measuring-tape" width="64" height="64"/>
+        <image name="padlockLight" width="50" height="50"/>
         <image name="play-button-sing" width="32" height="32"/>
         <image name="playButton" width="100" height="100"/>
         <image name="ratingStars" width="300" height="300"/>
@@ -2497,8 +2643,10 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
         <image name="toolsIcon" width="24" height="24"/>
         <image name="toolsOnboarding" width="200" height="200"/>
         <image name="update-arrow" width="32" height="32"/>
+        <image name="upgradeButton" width="361" height="137"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dLm-we-ler"/>
         <segue reference="ho7-ss-gWS"/>
         <segue reference="sFO-6i-VIq"/>
     </inferredMetricsTieBreakers>

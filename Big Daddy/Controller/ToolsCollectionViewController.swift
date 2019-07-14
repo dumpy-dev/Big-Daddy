@@ -14,19 +14,24 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
     // Initialise arrays
     
     var arrayOfImages = [UIImage]()
+    var arrayOfLockedImages = [UIImage]()
     var arrayOfIDs = [String]()
     var arrayOfTypes = [String]()
     var checklistID = 0
     var textID = 0
+    // fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
     
+    var fullVersionUnlocked = true
+    // var fullVersionUnlocked = false
     
     //Setup array values on view loading
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "search"), #imageLiteral(resourceName: "bodysuit"), #imageLiteral(resourceName: "ratingStars"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
-        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Baby Decoder", "Baby Checklist", "Rate Us!", "T&Cs", "Credits"]
-        arrayOfTypes = ["Timer", "Checklist", "Checklist", "BabyDecoder", "BabyChecklist", "General", "General", "General"]
+        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "search"), #imageLiteral(resourceName: "bodysuit"),#imageLiteral(resourceName: "upgradeArrow"), #imageLiteral(resourceName: "ratingStars"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
+        arrayOfLockedImages = [#imageLiteral(resourceName: "sandTimerLocked"), #imageLiteral(resourceName: "suitcaseLocked"), #imageLiteral(resourceName: "dogtagsLocked"), #imageLiteral(resourceName: "magnifyingGlassLocked"), #imageLiteral(resourceName: "babyBodysuitLocked"),#imageLiteral(resourceName: "upgradeArrow"), #imageLiteral(resourceName: "ratingStars"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
+        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Baby Decoder", "Baby Checklist", "Upgrade", "Rate Us!", "T&Cs", "Credits"]
+        arrayOfTypes = ["Timer", "Checklist", "Checklist", "BabyDecoder", "BabyChecklist", "General", "General", "General", "General"]
         }
 
     override func didReceiveMemoryWarning() {
@@ -55,10 +60,12 @@ func collectionView(_ collectionView: UICollectionView,
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "toolsCell", for: indexPath) as! ToolsCollectionViewCell
-        
-        cell.toolsIcon.image = arrayOfImages[indexPath.row]
         cell.toolsLabel.text = arrayOfIDs[indexPath.row]
-        
+        if fullVersionUnlocked == true {
+            cell.toolsIcon.image = arrayOfImages[indexPath.row]
+        } else {
+            cell.toolsIcon.image = arrayOfLockedImages[indexPath.row]
+        }
         return cell
     }
     
@@ -66,23 +73,45 @@ func collectionView(_ collectionView: UICollectionView,
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            performSegue(withIdentifier: "toolsTimerSegue", sender: nil)
+            if fullVersionUnlocked == true {
+                performSegue(withIdentifier: "toolsTimerSegue", sender: nil)
+            } else {
+                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+            }
         } else if indexPath.row == 1 {
             checklistID = 1
-            performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
+            if fullVersionUnlocked == true {
+                performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
+            } else {
+                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+            }
         } else if indexPath.row == 2 {
             checklistID = 2
-            performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
+            if fullVersionUnlocked == true {
+                performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
+            } else {
+                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+            }
         } else if indexPath.row == 3 {
-            performSegue(withIdentifier: "decoderSegue", sender: nil)
+            if fullVersionUnlocked == true {
+                performSegue(withIdentifier: "decoderSegue", sender: nil)
+            } else {
+                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+            }
         } else if indexPath.row == 4 {
-            performSegue(withIdentifier: "babyChecklistSegue", sender: nil)
+            if fullVersionUnlocked == true {
+                performSegue(withIdentifier: "babyChecklistSegue", sender: nil)
+            } else {
+                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+            }
         } else if indexPath.row == 5 {
+            performSegue(withIdentifier: "upgradeSegue", sender: nil)
+         } else if indexPath.row == 6 {
             performSegue(withIdentifier: "ratingsSegue", sender: nil)
-        } else if indexPath.row == 6 {
+        } else if indexPath.row == 7 {
             textID = 1
             performSegue(withIdentifier: "generalTextSegue", sender: nil)
-        } else if indexPath.row == 7 {
+        } else if indexPath.row == 8 {
             textID = 2
             performSegue(withIdentifier: "generalTextSegue", sender: nil)
         }
@@ -123,7 +152,7 @@ class TermsAndConditionsViewController : UIViewController {
         if textIdentifier == 1 {
             contentField.text = """
             The Big Daddy
-            Version 1.2.4
+            Version 2.0.0
             © Copyright 2019 Dumpy Devs Ltd
             
             
@@ -158,7 +187,7 @@ class TermsAndConditionsViewController : UIViewController {
         } else if textIdentifier == 2 {
             contentField.text = """
             The Big Daddy
-            Version 1.2.4
+            Version 2.0.0
             © Copyright 2019 Dumpy Devs Ltd
             
             

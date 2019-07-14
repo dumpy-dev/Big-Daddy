@@ -286,7 +286,8 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         }  else if checklistIdentifier >= 3 {
             babyChecklistCheck()
         }
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+        
+        tableView.reloadRows(at: [indexPath], with: .automatic)
         tableView.reloadData()
     }
         

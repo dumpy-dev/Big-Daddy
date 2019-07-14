@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2400FAD220697A00003D5CB9 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400FAD120697A00003D5CB9 /* ArticleViewController.swift */; };
+		241F598F22D5319900977524 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241F598E22D5319900977524 /* StoreKit.framework */; };
+		241F599122D5336D00977524 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F599022D5336D00977524 /* IAPHelper.swift */; };
+		241F599322D533E700977524 /* BigDaddyIAPs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F599222D533E700977524 /* BigDaddyIAPs.swift */; };
+		241F599522D606A400977524 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F599422D606A400977524 /* UpgradeViewController.swift */; };
 		24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428646F204D3E9700E54FCF /* SettingsViewController.swift */; };
 		242864922057270800E54FCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242864912057270800E54FCF /* TodayViewController.swift */; };
 		242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */ = {isa = PBXBuildFile; fileRef = 242F3790211F16C300ADE38E /* Caesarean Section.html */; };
@@ -92,6 +96,10 @@
 
 /* Begin PBXFileReference section */
 		2400FAD120697A00003D5CB9 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		241F598E22D5319900977524 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		241F599022D5336D00977524 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IAPHelper.swift; path = ../../IAPHelper.swift; sourceTree = "<group>"; };
+		241F599222D533E700977524 /* BigDaddyIAPs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigDaddyIAPs.swift; sourceTree = "<group>"; };
+		241F599422D606A400977524 /* UpgradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
 		2428646F204D3E9700E54FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242864912057270800E54FCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = ../View/TodayViewController.swift; sourceTree = "<group>"; };
 		242F3790211F16C300ADE38E /* Caesarean Section.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Caesarean Section.html"; sourceTree = "<group>"; };
@@ -184,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C7F15394F2CD8A629D75649 /* Pods_Big_Daddy.framework in Frameworks */,
+				241F598F22D5319900977524 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +291,8 @@
 		247FB47A204B47A800BF4CB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				241F599022D5336D00977524 /* IAPHelper.swift */,
+				241F599222D533E700977524 /* BigDaddyIAPs.swift */,
 				24DBDE2A20A0F73600AE1C86 /* Article.swift */,
 				24CD0B9D213B32D10041C3FE /* DecoderItem.swift */,
 				24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */,
@@ -329,6 +340,7 @@
 				2445DF59207819740043590E /* TodayDetailViewController.swift */,
 				242864912057270800E54FCF /* TodayViewController.swift */,
 				2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */,
+				241F599422D606A400977524 /* UpgradeViewController.swift */,
 				24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */,
 				24E8D95122ABF62F00ED689C /* Deprecated */,
 			);
@@ -347,6 +359,7 @@
 		79817557D23A09E856678992 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				241F598E22D5319900977524 /* StoreKit.framework */,
 				B84B3E6FDAD2DC5CB6063DC3 /* Pods_Big_Daddy.framework */,
 			);
 			name = Frameworks;
@@ -397,6 +410,11 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -542,6 +560,7 @@
 				24E8D95322ABFEBE00ED689C /* ContractionTimerTableCellView.swift in Sources */,
 				24E8D95022ABF59700ED689C /* ContractionTimerViewController.swift in Sources */,
 				24C1965C213ACF3700B07DBD /* decoderCollectionViewController.swift in Sources */,
+				241F599322D533E700977524 /* BigDaddyIAPs.swift in Sources */,
 				24CC367E212066A200AD9CF7 /* IntroScreenViewController.swift in Sources */,
 				2445DF5C2079167E0043590E /* ToolsCollectionViewController.swift in Sources */,
 				2479AA9220E828C200C9D0C0 /* ChecklistViewController.swift in Sources */,
@@ -551,8 +570,10 @@
 				24CC3699212D3A5F00AD9CF7 /* WeekCollectionViewCell2.swift in Sources */,
 				247FB46B204B478800BF4CB7 /* ViewController.swift in Sources */,
 				24AC094620D1BE4E0018532C /* HypnobirthingViewController.swift in Sources */,
+				241F599522D606A400977524 /* UpgradeViewController.swift in Sources */,
 				247FB469204B478800BF4CB7 /* AppDelegate.swift in Sources */,
 				24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */,
+				241F599122D5336D00977524 /* IAPHelper.swift in Sources */,
 				2467212D2198C25700B427F9 /* SetupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

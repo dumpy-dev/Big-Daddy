@@ -14,6 +14,7 @@ class ArticlesCustomTableViewCell: UITableViewCell {
     @IBOutlet weak var suggestedReadingLabel: UILabel!
     @IBOutlet weak var articleLabel: UILabel!
 
+    @IBOutlet var articlePadlock: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         

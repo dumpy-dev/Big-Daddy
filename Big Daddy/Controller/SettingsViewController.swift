@@ -13,6 +13,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     var dueDate = Date()
     let realm = try! Realm()
+   var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+    
+   // var fullVersionUnlocked = true
+    // var fullVersionUnlocked = false
+    
     
     // Setup IBOutlets
     @IBOutlet weak var motherNameEntered: UITextField!
@@ -23,7 +28,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
     
     // Setup Reset fuction
 
@@ -146,8 +150,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        motherNameEntered.placeholder = UserDefaults.standard.object(forKey: "mother") as? String
-        babyNameEntered.placeholder = UserDefaults.standard.object(forKey: "baby") as? String
+       
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
             if let previouslyEnteredDueDate = UserDefaults.standard.object(forKey: "DueDate") {
                 self.datePicker.setDate(previouslyEnteredDueDate as! Date, animated: false)
@@ -158,6 +161,19 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         self.motherNameEntered.delegate = self
         self.babyNameEntered.delegate = self
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if fullVersionUnlocked == false {
+            motherNameEntered.placeholder = "Upgrade to unlock!"
+            motherNameEntered.isEnabled = false
+            babyNameEntered.placeholder = "Upgrade to unlock!"
+            babyNameEntered.isEnabled = false
+        } else {
+            
+            motherNameEntered.placeholder = UserDefaults.standard.object(forKey: "mother") as? String
+            babyNameEntered.placeholder = UserDefaults.standard.object(forKey: "baby") as? String
+        }
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
