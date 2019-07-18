@@ -13,27 +13,65 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
 
     // Initialise arrays
     
+    @IBOutlet var upgradePopup: UIView!
     var arrayOfImages = [UIImage]()
     var arrayOfLockedImages = [UIImage]()
     var arrayOfIDs = [String]()
     var arrayOfTypes = [String]()
     var checklistID = 0
     var textID = 0
-    // fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
     
-    var fullVersionUnlocked = true
+  //  var fullVersionUnlocked = true
     // var fullVersionUnlocked = false
     
+    @IBAction func upgradePressed(_ sender: Any) {
+        self.upgradePopup.removeFromSuperview()
+         performSegue(withIdentifier: "upgradeSegue", sender: self)
+        
+    }
+    @IBOutlet var upgradeButton: UIButton!
     //Setup array values on view loading
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "search"), #imageLiteral(resourceName: "bodysuit"),#imageLiteral(resourceName: "upgradeArrow"), #imageLiteral(resourceName: "ratingStars"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
-        arrayOfLockedImages = [#imageLiteral(resourceName: "sandTimerLocked"), #imageLiteral(resourceName: "suitcaseLocked"), #imageLiteral(resourceName: "dogtagsLocked"), #imageLiteral(resourceName: "magnifyingGlassLocked"), #imageLiteral(resourceName: "babyBodysuitLocked"),#imageLiteral(resourceName: "upgradeArrow"), #imageLiteral(resourceName: "ratingStars"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
-        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Baby Decoder", "Baby Checklist", "Upgrade", "Rate Us!", "T&Cs", "Credits"]
+        arrayOfImages = [#imageLiteral(resourceName: "sand-clock"), #imageLiteral(resourceName: "briefcase"), #imageLiteral(resourceName: "dogTag"), #imageLiteral(resourceName: "search"), #imageLiteral(resourceName: "bodysuit"), #imageLiteral(resourceName: "ratingStars"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
+        arrayOfLockedImages = [#imageLiteral(resourceName: "sandTimerLocked"), #imageLiteral(resourceName: "suitcaseLocked"), #imageLiteral(resourceName: "dogtagsLocked"), #imageLiteral(resourceName: "magnifyingGlassLocked"), #imageLiteral(resourceName: "babyBodysuitLocked"), #imageLiteral(resourceName: "ratingStars"), #imageLiteral(resourceName: "terms"), #imageLiteral(resourceName: "credits")]
+        arrayOfIDs = ["Contraction Counter", "Hospital Bag", "Names", "Baby Decoder", "Baby Checklist", "Rate Us!", "T&Cs", "Credits"]
         arrayOfTypes = ["Timer", "Checklist", "Checklist", "BabyDecoder", "BabyChecklist", "General", "General", "General", "General"]
+        
+        if fullVersionUnlocked == false {
+            self.navigationController?.view.addSubview(upgradePopup)
+            upgradePopup.center.x = self.view.center.x
+            upgradePopup.frame.origin.y = self.view.frame.height / 1.1
+            upgradePopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            upgradePopup.alpha = 0
+            UIView.animate(withDuration: 0.8) {
+                self.upgradePopup.alpha = 1
+                self.upgradePopup.transform = CGAffineTransform.identity
+                
+            }
         }
-
+        }
+    override func viewDidAppear(_ animated: Bool) {
+        if fullVersionUnlocked == true {
+            self.upgradePopup.removeFromSuperview()
+        } else {
+            self.navigationController?.view.addSubview(upgradePopup)
+            upgradePopup.center.x = self.view.center.x
+            upgradePopup.frame.origin.y = self.view.frame.height / 1.1
+            upgradePopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            upgradePopup.alpha = 0
+            UIView.animate(withDuration: 0.8) {
+                self.upgradePopup.alpha = 1
+                self.upgradePopup.transform = CGAffineTransform.identity
+            }
+        }
+    }
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -64,6 +102,9 @@ func collectionView(_ collectionView: UICollectionView,
         if fullVersionUnlocked == true {
             cell.toolsIcon.image = arrayOfImages[indexPath.row]
         } else {
+            if 0 ... 4 ~= indexPath.row {
+                cell.toolsLabel.alpha = 0.6
+            }
             cell.toolsIcon.image = arrayOfLockedImages[indexPath.row]
         }
         return cell
@@ -76,42 +117,41 @@ func collectionView(_ collectionView: UICollectionView,
             if fullVersionUnlocked == true {
                 performSegue(withIdentifier: "toolsTimerSegue", sender: nil)
             } else {
-                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+               upgradeButton.wiggle()
             }
         } else if indexPath.row == 1 {
             checklistID = 1
             if fullVersionUnlocked == true {
                 performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
             } else {
-                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+               upgradeButton.wiggle()
             }
         } else if indexPath.row == 2 {
             checklistID = 2
             if fullVersionUnlocked == true {
                 performSegue(withIdentifier: "toolsChecklistSegue", sender: nil)
             } else {
-                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+               upgradeButton.wiggle()
             }
         } else if indexPath.row == 3 {
             if fullVersionUnlocked == true {
                 performSegue(withIdentifier: "decoderSegue", sender: nil)
             } else {
-                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+               upgradeButton.wiggle()
             }
         } else if indexPath.row == 4 {
             if fullVersionUnlocked == true {
                 performSegue(withIdentifier: "babyChecklistSegue", sender: nil)
             } else {
-                performSegue(withIdentifier: "upgradeSegue", sender: nil)
+               upgradeButton.wiggle()
             }
-        } else if indexPath.row == 5 {
-            performSegue(withIdentifier: "upgradeSegue", sender: nil)
-         } else if indexPath.row == 6 {
+        }
+        else if indexPath.row == 5 {
             performSegue(withIdentifier: "ratingsSegue", sender: nil)
-        } else if indexPath.row == 7 {
+        } else if indexPath.row == 6 {
             textID = 1
             performSegue(withIdentifier: "generalTextSegue", sender: nil)
-        } else if indexPath.row == 8 {
+        } else if indexPath.row == 7 {
             textID = 2
             performSegue(withIdentifier: "generalTextSegue", sender: nil)
         }
@@ -149,6 +189,7 @@ class TermsAndConditionsViewController : UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         if textIdentifier == 1 {
             contentField.text = """
             The Big Daddy

@@ -8,26 +8,61 @@
 
 import UIKit
 import RealmSwift
+import SAConfettiView
 
 class SettingsViewController: UIViewController, UITextFieldDelegate {
 
+    
     var dueDate = Date()
     let realm = try! Realm()
-   var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
-    
-   // var fullVersionUnlocked = true
+    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+    // var fullVersionUnlocked = true
     // var fullVersionUnlocked = false
-    
-    
-    // Setup IBOutlets
+ 
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
     @IBOutlet weak var dateSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
+    @IBOutlet var genderSelector: UISegmentedControl!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    @IBAction func genderSelected(_ sender: Any) {
+        let confettiView = SAConfettiView(frame: self.view.bounds)
+        confettiView.type = .Star
+        func runConfetti(){
+            self.view.addSubview(confettiView)
+            confettiView.startConfetti()
+            UIView.animate(withDuration: 2.5) {
+                confettiView.alpha = 0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                confettiView.stopConfetti()
+                confettiView.removeFromSuperview()
+            }
+        }
+        switch genderSelector.selectedSegmentIndex {
+            case 0:
+                confettiView.colors = [UIColor(red:1.00, green:0.95, blue:0.95, alpha:1.0),UIColor(red:0.96, green:0.66, blue:0.65, alpha:1.0), UIColor(red:1.00, green:0.94, blue:1.00, alpha:1.0)]
+                runConfetti()
+            case 1:
+                confettiView.colors = [UIColor(red:0.69, green:0.88, blue:0.90, alpha:1.0), UIColor(red:0.34, green:0.63, blue:0.92, alpha:1.0), UIColor(red:0.54, green:0.72, blue:0.70, alpha:1.0)]
+                runConfetti()
+        case 2:
+               break
+            default:
+                break
+        }
+    }
+    
+    @IBAction func upgradePressed(_ sender: Any) {
+        performSegue(withIdentifier: "settingsUpgradeSegue", sender: self)
+    }
+    @IBAction func restorePressed(_ sender: Any) {
+        performSegue(withIdentifier: "settingsUpgradeSegue", sender: self)
+    }
+    
     
     // Setup Reset fuction
 
@@ -149,18 +184,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
             if let previouslyEnteredDueDate = UserDefaults.standard.object(forKey: "DueDate") {
                 self.datePicker.setDate(previouslyEnteredDueDate as! Date, animated: false)
             } else {
                 self.datePicker.setDate(Date(), animated: false)
-        }
-        
+            }
         self.motherNameEntered.delegate = self
         self.babyNameEntered.delegate = self
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

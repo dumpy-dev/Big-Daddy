@@ -67,7 +67,7 @@ extension UIButton {
    
     @objc func wiggle() {
         let wiggleAnim = CABasicAnimation(keyPath: "position")
-        wiggleAnim.duration = 0.05
+        wiggleAnim.duration = 0.03
         wiggleAnim.repeatCount = 8
         wiggleAnim.autoreverses = true
         wiggleAnim.fromValue = CGPoint(x: self.center.x - 4.0, y: self.center.y)

@@ -14,7 +14,8 @@ class ArticlesTableViewController: UITableViewController {
     var filteredArticles = [Article]()
     let searchController = UISearchController(searchResultsController: nil)
     
-  
+    @IBOutlet var upgradeButton: UIButton!
+    
     @IBOutlet var upgradePopup: UIView!
     var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
     
@@ -146,7 +147,7 @@ class ArticlesTableViewController: UITableViewController {
         self.upgradePopup.removeFromSuperview()
         performSegue(withIdentifier: "upgradeArticlesSegue", sender: self)
     }
-    // MARK: - Table view data source
+    // MARK: - Table view data sourezxzs`z1 §z`ce
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -176,9 +177,8 @@ class ArticlesTableViewController: UITableViewController {
                 self.upgradePopup.removeFromSuperview()
                 performSegue(withIdentifier: "articleSelectedSegue", sender: self)
             } else {
-                
+                upgradeButton.wiggle()
                 print("article locked")
-               // performSegue(withIdentifier: "upgradeArticlesSegue", sender: self)
             }
         }
     }
@@ -257,3 +257,16 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
 fileprivate func convertToNSAttributedStringKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.Key: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
+
+//extension UIButton {
+//    
+//    @objc func wiggle() {
+//        let wiggleAnim = CABasicAnimation(keyPath: "position")
+//        wiggleAnim.duration = 0.05
+//        wiggleAnim.repeatCount = 8
+//        wiggleAnim.autoreverses = true
+//        wiggleAnim.fromValue = CGPoint(x: self.center.x - 4.0, y: self.center.y)
+//        wiggleAnim.toValue = CGPoint(x: self.center.x + 4.0, y: self.center.y)
+//        layer.add(wiggleAnim, forKey: "position")
+//    }
+//}
