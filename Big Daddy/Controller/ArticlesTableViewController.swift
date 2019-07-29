@@ -17,14 +17,14 @@ class ArticlesTableViewController: UITableViewController {
     @IBOutlet var upgradeButton: UIButton!
     
     @IBOutlet var upgradePopup: UIView!
-    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
-    
+    // var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
    // var fullVersionUnlocked = true
-   // var fullVersionUnlocked = false
+   var fullVersionUnlocked = false
 
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
+    
     
         func filterContentForSearchText(_ searchText: String, scope: String = "All") {
             filteredArticles = articlesArray.filter({( articles : Article) -> Bool in
@@ -38,6 +38,8 @@ class ArticlesTableViewController: UITableViewController {
         }
 
     //Hide the status bar
+  
+    
     override func viewDidAppear(_ animated: Bool) {
         print("Full version unlocked is : \(fullVersionUnlocked)")
         var prefersStatusBarHidden: Bool {
@@ -48,7 +50,7 @@ class ArticlesTableViewController: UITableViewController {
         } else {
             self.navigationController?.view.addSubview(upgradePopup)
             upgradePopup.center.x = self.view.center.x
-            upgradePopup.frame.origin.y = self.view.frame.height / 1.1
+            upgradePopup.frame.origin.y = self.view.frame.height / 1.2
             upgradePopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             upgradePopup.alpha = 0
             UIView.animate(withDuration: 0.8) {

@@ -9,7 +9,6 @@
 import UIKit
 
 class babyChecklistCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var decoderImage: UIImageView!
 }

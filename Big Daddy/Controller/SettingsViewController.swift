@@ -12,17 +12,17 @@ import SAConfettiView
 
 class SettingsViewController: UIViewController, UITextFieldDelegate {
 
-    
     var dueDate = Date()
     let realm = try! Realm()
-    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
-    // var fullVersionUnlocked = true
-    // var fullVersionUnlocked = false
+  //  var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+        // var fullVersionUnlocked = true
+        var fullVersionUnlocked = false
  
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
     @IBOutlet weak var dateSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var upgradeButton: UIButton!
     @IBOutlet var genderSelector: UISegmentedControl!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -49,8 +49,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             case 1:
                 confettiView.colors = [UIColor(red:0.69, green:0.88, blue:0.90, alpha:1.0), UIColor(red:0.34, green:0.63, blue:0.92, alpha:1.0), UIColor(red:0.54, green:0.72, blue:0.70, alpha:1.0)]
                 runConfetti()
-        case 2:
-               break
+            case 2:
+                break
             default:
                 break
         }
@@ -99,8 +99,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 let weeksElapsed : Int = 40 - weeksLeft
                 let remainderDays : Int = diffInDays!%7
                 let remainderDaysElapsed : Int = 7 - remainderDays
-            
-            //TODO:- this isn't working!
             
             if weeksLeft >= 40 {
                 let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be more than 9 months away, Einstein", preferredStyle: UIAlertController.Style.alert)
@@ -196,12 +194,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         if fullVersionUnlocked == false {
-            motherNameEntered.placeholder = "Upgrade to unlock!"
-            motherNameEntered.isEnabled = false
             babyNameEntered.placeholder = "Upgrade to unlock!"
             babyNameEntered.isEnabled = false
-        } else {
+            upgradeButton.isEnabled = true
             
+        } else {
+            upgradeButton.isEnabled = false
             motherNameEntered.placeholder = UserDefaults.standard.object(forKey: "mother") as? String
             babyNameEntered.placeholder = UserDefaults.standard.object(forKey: "baby") as? String
         }

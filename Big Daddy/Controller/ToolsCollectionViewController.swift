@@ -20,10 +20,10 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
     var arrayOfTypes = [String]()
     var checklistID = 0
     var textID = 0
-    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+   // var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
     
   //  var fullVersionUnlocked = true
-    // var fullVersionUnlocked = false
+    var fullVersionUnlocked = false
     
     @IBAction func upgradePressed(_ sender: Any) {
         self.upgradePopup.removeFromSuperview()
@@ -43,7 +43,7 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
         if fullVersionUnlocked == false {
             self.navigationController?.view.addSubview(upgradePopup)
             upgradePopup.center.x = self.view.center.x
-            upgradePopup.frame.origin.y = self.view.frame.height / 1.1
+            upgradePopup.frame.origin.y = self.view.frame.height / 1.2
             upgradePopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             upgradePopup.alpha = 0
             UIView.animate(withDuration: 0.8) {
@@ -59,7 +59,7 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
         } else {
             self.navigationController?.view.addSubview(upgradePopup)
             upgradePopup.center.x = self.view.center.x
-            upgradePopup.frame.origin.y = self.view.frame.height / 1.1
+            upgradePopup.frame.origin.y = self.view.frame.height / 1.2
             upgradePopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             upgradePopup.alpha = 0
             UIView.animate(withDuration: 0.8) {

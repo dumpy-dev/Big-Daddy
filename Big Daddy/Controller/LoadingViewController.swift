@@ -16,30 +16,8 @@ class LoadingViewController: UIViewController {
     private let productIdentifiers: Set<ProductIdentifier> = []
     private var purchasedProductIdentifiers: Set<ProductIdentifier> = []
     private var productIds: Set<ProductIdentifier> = []
-    
-//    init(productIds: Set<ProductIdentifier>) {
-//        productIdentifiers = productIds
-//        for productIdentifier in productIds {
-//            let purchased = UserDefaults.standard.bool(forKey: productIdentifier)
-//            if purchased {
-//                purchasedProductIdentifiers.insert(productIdentifier)
-//                print("Previously purchased: \(productIdentifier)")
-//            } else {
-//                print("Not purchased: \(productIdentifier)")
-//            }
-//        }
-//     super.init(nibName: nil, bundle: nil)
-//
-//      //  SKPaymentQueue.default().add(self)
-//    }
-    
- 
-    
- 
-    
-//    func isProductPurchased(_ productIdentifier: ProductIdentifier) -> Bool {
-//        return purchasedProductIdentifiers.contains(productIdentifier)
-//    }
+    let receiptFetcher = ReceiptFetcher()
+
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -48,36 +26,48 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // let product = "com.dumpy.BigDaddy.fullVersion"
-        
-       // print("The result of the purchase: \(isProductPurchased(product))")
-        
-        
-//        for productIdentifier in productIds {
-//            let purchased = UserDefaults.standard.bool(forKey: productIdentifier)
-//            if purchased {
-//                purchasedProductIdentifiers.insert(productIdentifier)
-//                print("Previously purchased: \(productIdentifier)")
-//            } else {
-//                print("Not purchased: \(productIdentifier)")
-//            }
-//        }
-
-        
-        
-        
-        
-        
-        
-        
         let realm = try! Realm()
         var viewCountData:Results<UserDataRealm> {
             get {
                 return realm.objects(UserDataRealm.self)
             }
         }
+        
+        receiptFetcher.fetchReceipt()
+        let receiptValidator = ReceiptValidator()
+        let validationResult = receiptValidator.validateReceipt()
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            print("The current app version is: \(version)")
         }
-
+        switch validationResult {
+        case .success(let receipt):
+            // receipt validation success
+            // Work with parsed receipt data.
+            
+            grantPremiumToPreviousUser(receipt: receipt)
+            print("original app version is \(receipt.originalAppVersion ?? "n/a")")
+        case .error(let error):
+            // receipt validation failed, refer to enum ReceiptValidationError
+            print("error is \(error.localizedDescription)")
+        }
+    }
+    
+    func grantPremiumToPreviousUser(receipt: ParsedReceipt) {
+    // cast to Double to handle the "1.0" default value returned from sandbox
+    // this also works with build number integer from production, eg: "37"
+    guard let originalAppVersionString = receipt.originalAppVersion,
+    let originalBuildNumber = Double(originalAppVersionString) else {
+    return
+    }
+    
+    // the last build number that the app is still a paid app
+    if originalBuildNumber < 37 {
+    // grant user premium feature here
+    print("premium granted")
+    }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

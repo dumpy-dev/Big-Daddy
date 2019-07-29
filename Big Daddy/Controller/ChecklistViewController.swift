@@ -10,17 +10,17 @@ import UIKit
 import RealmSwift
 
 class ChecklistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var barButton: UIBarButtonItem!
     
-    // MARK:- Setup variables and defaults
     let mother = UserDefaults.standard.object(forKey: "mother") as? String ?? "your partner"
     var checklistIdentifier : Int = 0
-    @IBOutlet weak var checklistTable: UITableView!
+    
+    
     @IBOutlet var addPopupView: UIView!
     @IBOutlet var helpPopupView: UIView!
-    
+    @IBOutlet weak var checklistTable: UITableView!
+    @IBOutlet weak var barButton: UIBarButtonItem!
     @IBOutlet weak var helpViewLabel: UILabel!
-    // MARK:- Setup Realm
+    
     let realm = try! Realm()
     var itemChecklist:Results<ChecklistRealm> {
         get {
@@ -83,8 +83,6 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
    
-    
-    // MARK:- Set up Baby Checklist Arrays
     let clothesArray : [String] = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs"]
     let travelArray : [String] = ["Carseat", "Mirror", "Sunshade", "Pram (with Bassinet)", " Travel Cot", "Baby Carrier", "Changing Bag", "Foldable Changing Mat"]
     let nappyArray : [String] = ["Nappies", "Nappy Bags", "Wipes", "Bottom Cream", "Changing Mat"]
@@ -95,13 +93,11 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     let miscArray : [String] = ["Books", "Toys", "Dummy", "Teething Toys", "Non-Bio Washing Powder", "Sense of Humour"]
     let todoArray : [String] = ["Pack Hospital Bag", "Test Fire Alarm", "Test Carbon Monoxide Alarm", "Check Fuel in Car", "Test Route to Hospital", "Wash Baby Clothes", "Build Cot", "Construct Pram", "Fit Car Seat", "Practice Removing Car Seat", "Prepare or Buy Freezer Meals"]
 
-    // Setup table
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
         if checklistIdentifier == 1 {
                 return self.itemChecklist.count
         } else if checklistIdentifier == 2 {
@@ -129,37 +125,36 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bagCell = tableView.dequeueReusableCell(withIdentifier: "checklistCell") as! HospitalBagTableViewCell
-        
         bagCell.tick.image = nil
-            func babyChecklistUpdate(){
-                let primaryKey = bagCell.itemName.text
-                let babyChecklistItem = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
-                    if babyChecklistItem?.itemCompleted == true {
-                        bagCell.itemName.alpha = 0.3
-                        bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
-                        bagCell.tick.alpha = 0.3
-                    } else {
-                        bagCell.itemName.alpha = 1
-                        bagCell.tick.alpha = 1
-                    }
+        func babyChecklistUpdate(){
+            let primaryKey = bagCell.itemName.text
+            let babyChecklistItem = realm.object(ofType: BabyChecklistRealm.self, forPrimaryKey: primaryKey)
+            if babyChecklistItem?.itemCompleted == true {
+                bagCell.itemName.alpha = 0.3
+                bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
+                bagCell.tick.alpha = 0.3
+            } else {
+                bagCell.itemName.alpha = 1
+                bagCell.tick.alpha = 1
+            }
         }
         if checklistIdentifier == 1 {
-                let item = itemChecklist[indexPath.row]
-                bagCell.itemName.text = item.item
+            let item = itemChecklist[indexPath.row]
+            bagCell.itemName.text = item.item
             if item.itemPacked == true {
                 bagCell.itemName.alpha = 0.3
                 bagCell.tick.image = #imageLiteral(resourceName: "tickOrange")
                 bagCell.tick.alpha = 0.3
-                } else {
+            } else {
                 bagCell.itemName.alpha = 1
                 bagCell.tick.image = #imageLiteral(resourceName: "briefcase")
                 bagCell.tick.alpha = 1
-                }
+            }
         } else if checklistIdentifier == 2 {
-                let item = nameList[indexPath.row]
-                bagCell.itemName.text = item.name
-                bagCell.tick.image = nil
-                bagCell.selectionStyle = .none
+            let item = nameList[indexPath.row]
+            bagCell.itemName.text = item.name
+            bagCell.tick.image = nil
+            bagCell.selectionStyle = .none
         } else if checklistIdentifier == 3 {
             let item = clothesDatabase[indexPath.row]
             bagCell.itemName.text = item.name
@@ -196,15 +191,15 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             let item = todoDatabase[indexPath.row]
             bagCell.itemName.text = item.name
             babyChecklistUpdate()
-            } else {
+        } else {
                 return bagCell
-            }
+        }
        
         if indexPath.row % 2 == 0 {
             bagCell.contentView.backgroundColor = UIColor(red:0.04, green:0.41, blue:0.49, alpha:1.0)
-            } else {
+        } else {
             bagCell.contentView.backgroundColor = UIColor(red:0.03, green:0.38, blue:0.49, alpha:1.0)
-            }
+        }
         return bagCell
     }
     
@@ -214,7 +209,6 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
   
-        
         if (editingStyle == .delete) && checklistIdentifier == 1 {
             let item = itemChecklist[indexPath.row]
             try! self.realm.write({
@@ -239,7 +233,6 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             tableView.deleteRows(at:[indexPath], with: .automatic)
             tableView.reloadData()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
