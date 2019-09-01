@@ -12,19 +12,20 @@ import StoreKit
 
 class LoadingViewController: UIViewController {
     
-    public typealias ProductIdentifier = String
-    private let productIdentifiers: Set<ProductIdentifier> = []
-    private var purchasedProductIdentifiers: Set<ProductIdentifier> = []
-    private var productIds: Set<ProductIdentifier> = []
     let receiptFetcher = ReceiptFetcher()
-
-
+    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("**LOADING SCREEN** Is full version unlocked? \(fullVersionUnlocked)")
+//        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+//            print("The current app version is: \(version)")
+//        }
         
         let realm = try! Realm()
         var viewCountData:Results<UserDataRealm> {
@@ -33,64 +34,39 @@ class LoadingViewController: UIViewController {
             }
         }
         
-        receiptFetcher.fetchReceipt()
-        let receiptValidator = ReceiptValidator()
-        let validationResult = receiptValidator.validateReceipt()
-        
-        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            print("The current app version is: \(version)")
-        }
-        switch validationResult {
-        case .success(let receipt):
-            // receipt validation success
-            // Work with parsed receipt data.
-            
-            grantPremiumToPreviousUser(receipt: receipt)
-            print("original app version is \(receipt.originalAppVersion ?? "n/a")")
-        case .error(let error):
-            // receipt validation failed, refer to enum ReceiptValidationError
-            print("error is \(error.localizedDescription)")
-        }
+//        receiptFetcher.fetchReceipt()
+//        let receiptValidator = ReceiptValidator()
+//        let validationResult = receiptValidator.validateReceipt()
+//
+//        switch validationResult {
+//        case .success(let receipt):
+//            grantPremiumToPreviousUser(receipt: receipt)
+//            print("original app version is \(receipt.originalAppVersion ?? "n/a")")
+//        case .error(let error):
+//            // receipt validation failed, refer to enum ReceiptValidationError
+//            print("error is \(error.localizedDescription)")
+//        }
     }
     
-    func grantPremiumToPreviousUser(receipt: ParsedReceipt) {
-    // cast to Double to handle the "1.0" default value returned from sandbox
-    // this also works with build number integer from production, eg: "37"
-    guard let originalAppVersionString = receipt.originalAppVersion,
-    let originalBuildNumber = Double(originalAppVersionString) else {
-    return
-    }
-    
-    // the last build number that the app is still a paid app
-    if originalBuildNumber < 37 {
-    // grant user premium feature here
-    print("premium granted")
-    }
-    }
+//    func grantPremiumToPreviousUser(receipt: ParsedReceipt) {
+//        guard let originalAppVersionString = receipt.originalAppVersion,
+//            let originalBuildNumber = Double(originalAppVersionString) else {
+//                return
+//            }
+//        // the last build number that the app is still a paid app (build 9, version 1.3.0)
+//        if originalBuildNumber < 10 {
+//            fullVersionUnlocked = true
+//            UserDefaults.standard.set(true, forKey: "fullVersionUnlocked")
+//            print("Full version is unlocked as earlier version already purchased: \(fullVersionUnlocked)")
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-  
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-      
-        
-       var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
-        
-        if fullVersionUnlocked == true {
-            print(fullVersionUnlocked)
-        } else if fullVersionUnlocked == false {
-            print(fullVersionUnlocked)
-        }
-        
-       // print("Full version unlocked is : \(fullVersionUnlocked)")
-        
+ 
+    override func viewDidAppear(_ animated: Bool) {        
         if let numberOfViews = UserDefaults.standard.object(forKey: "newViews") {
-            print("this screen has already been viewed before")
             let viewCount = numberOfViews as! Int + 1
             UserDefaults.standard.set(viewCount, forKey: "newViews")
             self.performSegue(withIdentifier: "secondUseSegue", sender: self)
@@ -98,10 +74,7 @@ class LoadingViewController: UIViewController {
             let shared = UserDefaults.standard
             let newViews = 1
             shared.set(newViews, forKey: "newViews")
-            print(newViews)
             self.performSegue(withIdentifier: "firstUseSegue", sender: self)
         }
-        
-
-}
+    }
 }

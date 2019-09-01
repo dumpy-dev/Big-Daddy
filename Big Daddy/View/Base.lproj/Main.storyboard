@@ -1088,25 +1088,25 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-99-HZA" userLabel="Slider Stack">
-                                                <rect key="frame" x="11.333333333333343" y="237.66666666666671" width="371.66666666666663" height="54.333333333333343"/>
+                                                <rect key="frame" x="9.3333333333333428" y="237.66666666666671" width="375.66666666666663" height="54.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraction Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jgx-S3-X00">
-                                                        <rect key="frame" x="112.33333333333331" y="0.0" width="147" height="27.333333333333332"/>
+                                                        <rect key="frame" x="114.33333333333331" y="0.0" width="147" height="27.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-Sd-0sk" userLabel="Silder + Label Stack">
-                                                        <rect key="frame" x="0.0" y="27.333333333333314" width="371.66666666666669" height="27"/>
+                                                        <rect key="frame" x="0.0" y="27.333333333333314" width="375.66666666666669" height="27"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="lfF-YX-18c">
-                                                                <rect key="frame" x="-2" y="0.0" width="347" height="28"/>
+                                                                <rect key="frame" x="-2" y="0.0" width="351" height="28"/>
                                                                 <connections>
                                                                     <action selector="strengthSlinder:" destination="VWn-bO-TnC" eventType="valueChanged" id="klY-LX-X1O"/>
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-fO-We2">
-                                                                <rect key="frame" x="363" y="0.0" width="8.6666666666666856" height="27"/>
+                                                                <rect key="frame" x="367" y="0.0" width="8.6666666666666856" height="27"/>
                                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1655,6 +1655,7 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                                 <state key="normal" image="cancel"/>
                                 <connections>
                                     <action selector="cancelButtonPressed:" destination="TGs-kr-DUo" eventType="touchUpInside" id="tJY-uj-3fb"/>
+                                    <segue destination="GNk-7u-z3J" kind="unwind" unwindAction="cancel:" id="2Iq-zQ-KiY"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Oib-jq-08m" userLabel="Upgrade Panel Stack">
@@ -1722,7 +1723,7 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                                             <constraint firstAttribute="height" constant="75" id="y6h-Cd-uqD"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£1.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kE-Fx-Lel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£1.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3kE-Fx-Lel">
                                         <rect key="frame" x="18.333333333333318" y="27.666666666666664" width="38.333333333333343" height="19.666666666666664"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1763,6 +1764,7 @@ If it was a false alarm, press the reset button and blame the spicy curry. 
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiX-Fq-voo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GNk-7u-z3J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-355.07246376811599" y="1603.5326086956522"/>
         </scene>

@@ -14,9 +14,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     var dueDate = Date()
     let realm = try! Realm()
-  //  var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
         // var fullVersionUnlocked = true
-        var fullVersionUnlocked = false
+        //var fullVersionUnlocked = false
  
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
@@ -26,6 +26,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var genderSelector: UISegmentedControl!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){
     }
     
     @IBAction func genderSelected(_ sender: Any) {
@@ -45,12 +48,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         switch genderSelector.selectedSegmentIndex {
             case 0:
                 confettiView.colors = [UIColor(red:1.00, green:0.95, blue:0.95, alpha:1.0),UIColor(red:0.96, green:0.66, blue:0.65, alpha:1.0), UIColor(red:1.00, green:0.94, blue:1.00, alpha:1.0)]
+                UserDefaults.standard.set(0, forKey: "babyGender")
                 runConfetti()
             case 1:
                 confettiView.colors = [UIColor(red:0.69, green:0.88, blue:0.90, alpha:1.0), UIColor(red:0.34, green:0.63, blue:0.92, alpha:1.0), UIColor(red:0.54, green:0.72, blue:0.70, alpha:1.0)]
                 runConfetti()
+                UserDefaults.standard.set(1, forKey: "babyGender")
             case 2:
-                break
+                UserDefaults.standard.set(2, forKey: "babyGender")
             default:
                 break
         }
@@ -59,10 +64,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func upgradePressed(_ sender: Any) {
         performSegue(withIdentifier: "settingsUpgradeSegue", sender: self)
     }
-    @IBAction func restorePressed(_ sender: Any) {
-        performSegue(withIdentifier: "settingsUpgradeSegue", sender: self)
-    }
     
+    @IBAction func restorePressed(_ sender: Any) {
+        if fullVersionUnlocked == true {
+                let alert = UIAlertController(title: "We couldn't find any purchases to restore", message: "If this isn't right, then please drop us a line on info@thebigdaddyapp.com", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+        } else {
+            IAPService.shared.restorePurchases()
+        }
+    }
     
     // Setup Reset fuction
 
@@ -120,7 +131,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             }
             
             //            let due = UserDefaults.standard.object(forKey: "DueDate")
-            //            print("This date has been saved to the default settings: \(due)")
+       
             
         } else {
             
@@ -129,8 +140,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 datePicker.datePickerMode = UIDatePicker.Mode.date
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd MMM yyyy"
-                let selectedDate = dateFormatter.string(from: datePicker.date)
-                print(selectedDate)
+               // let selectedDate = dateFormatter.string(from: datePicker.date)
+                
             let calculatedDueDate = datePicker.date
             let diffInDays = Calendar.current.dateComponents([.day], from: now, to: calculatedDueDate).day
             let weeksLeft : Int = diffInDays!/7
@@ -144,7 +155,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                     self.datePicker.setDate(Date() as Date, animated: true)
                 } else if weeksLeft < 0 {
                     let displayWeeksLeft = -(weeksLeft)
-                    print("this many weeks left: \(displayWeeksLeft)")
                     if weeksLeft >= -1 {
                     let alertController = UIAlertController(title: "Due Date", message: "Your due date can't be in the past!", preferredStyle: UIAlertController.Style.alert)
                     alertController.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
@@ -182,6 +192,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("**SETTINGS SCREEN** Is full version unlocked? \(fullVersionUnlocked)")
+        
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
             if let previouslyEnteredDueDate = UserDefaults.standard.object(forKey: "DueDate") {
                 self.datePicker.setDate(previouslyEnteredDueDate as! Date, animated: false)
@@ -190,9 +202,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             }
         self.motherNameEntered.delegate = self
         self.babyNameEntered.delegate = self
+        
+        if let savedSegmentIndex = UserDefaults.standard.value(forKey: "babyGender") {
+            genderSelector.selectedSegmentIndex = savedSegmentIndex as! Int
+        } else {
+            genderSelector.selectedSegmentIndex = 2
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
         if fullVersionUnlocked == false {
             babyNameEntered.placeholder = "Upgrade to unlock!"
             babyNameEntered.isEnabled = false

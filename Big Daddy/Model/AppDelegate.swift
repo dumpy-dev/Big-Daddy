@@ -14,12 +14,38 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        IAPService.shared.getProducts()
+//        if UserDefaults.standard.bool(forKey: "fullVersionUnlocked") != true {
+//        IAPService.shared.restorePurchases()
+//        }
+        let receiptFetcher = ReceiptFetcher()
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            print("Message from App Delegate: The current app version is: \(version)")
+        }
+        receiptFetcher.fetchReceipt()
+        let receiptValidator = ReceiptValidator()
+        let validationResult = receiptValidator.validateReceipt()
+        
+        switch validationResult {
+        case .success(let receipt):
+            grantPremiumToPreviousUser(receipt: receipt)
+            print("Message from App Delegate: Original app version is \(receipt.originalAppVersion ?? "n/a")")
+        case .error(let error):
+            // receipt validation failed, refer to enum ReceiptValidationError
+            print("Message from App Delegate: error is \(error.localizedDescription)")
+            
+        }
+        
+        
+        
+        
 
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            print("granted: (\(granted)")
+            print("Message from App Delegate: Is notification display granted? *** \(granted) ***")
         }
 
         let config = Realm.Configuration(
@@ -50,20 +76,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Now that we've told Realm how to handle the schema change, opening the file
         // will automatically perform the migration
          // let realm = try! Realm()
-        
-        
-        
-        
-        
-        
+    
         
         return true
         
-        
-       
-        
+    
     }
 
+    func grantPremiumToPreviousUser(receipt: ParsedReceipt) {
+        guard let originalAppVersionString = receipt.originalAppVersion,
+            let originalBuildNumber = Double(originalAppVersionString) else {
+                return
+        }
+        // the last build number that the app is still a paid app (build 9, version 1.3.0)
+        
+        print("Message from App Delegate: Build Number: \(originalBuildNumber)")
+        if originalBuildNumber < 1 {
+            fullVersionUnlocked = true
+            UserDefaults.standard.set(true, forKey: "fullVersionUnlocked")
+            print("Message from App Delegate: Full version is unlocked as earlier version already purchased: \(fullVersionUnlocked)")
+        }
+    }
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

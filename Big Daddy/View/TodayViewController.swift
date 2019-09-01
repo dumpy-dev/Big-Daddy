@@ -16,8 +16,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return .lightContent
     }
     
-    
-    
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var mainStackView: UIStackView!
     
@@ -78,12 +76,11 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-      weeklyTableView.alpha = 0
+    
+        weeklyTableView.alpha = 0
         mainStackView.alpha = 0
         tabBarController?.delegate = self
-       
-       
+    
         self.navigationController?.isNavigationBarHidden = true
         
         if let viewCount = UserDefaults.standard.object(forKey: "newViews") {
@@ -99,8 +96,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
              // print("this is view number: \(numberOfViews)")
         }
         
-       
-       
   
         // This is the code to calculate the current week of pregnancy
         let fortyWeeksInDays = 280
@@ -1045,10 +1040,8 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
             return cell
         }
-     
     }
-
-    }
+}
 
 extension Date {
     

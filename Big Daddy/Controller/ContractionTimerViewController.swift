@@ -153,9 +153,6 @@ class ContractionTimerViewController: UIViewController, UITableViewDelegate, UIT
             
             tableView.reloadData()
             
-            print(timeOffset)
-            print("times \(times)")
-            
         } else {
             
             UIView.transition(with: sender as! UIView, duration: 0.4, options: .transitionFlipFromTop, animations: {
@@ -169,7 +166,7 @@ class ContractionTimerViewController: UIViewController, UITableViewDelegate, UIT
             let timerItem = ContractionCounterRealm()
             
             if let savedInterval = UserDefaults.standard.object(forKey: "contractionInterval") {
-                print("this is saved: \(savedInterval)")
+           
                 timerItem.intervalString = savedInterval as! String
             } else {
                 timerItem.intervalString = ""

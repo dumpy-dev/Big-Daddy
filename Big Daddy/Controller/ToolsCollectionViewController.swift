@@ -20,16 +20,16 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
     var arrayOfTypes = [String]()
     var checklistID = 0
     var textID = 0
-   // var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
     
-  //  var fullVersionUnlocked = true
-    var fullVersionUnlocked = false
-    
+    @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){
+    }
+ 
     @IBAction func upgradePressed(_ sender: Any) {
         self.upgradePopup.removeFromSuperview()
          performSegue(withIdentifier: "upgradeSegue", sender: self)
-        
     }
+    
     @IBOutlet var upgradeButton: UIButton!
     //Setup array values on view loading
     
@@ -53,7 +53,11 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
             }
         }
         }
-    override func viewDidAppear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+        print("**TOOLS SCREEN** Is full version unlocked? \(fullVersionUnlocked)")
+        collectionView.reloadData()
         if fullVersionUnlocked == true {
             self.upgradePopup.removeFromSuperview()
         } else {
@@ -69,9 +73,6 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
         }
     }
     
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -83,15 +84,9 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
         return arrayOfImages.count
     }
     
-func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-   let availableWidth = view.frame.width
-    let cellWidth = availableWidth / 2 - 20
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let availableWidth = view.frame.width
+        let cellWidth = availableWidth / 2 - 20
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
@@ -169,7 +164,6 @@ func collectionView(_ collectionView: UICollectionView,
         }
         
         if segue.identifier == "generalTextSegue" {
-            print("This is the textID: \(textID)")
             let textSelected : TermsAndConditionsViewController = segue.destination as! TermsAndConditionsViewController
             textSelected.textIdentifier = textID
         }
@@ -180,6 +174,8 @@ func collectionView(_ collectionView: UICollectionView,
 class TermsAndConditionsViewController : UIViewController {
     
     var textIdentifier : Int = 0
+    var version : String = "\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? 0)"
+    var build : String = "X"
     @IBOutlet weak var contentField: UITextView!
     
     
@@ -193,7 +189,8 @@ class TermsAndConditionsViewController : UIViewController {
         if textIdentifier == 1 {
             contentField.text = """
             The Big Daddy
-            Version 2.0.0
+            Version \(version)
+            Build \(build)
             © Copyright 2019 Dumpy Devs Ltd
             
             
@@ -228,7 +225,8 @@ class TermsAndConditionsViewController : UIViewController {
         } else if textIdentifier == 2 {
             contentField.text = """
             The Big Daddy
-            Version 2.0.0
+            Version \(version)
+            Build \(build)
             © Copyright 2019 Dumpy Devs Ltd
             
             
@@ -240,6 +238,7 @@ class TermsAndConditionsViewController : UIViewController {
                 - Pixel Perfect
                 - Pixel Buddha
                 - Roundicons
+                - Dimitry Miroliubov
             
             at www.flaticon.com
 

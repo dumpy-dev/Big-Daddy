@@ -12,11 +12,11 @@
 		240CB06522EF00C50006D508 /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CB06422EF00C50006D508 /* IAPService.swift */; };
 		241F598F22D5319900977524 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241F598E22D5319900977524 /* StoreKit.framework */; };
 		241F599122D5336D00977524 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F599022D5336D00977524 /* IAPHelper.swift */; };
-		241F599322D533E700977524 /* BigDaddyIAPs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F599222D533E700977524 /* BigDaddyIAPs.swift */; };
 		241F599522D606A400977524 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F599422D606A400977524 /* UpgradeViewController.swift */; };
 		24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428646F204D3E9700E54FCF /* SettingsViewController.swift */; };
 		242864922057270800E54FCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242864912057270800E54FCF /* TodayViewController.swift */; };
 		242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */ = {isa = PBXBuildFile; fileRef = 242F3790211F16C300ADE38E /* Caesarean Section.html */; };
+		2433216F230C920A001142D7 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2433216E230C920A001142D7 /* AppleIncRootCertificate.cer */; };
 		2445B13F2081385F00BBA1EC /* WeeksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */; };
 		2445DF58207811750043590E /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF57207811750043590E /* TodayCollectionViewCell.swift */; };
 		2445DF5A207819740043590E /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DF59207819740043590E /* TodayDetailViewController.swift */; };
@@ -86,7 +86,6 @@
 		24C8149D22EF436100E2FADD /* emptyObjectiveCFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8149C22EF436100E2FADD /* emptyObjectiveCFile.m */; };
 		24C814A222EF452100E2FADD /* SwiftyLocalReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8149F22EF451F00E2FADD /* SwiftyLocalReceiptValidator.swift */; };
 		24C814A322EF452100E2FADD /* pkcs7_union_accessors.c in Sources */ = {isa = PBXBuildFile; fileRef = 24C814A022EF452000E2FADD /* pkcs7_union_accessors.c */; };
-		24C814A522EF46A100E2FADD /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 24C814A422EF46A100E2FADD /* AppleIncRootCertificate.cer */; };
 		24C9E8C721EA705400F623AA /* Postnatal Depression.html in Resources */ = {isa = PBXBuildFile; fileRef = 24C9E8C621EA705400F623AA /* Postnatal Depression.html */; };
 		24CC367E212066A200AD9CF7 /* IntroScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */; };
 		24CC3698212D3A5F00AD9CF7 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */; };
@@ -107,11 +106,11 @@
 		240CB06422EF00C50006D508 /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		241F598E22D5319900977524 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		241F599022D5336D00977524 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IAPHelper.swift; path = ../../IAPHelper.swift; sourceTree = "<group>"; };
-		241F599222D533E700977524 /* BigDaddyIAPs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigDaddyIAPs.swift; sourceTree = "<group>"; };
 		241F599422D606A400977524 /* UpgradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
 		2428646F204D3E9700E54FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		242864912057270800E54FCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = ../View/TodayViewController.swift; sourceTree = "<group>"; };
 		242F3790211F16C300ADE38E /* Caesarean Section.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Caesarean Section.html"; sourceTree = "<group>"; };
+		2433216E230C920A001142D7 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = Certificates/AppleIncRootCertificate.cer; sourceTree = SOURCE_ROOT; };
 		2445B13E2081385F00BBA1EC /* WeeksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF57207811750043590E /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		2445DF59207819740043590E /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +184,6 @@
 		24C8149F22EF451F00E2FADD /* SwiftyLocalReceiptValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyLocalReceiptValidator.swift; sourceTree = "<group>"; };
 		24C814A022EF452000E2FADD /* pkcs7_union_accessors.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pkcs7_union_accessors.c; sourceTree = "<group>"; };
 		24C814A122EF452100E2FADD /* pkcs7_union_accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkcs7_union_accessors.h; sourceTree = "<group>"; };
-		24C814A422EF46A100E2FADD /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = ../../../../Downloads/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
 		24C9E8C621EA705400F623AA /* Postnatal Depression.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Postnatal Depression.html"; sourceTree = "<group>"; };
 		24CC367D212066A200AD9CF7 /* IntroScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreenViewController.swift; sourceTree = "<group>"; };
 		24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekCollectionViewCell.swift; path = "/Users/GeorgieandChris 1/Desktop/Big Daddy Project Files/Big Daddy/Big Daddy/Model/WeekCollectionViewCell.swift"; sourceTree = "<absolute>"; };
@@ -300,10 +298,10 @@
 				247FB47C204B47C700BF4CB7 /* Controller */,
 				242864942058115A00E54FCF /* Assets */,
 				247FB474204B478800BF4CB7 /* Info.plist */,
+				2433216E230C920A001142D7 /* AppleIncRootCertificate.cer */,
 				24C814A022EF452000E2FADD /* pkcs7_union_accessors.c */,
 				24C814A122EF452100E2FADD /* pkcs7_union_accessors.h */,
 				24C8149F22EF451F00E2FADD /* SwiftyLocalReceiptValidator.swift */,
-				24C814A422EF46A100E2FADD /* AppleIncRootCertificate.cer */,
 			);
 			path = "Big Daddy";
 			sourceTree = "<group>";
@@ -312,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				241F599022D5336D00977524 /* IAPHelper.swift */,
-				241F599222D533E700977524 /* BigDaddyIAPs.swift */,
 				24DBDE2A20A0F73600AE1C86 /* Article.swift */,
 				24CD0B9D213B32D10041C3FE /* DecoderItem.swift */,
 				24CC3695212D3A5E00AD9CF7 /* WeekCollectionViewCell.swift */,
@@ -364,7 +361,6 @@
 				242864912057270800E54FCF /* TodayViewController.swift */,
 				2445DF5B2079167E0043590E /* ToolsCollectionViewController.swift */,
 				241F599422D606A400977524 /* UpgradeViewController.swift */,
-				24C8149C22EF436100E2FADD /* emptyObjectiveCFile.m */,
 				24DBDDF8208A840400AE1C86 /* ToolsViewController.swift */,
 				24E8D95122ABF62F00ED689C /* Deprecated */,
 				24C8149B22EF436100E2FADD /* Big Daddy-Bridging-Header.h */,
@@ -375,6 +371,7 @@
 		24E8D95122ABF62F00ED689C /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				24C8149C22EF436100E2FADD /* emptyObjectiveCFile.m */,
 				24DBDE2C20A788EC00AE1C86 /* ContractionCounterViewController.swift */,
 				247FB46A204B478800BF4CB7 /* ViewController.swift */,
 			);
@@ -490,7 +487,7 @@
 				242F3791211F16C300ADE38E /* Caesarean Section.html in Resources */,
 				2447DFB1217E085000A011AA /* Top Ten New Dad Worries.html in Resources */,
 				2447DF7F2177C3EA00A011AA /* Driving.html in Resources */,
-				24C814A522EF46A100E2FADD /* AppleIncRootCertificate.cer in Resources */,
+				2433216F230C920A001142D7 /* AppleIncRootCertificate.cer in Resources */,
 				2447DF932179266000A011AA /* Induction.html in Resources */,
 				2447DF87217925D300A011AA /* Foods to Avoid.html in Resources */,
 				2489222E217238EA00EE1F98 /* Amniocentesis.html in Resources */,
@@ -589,7 +586,6 @@
 				24E8D95022ABF59700ED689C /* ContractionTimerViewController.swift in Sources */,
 				24C1965C213ACF3700B07DBD /* decoderCollectionViewController.swift in Sources */,
 				240CB06322EEFF8B0006D508 /* IAPProduct.swift in Sources */,
-				241F599322D533E700977524 /* BigDaddyIAPs.swift in Sources */,
 				24C814A322EF452100E2FADD /* pkcs7_union_accessors.c in Sources */,
 				24CC367E212066A200AD9CF7 /* IntroScreenViewController.swift in Sources */,
 				2445DF5C2079167E0043590E /* ToolsCollectionViewController.swift in Sources */,

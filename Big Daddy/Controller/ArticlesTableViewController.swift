@@ -13,20 +13,20 @@ class ArticlesTableViewController: UITableViewController {
     var articlesArray = [Article]()
     var filteredArticles = [Article]()
     let searchController = UISearchController(searchResultsController: nil)
+    var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
     
     @IBOutlet var upgradeButton: UIButton!
     
     @IBOutlet var upgradePopup: UIView!
-    // var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
-   // var fullVersionUnlocked = true
-   var fullVersionUnlocked = false
+    
+    @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){
+    }
 
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    
-        func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
             filteredArticles = articlesArray.filter({( articles : Article) -> Bool in
                 return articles.keyword.lowercased().contains(searchText.lowercased())
             })
@@ -40,8 +40,10 @@ class ArticlesTableViewController: UITableViewController {
     //Hide the status bar
   
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("Full version unlocked is : \(fullVersionUnlocked)")
+    override func viewWillAppear(_ animated: Bool) {
+        fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+        print("**ARTICLES SCREEN** Is full version unlocked? \(fullVersionUnlocked)")
+        tableView.reloadData()
         var prefersStatusBarHidden: Bool {
             return true
         }
@@ -59,7 +61,6 @@ class ArticlesTableViewController: UITableViewController {
             }
         }
     }
-    
     
     // The viewDidLoad will load the array of articles and reload the table view
     override func viewDidLoad() {
@@ -180,7 +181,6 @@ class ArticlesTableViewController: UITableViewController {
                 performSegue(withIdentifier: "articleSelectedSegue", sender: self)
             } else {
                 upgradeButton.wiggle()
-                print("article locked")
             }
         }
     }
