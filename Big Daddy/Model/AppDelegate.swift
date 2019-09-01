@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .success(let receipt):
             grantPremiumToPreviousUser(receipt: receipt)
             print("Message from App Delegate: Original app version is \(receipt.originalAppVersion ?? "n/a")")
+            UserDefaults.standard.set(receipt.originalAppVersion, forKey: "originalBuildNumber")
         case .error(let error):
             // receipt validation failed, refer to enum ReceiptValidationError
             print("Message from App Delegate: error is \(error.localizedDescription)")
@@ -88,10 +89,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let originalBuildNumber = Double(originalAppVersionString) else {
                 return
         }
+       
         // the last build number that the app is still a paid app (build 9, version 1.3.0)
         
         print("Message from App Delegate: Build Number: \(originalBuildNumber)")
-        if originalBuildNumber < 1 {
+        if originalBuildNumber < 10 {
             fullVersionUnlocked = true
             UserDefaults.standard.set(true, forKey: "fullVersionUnlocked")
             print("Message from App Delegate: Full version is unlocked as earlier version already purchased: \(fullVersionUnlocked)")

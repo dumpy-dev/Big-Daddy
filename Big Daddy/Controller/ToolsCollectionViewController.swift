@@ -175,7 +175,6 @@ class TermsAndConditionsViewController : UIViewController {
     
     var textIdentifier : Int = 0
     var version : String = "\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? 0)"
-    var build : String = "X"
     @IBOutlet weak var contentField: UITextView!
     
     
@@ -190,7 +189,6 @@ class TermsAndConditionsViewController : UIViewController {
             contentField.text = """
             The Big Daddy
             Version \(version)
-            Build \(build)
             © Copyright 2019 Dumpy Devs Ltd
             
             
@@ -226,7 +224,6 @@ class TermsAndConditionsViewController : UIViewController {
             contentField.text = """
             The Big Daddy
             Version \(version)
-            Build \(build)
             © Copyright 2019 Dumpy Devs Ltd
             
             

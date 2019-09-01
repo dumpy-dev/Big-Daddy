@@ -18,9 +18,9 @@ class ReceiptFetcher : NSObject, SKRequestDelegate {
     }
     
     func fetchReceipt() {
-        print("fetching receipt")
+        print("Message from Receipt Fetcher: fetching receipt")
         guard let receiptUrl = Bundle.main.appStoreReceiptURL else {
-            print("unable to retrieve receipt url")
+            print("Message from Receipt Fetcher: unable to retrieve receipt url")
             return
         }
         
@@ -34,7 +34,7 @@ class ReceiptFetcher : NSObject, SKRequestDelegate {
             }
         } catch {
             // the receipt does not exist, start refreshing
-            print("error: \(error.localizedDescription)")
+            print("Message from Receipt Fetcher: error: \(error.localizedDescription)")
             /*
              error: The file “sandboxReceipt” couldn’t be opened because there is no such file
              */
@@ -44,11 +44,11 @@ class ReceiptFetcher : NSObject, SKRequestDelegate {
     
     // MARK: SKRequestDelegate methods
     func requestDidFinish(_ request: SKRequest) {
-        print("receipt fetching request finished successfully")
+        print("Message from Receipt Fetcher: receipt fetching request finished successfully")
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
-        print("receipt fetching request failed with error \(error.localizedDescription)")
+        print("Message from Receipt Fetcher: receipt fetching request failed with error \(error.localizedDescription)")
     }
     
 //    func grantPremiumToPreviousUser(receipt: ParsedReceipt) {

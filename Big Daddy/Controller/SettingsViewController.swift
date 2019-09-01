@@ -17,13 +17,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
         // var fullVersionUnlocked = true
         //var fullVersionUnlocked = false
- 
+    var version : String = "\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "X")"
+    var originalBuild = UserDefaults.standard.value(forKey: "originalBuildNumber") ?? "X"
+    
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
     @IBOutlet weak var dateSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var upgradeButton: UIButton!
     @IBOutlet var genderSelector: UISegmentedControl!
+    @IBOutlet var versionLabel: UILabel!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -212,16 +215,19 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
+        var fullVersionText = "X"
         if fullVersionUnlocked == false {
             babyNameEntered.placeholder = "Upgrade to unlock!"
             babyNameEntered.isEnabled = false
             upgradeButton.isEnabled = true
-            
+            fullVersionText = "Lite"
         } else {
             upgradeButton.isEnabled = false
             motherNameEntered.placeholder = UserDefaults.standard.object(forKey: "mother") as? String
             babyNameEntered.placeholder = UserDefaults.standard.object(forKey: "baby") as? String
+            fullVersionText = "Pro"
         }
+        versionLabel.text = "Version \(version)(\(originalBuild)) \(fullVersionText)"
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
