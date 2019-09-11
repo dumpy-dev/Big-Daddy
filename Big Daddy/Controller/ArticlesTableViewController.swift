@@ -16,7 +16,6 @@ class ArticlesTableViewController: UITableViewController {
     var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
     
     @IBOutlet var upgradeButton: UIButton!
-    
     @IBOutlet var upgradePopup: UIView!
     
     @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){
@@ -33,13 +32,10 @@ class ArticlesTableViewController: UITableViewController {
             tableView.reloadData()
         }
     
-        func isFiltering() -> Bool {
+    func isFiltering() -> Bool {
             return searchController.isActive && !searchBarIsEmpty()
         }
 
-    //Hide the status bar
-  
-    
     override func viewWillAppear(_ animated: Bool) {
         fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
         print("**ARTICLES SCREEN** Is full version unlocked? \(fullVersionUnlocked)")
@@ -62,7 +58,6 @@ class ArticlesTableViewController: UITableViewController {
         }
     }
     
-    // The viewDidLoad will load the array of articles and reload the table view
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -79,12 +74,9 @@ class ArticlesTableViewController: UITableViewController {
             }
         }
         
-        
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = convertToNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: UIColor.white])
         searchController.searchBar.tintColor = .white
-        
-        //Setup the arrays
-        
+      
         articlesArray = [
             Article(keyword:"alcohol pregnancy uk us france australia official advice avoid serious shirley airplane mother&rsquo;s blood baby liver organ develop process drinking drink first three months increase risk miscarriage premature birth low weight developmental problems heavily regularly serious condition foetal syndrome facial abnormalities learning difficulties restricted growth worry risk low gone off taste small batch organic craft IPA friday night cup of tea G&T gin tonic cucumber lime spirit alcohol-free", name:"Alcohol", unlocked: false),
              Article(keyword:"amniocentesis CVS chorionic villus sampling amniotic fluid placenta downs edwards&rsquo; patau&rsquo;s pataus chromosomal genetic problem condition test decision terminate pregnancy miscarriage abortion disability learning difficulties", name:"Amniocentesis", unlocked: false),
@@ -128,8 +120,7 @@ class ArticlesTableViewController: UITableViewController {
               Article(keyword:"top ten dad worries anxiety worry anxious what if something goes wrong during the birth labour after new baby care how are we going to look after a tiny human stop crying drop fun pints pub nights out sleep deprived cranky can we afford finances financial assistance help budget ready to be daddy father love my right away rubbish poonami movies real life mistakes feel talk cup of tea", name:"Top Ten New Dad Worries", unlocked: false),
               Article(keyword:"preparing for getting ready labour hospital bag 36 weeks toothbrush phone chargers handy list check off pack close supervision maternity pad breast batch cooking healthy meals gordon brown ramsay tasty supermarket nappy ready to drop online shop check out tea bags coffee snacks schedule delivery when you know you’ll be home youtube tutorial massage back shoulder hand foot feet practise practice new skills birth preferences talk through epidural water bath help speak for her important numbers hospital midwife family contact telephone mobile driving recce park parking machine change cash seat carseat how to get it in", name:"Top Tips to Get Ready for B-Day", unlocked: false),
               Article(keyword:"vaccinations flu jab winter bronchitis pneumonia complications baby whooping cough 16 32 weeks immunity placenta safe sore arm rhesus negative anti-D injection blood groups", name:"Vaccinations", unlocked: false),
-              Article(keyword:"vitamin supplements job to remind her folic acid 400 micrograms how many much 12 weeks birth defects spina bifida conceive three months D 10 per day throughout pregnancy breastfeeding healthy bones teeth muscles sunshine winter A harmful don’t take do C iron calcium diet multivitamins important jamie oliver smelly football boots bedroom nutritious meal snack", name:"Vitamins", unlocked: false),
-
+              Article(keyword:"vitamin supplements job to remind her folic acid 400 micrograms how many much 12 weeks birth defects spina bifida conceive three months D 10 per day throughout pregnancy breastfeeding healthy bones teeth muscles sunshine winter A harmful don’t take do C iron calcium diet multivitamins important jamie oliver smelly football boots bedroom nutritious meal snack", name:"Vitamins", unlocked: false)
             ]
         tableView.reloadData()
         
@@ -150,8 +141,7 @@ class ArticlesTableViewController: UITableViewController {
         self.upgradePopup.removeFromSuperview()
         performSegue(withIdentifier: "upgradeArticlesSegue", sender: self)
     }
-    // MARK: - Table view data sourezxzs`z1 §z`ce
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -163,8 +153,6 @@ class ArticlesTableViewController: UITableViewController {
         return articlesArray.count
     }
     
-  
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var article: Article
         if isFiltering() {

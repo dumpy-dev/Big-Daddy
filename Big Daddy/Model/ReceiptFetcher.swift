@@ -23,7 +23,6 @@ class ReceiptFetcher : NSObject, SKRequestDelegate {
             print("Message from Receipt Fetcher: unable to retrieve receipt url")
             return
         }
-        
         do {
             // if the receipt does not exist, start refreshing
             let reachable = try receiptUrl.checkResourceIsReachable()

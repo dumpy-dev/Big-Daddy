@@ -97,9 +97,9 @@ class ToolsCollectionViewController: UICollectionViewController, UICollectionVie
         if fullVersionUnlocked == true {
             cell.toolsIcon.image = arrayOfImages[indexPath.row]
         } else {
-            if 0 ... 4 ~= indexPath.row {
-                cell.toolsLabel.alpha = 0.6
-            }
+//            if 0 ... 4 ~= indexPath.row {
+//                cell.toolsLabel.alpha = 0.6
+//            }
             cell.toolsIcon.image = arrayOfLockedImages[indexPath.row]
         }
         return cell
@@ -236,6 +236,7 @@ class TermsAndConditionsViewController : UIViewController {
                 - Pixel Buddha
                 - Roundicons
                 - Dimitry Miroliubov
+                - DinosoftLabs
             
             at www.flaticon.com
 

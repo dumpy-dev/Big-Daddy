@@ -93,13 +93,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // the last build number that the app is still a paid app (build 9, version 1.3.0)
         
         print("Message from App Delegate: Build Number: \(originalBuildNumber)")
-        if originalBuildNumber < 10 {
+        if originalBuildNumber < 13 {
             fullVersionUnlocked = true
             UserDefaults.standard.set(true, forKey: "fullVersionUnlocked")
             print("Message from App Delegate: Full version is unlocked as earlier version already purchased: \(fullVersionUnlocked)")
         }
     }
     
+    func restoreComplete() {
+        print("Message from App Delegate: restore completed")
+    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

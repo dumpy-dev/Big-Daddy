@@ -19,6 +19,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         //var fullVersionUnlocked = false
     var version : String = "\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "X")"
     var originalBuild = UserDefaults.standard.value(forKey: "originalBuildNumber") ?? "X"
+    var fullVersionText = "X"
+    
     
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
@@ -94,6 +96,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                     self.motherNameEntered.text = nil
                     self.babyNameEntered.placeholder = nil
                     self.babyNameEntered.text = nil
+                    if self.fullVersionUnlocked == true {
+                        UserDefaults.standard.set(true, forKey: "fullVersionUnlocked")
+                    }
                 })
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
@@ -197,6 +202,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         print("**SETTINGS SCREEN** Is full version unlocked? \(fullVersionUnlocked)")
         
+        
+        
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
             if let previouslyEnteredDueDate = UserDefaults.standard.object(forKey: "DueDate") {
                 self.datePicker.setDate(previouslyEnteredDueDate as! Date, animated: false)
@@ -214,8 +221,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(restoreCompleted), name: .restoreCompleted, object: nil)
+        
         fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
-        var fullVersionText = "X"
         if fullVersionUnlocked == false {
             babyNameEntered.placeholder = "Upgrade to unlock!"
             babyNameEntered.isEnabled = false
@@ -227,9 +235,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             babyNameEntered.placeholder = UserDefaults.standard.object(forKey: "baby") as? String
             fullVersionText = "Pro"
         }
-        versionLabel.text = "Version \(version)(\(originalBuild)) \(fullVersionText)"
+        versionLabel.text = "Version \(version) (\(originalBuild)) \(fullVersionText)"
     }
 
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .restoreCompleted, object: nil)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -242,5 +255,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func dueDatePicked(_ sender: UIDatePicker) {
     }
   
+    @objc public func restoreCompleted() {
+        
+        let alert = UIAlertController(title: "Welcome back!", message: "Your previous purchase has been successfully restored.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        versionLabel.text = "Version \(version) (\(originalBuild)) \(fullVersionText)"
+        upgradeButton.isEnabled = false
+        self.present(alert, animated: true)
+    }
 }
 

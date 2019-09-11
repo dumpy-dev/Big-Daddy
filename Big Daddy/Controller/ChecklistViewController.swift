@@ -83,7 +83,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
    
-    let clothesArray : [String] = ["Vests", "Coat", "Sleepsuits", "Gloves", "Socks", "Daytime Outfits", "Hats", "Muslins", "Bibs"]
+    let clothesArray : [String] = ["Vests x7", "Sleepsuits x7","Daytime Outfits x7", "Coat x1", "Gloves x2", "Socks x3",  "Hats x3", "Muslins x10", "Bibs x5"]
     let travelArray : [String] = ["Carseat", "Mirror", "Sunshade", "Pram (with Bassinet)", " Travel Cot", "Baby Carrier", "Changing Bag", "Foldable Changing Mat"]
     let nappyArray : [String] = ["Nappies", "Nappy Bags", "Wipes", "Bottom Cream", "Changing Mat"]
     let healthArray : [String] = ["Thermometer", "Sudocrem", "Calpol", "Nail Scissors"]
@@ -476,7 +476,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             // Name list
         } else if nameList.count == 0 && checklistIdentifier == 2 {
-            let defaultItemArray = ["Maximus Decimus Meridius", "The Artist Formerly Known as Prince"]
+            let defaultItemArray = ["Maximus Decimus Meridius"]
             for item in defaultItemArray{
                 let nameItem = NameRealm()
                 nameItem.name = item

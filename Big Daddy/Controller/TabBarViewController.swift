@@ -1,22 +1,27 @@
 //
-//  SetupViewController.swift
+//  TabBarViewController.swift
 //  Big Daddy
 //
-//  Created by Georgie and Chris on 11/11/2018.
-//  Copyright © 2018 Dumpy Developments. All rights reserved.
+//  Created by Georgie and Chris on 30/06/2019.
+//  Copyright © 2019 Dumpy Developments. All rights reserved.
 //
 
 import UIKit
 
-class SetupViewController: UIPageViewController {
+class TabBarViewController: UITabBarController {
 
+   // @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet var mainTabBar: UITabBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
     /*
     // MARK: - Navigation
 

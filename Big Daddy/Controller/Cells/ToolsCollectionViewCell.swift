@@ -9,8 +9,6 @@
 import UIKit
 
 class ToolsCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var toolsIcon: UIImageView!
-    
     @IBOutlet weak var toolsLabel: UILabel!
 }
