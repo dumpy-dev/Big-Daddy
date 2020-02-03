@@ -45,9 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
 
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            print("Message from App Delegate: Is notification display granted? *** \(granted) ***")
-        }
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+//            print("Message from App Delegate: Is notification display granted? *** \(granted) ***")
+//            UserDefaults.standard.set(true, forKey: "notificationsAllowed")
+//        }
 
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used

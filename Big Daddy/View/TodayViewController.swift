@@ -86,7 +86,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let viewCount = UserDefaults.standard.object(forKey: "newViews") {
             
             let numberOfViews = viewCount as! Int
-            if numberOfViews == 5 {
+            if numberOfViews == 5 || numberOfViews == 10 || numberOfViews == 25 {
                 if #available( iOS 10.3,*){
                     SKStoreReviewController.requestReview()
                 } else {
@@ -185,8 +185,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             })
    
      let center = UNUserNotificationCenter.current()
-        
-       
         
         let fortyWeeksInDays = 280
         let startDate = Date()
@@ -368,10 +366,6 @@ extension UICollectionView {
 }
 
 extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    
-   
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.sizingView.frame.width
@@ -975,7 +969,7 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
                     
                     """,
                     28 : """
-                    Feeling like you wish you could help \(mother) more with her pregnancy? Be careful what you wish for - male emperor penguins are responsible for keeping their partner’s egg warm, while she goes and has a nice meal. For several weeks.
+                    Feeling like you wish you could help \(motherMiddle) more with her pregnancy? Be careful what you wish for - male emperor penguins are responsible for keeping their partner’s egg warm, while she goes and has a nice meal. For several weeks.
                     
                     """,
                     29 : """

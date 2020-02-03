@@ -70,6 +70,7 @@
 		246BE866210DB4690087B095 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BE865210DB4690087B095 /* RatingsViewController.swift */; };
 		2479AA9020E8287400C9D0C0 /* ChecklistRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2479AA8F20E8287400C9D0C0 /* ChecklistRealm.swift */; };
 		2479AA9220E828C200C9D0C0 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2479AA9120E828C200C9D0C0 /* ChecklistViewController.swift */; };
+		247AF0CC23D89600005FB118 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247AF0CB23D89600005FB118 /* ShareViewController.swift */; };
 		247FB469204B478800BF4CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FB468204B478800BF4CB7 /* AppDelegate.swift */; };
 		247FB46B204B478800BF4CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FB46A204B478800BF4CB7 /* ViewController.swift */; };
 		247FB46E204B478800BF4CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247FB46C204B478800BF4CB7 /* Main.storyboard */; };
@@ -164,6 +165,7 @@
 		246BE865210DB4690087B095 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
 		2479AA8F20E8287400C9D0C0 /* ChecklistRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistRealm.swift; sourceTree = "<group>"; };
 		2479AA9120E828C200C9D0C0 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
+		247AF0CB23D89600005FB118 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = "Big Daddy/Controller/ShareViewController.swift"; sourceTree = SOURCE_ROOT; };
 		247FB465204B478800BF4CB7 /* Big Daddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Daddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		247FB468204B478800BF4CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247FB46A204B478800BF4CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			children = (
 				247FB471204B478800BF4CB7 /* LaunchScreen.storyboard */,
 				247FB46C204B478800BF4CB7 /* Main.storyboard */,
+				247AF0CB23D89600005FB118 /* ShareViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				247FB469204B478800BF4CB7 /* AppDelegate.swift in Sources */,
 				24C8149D22EF436100E2FADD /* emptyObjectiveCFile.m in Sources */,
 				240CB06522EF00C50006D508 /* IAPService.swift in Sources */,
+				247AF0CC23D89600005FB118 /* ShareViewController.swift in Sources */,
 				24286470204D3E9700E54FCF /* SettingsViewController.swift in Sources */,
 				241F599122D5336D00977524 /* IAPHelper.swift in Sources */,
 				2467212D2198C25700B427F9 /* SetupViewController.swift in Sources */,

@@ -19,7 +19,8 @@ class InitialSetupViewController: UIPageViewController, UIPageViewControllerDele
                 self.newVc(viewController: "setupVC3"),
                 self.newVc(viewController: "setupVC4"),
                 self.newVc(viewController: "setupVC5"),
-                self.newVc(viewController: "setupVC6")]
+                self.newVc(viewController: "setupVC6new"),
+                self.newVc(viewController: "setupVC7")]
     }()
     
     override var prefersStatusBarHidden: Bool {
@@ -149,15 +150,24 @@ class setupVC5 : UIViewController, UITextFieldDelegate {
     }
 }
 
-class setupVC6 : UIViewController {
+class setupVC6new : UIViewController {
+    
+    @IBAction func turnOnNotifcationsPressed(_ sender: Any) {
+    }
+  
+}
+
+
+class setupVC7 : UIViewController {
     
     @IBOutlet weak var dueDateSwitch: UISwitch!
-    @IBOutlet weak var datePicker: UIDatePicker!
     
+    
+    @IBOutlet var datePicker: UIDatePicker!
     @IBAction func datePicked(_ sender: Any) {
     }
-    override func viewDidLoad() {
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+    override func viewDidAppear(_ animated: Bool) {
+   // datePicker.setValue(UIColor.white, forKeyPath: "textColor")
     }
     
     @IBAction func continuePressed(_ sender: Any) {

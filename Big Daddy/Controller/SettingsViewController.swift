@@ -9,9 +9,11 @@
 import UIKit
 import RealmSwift
 import SAConfettiView
+import UserNotifications
 
 class SettingsViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var notificationStatus: UILabel!
     var dueDate = Date()
     let realm = try! Realm()
     var fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
@@ -22,6 +24,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     var fullVersionText = "X"
     
     
+   
+    @IBOutlet var notificationLabel: UILabel!
+    @IBOutlet var notificationSelector: UISwitch!
     @IBOutlet weak var motherNameEntered: UITextField!
     @IBOutlet weak var babyNameEntered: UITextField!
     @IBOutlet weak var dateSwitch: UISwitch!
@@ -35,6 +40,25 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){
     }
+    
+    @IBAction func notificationsChangedState(_ sender: Any) {
+        
+       if notificationSelector.isOn == true {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            print("Message from Settings: Is notification display granted? *** \(granted) ***")
+            UserDefaults.standard.set(true, forKey: "notificationsAllowed")
+            
+        }
+        
+        self.notificationStatus.text = "Notifications are turned on"
+        } else {
+            notificationStatus.text = "Notifications are turned off"
+            UserDefaults.standard.set(false, forKey: "notificationsAllowed")
+        }
+        
+    }
+    
+    
     
     @IBAction func genderSelected(_ sender: Any) {
         let confettiView = SAConfettiView(frame: self.view.bounds)
@@ -222,6 +246,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(restoreCompleted), name: .restoreCompleted, object: nil)
+        
+        if UserDefaults.standard.bool(forKey: "notificationsAllowed") == true {
+            notificationStatus.text = "Notifications are turned on"
+            notificationSelector.isOn = true
+        } else {
+            notificationStatus.text = "Notifications are turned off"
+            notificationSelector.isOn = false
+        }
         
         fullVersionUnlocked = UserDefaults.standard.bool(forKey: "fullVersionUnlocked")
         if fullVersionUnlocked == false {

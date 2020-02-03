@@ -22,14 +22,12 @@ class LoadingViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("**LOADING SCREEN** Is full version unlocked? \(fullVersionUnlocked)")
-//        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-//            print("The current app version is: \(version)")
-//        }
-        
+
         let realm = try! Realm()
         var viewCountData:Results<UserDataRealm> {
             get {
