@@ -1,26 +1,33 @@
 PODS:
-  - Realm (3.16.1):
-    - Realm/Headers (= 3.16.1)
-  - Realm/Headers (3.16.1)
-  - RealmSwift (3.16.1):
-    - Realm (= 3.16.1)
+  - OpenSSL-Universal (1.0.2.20):
+    - OpenSSL-Universal/Static (= 1.0.2.20)
+  - OpenSSL-Universal/Static (1.0.2.20)
+  - Realm (5.5.0):
+    - Realm/Headers (= 5.5.0)
+  - Realm/Headers (5.5.0)
+  - RealmSwift (5.5.0):
+    - Realm (= 5.5.0)
   - SAConfettiView (0.1.8)
 
 DEPENDENCIES:
+  - OpenSSL-Universal
+  - Realm
   - RealmSwift
   - SAConfettiView
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
+    - OpenSSL-Universal
     - Realm
     - RealmSwift
     - SAConfettiView
 
 SPEC CHECKSUMS:
-  Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
-  RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
+  OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
+  Realm: fb399d76f44042e5cdfc630f33828fdb4d077345
+  RealmSwift: 3b7e62356207ef16d34de4e55d475163bd2062bb
   SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
 
-PODFILE CHECKSUM: 9682d074af74024bde67a5336bec79d175deb358
+PODFILE CHECKSUM: 71743e297728f26bf4726991226cf2154cebeb89
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.9.3

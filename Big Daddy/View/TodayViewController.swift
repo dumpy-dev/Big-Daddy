@@ -19,6 +19,10 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var mainStackView: UIStackView!
     
+    @IBAction func sharePressed(_ sender: Any) {
+        performSegue(withIdentifier: "shareSegue", sender: self)
+    }
+    
     // MARK:- Setup basic variables
     @IBOutlet weak var sizingView: UIView!
     var viewCount = 0
@@ -170,21 +174,27 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     override func viewWillAppear(_ animated: Bool) {
-        let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
-        center.removeAllDeliveredNotifications()
+            let center = UNUserNotificationCenter.current()
+            center.removeAllPendingNotificationRequests()
+            center.removeAllDeliveredNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
         UIView.animate(withDuration: 0.6, delay: 0.0, animations: {
+                    
+            // This line may be required - possibly deleted accidentally (present in Master2):
             
-            self.weeklyTableView.alpha = 1
-            self.mainStackView.alpha = 1
+           //  self.weeklyTableView.alpha = 1
+            
+            
+                    self.mainStackView.alpha = 1
             })
    
-     let center = UNUserNotificationCenter.current()
+
+            let center = UNUserNotificationCenter.current()
+      
         
         let fortyWeeksInDays = 280
         let startDate = Date()
@@ -248,37 +258,45 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
  
         
         var arrayValue = 36
-        var triggerID = "trigger"
-        var triggerInt = 0
-       
-        for i in dateArray {
+        
+        // these variables may have been deleted by accident - to be checked
+        // var triggerID = "trigger"
+       // var triggerInt = 0
+        
+        
+        
+        // this line is repeated later - likely copied in accidentally, may not be needed
+            // let notificationContent  = UNMutableNotificationContent()
+        
+        
+            for i in dateArray {
             
             let baby = UserDefaults.standard.string(forKey: "baby") ?? "Your baby"
-            var dateComps = Calendar.current.dateComponents([.year, .month, .day], from: i)
-            dateComps.hour = 10
-            dateComps.minute = 00
-         let notificationContent  = UNMutableNotificationContent()
-            notificationContent.title = "\(baby) is growing"
-            //while arrayValue <= 36 {
-            notificationContent.body = "Your baby has levelled up and is now \(babySizeLabelArray[arrayValue])!"
-           // }
-         notificationContent.sound = UNNotificationSound.default
-         triggerID = String("trigger\(triggerInt)")
-            
-        triggerInt = triggerInt + 1
-         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComps, repeats: false)
-         let request = UNNotificationRequest(identifier: triggerID, content: notificationContent, trigger: trigger)
-         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-          
-        
-            
-            arrayValue = arrayValue - 1
-            if arrayValue < 0 {
-                arrayValue = 0
-            }
-            
-    
-        }
+                var dateComps = Calendar.current.dateComponents([.year, .month, .day], from: i)
+                dateComps.hour = 10
+                dateComps.minute = 00
+                let notificationContent  = UNMutableNotificationContent()
+                notificationContent.title = "\(baby) is growing"
+                //while arrayValue <= 36 {
+                notificationContent.body = "Your baby has levelled up and is now \(babySizeLabelArray[arrayValue])!"
+               // }
+                notificationContent.sound = UNNotificationSound.default
+                triggerID = String("trigger\(triggerInt)")
+                triggerInt = triggerInt + 1
+                
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComps, repeats: false)
+                let request = UNNotificationRequest(identifier: triggerID, content: notificationContent, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                 
+               
+                   
+                   arrayValue = arrayValue - 1
+                   if arrayValue < 0 {
+                       arrayValue = 0
+                   }
+                   
+               }
  
         center.getPendingNotificationRequests(completionHandler: { requests in
             for request in requests {
@@ -311,6 +329,17 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+//    if segue.identifier == "shareSegue" {
+//        let selectedWeek : ShareViewController = segue.destination as! ShareViewController
+//        checklistSelected.checklistIdentifier = checklistID
+//    }
+    }
+    
+    
 }
 
 

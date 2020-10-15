@@ -7,6 +7,7 @@ target 'Big Daddy' do
   # Pods for Big Daddy
 
 pod 'RealmSwift'
+pod 'Realm'
 pod 'SAConfettiView'
 pod 'OpenSSL-Universal'
 

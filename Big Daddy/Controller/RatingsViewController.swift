@@ -32,7 +32,11 @@ class RatingsViewController: UIViewController, MFMailComposeViewControllerDelega
             SKStoreReviewController.requestReview()
         } else {
             if let url = URL(string: "https://itunes.apple.com/gb/app/the-big-daddy/id1447942380?mt=8&fbclid=IwAR0ZlEWM9ocd2ncSBx0CiUnDxmiMjHAxoSW0CBEfro2tFwbDZOVcElx0OQc") {
-                UIApplication.shared.open(url, options: [:])
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:])
+                } else {
+                    // Fallback on earlier versions
+                }
             }
         }
     }

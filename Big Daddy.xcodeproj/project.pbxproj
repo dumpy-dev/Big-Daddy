@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2400FAD220697A00003D5CB9 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2400FAD120697A00003D5CB9 /* ArticleViewController.swift */; };
+		240B0AEA250FB30F007C7DD6 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 240B0AE9250FB30F007C7DD6 /* SwiftPackageProductDependency */; };
+		240B0AEC250FB30F007C7DD6 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 240B0AEB250FB30F007C7DD6 /* SwiftPackageProductDependency */; };
 		240CB06322EEFF8B0006D508 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CB06222EEFF8B0006D508 /* IAPProduct.swift */; };
 		240CB06522EF00C50006D508 /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240CB06422EF00C50006D508 /* IAPService.swift */; };
 		241F598F22D5319900977524 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241F598E22D5319900977524 /* StoreKit.framework */; };
@@ -209,6 +211,8 @@
 			files = (
 				5C7F15394F2CD8A629D75649 /* Pods_Big_Daddy.framework in Frameworks */,
 				241F598F22D5319900977524 /* StoreKit.framework in Frameworks */,
+				240B0AEA250FB30F007C7DD6 /* BuildFile in Frameworks */,
+				240B0AEC250FB30F007C7DD6 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +429,10 @@
 			dependencies = (
 			);
 			name = "Big Daddy";
+			packageProductDependencies = (
+				240B0AE9250FB30F007C7DD6 /* SwiftPackageProductDependency */,
+				240B0AEB250FB30F007C7DD6 /* SwiftPackageProductDependency */,
+			);
 			productName = "Big Daddy";
 			productReference = 247FB465204B478800BF4CB7 /* Big Daddy.app */;
 			productType = "com.apple.product-type.application";
@@ -460,6 +468,9 @@
 				Base,
 			);
 			mainGroup = 247FB45C204B478800BF4CB7;
+			packageReferences = (
+				240B0AE8250FB30F007C7DD6 /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = 247FB466204B478800BF4CB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -532,17 +543,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Big Daddy/Pods-Big Daddy-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Big Daddy/Pods-Big Daddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Big Daddy/Pods-Big Daddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -692,7 +698,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -745,10 +751,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -763,7 +770,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S387596Z3;
 				INFOPLIST_FILE = "Big Daddy/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dumpy.Big-Daddy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -784,7 +794,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S387596Z3;
 				INFOPLIST_FILE = "Big Daddy/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dumpy.Big-Daddy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -816,6 +829,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		240B0AE8250FB30F007C7DD6 /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		240B0AE9250FB30F007C7DD6 /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 240B0AE8250FB30F007C7DD6 /* RemoteSwiftPackageReference */;
+			productName = FacebookShare;
+		};
+		240B0AEB250FB30F007C7DD6 /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 240B0AE8250FB30F007C7DD6 /* RemoteSwiftPackageReference */;
+			productName = FacebookCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 247FB45D204B478800BF4CB7 /* Project object */;
 }

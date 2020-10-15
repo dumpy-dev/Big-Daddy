@@ -44,10 +44,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func notificationsChangedState(_ sender: Any) {
         
        if notificationSelector.isOn == true {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            print("Message from Settings: Is notification display granted? *** \(granted) ***")
-            UserDefaults.standard.set(true, forKey: "notificationsAllowed")
-            
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+                print("Message from Settings: Is notification display granted? *** \(granted) ***")
+                UserDefaults.standard.set(true, forKey: "notificationsAllowed")
+                
+            }
+        } else {
+            // Fallback on earlier versions
         }
         
         self.notificationStatus.text = "Notifications are turned on"

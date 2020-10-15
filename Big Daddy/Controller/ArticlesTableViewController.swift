@@ -126,9 +126,17 @@ class ArticlesTableViewController: UITableViewController {
         
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
+        if #available(iOS 9.1, *) {
+            searchController.obscuresBackgroundDuringPresentation = false
+        } else {
+            // Fallback on earlier versions
+        }
         searchController.searchBar.placeholder = "is it me you're looking for?"
-        navigationItem.searchController = searchController
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+        } else {
+            // Fallback on earlier versions
+        }
         definesPresentationContext = true
         }
 
